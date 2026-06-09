@@ -344,6 +344,38 @@ def build_compatibility(
     return {"by_support": by_support, "by_skill": by_skill}
 
 
+def apply_authoritative_compat(
+    computed: dict[str, Any],
+    support_gems: list[SupportGem],
+) -> dict[str, Any]:
+    """If data/poe2db_supportedby.json exists, rebuild the compat matrix from it.
+
+    poe2db's per-gem #SupportedBy list is GGG-accurate and supersedes the
+    skillTypes-derived computation (which over-includes minion/companion skills).
+    Produced by scripts/build_compat_validation.py. Kept here so a fresh
+    build_catalog.py run stays idempotent instead of clobbering validated data.
+    Skills absent from poe2db data fall back to the computed list.
+    """
+    src = OUT_DIR / "poe2db_supportedby.json"
+    if not src.exists():
+        return computed
+    data = load_json(src)
+    known = {s.name for s in support_gems}
+    by_skill: dict[str, list[str]] = dict(computed["by_skill"])
+    for skill_name, info in data.get("skills", {}).items():
+        if skill_name not in by_skill:
+            continue
+        by_skill[skill_name] = sorted(s for s in info.get("supports", []) if s in known)
+    by_support: dict[str, list[str]] = {sup.name: [] for sup in support_gems}
+    for skill_name, sups in by_skill.items():
+        for s in sups:
+            by_support.setdefault(s, []).append(skill_name)
+    for s in by_support:
+        by_support[s].sort()
+    print("  compat: applied authoritative poe2db #SupportedBy override")
+    return {"by_support": by_support, "by_skill": by_skill}
+
+
 # ---------------------------------------------------------------------------
 # Spirit and Meta subsets
 # ---------------------------------------------------------------------------
@@ -858,6 +890,7 @@ def main() -> None:
     print(f"  Support gems: {kept} kept, {dropped} dropped (hidden/internal)")
 
     compatibility = build_compatibility(skill_gems, support_gems)
+    compatibility = apply_authoritative_compat(compatibility, support_gems)
     spirit_gems = build_spirit_gems(skill_gems)
     meta_gems = build_meta_gems(skill_gems)
     print(f"  Spirit gems: {len(spirit_gems)}")
