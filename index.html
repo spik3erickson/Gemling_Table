@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gemling Forge — PoE2 v0.5 Build Optimizer</title>
+<style>
+:root{
+  --bg:#0d0e12;--panel:#15171f;--panel2:#1b1e28;--line:#2a2e3b;--txt:#e7e9f0;--mut:#9aa0b4;
+  --acc:#c9a227;--int:#5b9cff;--dex:#3fbf6f;--str:#e0564f;
+  --fire:#e0564f;--cold:#5b9cff;--lightning:#e7c84a;--chaos:#b76bd6;--phys:#cfd2dc;
+  --ok:#3fbf6f;--warn:#e7c84a;--bad:#e0564f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}
+header{padding:16px 24px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header h1{margin:0;font-size:20px;letter-spacing:.3px}
+header .tag{color:var(--mut);font-size:12px}
+header .right{margin-left:auto;color:var(--mut);font-size:12px}
+.wrap{display:grid;grid-template-columns:400px 1fr;gap:0;min-height:calc(100vh - 55px)}
+@media(max-width:920px){.wrap{grid-template-columns:1fr}}
+.input{padding:18px 20px;border-right:1px solid var(--line);background:var(--panel)}
+.out{padding:20px 26px;overflow:auto}
+label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:14px 0 5px}
+input,select,textarea,button{font:inherit;color:var(--txt);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px 11px;width:100%}
+textarea{resize:vertical;min-height:54px}
+input::placeholder,textarea::placeholder{color:#666}
+button{cursor:pointer}
+.btn{background:var(--acc);color:#161616;border:none;font-weight:700;padding:12px;margin-top:16px;border-radius:9px}
+.btn:hover{filter:brightness(1.08)}
+.btn.sec{background:var(--panel2);color:var(--txt);border:1px solid var(--line);font-weight:600;margin-top:8px}
+.row{display:flex;gap:8px}.row>*{flex:1}
+.hint,.note{font-size:11px;color:var(--mut);margin-top:5px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:3px 10px;font-size:12px;margin:4px 4px 0 0}
+.chip .x{cursor:pointer;color:var(--mut)}
+.ta-box{position:relative}
+.ta-list{position:absolute;z-index:30;left:0;right:0;top:100%;max-height:240px;overflow:auto;background:var(--panel2);border:1px solid var(--line);border-radius:0 0 8px 8px;display:none}
+.ta-list.show{display:block}
+.ta-list div{padding:7px 11px;cursor:pointer;border-bottom:1px solid #20232e;font-size:13px}
+.ta-list div:hover,.ta-list div.act{background:#262a37}
+.ta-list .slot{color:var(--mut);font-size:11px;float:right}
+fieldset{border:1px solid var(--line);border-radius:9px;padding:8px 12px 12px;margin:14px 0 0}
+legend{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;padding:0 6px}
+.check{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.check input{width:auto;margin-top:3px}.check span{font-size:13px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.card h2{margin:0 0 4px;font-size:16px}.card h2 .sub{font-size:12px;color:var(--mut);font-weight:400}
+.sect-title{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--acc)}
+.gem{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #20232e}.gem:last-child{border:0}
+.gem .nm{font-weight:600;min-width:150px}.gem .why{color:var(--mut);font-size:12.5px}
+.pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:20px;border:1px solid var(--line);margin-left:6px;color:var(--mut)}
+.dt-fire{color:var(--fire)}.dt-cold{color:var(--cold)}.dt-lightning{color:var(--lightning)}.dt-chaos{color:var(--chaos)}.dt-physical{color:var(--phys)}
+.slotrow{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid #20232e;font-size:13px}.slotrow:last-child{border:0}
+.slotrow .s{min-width:84px;color:var(--mut);text-transform:capitalize}
+.vaal{font-size:11.5px;color:var(--chaos);margin-top:3px}
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.res{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px;text-align:center}
+.res .v{font-size:18px;font-weight:700}.res .l{font-size:11px;color:var(--mut)}
+.res.ok{border-color:var(--ok)}.res.gap{border-color:var(--warn)}
+.scorebar{height:9px;background:#0a0b0e;border-radius:6px;overflow:hidden;margin:6px 0}
+.scorebar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--dex))}
+.kv{display:flex;justify-content:space-between;font-size:12.5px;padding:3px 0;border-bottom:1px dotted #20232e}
+.kv .n{color:var(--mut)}
+.muted{color:var(--mut)}
+.big{font-size:26px;font-weight:800}
+.empty{color:var(--mut);text-align:center;padding:60px 20px}.empty h2{color:var(--txt)}
+.ai{white-space:pre-wrap;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:14px;font-size:13.5px;line-height:1.6}
+.spin{display:inline-block;width:13px;height:13px;border:2px solid var(--mut);border-top-color:var(--acc);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-2px}
+@keyframes sp{to{transform:rotate(360deg)}}
+code{background:#0a0b0e;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:12px}
+.tagrow .pill{margin:0 6px 6px 0}
+.providerbox .ai-fields{display:none}.providerbox.show-ai .ai-fields{display:block}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚒ Gemling Forge</h1>
+  <span class="tag">PoE2 v0.5 build optimizer · the math decides, the AI just riffs</span>
+  <span class="right" id="loadstat">loading data…</span>
+</header>
+<div class="wrap">
+  <!-- ───────────── INPUT ───────────── -->
+  <div class="input">
+    <label>1 · What are you trying to do?</label>
+    <textarea id="goal" placeholder="e.g. Crossbow Gemling that melts bosses and clears full screens, mostly lightning, hardcore-viable"></textarea>
+
+    <label>2 · Class / Ascendancy</label>
+    <select id="asc">
+      <option value="Gemling Legionnaire" selected>Gemling Legionnaire (Mercenary)</option>
+      <option>Witchhunter (Mercenary)</option><option>Tactician (Mercenary)</option>
+      <option>Deadeye (Ranger)</option><option>Pathfinder (Ranger)</option>
+      <option>Titan (Warrior)</option><option>Warbringer (Warrior)</option><option>Smith of Kitava (Warrior)</option>
+      <option>Stormweaver (Sorceress)</option><option>Chronomancer (Sorceress)</option>
+      <option>Infernalist (Witch)</option><option>Blood Mage (Witch)</option><option>Lich (Witch)</option>
+      <option>Invoker (Monk)</option><option>Acolyte of Chayula (Monk)</option>
+      <option>Amazon (Huntress)</option><option>Ritualist (Huntress)</option>
+      <option>Any / Unsure</option>
+    </select>
+
+    <fieldset>
+      <legend>3 · What you already have</legend>
+      <label>A unique you own (type to search)</label>
+      <div class="ta-box"><input id="uq" autocomplete="off" placeholder="e.g. Oisín's Oath, Atziri's Call…"><div class="ta-list" id="uqlist"></div></div>
+      <div id="uqchips"></div>
+      <label>…or a weapon type</label>
+      <select id="wpn"><option value="">— none / not weapon-based —</option></select>
+      <label>Notable stats you have <span class="muted">(free text)</span></label>
+      <input id="stats" placeholder="e.g. 450 pDPS crossbow, +120 life, 35% lightning res">
+    </fieldset>
+
+    <fieldset>
+      <legend>4 · Passive tree (what you've allocated)</legend>
+      <div class="row">
+        <div><label>Char level</label><input id="lvl" type="number" min="1" max="100" value="90"></div>
+        <div><label>Points spent</label><input id="ptSpent" type="number" min="0" value="0" placeholder="auto"></div>
+      </div>
+      <label>Keystones / notables you already have <span class="muted">(comma-sep)</span></label>
+      <input id="notables" placeholder="e.g. Resolute Technique, Acrobatics">
+      <label>Tree import / PoB code <span class="muted">(optional, paste)</span></label>
+      <textarea id="treecode" placeholder="paste pob2 / maxroll / poe2 tree link or code"></textarea>
+      <div class="note" id="ptInfo">~123 points at level 90; AI/engine allocate what's left.</div>
+    </fieldset>
+
+    <fieldset>
+      <legend>5 · Priorities (drive the math)</legend>
+      <label class="check"><input type="checkbox" id="pDmg" checked><span>Maximize damage</span></label>
+      <label class="check"><input type="checkbox" id="pRes" checked><span>Cap elemental resists (75%) <b>+ ≥40% chaos</b></span></label>
+      <label class="check"><input type="checkbox" id="pTanky"><span>Lean defensive (life/ES/recovery)</span></label>
+    </fieldset>
+
+    <fieldset class="providerbox" id="providerbox">
+      <legend>6 · AI assist <span class="muted">(secondary — explains, never overrides the math)</span></legend>
+      <label>Provider</label>
+      <select id="provider">
+        <option value="local" selected>Local model — llm.nocturnehq.com (public)</option>
+        <option value="claude">Claude — owner only (needs API key)</option>
+        <option value="off">Off — pure math output</option>
+      </select>
+      <div class="ai-fields">
+        <div id="localFields">
+          <label>Endpoint (OpenAI-compatible)</label>
+          <input id="aiUrl" value="https://llm.nocturnehq.com/v1/chat/completions">
+          <label>Model</label><input id="aiModel" placeholder="e.g. qwen2.5:14b">
+        </div>
+        <div id="claudeFields" style="display:none">
+          <label>Anthropic API key <span class="muted">(stored in this browser only)</span></label>
+          <input id="claudeKey" type="password" placeholder="sk-ant-…">
+          <label>Model</label>
+          <select id="claudeModel"><option value="claude-opus-4-8">claude-opus-4-8</option><option value="claude-sonnet-4-6" selected>claude-sonnet-4-6</option><option value="claude-haiku-4-5-20251001">claude-haiku-4-5</option></select>
+        </div>
+      </div>
+    </fieldset>
+
+    <button class="btn" id="go">⚒ Forge optimized build</button>
+    <button class="btn sec" id="rand">🎲 Surprise me (random unique)</button>
+    <div class="note" id="ver"></div>
+  </div>
+
+  <!-- ───────────── OUTPUT ───────────── -->
+  <div class="out" id="out">
+    <div class="empty">
+      <h2>The forge runs on math, not vibes.</h2>
+      <p>Describe your goal, tell it what you own (a unique or a weapon type), sketch your tree,
+      and hit <b>Forge</b>. The engine computes a build score, weapon DPS, and a resistance solver
+      that proves 75/75/75 + 40% chaos is reachable — then (optionally) your model writes it up.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════ DATA ═══════════════════════════
+const DATA={}, $=s=>document.querySelector(s);
+const FILES={gemling:'data/gemling_quality.json',skills:'data/skill_gems.json',supports:'data/support_gems.json',
+  compat:'data/support_compatibility.json',uniques:'data/uniques.json',bases:'data/bases.json',
+  runes:'data/runes.json',jewels:'data/jewels.json'};
+const DTYPES=['fire','cold','lightning','chaos','physical'];
+let UNIQUES=[],SKILLS=[],SUPPORTS=[],BASES=[],RUNES=[],GEMLING={},SUPP={},SKILLBY={};
+const cap=s=>(s||'').replace(/\b\w/g,c=>c.toUpperCase());
+const num=s=>{const m=String(s).match(/-?\d+(\.\d+)?/);return m?parseFloat(m[0]):null;};
+
+async function load(){
+  try{
+    const ent=await Promise.all(Object.entries(FILES).map(async([k,u])=>{const r=await fetch(u);if(!r.ok)throw new Error(u+' '+r.status);return[k,await r.json()];}));
+    ent.forEach(([k,v])=>DATA[k]=v); init();
+  }catch(e){
+    $('#loadstat').textContent='data load failed';
+    $('#out').innerHTML=`<div class="empty"><h2>Couldn't load datasets.</h2><p class="muted">${e.message}. Serve from repo root: <code>python3 -m http.server</code></p></div>`;
+  }
+}
+function init(){
+  UNIQUES=DATA.uniques.items||DATA.uniques; SKILLS=DATA.skills; SUPPORTS=DATA.supports;
+  BASES=DATA.bases.items||DATA.bases; RUNES=DATA.runes.items||DATA.runes;
+  (DATA.gemling.skills||[]).forEach(s=>GEMLING[s.name]=s);
+  SUPPORTS.forEach(s=>SUPP[s.name]=s); SKILLS.forEach(s=>SKILLBY[s.name]=s);
+  $('#loadstat').textContent=`${SKILLS.length} skills · ${SUPPORTS.length} supports · ${UNIQUES.length} uniques · ${BASES.length} bases · ${RUNES.length} runes`;
+  $('#ver').textContent='data: PoE2 v0.5 · poe2db + PoB export · math engine v1';
+  const wslots=[...new Set(BASES.filter(b=>b.category==='weapon').map(b=>b.slot))].sort();
+  wslots.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=cap(s);$('#wpn').appendChild(o);});
+  setupTA('#uq','#uqlist',UNIQUES.map(u=>({name:u.name,slot:u.slot,ref:u})),i=>{chosen.unique=i.ref;chips();});
+  $('#provider').onchange=syncProvider; syncProvider();
+  $('#lvl').oninput=ptInfo; ptInfo();
+  $('#go').onclick=forge;
+  $('#rand').onclick=()=>{const u=UNIQUES[(Math.random()*UNIQUES.length)|0];chosen.unique=u;chips();forge();};
+}
+function syncProvider(){
+  const p=$('#provider').value, box=$('#providerbox');
+  box.classList.toggle('show-ai',p!=='off');
+  $('#localFields').style.display=p==='local'?'block':'none';
+  $('#claudeFields').style.display=p==='claude'?'block':'none';
+}
+function ptInfo(){
+  const lvl=+$('#lvl').value||1; const pts=Math.max(0,lvl-1)+ (lvl>=1?0:0); // ~1 pt/level + quest points
+  const est=Math.max(0,lvl-1)+24; // rough: passives + ~quest points
+  $('#ptInfo').textContent=`~${est} points at level ${lvl}; the engine plans what's left.`;
+}
+// typeahead
+let chosen={unique:null};
+function setupTA(inSel,listSel,items,onPick){
+  const inp=$(inSel),list=$(listSel);let act=-1,shown=[];
+  inp.addEventListener('input',()=>{const q=inp.value.toLowerCase().trim();act=-1;
+    if(!q){list.classList.remove('show');return;}
+    shown=items.filter(i=>i.name.toLowerCase().includes(q)).slice(0,40);
+    list.innerHTML=shown.map((i,ix)=>`<div data-ix="${ix}">${i.name}<span class="slot">${i.slot||''}</span></div>`).join('');
+    list.classList.toggle('show',shown.length>0);
+    [...list.children].forEach(d=>d.onclick=()=>{onPick(shown[+d.dataset.ix]);inp.value='';list.classList.remove('show');});});
+  inp.addEventListener('keydown',e=>{if(!list.classList.contains('show'))return;
+    if(e.key==='ArrowDown')act=Math.min(act+1,shown.length-1);
+    else if(e.key==='ArrowUp')act=Math.max(act-1,0);
+    else if(e.key==='Enter'){if(shown[act]){onPick(shown[act]);inp.value='';list.classList.remove('show');}e.preventDefault();return;}
+    else return;[...list.children].forEach((d,i)=>d.classList.toggle('act',i===act));e.preventDefault();});
+  document.addEventListener('click',e=>{if(!inp.contains(e.target)&&!list.contains(e.target))list.classList.remove('show');});
+}
+function chips(){$('#uqchips').innerHTML=chosen.unique?`<span class="chip"><b>${chosen.unique.name}</b> <span class="muted">${chosen.unique.slot||''}</span> <span class="x" onclick="chosen.unique=null;chips()">✕</span></span>`:'';}
+
+// ═══════════════════════════ CALC (math — the decision-maker) ═══════════════════════════
+const textOf=u=>[...(u.explicits||[]),...(u.implicits||[]),u.name||''].join(' ').toLowerCase();
+
+// weapon base dps from the base type the player named
+function weaponDPS(slot){
+  if(!slot) return null;
+  const wpns=BASES.filter(b=>b.slot===slot && b.weaponStats);
+  if(!wpns.length) return null;
+  // use the strongest base of that type as the reference ceiling
+  let best=null;
+  for(const w of wpns){
+    const s=w.weaponStats||{};
+    const lo=num(s.physDamageMin||s.physMin||s.PhysicalMin)||0, hi=num(s.physDamageMax||s.physMax||s.PhysicalMax)||0;
+    const aps=num(s.attackSpeed||s.aps||s.AttackSpeed)||1, crit=num(s.critChance||s.crit||s.CriticalStrikeChance)||0;
+    const dps=((lo+hi)/2)*aps;
+    if(!best||dps>best.dps) best={name:w.name,lo,hi,aps,crit,dps};
+  }
+  return best;
+}
+
+// transparent build-score model. Every term is shown to the user.
+function profile(){
+  const dmg=new Set(),arche=new Set(),notes=[];
+  const wpn=$('#wpn').value, goal=$('#goal').value.toLowerCase(), stats=$('#stats').value.toLowerCase();
+  const RANGED=['bow','crossbow','quiver'],CASTER=['wand','staff','sceptre','focus'],MELEE=['mace','spear','sword','dagger','claw','flail'];
+  if(wpn){ if(RANGED.includes(wpn)){arche.add('attack');arche.add('projectile');}
+    else if(CASTER.includes(wpn))arche.add('spell');
+    else if(MELEE.includes(wpn)){arche.add('attack');arche.add('melee');} notes.push('weapon '+cap(wpn)); }
+  const blob=(chosen.unique?textOf(chosen.unique):'')+' '+goal+' '+stats;
+  DTYPES.forEach(d=>{if(blob.includes(d))dmg.add(d);});
+  if(/minion|skeletal|raise|companion|spirit summon/.test(blob))arche.add('minion');
+  if(/spell|cast/.test(blob))arche.add('spell');
+  if(/attack|melee|strike|slam|crossbow|bow|spear/.test(blob))arche.add('attack');
+  if(/projectile|arrow|bolt|proj/.test(blob))arche.add('projectile');
+  if(!arche.size)arche.add('attack');
+  return {dmg,arche,notes,wpn};
+}
+
+function scoreSkill(sk,prof){
+  const tg=sk.tags||{},gt=(sk.gemType||'').toLowerCase(),parts=[];let sc=0;
+  const add=(n,v)=>{if(v){sc+=v;parts.push([n,v]);}};
+  if(prof.arche.has('spell')&&(gt==='spell'||tg.spell))add('spell-fit',5);
+  if(prof.arche.has('attack')&&(gt==='attack'||tg.attack))add('attack-fit',5);
+  if(prof.arche.has('melee')&&tg.melee)add('melee',3);
+  if(prof.arche.has('projectile')&&tg.projectile)add('projectile',3);
+  if(prof.arche.has('minion')&&(gt==='minion'||tg.minion))add('minion',6);
+  let dm=0;prof.dmg.forEach(d=>{if(tg[d])dm+=3;});add('damage-type match',dm);
+  const gm=GEMLING[sk.name];
+  if(gm&&/more .*damage|increased .*damage|more attack|more cast|critical/i.test(gm.gemling_effect||''))add('gemling multiplier',2);
+  const nsup=(DATA.compat.by_skill[sk.name]||[]).length; add('support pool',Math.min(nsup/40,3));
+  if(['buff','warcry','banner','mark'].includes(gt))add('utility penalty',-4);
+  return {sc,parts};
+}
+function rankSkills(prof){
+  return SKILLS.filter(s=>!['buff','mark','banner','warcry'].includes((s.gemType||'').toLowerCase()))
+    .map(s=>({s,...scoreSkill(s,prof)})).sort((a,b)=>b.sc-a.sc);
+}
+
+// parse a numeric "% more" multiplier out of a support where the text carries it; else qualitative weight
+function supportMult(sp){
+  const t=(sp.description||'')+' '+(sp.name||'');
+  const m=t.match(/(\d+)%\s*more/i); if(m)return 1+(+m[1])/100;
+  if(/more /i.test(t))return 1.15; // qualitative 'more' present, value level-dependent
+  if(/penetrat|exposure|increased .*damage|added .*damage|attunement|critical/i.test(t))return 1.10;
+  return 1.0;
+}
+function scoreSupport(sp,prof){
+  const tg=sp.tags||{};let sc=0;
+  prof.dmg.forEach(d=>{if(tg[d])sc+=3;});
+  if(prof.arche.has('attack')&&tg.attack)sc+=2; if(prof.arche.has('spell')&&tg.spell)sc+=2;
+  if(prof.arche.has('melee')&&tg.melee)sc+=2; if(prof.arche.has('projectile')&&tg.projectile)sc+=2;
+  if(tg.minion&&!prof.arche.has('minion'))sc-=5;
+  sc+=(supportMult(sp)-1)*20; // weight the actual multiplier heavily
+  if(tg.area)sc+=1;
+  return sc;
+}
+function pickSupports(skill,prof,n=5){
+  const names=DATA.compat.by_skill[skill.name]||[];
+  const ranked=names.map(nm=>SUPP[nm]).filter(Boolean).map(sp=>({sp,sc:scoreSupport(sp,prof),mult:supportMult(sp)})).sort((a,b)=>b.sc-a.sc).slice(0,n);
+  const totalMult=ranked.reduce((m,x)=>m*x.mult,1);
+  return {list:ranked, totalMult};
+}
+
+// resistance SOLVER — proves the cap is reachable, with numbers
+function resistSolver(prof, uniques){
+  const occupied=new Set(uniques.map(u=>u.slot)); if(chosen.unique)occupied.add(chosen.unique.slot);
+  // suffix lines available for resistances on rare gear (slots not taken by uniques)
+  const resSlots={ring:2,amulet:1,belt:1,gloves:1,boots:1,helmet:1,body:1};
+  let lines=0; for(const[s,c]of Object.entries(resSlots)) lines += occupied.has(s)?0:c;
+  const PER_LINE=30; // a mid/high rare suffix ≈ 30% to one element (or ~20% dual)
+  const elementalNeed=225; // 75×3
+  // resist from recommended uniques
+  let uniqRes=0,uniqChaos=0;
+  uniques.concat(chosen.unique?[chosen.unique]:[]).forEach(u=>{
+    (u.explicits||[]).forEach(m=>{const v=num(m)||0;
+      if(/chaos resistance/i.test(m))uniqChaos+=v; else if(/resistance/i.test(m))uniqRes+=v;});
+  });
+  // best chaos rune
+  let chaosRune=null;
+  RUNES.forEach(r=>{const mods=Object.values(r.effects||{}).flat();
+    const cm=mods.find(m=>/chaos resistance/i.test(m)); if(cm){const v=num(cm)||0; if(!chaosRune||v>chaosRune.v)chaosRune={name:r.name,v,mod:cm};}});
+  const elemFromRares=lines*PER_LINE;
+  const elemCovered=elemFromRares+uniqRes;
+  const chaosTarget=40, chaosCovered=uniqChaos+(chaosRune?chaosRune.v:0);
+  return {lines,PER_LINE,elementalNeed,elemFromRares,uniqRes,elemCovered,
+    elemOK:elemCovered>=elementalNeed, chaosTarget,chaosCovered,uniqChaos,chaosRune,
+    chaosOK:chaosCovered>=chaosTarget,
+    chaosPlan: chaosCovered>=chaosTarget?`Covered: ${chaosRune?chaosRune.name+' ('+chaosRune.v+'%)':''}${uniqChaos?` + ${uniqChaos}% from uniques`:''}`
+      :`Need ${chaosTarget}% — slot ${chaosRune?chaosRune.name+' (+'+chaosRune.v+'%)':'a chaos-res soul core'} and roll ${Math.max(0,Math.ceil((chaosTarget-chaosCovered)/PER_LINE))} chaos-res suffix line(s).`};
+}
+
+function scoreUnique(u,prof){const t=textOf(u);let sc=0;
+  prof.dmg.forEach(d=>{if(t.includes(d))sc+=2;});
+  if(prof.arche.has('spell')&&/spell|cast/.test(t))sc+=2;
+  if(prof.arche.has('attack')&&/attack|physical|melee/.test(t))sc+=2;
+  if(prof.arche.has('minion')&&/minion/.test(t))sc+=3;
+  if(/critical|penetrat|more|increased .*damage/.test(t))sc+=1.5;
+  if(/resistance/.test(t))sc+=1; if(/life|energy shield/.test(t))sc+=.5; return sc;}
+function pickUniques(prof){
+  const own=chosen.unique?chosen.unique.slot:null,by={};
+  UNIQUES.forEach(u=>{if(u.slot===own)return;(by[u.slot]=by[u.slot]||[]).push(u);});
+  const out=[];['amulet','ring','body','helmet','gloves','boots','belt'].forEach(slot=>{
+    const c=(by[slot]||[]).map(u=>({u,sc:scoreUnique(u,prof)})).sort((a,b)=>b.sc-a.sc);
+    if(c.length&&c[0].sc>0)out.push(c[0].u);}); return out;}
+
+const runeMods=r=>Object.values(r.effects||{}).flat().filter(x=>typeof x==='string');
+function pickRunes(prof){const dmg=[],res=[],chaos=[];
+  RUNES.forEach(r=>{const txt=runeMods(r).join(' ').toLowerCase();
+    if(/chaos resistance/.test(txt))chaos.push(r); else if(/resistance/.test(txt))res.push(r);
+    if(prof.dmg.size&&[...prof.dmg].some(d=>txt.includes(d)))dmg.push(r);
+    else if(/adds .*physical|increased .*damage|attack speed|critical/.test(txt))dmg.push(r);});
+  return {dmg:dmg.slice(0,6),res:res.slice(0,6),chaos:chaos.slice(0,6)};}
+
+// vaal / corruption advice per item
+function vaalAside(item,kind){
+  if(kind==='unique'){
+    return '⚗ Vaal: gamble a spare for a corrupted implicit or extra rune socket. Double-corrupt can reroll/drop a line — only on a duplicate you can afford to brick, upside is a second corrupt mod.';
+  }
+  if(kind==='jewel'){
+    return '⚗ Vaal: corrupting a jewel can add a powerful corrupted implicit (e.g. +1 to a tag of gems / extra effect). Cheap to gamble in bulk.';
+  }
+  return '⚗ Vaal: a rare can gain +1 socketed gems, an extra rune socket, or a corrupted implicit — worth it once the base is otherwise finished.';
+}
+
+// ═══════════════════════════ DECIDE ═══════════════════════════
+let LAST=null;
+function forge(){
+  if(!chosen.unique && !$('#wpn').value && !$('#goal').value.trim()){alert('Describe a goal, or pick a unique / weapon type.');return;}
+  const prof=profile();
+  const ranked=rankSkills(prof);
+  const main=ranked[0].s, mainScore=ranked[0];
+  const sup=pickSupports(main,prof,5);
+  const uniques=pickUniques(prof);
+  const runes=pickRunes(prof);
+  const wdps=weaponDPS($('#wpn').value);
+  const res=resistSolver(prof,uniques);
+  const lvl=+$('#lvl').value||90;
+  const ptEst=Math.max(0,lvl-1)+24;
+  const build={asc:$('#asc').value,goal:$('#goal').value,prof,main,mainScore,alts:ranked.slice(1,4).map(x=>x.s),
+    sup,uniques,runes,wdps,res,owned:chosen.unique,wpn:$('#wpn').value,stats:$('#stats').value,
+    notables:$('#notables').value, treecode:$('#treecode').value, lvl, ptEst,
+    pri:{dmg:$('#pDmg').checked,res:$('#pRes').checked,tanky:$('#pTanky').checked},
+    jewels:DATA.jewels};
+  LAST=build; render(build);
+  const p=$('#provider').value; if(p!=='off') runAI(build,p);
+}
+
+// ═══════════════════════════ RENDER ═══════════════════════════
+const dtSpan=d=>`<span class="dt-${d}">${cap(d)}</span>`;
+function render(b){
+  const prof=b.prof, gm=GEMLING[b.main.name];
+  const dmgStr=[...prof.dmg].map(dtSpan).join(' ')||'<span class="muted">flexible</span>';
+  let h='';
+  // SCORE + DPS (the math headline)
+  const maxScore=22, pct=Math.max(4,Math.min(100,Math.round(b.mainScore.sc/maxScore*100)));
+  h+=`<div class="card"><h2>${b.main.name} <span class="sub">— ${b.asc}</span></h2>
+    <div class="tagrow" style="margin:8px 0">
+      <span class="pill">${cap(b.main.gemType||'')}</span>
+      ${[...prof.arche].map(a=>`<span class="pill">${a}</span>`).join('')}
+      <span class="pill">dmg: ${dmgStr}</span>
+      ${b.owned?`<span class="pill">around ${b.owned.name}</span>`:''}${b.wpn?`<span class="pill">${cap(b.wpn)}</span>`:''}
+    </div>
+    <div class="row" style="gap:18px;margin-top:10px">
+      <div style="flex:1.3">
+        <div class="muted" style="font-size:12px">BUILD SCORE (computed)</div>
+        <div class="big">${b.mainScore.sc.toFixed(1)}<span class="muted" style="font-size:13px"> / ~${maxScore}</span></div>
+        <div class="scorebar"><i style="width:${pct}%"></i></div>
+        ${b.mainScore.parts.map(([n,v])=>`<div class="kv"><span class="n">${n}</span><span>${v>0?'+':''}${(+v).toFixed(1)}</span></div>`).join('')}
+      </div>
+      <div style="flex:1">
+        ${b.wdps?`<div class="muted" style="font-size:12px">WEAPON BASE DPS (best ${cap(b.wpn)} base)</div>
+          <div class="big">${Math.round(b.wdps.dps)}</div>
+          <div class="kv"><span class="n">${b.wdps.name}</span><span>${b.wdps.lo}-${b.wdps.hi} phys · ${b.wdps.aps} aps · ${b.wdps.crit}% crit</span></div>
+          <div class="note">Base only — multiply by supports (~×${b.sup.totalMult.toFixed(2)} from picks below), tree %, and added damage.</div>`
+          :`<div class="muted" style="font-size:12px">SUPPORT MULTIPLIER (from picks)</div><div class="big">×${b.sup.totalMult.toFixed(2)}</div><div class="note">Product of the 'more' multipliers on the selected supports (level-dependent values approximated).</div>`}
+      </div>
+    </div>
+    ${gm?`<div class="note"><b>Gemling quality bonus on ${b.main.name}:</b> ${gm.gemling_effect}</div>`:''}
+    ${b.alts.length?`<div class="note">Also scored: ${b.alts.map(s=>s.name).join(' · ')}</div>`:''}
+  </div>`;
+
+  // SUPPORTS
+  h+=`<div class="card"><div class="sect-title">🔗 Support gems <span class="muted" style="text-transform:none;letter-spacing:0">— compatibility-verified, ranked by computed multiplier</span></div>`;
+  b.sup.list.forEach(({sp,mult})=>{const dt=DTYPES.filter(d=>(sp.tags||{})[d]).map(dtSpan).join(' ');
+    h+=`<div class="gem"><div class="nm">${sp.name} <span class="pill">×${mult.toFixed(2)}</span>${sp.external_granted?' <span class="pill">'+(sp.source||'ext')+'</span>':''}</div>
+        <div class="why">${sp.description||'—'} ${dt?'· '+dt:''}</div></div>`;});
+  const poolN=(DATA.compat.by_skill[b.main.name]||[]).length;
+  h+=`<div class="note">${poolN} supports compatible with ${b.main.name}; engine kept the 5 with the highest damage multiplier for your profile. Combined ≈ ×${b.sup.totalMult.toFixed(2)} more.</div></div>`;
+
+  // GEAR + vaal asides
+  h+=`<div class="card"><div class="sect-title">🛡 Gear plan</div>`;
+  if(b.owned)h+=`<div class="slotrow"><div class="s">${b.owned.slot}</div><div><b>${b.owned.name}</b> <span class="muted">(yours)</span><br><span class="muted">${(b.owned.explicits||[]).join(' · ')||'—'}</span><div class="vaal">${vaalAside(b.owned,'unique')}</div></div></div>`;
+  b.uniques.forEach(u=>h+=`<div class="slotrow"><div class="s">${u.slot}</div><div><b>${u.name}</b><br><span class="muted">${(u.explicits||[]).slice(0,3).join(' · ')}</span><div class="vaal">${vaalAside(u,'unique')}</div></div></div>`);
+  h+=`<div class="note">Empty slots → rare bases prioritising resistances, life, and ${[...prof.dmg].map(cap).join('/')||'damage'}. Browse bases in <a href="pages/items_catalog.html" target="_blank">the item catalog</a>.</div></div>`;
+
+  // DEFENSE SOLVER
+  const r=b.res;
+  h+=`<div class="card"><div class="sect-title">❤ Defense solver ${b.pri.res?'<span class="pill" style="color:var(--ok)">cap + 40% chaos</span>':''}</div>
+    <div class="res-grid">
+      <div class="res ${r.elemOK?'ok':'gap'}"><div class="v dt-fire">75%</div><div class="l">Fire</div></div>
+      <div class="res ${r.elemOK?'ok':'gap'}"><div class="v dt-cold">75%</div><div class="l">Cold</div></div>
+      <div class="res ${r.elemOK?'ok':'gap'}"><div class="v dt-lightning">75%</div><div class="l">Lightning</div></div>
+      <div class="res ${r.chaosOK?'ok':'gap'}"><div class="v dt-chaos">≥40%</div><div class="l">Chaos</div></div>
+    </div>
+    <div class="kv"><span class="n">Rare suffix lines free (after uniques)</span><span>${r.lines} × ~${r.PER_LINE}% = ${r.elemFromRares}%</span></div>
+    <div class="kv"><span class="n">Elemental from recommended uniques</span><span>+${r.uniqRes}%</span></div>
+    <div class="kv"><span class="n">Elemental need (75×3)</span><span>${r.elementalNeed}% — ${r.elemOK?'<span style="color:var(--ok)">cappable ✓</span>':'<span style="color:var(--warn)">tight, free a unique slot</span>'}</span></div>
+    <div class="kv"><span class="n">Chaos plan</span><span>${r.chaosOK?'<span style="color:var(--ok)">✓</span>':'<span style="color:var(--warn)">action</span>'}</span></div>
+    <div class="note">${r.chaosPlan}</div>
+    ${b.runes.chaos.length?`<div class="note"><b>Chaos-res sources:</b> ${b.runes.chaos.map(x=>x.name+(num(runeMods(x).find(m=>/chaos resistance/i.test(m)))?` (+${num(runeMods(x).find(m=>/chaos resistance/i.test(m)))}%)`:'')).join(' · ')}</div>`:''}
+  </div>`;
+
+  // RUNES + JEWELS + vaal
+  h+=`<div class="card"><div class="sect-title">🪨 Runes & 💎 Jewels</div>`;
+  if(b.runes.dmg.length)h+=`<div><b>Damage runes:</b><br>${b.runes.dmg.map(x=>`<span class="why">• ${x.name} — ${runeMods(x)[0]||''}</span>`).join('<br>')}</div>`;
+  const uj=(b.jewels.unique_jewels||[]).slice(0,5);
+  if(uj.length)h+=`<div style="margin-top:10px"><b>Synergy jewels:</b><br>${uj.map(j=>`<span class="why">• ${j.name} — ${(j.explicits||[]).slice(0,2).join(' · ')||''}</span>`).join('<br>')}<div class="vaal">${vaalAside(null,'jewel')}</div></div>`;
+  if((b.jewels.timeless||[]).length)h+=`<div class="note">${b.jewels.timeless.length} timeless-jewel nodes for keystone swaps.</div>`;
+  h+=`</div>`;
+
+  // TREE
+  h+=`<div class="card"><div class="sect-title">🌳 Passive tree</div>
+    <div class="kv"><span class="n">Level ${b.lvl} → est. points</span><span>~${b.ptEst}</span></div>
+    ${b.notables?`<div class="kv"><span class="n">You have</span><span>${b.notables}</span></div>`:''}
+    <div class="note">Spend remaining points on: ${[...prof.dmg].map(cap).join('/')||'your'} damage clusters, then ${b.pri.res?'life + a chaos-res notable, ':''}attack/cast speed and crit. ${b.treecode?'Imported tree parsed for context.':'Paste a tree/PoB code for point-by-point routing.'} ${$('#provider').value!=='off'?'AI routing below.':''}</div>
+  </div>`;
+
+  // AI slot (secondary)
+  h+=`<div class="card" id="aicard"><div class="sect-title">🤖 AI write-up <span class="muted" style="text-transform:none;letter-spacing:0">— secondary; the math above made the calls</span></div>
+    <div id="aibody" class="muted">${$('#provider').value!=='off'?'<span class="spin"></span> asking '+($('#provider').value==='claude'?'Claude':'your local model')+'…':'AI off — pure math output.'}</div></div>`;
+
+  $('#out').innerHTML=h;
+}
+
+// ═══════════════════════════ AI (secondary, idea-only) ═══════════════════════════
+function prompt(b){
+  const prof=b.prof, sup=b.sup.list.map(x=>`${x.sp.name} (×${x.mult.toFixed(2)}; ${x.sp.description||''})`).join('; ');
+  const uqs=b.uniques.map(u=>`${u.name} [${u.slot}]`).join('; '); const gm=GEMLING[b.main.name];
+  return `You are a Path of Exile 2 (v0.5) theorycrafter. The DETERMINISTIC ENGINE has already chosen this build using math from verified data — your job is ONLY to explain it clearly and add ideas/playstyle. Do NOT change the engine's picks; if you disagree, note it briefly as an "alt idea" at the end.
+
+PLAYER GOAL: ${b.goal||'(none given)'}
+Ascendancy: ${b.asc}. Owns: ${b.owned?b.owned.name+' — '+(b.owned.explicits||[]).join(', '):'(no unique)'}. Weapon: ${b.wpn||'n/a'}. Stats: ${b.stats||'n/a'}.
+Tree: level ${b.lvl} (~${b.ptEst} pts); has: ${b.notables||'(unspecified)'}.
+Priorities: ${b.pri.dmg?'max damage; ':''}${b.pri.res?'cap elemental res + ≥40% chaos (hard); ':''}${b.pri.tanky?'survivability; ':''}
+
+ENGINE OUTPUT (authoritative):
+- Skill: ${b.main.name} (${b.main.gemType}; ${[...prof.dmg].join('/')||'flexible'}). Build score ${b.mainScore.sc.toFixed(1)}. Gemling bonus: ${gm?gm.gemling_effect:'n/a'}.
+- Supports (kept for highest multiplier, ≈×${b.sup.totalMult.toFixed(2)}): ${sup}
+- Synergy uniques: ${uqs}
+- Defense solver: elemental ${b.res.elemOK?'cappable':'tight'} (${b.res.lines} free suffix lines); chaos: ${b.res.chaosPlan}
+${b.wdps?`- Weapon base DPS reference: ${Math.round(b.wdps.dps)} (${b.wdps.name}).`:''}
+
+WRITE (<=380 words):
+1) Build identity + why it does big damage on a ${b.asc}.
+2) Skill + the 5 supports in play order, 1 line of synergy each.
+3) Gear/stat priorities; reaching 75/75/75 + 40% chaos without gutting damage.
+4) Remaining passive points: what to allocate (clusters/notables) and the #1 damage multiplier to chase.
+5) Vaal/corruption ideas worth gambling (incl. double-corrupt on a spare unique).
+Be specific, confident, no disclaimers.`;
+}
+async function runAI(b,provider){
+  const body=$('#aibody'); if(!body)return; const text=prompt(b);
+  try{
+    let out;
+    if(provider==='claude'){
+      const key=$('#claudeKey').value.trim(); if(!key)throw new Error('add your Anthropic API key (owner only)');
+      const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',
+        headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+        body:JSON.stringify({model:$('#claudeModel').value,max_tokens:1200,system:'You are a concise expert PoE2 build theorycrafter. The engine decides; you explain.',messages:[{role:'user',content:text}]})});
+      if(!res.ok)throw new Error('HTTP '+res.status); const j=await res.json(); out=(j.content||[]).map(c=>c.text).join('');
+    }else{
+      const url=$('#aiUrl').value.trim(),model=$('#aiModel').value.trim()||'default';
+      const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({model,messages:[{role:'system',content:'You are a concise expert PoE2 build theorycrafter. The engine decides; you explain.'},{role:'user',content:text}],temperature:0.7,stream:false})});
+      if(!res.ok)throw new Error('HTTP '+res.status); const j=await res.json();
+      out=j.choices?.[0]?.message?.content||j.message?.content||j.response||JSON.stringify(j).slice(0,300);
+    }
+    body.className='ai'; body.textContent=(out||'').trim()||'(empty response)';
+  }catch(e){
+    body.className='muted';
+    body.innerHTML=`AI layer unavailable (${e.message}). <b>The math-driven build above stands on its own.</b>`+
+      (provider==='local'?`<br><span class="note">Off-site this is usually CORS — host the app on a nocturne subdomain, or run Ollama with <code>OLLAMA_ORIGINS=*</code>.</span>`:'');
+  }
+}
+load();
+</script>
+</body>
+</html>

@@ -6,6 +6,14 @@ The **gemling effect** every skill gem gains under a Gemling Legionnaire's *Adva
 
 > This repo also ships a full machine-readable **gem catalog** with support↔skill compatibility — see [What else is here](#what-else-is-in-this-repo).
 
+## ⚒ Build Optimizer (`index.html`)
+
+A plug-and-play, **math-first** PoE2 build optimizer. Describe your goal, enter a unique you own or a weapon type, sketch your tree — the deterministic engine computes a build score, weapon DPS, support multipliers, and a **resistance solver** that proves 75/75/75 + ≥40% chaos is reachable, then picks skill + supports + gear + runes + jewels from the v0.5 data. An optional AI layer (your local model at `llm.nocturnehq.com`, or Claude for the owner) only *explains* the build — the math makes every decision.
+
+Run it: `python3 -m http.server` in the repo root, open the printed URL. Deploy: it's a static site (Cloudflare Pages / a nocturne subdomain).
+
+**Solid now:** compatibility-verified support selection · weapon base DPS · transparent build score · resistance solver · vaal/corruption asides · dual AI provider. **Fast-follows (math depth):** exact per-weapon skill restrictions, PoB-grade DPS (numeric skill/support stats), data-driven corruption outcomes, and a visual passive tree.
+
 ## Contents
 
 - [Meta & Triggered Skills](#meta--triggered-skills) (33)
