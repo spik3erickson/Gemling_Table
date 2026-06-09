@@ -3,10 +3,12 @@
   "source": "repoe-fork/pob-data PoB export",
   "counts": {
     "skill_gems": 399,
-    "support_gems": 538,
+    "support_gems": 571,
     "support_dropped": 28,
     "spirit_gems": 118,
-    "meta_gems": 29
+    "meta_gems": 29,
+    "support_gems_pob": 538,
+    "support_gems_external": 33
   },
   "generated_from": [
     "Gems.json",
@@ -32,5 +34,6 @@
     "meta_gems": "meta_gems.json",
     "catalog_index": "gem_catalog.json",
     "browser": "gem_catalog.html"
-  }
+  },
+  "notes": "support_gems = 538 PoB-export player supports + 33 external-granted (23 Lineage + 10 unique/league) catalogued from poe2db. Compatibility is authoritative from poe2db #SupportedBy."
 }

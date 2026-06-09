@@ -389,7 +389,7 @@ A normalized **PoE2 v0.5 gem catalog** built from the [Path of Building data exp
 |---|---|
 | `data/gemling_quality.json` | The 260-skill gemling table above, machine-readable |
 | `data/skill_gems.json` | 399 active gems — tags, attribute, skill types, descriptions |
-| `data/support_gems.json` | 538 support gems — with require/exclude skill-type rules |
+| `data/support_gems.json` | 571 support gems (538 PoB + 33 Lineage/external-granted) with rules |
 | `data/support_compatibility.json` | Which supports work with which skills (both directions) |
 | `data/spirit_gems.json`, `data/meta_gems.json` | Spirit / meta gem subsets |
 | `data/uniques.json` | 395 unique items across every slot, with mods |

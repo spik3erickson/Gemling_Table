@@ -895,6 +895,37 @@
     "description": "Supports Fire Spell Skills causing you to gain Elemental Archon when Igniting with them."
   },
   {
+    "id": "External/Lineage/Arbiter'sReach",
+    "gameId": null,
+    "name": "Arbiter's Reach",
+    "gemFamily": "Arbiter's Reach",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "buff": true,
+      "persistent": true,
+      "duration": true
+    },
+    "tagString": "Support, Lineage, Buff, Persistent, Duration",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Persistent Buff Skills, causing you periodically grant Guard to allies in your Presence while the Skill is active.",
+    "explicits": [
+      "Allies in your Presence gain Guard equal to 10% of your maximum Life for 4 seconds, every 6 seconds while a Supported Skill is active"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Arbiters_Reach"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemArcaneSurgeSupport",
     "gameId": "Metadata/Items/Gems/SupportGemArcaneSurge",
     "name": "Arcane Surge",
@@ -1260,6 +1291,35 @@
       "Persistent"
     ],
     "description": "Supports Curse Spells you cast yourself, causing those Curses to ignore the usual Curse Limit, but be reflected back to you when inflicted."
+  },
+  {
+    "id": "External/Lineage/Atziri'sCall",
+    "gameId": null,
+    "name": "Atziri's Call",
+    "gemFamily": "Atziri's Call",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "spell": true,
+      "aoe": true,
+      "trigger": true
+    },
+    "tagString": "Support, Lineage, Spell, AoE, Trigger",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "[DNT] Supports Spells you use yourself which Hit enemies. On Critical Hit with supported Spells , Trigger Atziri's Storm at the location of the nearest enemy.",
+    "explicits": [],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Atziris_Call"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemAtzirisImpatienceSupport",
@@ -2222,6 +2282,38 @@
     "description": "Supports Skills which create Fissures in the ground, causing them to create additional secondary Fissures which branch off from the primary fissure, with lowered area of effect and Damage."
   },
   {
+    "id": "External/Lineage/Breachlord'sAmalgam",
+    "gameId": null,
+    "name": "Breachlord's Amalgam",
+    "gemFamily": "Breachlord's Amalgam",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "projectile": true,
+      "lightning": true,
+      "cold": true
+    },
+    "tagString": "Support, Lineage, Projectile, Lightning, Cold",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Lightning or Cold skills you use yourself which fire Projectiles and do not already have cooldowns, adding a cooldown and making the Projectiles return, piercing through targets as they do so.",
+    "explicits": [
+      "Projectiles from Supported Skills Return to you",
+      "Returning Projectiles from Supported Skills Pierce all targets"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Breachlords_Amalgam"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemBrinkSupport",
     "gameId": "Metadata/Items/Gem/SupportGemBrink",
     "name": "Brink I",
@@ -2733,6 +2825,38 @@
     ],
     "excludeSkillTypeNames": [],
     "description": "Supports Skills which are boosted by Elemental Ground Surfaces, Triggering Catalysing Discharge of the corresponding type when they are boosted by an allied Elemental Ground Surface."
+  },
+  {
+    "id": "External/Lineage/Catha'sBrilliance",
+    "gameId": null,
+    "name": "Catha's Brilliance",
+    "gemFamily": "Catha's Brilliance",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "minion": true,
+      "aoe": true,
+      "fire": true
+    },
+    "tagString": "Support, Lineage, Minion, AoE, Fire",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports skills which create Companions , causing enemies near them to be Blinded and Ignited . The damage of the Ignite is based on the Life of the supported Minion .",
+    "explicits": [
+      "Minions from Supported Skills Blind Enemies within a 2 metre radius",
+      "Minions from Supported Skills Ignite Enemies within a radius of 2 metres as though dealing Base Fire Damage equal to 10 % of Minion's Maximum Life"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Cathas_Brilliance"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemCatharsisSupport",
@@ -3787,6 +3911,40 @@
       "Persistent"
     ],
     "description": "Supports Skills you use yourself which Damage enemies with Hits. Supported Skills consume a percentage of your maximum Life Flask charges, inflicting more powerful Bleeding based on Life Flask charges consumed."
+  },
+  {
+    "id": "External/Granted/ConcussiveRunes",
+    "gameId": null,
+    "name": "Concussive Runes",
+    "gemFamily": "Concussive Runes",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "attack": true,
+      "aoe": true,
+      "melee": true,
+      "slam": true,
+      "trigger": true
+    },
+    "tagString": "Support, Attack, AoE, Melee, Slam, Trigger",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Attacks , causing a Runic Shockwave to erupt under enemies they Heavy Stun . The Shockwave costs Runic Ward , and will not Trigger if you do not have enough Runic Ward .",
+    "explicits": [
+      "Supported Skills Trigger a Runic Shockwave on Heavy Stunning an enemy",
+      "Cannot cause Stun buildup",
+      "Shockwave radius is 2 metres"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Concussive_Runes"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemConcussiveSpellsSupport",
@@ -5468,6 +5626,43 @@
     "description": "Supports Spells that deal non-Ailment damage over time, causing them to consume Ailments on enemies it applies damage over time Debuffs to in order to deal substantially more damage over time."
   },
   {
+    "id": "External/Lineage/Dreamer'sKnell",
+    "gameId": null,
+    "name": "Dreamer's Knell",
+    "gemFamily": "Dreamer's Knell",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "attack": true,
+      "aoe": true,
+      "melee": true,
+      "trigger": true,
+      "duration": true
+    },
+    "tagString": "Support, Lineage, Attack, AoE, Melee, Trigger, Duration",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "[DNT-UNUSED] Ezomyte Four",
+    "explicits": [
+      "[DNT-UNUSED] Supported Skills create a Bell for every 2 Combo expended when expending Combo",
+      "Attack Damage of this skill is 40 % of Default Attack Damage",
+      "Shockwave radius is 1 metre",
+      "Bell duration is 8 seconds",
+      "[DNT-UNUSED] Limit 8 Bells"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Dreamers_Knell"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemDurabilitySupport",
     "gameId": "Metadata/Items/Gem/SupportGemDurability",
     "name": "Durability",
@@ -5935,6 +6130,46 @@
     "description": "Supports Skills which generate Charges. When generating Power Charge with Supported Skills, Empower some of your Attacks to Trigger Spark Projectiles on use."
   },
   {
+    "id": "External/Granted/EmpoweredSparksII",
+    "gameId": null,
+    "name": "Empowered Sparks II",
+    "gemFamily": "Empowered Sparks II",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "projectile": true,
+      "trigger": true,
+      "lightning": true,
+      "duration": true
+    },
+    "tagString": "Support, Projectile, Trigger, Lightning, Duration",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Skills which generate Charges . When generating Power Charge with Supported Skills, Empower some of your Attacks to Trigger Spark Projectiles on use.",
+    "explicits": [
+      "Generating a Power Charge with supported Skills Empowers 3 Attacks",
+      "Deals (1 — 8) to (7 — 144) Lightning Damage",
+      "Fires (6 — 11) Projectiles",
+      "Projectile duration is 2 seconds",
+      "Projectiles fired at the same time can Hit the same target no more than once every 0.66 seconds",
+      "Projectile duration is 2 seconds",
+      "Projectiles fired at the same time can Hit the same target no more than once every 0.66 seconds",
+      "Deals (5 — 122) to (7 — 182) Cold Damage",
+      "Deals (1 — 8) to (7 — 144) Lightning Damage",
+      "Fires (14 — 18) Projectiles in a circle"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Empowered_Sparks_II"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemEncroachingGroundSupport",
     "gameId": "Metadata/Items/Gem/SupportGemSuffuse",
     "name": "Encroaching Ground",
@@ -6187,6 +6422,36 @@
     ],
     "excludeSkillTypeNames": [],
     "description": "Supports any skill that Hits enemies, allowing it to inflict an extra Poison on enemies but shortening the duration of those Poisons."
+  },
+  {
+    "id": "External/Lineage/Esh'sProwess",
+    "gameId": null,
+    "name": "Esh's Prowess",
+    "gemFamily": "Esh's Prowess",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "lightning": true
+    },
+    "tagString": "Support, Lineage, Lightning",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Lightning skills that Hit targets, granting them an additional level and causing them to only roll the minimum or maximum value for Lightning damage. Does not support skills which do not have levels.",
+    "explicits": [
+      "+1 to Level of Supported Lightning Skills",
+      "Supported Skills only roll the minimum or maximum Damage value for Lightning Damage"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Eshs_Prowess"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemEshsRadianceSupport",
@@ -7144,6 +7409,44 @@
     ],
     "excludeSkillTypeNames": [],
     "description": "Supports any skill that Hits enemies, making those Hits ignore enemy Fire resistance."
+  },
+  {
+    "id": "External/Granted/FistOfKalguur",
+    "gameId": null,
+    "name": "Fist Of Kalguur",
+    "gemFamily": "Fist Of Kalguur",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "attack": true,
+      "aoe": true,
+      "melee": true,
+      "slam": true,
+      "trigger": true,
+      "physical": true,
+      "duration": true
+    },
+    "tagString": "Support, Attack, AoE, Melee, Slam, Trigger, Physical, Duration",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Slams you use yourself, allowing them to spend large amounts of Runic Ward to become Runically Boosted. Runically Boosted Slams are Empowered with extra Physical damage and create a rune the first time they hit an enemy. The rune erupts in an Aftershock after a duration. Cannot support Channelling Skills.",
+    "explicits": [
+      "Limit 1 active rune",
+      "Runically Boosted Skills Gain 20 % of Damage as Extra Physical Damage",
+      "Supported Skills spend Runic Ward equal to 150 % of Life and Mana Cost if possible to become Runically Boosted",
+      "Rune radius is 2.4 metres",
+      "Rune duration is 4 seconds"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Fist_Of_Kalguur"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemFistOfWarSupport",
@@ -8185,6 +8488,35 @@
     "description": "Supports Curse Skills, giving them a short cooldown but causing them to create areas which Curse enemies so long as they are within them. Cursed areas from Supported Skills gather power before erupting in a column of annihilating light after a moderate delay."
   },
   {
+    "id": "External/Granted/HealingRunes",
+    "gameId": null,
+    "name": "Healing Runes",
+    "gemFamily": "Healing Runes",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "buff": true,
+      "persistent": true
+    },
+    "tagString": "Support, Buff, Persistent",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Persistent Buff Skills, causing you to lose Runic Ward and heal nearby allies based on the Ward lost. Healing done is split between allies who are not on full Life.",
+    "explicits": [
+      "Lose up to 10 % of your maximum Runic Ward every 5 seconds to heal nearby allies for a total of 200 % of the amount of Ward lost"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Healing_Runes"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemMeleePhysicalDamageSupport",
     "gameId": "Metadata/Items/Gems/SupportGemHeavySwing",
     "name": "Heavy Swing",
@@ -8378,6 +8710,36 @@
     ],
     "excludeSkillTypeNames": [],
     "description": "Supports Shapeshifting Skills, causing them to grant Helbrym's Composure for a brief duration when they cause you to Shapeshift. Shapeshifting into a different form before the Buff expires causes it to be removed without effect."
+  },
+  {
+    "id": "External/Lineage/HerDeclaration",
+    "gameId": null,
+    "name": "Her Declaration",
+    "gemFamily": "Her Declaration",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "buff": true,
+      "persistent": true
+    },
+    "tagString": "Support, Lineage, Buff, Persistent",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Persistent Buff Skills, causing enemies that enter your Presence to become Intimidated while the Skill is active.",
+    "explicits": [
+      "Enemies entering your Presence while a Supported Skill is active are Intimidated for 4 seconds"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Her_Declaration"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemHerbalismSupport",
@@ -10592,6 +10954,38 @@
     "description": "Supports skills which create Minions, granting them less damage taken but making them deal less damage."
   },
   {
+    "id": "External/Lineage/Medved'sFelling",
+    "gameId": null,
+    "name": "Medved's Felling",
+    "gemFamily": "Medved's Felling",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "attack": true,
+      "melee": true
+    },
+    "tagString": "Support, Lineage, Attack, Melee",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Melee Attacks you use yourself, causing them to attack faster the more Rage you have and grant Rage on Hit, but also making you lose Life based on your Rage when using them.",
+    "explicits": [
+      "Lose 1 % of Maximum Life per 5 Rage when you use Supported Skills",
+      "Supported Skills grant 10 % of Maximum Rage on Melee hit",
+      "Supported Skills have 5 % increased Attack Speed per 5 Rage"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Medveds_Felling"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemMinionInstabilitySupport",
     "gameId": "Metadata/Items/Gem/SupportGemMinionInstability",
     "name": "Minion Instability",
@@ -11065,6 +11459,43 @@
     "description": "Supports Persistent Buff Skills, causing you to deal increased Spell Damage while on full Energy Shield while the Supported Skill is active."
   },
   {
+    "id": "External/Lineage/Mórrigan'sInsight",
+    "gameId": null,
+    "name": "Mórrigan's Insight",
+    "gemFamily": "Mórrigan's Insight",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "trigger": true,
+      "cold": true,
+      "duration": true,
+      "payoff": true
+    },
+    "tagString": "Support, Lineage, Trigger, Cold, Duration, Payoff",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports any skill that Hits enemies, causing them to deal more damage and trigger Nature's Exchange when consuming Freeze on enemies. Cannot support skills that Consume Freeze .",
+    "explicits": [
+      "Supported Skills trigger Nature's Exchange when Consuming Freeze",
+      "Supported Skills cannot cause Freeze buildup",
+      "Supported Skills Consume Freeze on enemies to deal 50 % more Damage",
+      "Buff duration is 8 seconds",
+      "Grants (16 — 531) Guard",
+      "Grants (3 — 106) to (5 — 159) Cold Thorns damage"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/M%C3%B3rrigans_Insight"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemNeuralOverload",
     "gameId": "Metadata/Items/Gems/SupportGemNeuralOverload",
     "name": "Neural Overload",
@@ -11258,6 +11689,95 @@
     "description": "Supports Skills which Hit enemies, causing their Mana Leech to recover based on Elemental damage instead of Physical damage."
   },
   {
+    "id": "External/Lineage/Oisín'sOath",
+    "gameId": null,
+    "name": "Oisín's Oath",
+    "gemFamily": "Oisín's Oath",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "spell": true
+    },
+    "tagString": "Support, Lineage, Spell",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Skills which Hit enemies, causing their Mana Leech to recover based on Elemental damage instead of Physical damage.",
+    "explicits": [
+      "Mana Leech from Supported Skills recovers based on Elemental Damage Types instead of Physical Damage"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Ois%C3%ADns_Oath"
+  },
+  {
+    "id": "External/Lineage/Olroth'sConviction",
+    "gameId": null,
+    "name": "Olroth's Conviction",
+    "gemFamily": "Olroth's Conviction",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true
+    },
+    "tagString": "Support, Lineage",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports skills that can Empower a specific number of other skills, causing them to apply to more skill uses.",
+    "explicits": [
+      "Supported Skills Gain 100 % of Life and Mana Cost as Extra Runic Ward Cost",
+      "Supported Skills Empower 2 additional Skill uses"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Olroths_Conviction"
+  },
+  {
+    "id": "External/Lineage/Olroth'sHubris",
+    "gameId": null,
+    "name": "Olroth's Hubris",
+    "gemFamily": "Olroth's Hubris",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true
+    },
+    "tagString": "Support, Lineage",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Attacks you use or Trigger yourself, causing them to cost Runic Ward to use but deal additional Physical and Cold damage based on their Runic Ward cost, in addition to causing Physical damage to Contribute to Freeze buildup. Cannot Support Channelling Skills, Sustained Skills, or Skills without a cost.",
+    "explicits": [
+      "Physical Damage from Hits also Contributes to Freeze Buildup",
+      "Supported Skills cost an additional 20 % of maximum Runic Ward",
+      "Supported Skills deal added Cold damage equal to 15 % of Runic Ward cost",
+      "Supported Skills deal added Physical damage equal to 15 % of Runic Ward cost"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Olroths_Hubris"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemOpeningMoveSupport",
     "gameId": "Metadata/Items/Gems/SupportGemOpeningMove",
     "name": "Opening Move",
@@ -11339,6 +11859,35 @@
     ],
     "excludeSkillTypeNames": [],
     "description": "Supports Skills which have a Limit, increasing that Limit at the cost of their duration. Only applies to restrictions that use the word \"Limit\"."
+  },
+  {
+    "id": "External/Granted/OverabundanceIII",
+    "gameId": null,
+    "name": "Overabundance III",
+    "gemFamily": "Overabundance III",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "curse": true
+    },
+    "tagString": "Support, Curse",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Skills which have a Limit , doubling that Limit , but Cursing yourself on Supported Skill use. Only applies to restrictions that use the word \" Limit \". Cannot support Persistent Skills.",
+    "explicits": [
+      "Inflicts a random Curse on you when you use Supported Skills, ignoring Curse limit",
+      "Limits of Supported Skills are doubled"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Overabundance_III"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemOverchargeSupport",
@@ -12490,6 +13039,35 @@
     ],
     "excludeSkillTypeNames": [],
     "description": "Supports any skill that has a duration, making that duration longer."
+  },
+  {
+    "id": "External/Lineage/PrototypeSeventeen",
+    "gameId": null,
+    "name": "Prototype Seventeen",
+    "gemFamily": "Prototype Seventeen",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true
+    },
+    "tagString": "Support, Lineage",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports non- Channelling skill you use yourself that Hits enemies, causing it to gain Critical Hit chance based on Rage , but also remove all Rage upon Critically Hitting .",
+    "explicits": [
+      "Supported Skills get 20 % increased Critical Hit chance per 5 Rage",
+      "Lose all Rage when you deal a Critical Hit with Supported Skills"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Prototype_Seventeen"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemPunchThroughSupport",
@@ -13694,6 +14272,35 @@
     "description": "Supports any Skill which creates Projectiles, giving those Projectiles a chance to Chain when impacting terrain."
   },
   {
+    "id": "External/Granted/RicochetIII",
+    "gameId": null,
+    "name": "Ricochet III",
+    "gemFamily": "Ricochet III",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "projectile": true
+    },
+    "tagString": "Support, Projectile",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports any Skill which creates Projectiles , causing those Projectiles to Chain when impacting terrain, at the cost of any additional Projectiles , as well as causing them to always Pierce .",
+    "explicits": [
+      "Projectiles from Supported Skills Pierce all Targets",
+      "Modifiers to number of Projectiles instead apply to the number times Projectiles from Supported Skills Chain from terrain"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Ricochet_III"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemRigwaldsFerocitySupport",
     "gameId": "Metadata/Items/Gem/SupportGemRigwaldsFerocity",
     "name": "Rigwald's Ferocity",
@@ -13857,6 +14464,100 @@
       "MinionsAreUndamagable"
     ],
     "description": "Supports Skills that create Companions which can be damaged. Minions created by Supported Skills take a portion of Hit Damage you would otherwise have taken, but have lowered maximum Life. A percentage of Damage taken this way is Recouped by you as Life."
+  },
+  {
+    "id": "External/Granted/RuneforgedBlades",
+    "gameId": null,
+    "name": "Runeforged Blades",
+    "gemFamily": "Runeforged Blades",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "attack": true,
+      "projectile": true,
+      "trigger": true,
+      "payoff": true
+    },
+    "tagString": "Support, Attack, Projectile, Trigger, Payoff",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Attacks you use yourself, causing them to Consume Fully Broken Armour on enemies to fire a nova of runic Projectiles at the cost of Runic Ward . The Projectiles cannot Hit the enemy from which they originated. Cannot support skills that Consume Broken Armour .",
+    "explicits": [
+      "Supported Skills cannot Break Armour",
+      "Fires 7 Projectiles",
+      "Cannot Break Armour",
+      "Fires Projectiles in a circle"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Runeforged_Blades"
+  },
+  {
+    "id": "External/Granted/RunicExtraction",
+    "gameId": null,
+    "name": "Runic Extraction",
+    "gemFamily": "Runic Extraction",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "remnant": true
+    },
+    "tagString": "Support, Remnant",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports any Skill that deals damage. Enemies you kill with supported Skills have a chance to drop a Verisium Infusion Remnant .",
+    "explicits": [
+      "Remnants created by Supported Skills last for 8 seconds",
+      "Supported Skills Gain 20 % of Life and Mana Cost as Extra Runic Ward Cost",
+      "Supported Skills have 35 % chance create a Verisium Infusion Remnant on kill"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Runic_Extraction"
+  },
+  {
+    "id": "External/Granted/RunicInfusion",
+    "gameId": null,
+    "name": "Runic Infusion",
+    "gemFamily": "Runic Infusion",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "attack": true,
+      "physical": true
+    },
+    "tagString": "Support, Attack, Physical",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Attacks you use or Trigger yourself, causing them to cost Runic Ward to use but deal additional Physical damage based on their Runic Ward cost. Cannot Support Channelling Skills, Sustained Skills, or Skills without a cost.",
+    "explicits": [
+      "Supported Skills cost an additional 20 % of maximum Runic Ward",
+      "Supported Skills deal added Physical damage equal to 25 % of Runic Ward cost"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Runic_Infusion"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemRuptureSupport",
@@ -14080,6 +14781,35 @@
     "description": "Supports Attack Skills you use yourself which fire Projectiles, Sealing them over time. The Seals are broken when used, causing additional Projectiles to be fired. Projectiles from Supported Skills are fired in random directions. Cannot Support Skills which require Combo, have a Cooldown or which already gain Seals."
   },
   {
+    "id": "External/Granted/ScouringFlame",
+    "gameId": null,
+    "name": "Scouring Flame",
+    "gemFamily": "Scouring Flame",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "fire": true
+    },
+    "tagString": "Support, Fire",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports any skill that Hits enemies, causing inflicted Ignites to deal more damage but the skill to gain a Runic Ward cost.",
+    "explicits": [
+      "Supported Skills Gain 25 % of Life and Mana Cost as Extra Runic Ward Cost",
+      "50 % more Magnitude of Ignite inflicted with Supported Skills"
+    ],
+    "source": "external",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Scouring_Flame"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemDeadlyIgnitesSupport",
     "gameId": "Metadata/Items/Gems/SupportGemSearingFlame",
     "name": "Searing Flame I",
@@ -14273,6 +15003,36 @@
       "RemnantCannotBeShared"
     ],
     "description": "Supports Skills that generate Remnants, causing those Remnants to affect Allies in your Presence when collected instead of you."
+  },
+  {
+    "id": "External/Lineage/Seraph'sHeart",
+    "gameId": null,
+    "name": "Seraph's Heart",
+    "gemFamily": "Seraph's Heart",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "buff": true,
+      "persistent": true
+    },
+    "tagString": "Support, Lineage, Buff, Persistent",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Persistent Buff Skills, providing a chance for enemies to calculate their Hits as though your Resistances were 90% while the skill is active.",
+    "explicits": [
+      "Enemy Hits have 20 % chance to treat all your Resistances as being 90% while a Supported Skill is active"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Seraphs_Heart"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemShockSupport",
@@ -15283,6 +16043,65 @@
     "description": "Supports any skill that Hits Enemies, causing it to build up Stun significantly more quickly, at the cost of Damage."
   },
   {
+    "id": "External/Lineage/Styrn'sFerocity",
+    "gameId": null,
+    "name": "Styrn's Ferocity",
+    "gemFamily": "Styrn's Ferocity",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "physical": true
+    },
+    "tagString": "Support, Lineage, Physical",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Shield Skills that Hit enemies, causing those Hits to Crush their targets, additionally causing any Physical Damage Hits against those targets while Crushed to Break their Armour .",
+    "explicits": [
+      "Supported Skills Crush targets they Hit for 8 seconds",
+      "Hits against targets Crushed by Supported Skills Break Armour equal to 10 % of Physical damage dealt"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Styrns_Ferocity"
+  },
+  {
+    "id": "External/Lineage/Styrn'sMountain",
+    "gameId": null,
+    "name": "Styrn's Mountain",
+    "gemFamily": "Styrn's Mountain",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true
+    },
+    "tagString": "Support, Lineage",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Skills that Raise your Shield causing your other melee skills to deal more damage if you block.",
+    "explicits": [
+      "Melee Skills that don't raise a Shield deal 20 % more Damage if you've Blocked while using Supported Skills Recently",
+      "50 % more Stun Threshold for Heavy Stuns while using Supported Skills"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Styrns_Mountain"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemIncreasedCriticalDamageSupport",
     "gameId": "Metadata/Items/Gems/SupportGemSupercritical",
     "name": "Supercritical",
@@ -15472,6 +16291,38 @@
     ],
     "excludeSkillTypeNames": [],
     "description": "Supports Skills which can cause Damaging Hits. Poison inflicted with Supported Skills deals Damage faster the higher your Rage."
+  },
+  {
+    "id": "External/Lineage/Tangmazu'sThurible",
+    "gameId": null,
+    "name": "Tangmazu's Thurible",
+    "gemFamily": "Tangmazu's Thurible",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "minion": true,
+      "persistent": true
+    },
+    "tagString": "Support, Lineage, Minion, Persistent",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Skills which summon Companions causing them to be Gigantic and gain Evasion and Deflection based on your own.",
+    "explicits": [
+      "Companions from Supported Skills are Gigantic",
+      "Companions from Supported Skills have +4 to Evasion Rating per 10 Evasion Rating you have",
+      "Companions from Supported Skills have +4 to Deflection Rating per 10 Deflection Rating you have"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Tangmazus_Thurible"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemTasaliosRhythmSupport",
@@ -15814,6 +16665,74 @@
     "description": "Supports Warcry Skills. Attacks Empowered by Supported Skills have a chance not to lower the Empowerment count of Supported Skills when they are used."
   },
   {
+    "id": "External/Lineage/Trickster'sShard",
+    "gameId": null,
+    "name": "Trickster's Shard",
+    "gemFamily": "Trickster's Shard",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "spell": true,
+      "aoe": true,
+      "trigger": true,
+      "duration": true
+    },
+    "tagString": "Support, Lineage, Spell, AoE, Trigger, Duration",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports non-instant Spells you cast yourself. Supported Spells will Trigger Fragment Self, creating a Fractured Mimic which will cast that Spell if you get enough of them.",
+    "explicits": [
+      "Supported Spells Trigger Fragment Self",
+      "Supported Spells deal 50 % less Damage when cast by Fractured Mimics",
+      "Fractured Mimics are created within 1.5 metres",
+      "Fractured Mimic duration is 5 seconds",
+      "Limit 4 Fractured Mimics"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Tricksters_Shard"
+  },
+  {
+    "id": "External/Lineage/Tul'sAvalanche",
+    "gameId": null,
+    "name": "Tul's Avalanche",
+    "gemFamily": "Tul's Avalanche",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "spell": true,
+      "aoe": true
+    },
+    "tagString": "Support, Lineage, Spell, AoE",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Cascadable Spells you cast yourself, Sealing them when you Block , The Seals are broken when used, each making the Spell Echo . Cannot support skills with a Cooldown or which already gain Seals.",
+    "explicits": [
+      "Supported Skills have a maximum of 4 Seals",
+      "Supported Spells Echo 1 time per Seal broken",
+      "Supported Skills gain a Seal every 2 times you Block"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Tuls_Avalanche"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemTulsStillnessSupport",
     "gameId": "Metadata/Items/Gem/SupportGemTulsStillness",
     "name": "Tul's Stillness",
@@ -15870,6 +16789,36 @@
     "description": "Supports Skills which can gain levels, granting them additional levels provided exactly two other supports are used with the supported Skill. Does not support skills which do not have levels."
   },
   {
+    "id": "External/Lineage/Uhtred'sConstellation",
+    "gameId": null,
+    "name": "Uhtred's Constellation",
+    "gemFamily": "Uhtred's Constellation",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true
+    },
+    "tagString": "Support, Lineage",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports non-instant skills which have a cooldown, granting them two additional cooldown uses and more damage per different skill with a cooldown you have used recently.",
+    "explicits": [
+      "Supported Skills have 50 % less Cooldown Recovery Rate",
+      "Supported Non-Instant Skills have +2 Cooldown Uses",
+      "Supported Skills deal 8 % more Damage for each different Skill with a Cooldown you have used in the last 8 seconds"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Uhtreds_Constellation"
+  },
+  {
     "id": "Metadata/Items/Gems/SkillGemUhtredExodusSupport",
     "gameId": "Metadata/Items/Gem/SupportGemUhtredsExodus",
     "name": "Uhtred's Exodus",
@@ -15920,6 +16869,37 @@
       "SingleLevelSkill"
     ],
     "description": "Supports Skills which can gain levels, granting them additional levels provided exactly one other support is used with the supported Skill. Does not support skills which do not have levels."
+  },
+  {
+    "id": "External/Lineage/Uhtred'sRite",
+    "gameId": null,
+    "name": "Uhtred's Rite",
+    "gemFamily": "Uhtred's Rite",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "duration": true
+    },
+    "tagString": "Support, Lineage, Duration",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports skills with Cooldowns, causing them to grant Overflowing Chalice when used. Supported skills deal more damage during the effect of your Life Flask and have increased Mana Cost Efficiency during the effect of your Mana Flask.",
+    "explicits": [
+      "Supported Skills grant Overflowing Chalice when used, for 1 second per 1 second of their cooldown",
+      "Supported Skills deal 20 % more damage during effect of any Life Flask",
+      "Supported Skills have 20 % increased Mana Cost Efficiency during effect of any Mana Flask"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Uhtreds_Rite"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemUndermineSupport",
@@ -16682,6 +17662,67 @@
       "Persistent"
     ],
     "description": "Supports Projectile Attack Skills you use yourself. Supported Skills gain Voltaic Charge as you move, up to a maximum. When used, Supported Skills expend that Charge to gain extra Lightning Damage."
+  },
+  {
+    "id": "External/Lineage/Vorana'sSiege",
+    "gameId": null,
+    "name": "Vorana's Siege",
+    "gemFamily": "Vorana's Siege",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "aoe": true
+    },
+    "tagString": "Support, Lineage, AoE",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports skills which Hit targets and have an area of effect, increasing the affected area and causing it to Hit Isolated targets harder.",
+    "explicits": [
+      "Supported Skills have 35 % increased Area of Effect",
+      "Supported Skills deal 20 % more Damage with Hits against Isolated targets"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Voranas_Siege"
+  },
+  {
+    "id": "External/Lineage/Vruun'sAftermath",
+    "gameId": null,
+    "name": "Vruun's Aftermath",
+    "gemFamily": "Vruun's Aftermath",
+    "tier": null,
+    "reqStr": 0,
+    "reqInt": 0,
+    "reqDex": 0,
+    "tags": {
+      "support": true,
+      "lineage": true,
+      "warcry": true
+    },
+    "tagString": "Support, Lineage, Warcry",
+    "grantedEffectId": null,
+    "requireSkillTypes": [],
+    "excludeSkillTypes": [],
+    "addSkillTypes": [],
+    "requireSkillTypeNames": [],
+    "excludeSkillTypeNames": [],
+    "description": "Supports Warcries , causing them to destroy Ice Crystals and Ice Fragments . Supported Skills empower additional Attacks if they destroy enough Ice Crystals and Ice Fragments .",
+    "explicits": [
+      "Supported Warcries cause Ice Crystals to explode",
+      "Supported Warcries Detonate your Ice Fragments",
+      "Supported Warcries Empower 3 additional Attacks if they destroy at least 5 total Ice Crystals and Ice Fragments"
+    ],
+    "source": "lineage",
+    "external_granted": true,
+    "poe2db_url": "https://poe2db.tw/us/Vruuns_Aftermath"
   },
   {
     "id": "Metadata/Items/Gems/SkillGemVruunsInevitabilitySupport",
