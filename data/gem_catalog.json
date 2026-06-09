@@ -1,0 +1,36 @@
+{
+  "version": "0.5",
+  "source": "repoe-fork/pob-data PoB export",
+  "counts": {
+    "skill_gems": 399,
+    "support_gems": 538,
+    "support_dropped": 28,
+    "spirit_gems": 118,
+    "meta_gems": 29
+  },
+  "generated_from": [
+    "Gems.json",
+    "Skills/act_dex.json",
+    "Skills/act_int.json",
+    "Skills/act_str.json",
+    "Skills/minion.json",
+    "Skills/other.json",
+    "Skills/spectre.json",
+    "Skills/sup_dex.json",
+    "Skills/sup_int.json",
+    "Skills/sup_str.json"
+  ],
+  "skill_type_enum_source": "https://raw.githubusercontent.com/PathOfBuildingCommunity/PathOfBuilding-PoE2/dev/src/Data/Global.lua",
+  "spirit_gem_rule": "skillTypes contains Persistent(140) AND (HasReservation(12) OR Aura(39) OR Herald(52)), OR tags.persistent && (tags.aura || tags.herald || tags.buff)",
+  "meta_gem_rule": "gemType=='Meta' OR tags.meta OR skillTypes contains Meta(122)",
+  "compatibility_rule": "A support S can support active A iff: (S.requireSkillTypes is empty OR A.skillTypes & S.requireSkillTypes != empty) AND (A.skillTypes & S.excludeSkillTypes is empty)",
+  "files": {
+    "skill_gems": "skill_gems.json",
+    "support_gems": "support_gems.json",
+    "support_compatibility": "support_compatibility.json",
+    "spirit_gems": "spirit_gems.json",
+    "meta_gems": "meta_gems.json",
+    "catalog_index": "gem_catalog.json",
+    "browser": "gem_catalog.html"
+  }
+}

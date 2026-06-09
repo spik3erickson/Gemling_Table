@@ -1,0 +1,2088 @@
+{
+  "version": "0.5",
+  "source": "https://poe2db.tw/us/Advanced_Thaumaturgy",
+  "note": "Gemling effect = the secondaryQualityMod (Gemling Legionnaire ascendancy: \"Gem Quality grants Socketed Skills an additional effect\"). Generic quality mod backfilled by name from the prior per-gem scrape; null where unknown / new in 0.5.",
+  "count": 260,
+  "skills": [
+    {
+      "name": "Alchemist's Boon",
+      "url": "https://poe2db.tw/us/Alchemists_Boon",
+      "attribute": "dex",
+      "gemling_effect": "Grants (0—20)% increased Attack speed during any Life Flask Effect  ·  Grants (0—20)% increased cast speed during any Mana Flask Effect",
+      "generic_quality_mod": "Grants you (0—0.03) Flask charges per second",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Ancestral Cry",
+      "url": "https://poe2db.tw/us/Ancestral_Cry",
+      "attribute": "str",
+      "gemling_effect": "Grants (0—10)% more Fire damage",
+      "generic_quality_mod": "+(0—20)% increased Warcry duration per Endurance Charge consumed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Ancestral Warrior Totem",
+      "url": "https://poe2db.tw/us/Ancestral_Warrior_Totem",
+      "attribute": "str",
+      "gemling_effect": "(0—50)% increased totem life",
+      "generic_quality_mod": "+(0—2) seconds to Totem duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Animus Exchange",
+      "url": "https://poe2db.tw/us/Animus_Exchange",
+      "attribute": "?",
+      "gemling_effect": "Gain Runic Ward equal to (0—5)% of Sacrificed Life",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Animus Splinters",
+      "url": "https://poe2db.tw/us/Animus_Splinters",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% increased Skill Effect Duration",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Arc",
+      "url": "https://poe2db.tw/us/Arc",
+      "attribute": "int",
+      "gemling_effect": "Projectiles deal (0—3)% more Damage with Hits for each remaining Chain",
+      "generic_quality_mod": "Chains +(0—2) times",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Archmage",
+      "url": "https://poe2db.tw/us/Archmage",
+      "attribute": "int",
+      "gemling_effect": "Non-Channelling Spells Gain (0—1)% of Damage as extra Lightning damage for each 100 maximum Mana you have  ·  Non-Channelling Spells cost an additional (0—2)% of your maximum Mana",
+      "generic_quality_mod": "(0—10)% increased Reservation Efficiency",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Arctic Armour",
+      "url": "https://poe2db.tw/us/Arctic_Armour",
+      "attribute": "int",
+      "gemling_effect": "Buff grants (0—20)% increased Armour per Stage",
+      "generic_quality_mod": "Gains a Stage every seconds, up to a maximum of (0—1) Stages",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Arctic Howl",
+      "url": "https://poe2db.tw/us/Arctic_Howl",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% chance to not count Empowered Attacks",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Armour Breaker",
+      "url": "https://poe2db.tw/us/Armour_Breaker",
+      "attribute": "str",
+      "gemling_effect": "Deals (0—20)% more Physical damage",
+      "generic_quality_mod": "Break (0—20)% increased Armour",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Armour Piercing Rounds",
+      "url": "https://poe2db.tw/us/Armour_Piercing_Rounds",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Attack Speed",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Artillery Ballista",
+      "url": "https://poe2db.tw/us/Artillery_Ballista",
+      "attribute": "?",
+      "gemling_effect": "Limit (0—1) Totem",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Attrition",
+      "url": "https://poe2db.tw/us/Attrition",
+      "attribute": "?",
+      "gemling_effect": "(0—40)% increased Presence Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Ball Lightning",
+      "url": "https://poe2db.tw/us/Ball_Lightning",
+      "attribute": "int",
+      "gemling_effect": "(-30 — 0)% more Projectile Speed",
+      "generic_quality_mod": "Bolts target enemies within +(0—0.4) metres",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Barkskin",
+      "url": "https://poe2db.tw/us/Barkskin",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Skill Effect Duration",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Barrage",
+      "url": "https://poe2db.tw/us/Barrage",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": "Repeats deal +(0—5)% more Damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Barrier Invocation",
+      "url": "https://poe2db.tw/us/Barrier_Invocation",
+      "attribute": "?",
+      "gemling_effect": "Socketed Spells deal (0—20)% increased Damage when triggered",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Berserk",
+      "url": "https://poe2db.tw/us/Berserk",
+      "attribute": "str",
+      "gemling_effect": "Buff grants +(0—8) to maximum Rage",
+      "generic_quality_mod": "Grants (0—10)% increased Rage effect",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Bind Spectre",
+      "url": "https://poe2db.tw/us/Bind_Spectre",
+      "attribute": "int",
+      "gemling_effect": "(0—20)% increased Reservation Efficiency",
+      "generic_quality_mod": "Minions deal (0—20)% more damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Bitter Dead",
+      "url": "https://poe2db.tw/us/Bitter_Dead",
+      "attribute": "?",
+      "gemling_effect": "(0—10)% chance to not destroy Consumed Corpse",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Blasphemy",
+      "url": "https://poe2db.tw/us/Blasphemy",
+      "attribute": "int",
+      "gemling_effect": "Socketed Curses have (0—20)% increased Magnitudes",
+      "generic_quality_mod": "(0—10)% increased Reservation Efficiency",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Blink",
+      "url": "https://poe2db.tw/us/Blink",
+      "attribute": "int",
+      "gemling_effect": "Teleports + (0—2.5) metres",
+      "generic_quality_mod": "(0—10)% increased Cooldown Recovery Rate",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Blood Hunt",
+      "url": "https://poe2db.tw/us/Blood_Hunt",
+      "attribute": "dex",
+      "gemling_effect": "Enemies lose Life equal to + (0—4)% of Consumed Blood Loss",
+      "generic_quality_mod": "+(0—0.4) metres to explosion radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Bloodhound's Mark",
+      "url": "https://poe2db.tw/us/Bloodhounds_Mark",
+      "attribute": "dex",
+      "gemling_effect": "Deals (0—20)% more Physical damage",
+      "generic_quality_mod": "Marked target receives Heavy Stun buildup equal to (0—50)% of Blood Loss",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Bone Cage",
+      "url": "https://poe2db.tw/us/Bone_Cage",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% more Magnitude of Bleeding inflicted",
+      "generic_quality_mod": "Pins Enemies as though dealing +(0—50)% more Damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Bone Offering",
+      "url": "https://poe2db.tw/us/Bone_Offering",
+      "attribute": "int",
+      "gemling_effect": "(0—30)% more Skill Effect Duration",
+      "generic_quality_mod": "Shielded Minions take (0—30)% less Damage for 1 second after Shield is lost",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Boneshatter",
+      "url": "https://poe2db.tw/us/Boneshatter",
+      "attribute": "str",
+      "gemling_effect": "Shockwave radius is (0—2) metres",
+      "generic_quality_mod": "(0—20)% increased Attack Speed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Bonestorm",
+      "url": "https://poe2db.tw/us/Bonestorm",
+      "attribute": "int",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": "(0—10)% more Cast Speed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Briarpatch",
+      "url": "https://poe2db.tw/us/Briarpatch",
+      "attribute": "?",
+      "gemling_effect": "Thorny Ground radius is (0—0.6) metres",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Cast on Critical",
+      "url": "https://poe2db.tw/us/Cast_on_Critical",
+      "attribute": "int",
+      "gemling_effect": "Buff grants (0—20)% increased Critical Hit chance",
+      "generic_quality_mod": "(0—10)% increased Reservation Efficiency",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Cast on Dodge",
+      "url": "https://poe2db.tw/us/Cast_on_Dodge",
+      "attribute": "?",
+      "gemling_effect": "Buff grants +(0—1) metre to Dodge Roll distance",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Cast on Elemental Ailment",
+      "url": "https://poe2db.tw/us/Cast_on_Elemental_Ailment",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% increased Reservation Efficiency",
+      "generic_quality_mod": "(0—15)% increased Energy gained",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Cast on Minion Death",
+      "url": "https://poe2db.tw/us/Cast_on_Minion_Death",
+      "attribute": "int",
+      "gemling_effect": "Socketed Spells deal (0—20)% increased Damage when triggered",
+      "generic_quality_mod": "(0—20)% increased Energy gained",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Charge Regulation",
+      "url": "https://poe2db.tw/us/Charge_Regulation",
+      "attribute": "?",
+      "gemling_effect": "Buff grants (0—2)% increased damage per Charge",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Charged Staff",
+      "url": "https://poe2db.tw/us/Charged_Staff",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Cluster Grenade",
+      "url": "https://poe2db.tw/us/Cluster_Grenade",
+      "attribute": "?",
+      "gemling_effect": "(0—40)% reduced Detonation Time",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Combat Frenzy",
+      "url": "https://poe2db.tw/us/Combat_Frenzy",
+      "attribute": "dex",
+      "gemling_effect": "(-1 — 0) seconds to delay on gaining a Frenzy Charge",
+      "generic_quality_mod": "(0—10)% chance to gain an additional Charge",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Comet",
+      "url": "https://poe2db.tw/us/Comet",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% increased Damage with Hits against Frozen Enemies",
+      "generic_quality_mod": "(0—10)% chance to Echo",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Companion: {0}",
+      "url": "https://poe2db.tw/us/Companion%3A_%7B0%7D",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Minion Attack Speed",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Conductive Runes",
+      "url": "https://poe2db.tw/us/Conductive_Runes",
+      "attribute": "?",
+      "gemling_effect": "Runes emerge within a (0—0.6) metre length cone",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Conductivity",
+      "url": "https://poe2db.tw/us/Conductivity",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% faster Curse Activation",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Contagion",
+      "url": "https://poe2db.tw/us/Contagion",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% more Area of Effect",
+      "generic_quality_mod": "Contagion targets (0—2) additional Enemies when Cast",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Convalescence",
+      "url": "https://poe2db.tw/us/Convalescence",
+      "attribute": "int",
+      "gemling_effect": "(0—30)% increased Cooldown Recovery Rate",
+      "generic_quality_mod": "+(0—0.5) seconds to Buff duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Cross Slash",
+      "url": "https://poe2db.tw/us/Cross_Slash",
+      "attribute": "?",
+      "gemling_effect": "Converts (0—40)% of Physical damage to Cold damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Cull The Weak",
+      "url": "https://poe2db.tw/us/Cull_The_Weak",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% chance to gain an additional random Charge when you gain a Charge",
+      "generic_quality_mod": "(0—20)% chance to gain an additional Charge",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Dark Effigy",
+      "url": "https://poe2db.tw/us/Dark_Effigy",
+      "attribute": "int",
+      "gemling_effect": "Limit (0—1) Totem",
+      "generic_quality_mod": "+(0—0.2) metres to Impact radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Defiance Banner",
+      "url": "https://poe2db.tw/us/Defiance_Banner",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Despair",
+      "url": "https://poe2db.tw/us/Despair",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% reduced Mana Cost",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Detonate Dead",
+      "url": "https://poe2db.tw/us/Detonate_Dead",
+      "attribute": "int",
+      "gemling_effect": "Converts (0—60)% of Physical damage to Fire damage",
+      "generic_quality_mod": "+(0—0.4) metres to explosion radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Detonate Living",
+      "url": "https://poe2db.tw/us/Detonate_Living",
+      "attribute": "?",
+      "gemling_effect": "+(0—0.4) metres to explosion radius",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Detonating Arrow",
+      "url": "https://poe2db.tw/us/Detonating_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% more Ignite Magnitude",
+      "generic_quality_mod": "+(0—1) to number of Maximum Stages",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Devour",
+      "url": "https://poe2db.tw/us/Devour",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% chance to gain an additional Charge",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Disengage",
+      "url": "https://poe2db.tw/us/Disengage",
+      "attribute": "dex",
+      "gemling_effect": "+(0—1) metres to Melee Strike Range",
+      "generic_quality_mod": "(0—20)% chance for an additional Shockwave",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Dread Banner",
+      "url": "https://poe2db.tw/us/Dread_Banner",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Earthquake",
+      "url": "https://poe2db.tw/us/Earthquake",
+      "attribute": "str",
+      "gemling_effect": "(0—40)% more Magnitude of Damaging Ailments inflicted",
+      "generic_quality_mod": "+(0—2) to Jagged Ground patch Limit",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Earthshatter",
+      "url": "https://poe2db.tw/us/Earthshatter",
+      "attribute": "str",
+      "gemling_effect": "(0—20)% chance to cause an additional Aftershock",
+      "generic_quality_mod": "(0—6)% more Damage with Hits for each Spike",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Electrocuting Arrow",
+      "url": "https://poe2db.tw/us/Electrocuting_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "Targets with attached Rods take (0—20)% increased damage",
+      "generic_quality_mod": "Hits against targets with attached Rods gain (0—10)% of Damage as extra Lightning Damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Elemental Conflux",
+      "url": "https://poe2db.tw/us/Elemental_Conflux",
+      "attribute": "int",
+      "gemling_effect": "(0—4) second duration between Element randomisations",
+      "generic_quality_mod": "Buff grants (0—10)% more damage with the affected Element",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Elemental Invocation",
+      "url": "https://poe2db.tw/us/Elemental_Invocation",
+      "attribute": "?",
+      "gemling_effect": "Socketed Spells deal (0—20)% increased Damage when triggered",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Elemental Sundering",
+      "url": "https://poe2db.tw/us/Elemental_Sundering",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Critical Hit Chance",
+      "generic_quality_mod": "+(0—0.2) metres to Pulse radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Elemental Weakness",
+      "url": "https://poe2db.tw/us/Elemental_Weakness",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% faster Curse Activation",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Ember Fusillade",
+      "url": "https://poe2db.tw/us/Ember_Fusillade",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% reduced Skill Effect Duration  ·  (0—20)% less Cast Speed",
+      "generic_quality_mod": "+(0—2)% more Damage for each previous Ember fired in sequence",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Emergency Reload",
+      "url": "https://poe2db.tw/us/Emergency_Reload",
+      "attribute": "?",
+      "gemling_effect": "Buff Empowers bolts with (0—10)% more damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Enfeeble",
+      "url": "https://poe2db.tw/us/Enfeeble",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% reduced Mana Cost",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Entangle",
+      "url": "https://poe2db.tw/us/Entangle",
+      "attribute": "?",
+      "gemling_effect": "+(0—4) to Fissure Limit",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Escape Shot",
+      "url": "https://poe2db.tw/us/Escape_Shot",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% increased Damage with Hits against Frozen Enemies",
+      "generic_quality_mod": "(0—120)% more Freeze Buildup",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Essence Drain",
+      "url": "https://poe2db.tw/us/Essence_Drain",
+      "attribute": "int",
+      "gemling_effect": "Chains +(0—4) times",
+      "generic_quality_mod": "+(0—1) second to Debuff duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Eternal March",
+      "url": "https://poe2db.tw/us/Eternal_March",
+      "attribute": "?",
+      "gemling_effect": "(0—40)% increased Cooldown Recovery Rate",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Eternal Rage",
+      "url": "https://poe2db.tw/us/Eternal_Rage",
+      "attribute": "str",
+      "gemling_effect": "(0—15)% increased Spirit Reservation Efficiency",
+      "generic_quality_mod": "Regenerate (0—0.5) Rage per second",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Explosive Grenade",
+      "url": "https://poe2db.tw/us/Explosive_Grenade",
+      "attribute": "?",
+      "gemling_effect": "Fires +(0—2) Projectiles",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Explosive Shot",
+      "url": "https://poe2db.tw/us/Explosive_Shot",
+      "attribute": "?",
+      "gemling_effect": "+(0—2) Bolts loaded per clip",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Explosive Spear",
+      "url": "https://poe2db.tw/us/Explosive_Spear",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": "+(0—0.4) metres to Explosion radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Explosive Transmutation",
+      "url": "https://poe2db.tw/us/Explosive_Transmutation",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% increased Runic Ward Cost Efficiency",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Eye of Winter",
+      "url": "https://poe2db.tw/us/Eye_of_Winter",
+      "attribute": "int",
+      "gemling_effect": "Projectiles have (0—50)% chance to Return to you",
+      "generic_quality_mod": "(0—30)% increased Projectile Speed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Falling Thunder",
+      "url": "https://poe2db.tw/us/Falling_Thunder",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Fangs of Frost",
+      "url": "https://poe2db.tw/us/Fangs_of_Frost",
+      "attribute": "dex",
+      "gemling_effect": "+(0—1) metres to Melee Strike Range",
+      "generic_quality_mod": "(0—15)% chance to not consume Parried Debuff",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Feral Invocation",
+      "url": "https://poe2db.tw/us/Feral_Invocation",
+      "attribute": "?",
+      "gemling_effect": "(0—40)% increased Reservation Efficiency",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Ferocious Roar",
+      "url": "https://poe2db.tw/us/Ferocious_Roar",
+      "attribute": "?",
+      "gemling_effect": "Socketed Skills have (0—40)% increased Cooldown Recovery Rate",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Fireball",
+      "url": "https://poe2db.tw/us/Fireball",
+      "attribute": "int",
+      "gemling_effect": "+ (0—10)% chance to fire 8 additional Projectiles in a circle",
+      "generic_quality_mod": "+(0—10)% chance to fire 2 additional Projectiles",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Firestorm",
+      "url": "https://poe2db.tw/us/Firestorm",
+      "attribute": "int",
+      "gemling_effect": "(0—20)% chance to not remove an Infusion but still count as consuming them",
+      "generic_quality_mod": "+(0—0.2) metres to impact radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Flame Breath",
+      "url": "https://poe2db.tw/us/Flame_Breath",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Flame Wall",
+      "url": "https://poe2db.tw/us/Flame_Wall",
+      "attribute": "int",
+      "gemling_effect": "Deals (0—40)% more Fire Damage",
+      "generic_quality_mod": "Inflicts (0—20)% more Flammability Magnitude",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Flameblast",
+      "url": "https://poe2db.tw/us/Flameblast",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% more Magnitude of Damaging Ailments per Stage",
+      "generic_quality_mod": "(0—20)% more Cast Speed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Flammability",
+      "url": "https://poe2db.tw/us/Flammability",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% faster Curse Activation",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Flash Grenade",
+      "url": "https://poe2db.tw/us/Flash_Grenade",
+      "attribute": "?",
+      "gemling_effect": "Gain (0—10)% damage as Extra Lightning Damage  ·  active skill base all damage % to gain as cold [0,10]",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Flicker Strike",
+      "url": "https://poe2db.tw/us/Flicker_Strike",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Forge Hammer",
+      "url": "https://poe2db.tw/us/Forge_Hammer",
+      "attribute": "str",
+      "gemling_effect": "Gain (0—20)% damage as Extra Fire Damage",
+      "generic_quality_mod": "(0—10)% increased Cooldown Recovery Rate",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Fortifying Cry",
+      "url": "https://poe2db.tw/us/Fortifying_Cry",
+      "attribute": "str",
+      "gemling_effect": "(0—20)% more Guard gained",
+      "generic_quality_mod": "Shockwave radius is (0—0.4) metres",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Fragmentation Rounds",
+      "url": "https://poe2db.tw/us/Fragmentation_Rounds",
+      "attribute": "?",
+      "gemling_effect": "(0—100)% more reload speed",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Freezing Mark",
+      "url": "https://poe2db.tw/us/Freezing_Mark",
+      "attribute": "?",
+      "gemling_effect": "(0—50)% reduced Mana Cost",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Freezing Salvo",
+      "url": "https://poe2db.tw/us/Freezing_Salvo",
+      "attribute": "dex",
+      "gemling_effect": "Maximum (0—4) Seals",
+      "generic_quality_mod": "(0—40)% more Freeze Buildup",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Frost Bomb",
+      "url": "https://poe2db.tw/us/Frost_Bomb",
+      "attribute": "int",
+      "gemling_effect": "Limit (0—3) Frost Bomb",
+      "generic_quality_mod": "+(0—10)% maximum Elemental Exposure applied",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Frost Darts",
+      "url": "https://poe2db.tw/us/Frost_Darts",
+      "attribute": "int",
+      "gemling_effect": "Forks (0—2) additional Times",
+      "generic_quality_mod": "+(0—10)% chance to fire 2 additional Projectiles",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Frost Wall",
+      "url": "https://poe2db.tw/us/Frost_Wall",
+      "attribute": "int",
+      "gemling_effect": "(0—400)% increased Ice Crystal Life",
+      "generic_quality_mod": "(0—20)% increased Cooldown Recovery Rate",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Frostbolt",
+      "url": "https://poe2db.tw/us/Frostbolt",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% more Projectile Speed",
+      "generic_quality_mod": "(0—20)% more Projectile Damage after Piercing an Enemy",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Frostflame Nova",
+      "url": "https://poe2db.tw/us/Frostflame_Nova",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% increased Damage with Hits against Frozen Enemies",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Frozen Locus",
+      "url": "https://poe2db.tw/us/Frozen_Locus",
+      "attribute": "?",
+      "gemling_effect": "base number of frozen locus allowed [0,1]",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Furious Slam",
+      "url": "https://poe2db.tw/us/Furious_Slam",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Fury of the Mountain",
+      "url": "https://poe2db.tw/us/Fury_of_the_Mountain",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Attack Speed",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Galvanic Shards",
+      "url": "https://poe2db.tw/us/Galvanic_Shards",
+      "attribute": "?",
+      "gemling_effect": "+(0—2) Bolts loaded per clip",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Gas Arrow",
+      "url": "https://poe2db.tw/us/Gas_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "Deals (0—20)% more Fire Damage",
+      "generic_quality_mod": "+(0—0.4) metres to impact radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Gas Grenade",
+      "url": "https://poe2db.tw/us/Gas_Grenade",
+      "attribute": "?",
+      "gemling_effect": "Deals (0—20)% more Fire Damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Gathering Storm",
+      "url": "https://poe2db.tw/us/Gathering_Storm",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% chance for Lightning Damage with Hits to be Lucky",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Ghost Dance",
+      "url": "https://poe2db.tw/us/Ghost_Dance",
+      "attribute": "?",
+      "gemling_effect": "Maximum (0—1) Ghost Shrouds",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Glacial Bolt",
+      "url": "https://poe2db.tw/us/Glacial_Bolt",
+      "attribute": "?",
+      "gemling_effect": "Explosion radius is (0—1) metre",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Glacial Cascade",
+      "url": "https://poe2db.tw/us/Glacial_Cascade",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Attack Speed",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Glacial Lance",
+      "url": "https://poe2db.tw/us/Glacial_Lance",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": "active skill base area of effect radius [0,4]",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Grim Feast",
+      "url": "https://poe2db.tw/us/Grim_Feast",
+      "attribute": "int",
+      "gemling_effect": "Remnants created by Supported Skills can be collected from (0—40)% further away",
+      "generic_quality_mod": "Remnants store (0—5)% of Minion maximum Life",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Grim Pillars",
+      "url": "https://poe2db.tw/us/Grim_Pillars",
+      "attribute": "?",
+      "gemling_effect": "+(0—0.4) metres to eruption radius",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Hailstorm Rounds",
+      "url": "https://poe2db.tw/us/Hailstorm_Rounds",
+      "attribute": "?",
+      "gemling_effect": "Penetrates (0—60)% Cold Resistance",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Hammer of the Gods",
+      "url": "https://poe2db.tw/us/Hammer_of_the_Gods",
+      "attribute": "str",
+      "gemling_effect": "(0—50)% chance to not consume Glory",
+      "generic_quality_mod": "+(0—0.4) metres to impact radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Hand of Chayula",
+      "url": "https://poe2db.tw/us/Hand_of_Chayula",
+      "attribute": "?",
+      "gemling_effect": "(0—50)% reduced Mana Cost",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Herald of Ash",
+      "url": "https://poe2db.tw/us/Herald_of_Ash",
+      "attribute": "str",
+      "gemling_effect": "Buff grants (0—20)% increased Fire damage",
+      "generic_quality_mod": "An additional +(0—5)% of Overkill damage contributes to base Ignite damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Herald of Blood",
+      "url": "https://poe2db.tw/us/Herald_of_Blood",
+      "attribute": "?",
+      "gemling_effect": "Buff grants (0—15)% increased Physical damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Herald of Ice",
+      "url": "https://poe2db.tw/us/Herald_of_Ice",
+      "attribute": "?",
+      "gemling_effect": "Buff grants (0—20)% increased Cold damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Herald of Plague",
+      "url": "https://poe2db.tw/us/Herald_of_Plague",
+      "attribute": "dex",
+      "gemling_effect": "(0—30)% more Area of Effect",
+      "generic_quality_mod": "(0—20)% chance to Hinder enemies on spreading Poison to them",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Herald of Thunder",
+      "url": "https://poe2db.tw/us/Herald_of_Thunder",
+      "attribute": "dex",
+      "gemling_effect": "Buff grants (0—20)% increased Lightning damage",
+      "generic_quality_mod": "Lightning Bolts strike the targets of your next (0—2) Attack Hits after killing a Shocked enemy with Attack damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Hexblast",
+      "url": "https://poe2db.tw/us/Hexblast",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% more Critical Hit Chance",
+      "generic_quality_mod": "(0—10)% more Damage per 1 second of remaining duration on removed Curse",
+      "new_in_0_5": false
+    },
+    {
+      "name": "High Velocity Rounds",
+      "url": "https://poe2db.tw/us/High_Velocity_Rounds",
+      "attribute": "?",
+      "gemling_effect": "Deals (0—20)% more Physical damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Hollow Shell",
+      "url": "https://poe2db.tw/us/Hollow_Shell",
+      "attribute": "?",
+      "gemling_effect": "+(0—2) seconds to Guard duration",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Hypothermia",
+      "url": "https://poe2db.tw/us/Hypothermia",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% faster Curse Activation",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Ice Nova",
+      "url": "https://poe2db.tw/us/Ice_Nova",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% chance to not remove an Infusion but still count as consuming them",
+      "generic_quality_mod": "(0—20)% more Damage with Hits against Enemies that are Chilled",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Ice Shards",
+      "url": "https://poe2db.tw/us/Ice_Shards",
+      "attribute": "?",
+      "gemling_effect": "(0—200)% more Freeze Buildup",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Ice Shot",
+      "url": "https://poe2db.tw/us/Ice_Shot",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% reduced Movement Speed Penalty from using Skills while moving",
+      "generic_quality_mod": "active skill chill effect +% final [0,30]",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Ice Strike",
+      "url": "https://poe2db.tw/us/Ice_Strike",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Critical Hit Chance",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Ice-Tipped Arrows",
+      "url": "https://poe2db.tw/us/Ice-Tipped_Arrows",
+      "attribute": "dex",
+      "gemling_effect": "Empowers + (0—2) Attacks",
+      "generic_quality_mod": "(0—10)% increased Cooldown Recovery Rate",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Incendiary Shot",
+      "url": "https://poe2db.tw/us/Incendiary_Shot",
+      "attribute": "?",
+      "gemling_effect": "Fires (0—4) fragments per shot",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Incinerate",
+      "url": "https://poe2db.tw/us/Incinerate",
+      "attribute": "int",
+      "gemling_effect": "+ (0—2) seconds of Maximum fuel",
+      "generic_quality_mod": "(0—20)% more Ignite duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Infernal Cry",
+      "url": "https://poe2db.tw/us/Infernal_Cry",
+      "attribute": "str",
+      "gemling_effect": "Warcry radius is (0—3) metres",
+      "generic_quality_mod": "Empowered Attacks Gain (0—10)% of damage as extra Fire damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Iron Ward",
+      "url": "https://poe2db.tw/us/Iron_Ward",
+      "attribute": "str",
+      "gemling_effect": "Deals (0—20)% more Physical damage",
+      "generic_quality_mod": "(0—50)% more Stun buildup",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Killing Palm",
+      "url": "https://poe2db.tw/us/Killing_Palm",
+      "attribute": "?",
+      "gemling_effect": "Recover (0—10)% of maximum Life over four seconds on Culling an Enemy",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Leap Slam",
+      "url": "https://poe2db.tw/us/Leap_Slam",
+      "attribute": "str",
+      "gemling_effect": "(0—20)% more Area of Effect",
+      "generic_quality_mod": "(0—20)% more Damage with Hits against Enemies with Fully Broken Armour",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Leylines",
+      "url": "https://poe2db.tw/us/Leylines",
+      "attribute": "?",
+      "gemling_effect": "Leyline radius is (0—1) metre",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Lightning Arrow",
+      "url": "https://poe2db.tw/us/Lightning_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "(0—30)% chance for Lightning Damage with Hits to be Lucky",
+      "generic_quality_mod": "(0—40)% more chance to Shock",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Lightning Conduit",
+      "url": "https://poe2db.tw/us/Lightning_Conduit",
+      "attribute": "int",
+      "gemling_effect": "(0—4) additional bolts if a Shocked enemy is in the target area",
+      "generic_quality_mod": "(0—20)% more Lightning Damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Lightning Rod",
+      "url": "https://poe2db.tw/us/Lightning_Rod",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Attack Speed",
+      "generic_quality_mod": "(0—20)% chance to cause an additional Burst on impact",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Lightning Spear",
+      "url": "https://poe2db.tw/us/Lightning_Spear",
+      "attribute": "dex",
+      "gemling_effect": "Benefits from consuming Charges have (0—20)% chance to be doubled",
+      "generic_quality_mod": "Fires +(0—2) bolts",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Lightning Warp",
+      "url": "https://poe2db.tw/us/Lightning_Warp",
+      "attribute": "int",
+      "gemling_effect": "(0—40)% more Cast Speed",
+      "generic_quality_mod": "(0—10)% increased Magnitude of Shock inflicted",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Lingering Illusion",
+      "url": "https://poe2db.tw/us/Lingering_Illusion",
+      "attribute": "?",
+      "gemling_effect": "(0—40)% increased Spirit Reservation Efficiency",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Living Bomb",
+      "url": "https://poe2db.tw/us/Living_Bomb",
+      "attribute": "int",
+      "gemling_effect": "Deals (0—50)% more Fire Damage  ·  Explodes after enemy is dealt damage equal to (0—200)% of its Ailment Threshold",
+      "generic_quality_mod": "Inflicts (0—20)% more Flammability Magnitude",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Lunar Assault",
+      "url": "https://poe2db.tw/us/Lunar_Assault",
+      "attribute": "?",
+      "gemling_effect": "Penetrates (0—20)% Cold Resistance",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Lunar Blessing",
+      "url": "https://poe2db.tw/us/Lunar_Blessing",
+      "attribute": "?",
+      "gemling_effect": "(0—40)% increased Cooldown Recovery Rate",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Magma Barrier",
+      "url": "https://poe2db.tw/us/Magma_Barrier",
+      "attribute": "str",
+      "gemling_effect": "Buff grants +(0—5)% to maximum Block Chance",
+      "generic_quality_mod": "+(0—5)% increased Block chance",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Magnetic Salvo",
+      "url": "https://poe2db.tw/us/Magnetic_Salvo",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Lightning Damage",
+      "generic_quality_mod": "Fires up to +(0—4) missiles",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Mana Remnants",
+      "url": "https://poe2db.tw/us/Mana_Remnants",
+      "attribute": "int",
+      "gemling_effect": "Buff grants (0—40)% increased Mana Regeneration Rate",
+      "generic_quality_mod": "Each Remnant grants (0—40) Mana",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Mana Tempest",
+      "url": "https://poe2db.tw/us/Mana_Tempest",
+      "attribute": "int",
+      "gemling_effect": "(-8 — 0)% of Mana and Life spent while in the storm is  ·  added to this Skill's Mana Cost per Second",
+      "generic_quality_mod": "Effects of Mana Tempest linger for (0—2) seconds after leaving the Tempest",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Mantra of Destruction",
+      "url": "https://poe2db.tw/us/Mantra_of_Destruction",
+      "attribute": "?",
+      "gemling_effect": "Purple Flames of Chayula Duration is (0—0.05) seconds",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Mirage Archer",
+      "url": "https://poe2db.tw/us/Mirage_Archer",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% increased Reservation Efficiency of Skills",
+      "generic_quality_mod": "+(0—1) seconds to Mirage duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Molten Blast",
+      "url": "https://poe2db.tw/us/Molten_Blast",
+      "attribute": "str",
+      "gemling_effect": "Fires +(0—2) Projectiles",
+      "generic_quality_mod": "(0—30)% chance to inflict Exposure on Hit",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Mortar Cannon",
+      "url": "https://poe2db.tw/us/Mortar_Cannon",
+      "attribute": "?",
+      "gemling_effect": "Limit (0—1) Totem",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Oil Barrage",
+      "url": "https://poe2db.tw/us/Oil_Barrage",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% chance to not remove Charges on use",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Oil Grenade",
+      "url": "https://poe2db.tw/us/Oil_Grenade",
+      "attribute": "?",
+      "gemling_effect": "Exposure lowers Total Elemental  ·  Resistances by an additional (0—10)%",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Orb of Storms",
+      "url": "https://poe2db.tw/us/Orb_of_Storms",
+      "attribute": "int",
+      "gemling_effect": "Orb expires after firing (0—6) bolts",
+      "generic_quality_mod": "Chains +(0—3) times",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Pain Offering",
+      "url": "https://poe2db.tw/us/Pain_Offering",
+      "attribute": "int",
+      "gemling_effect": "Aura grants Minions (0—20)% increased Attack and Cast Speed",
+      "generic_quality_mod": "+(0—2.4) metres to Minion Aura radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Perfect Strike",
+      "url": "https://poe2db.tw/us/Perfect_Strike",
+      "attribute": "str",
+      "gemling_effect": "(0—40)% more Attack Speed",
+      "generic_quality_mod": "Inflicts (0—20)% more Flammability Magnitude",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Permafrost Bolts",
+      "url": "https://poe2db.tw/us/Permafrost_Bolts",
+      "attribute": "?",
+      "gemling_effect": "(0—100)% more reload speed",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Plague Bearer",
+      "url": "https://poe2db.tw/us/Plague_Bearer",
+      "attribute": "dex",
+      "gemling_effect": "(0—50)% increased Magnitude of Poison on targets that are not Poisoned",
+      "generic_quality_mod": "Stores (0—2)% of Expected Poison damage, up to Deals Physical damage equal to the stored Poison",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Plasma Blast",
+      "url": "https://poe2db.tw/us/Plasma_Blast",
+      "attribute": "?",
+      "gemling_effect": "Fires +(0—2) Projectiles",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Poisonburst Arrow",
+      "url": "https://poe2db.tw/us/Poisonburst_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "Break Armour equal to (0—20)% of Poison damage",
+      "generic_quality_mod": "(0—10)% more Magnitude of Poison inflicted",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Pounce",
+      "url": "https://poe2db.tw/us/Pounce",
+      "attribute": "?",
+      "gemling_effect": "Limit (0—4) Summoned Wolves",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Powered by Verisium",
+      "url": "https://poe2db.tw/us/Powered_by_Verisium",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% chance to gain an additional Infusion",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Primal Strikes",
+      "url": "https://poe2db.tw/us/Primal_Strikes",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Critical Hit Chance",
+      "generic_quality_mod": "(0—20)% increased Attack Speed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Profane Ritual",
+      "url": "https://poe2db.tw/us/Profane_Ritual",
+      "attribute": "int",
+      "gemling_effect": "(0—100)% more Skill Effect Duration",
+      "generic_quality_mod": "(0—10)% chance to not destroy Consumed Corpse",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Raging Spirits",
+      "url": "https://poe2db.tw/us/Raging_Spirits",
+      "attribute": "int",
+      "gemling_effect": "Minions deal (0—50)% more damage",
+      "generic_quality_mod": "Limit (0—2) Summoned Raging Spirits",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Rain of Arrows",
+      "url": "https://poe2db.tw/us/Rain_of_Arrows",
+      "attribute": "dex",
+      "gemling_effect": "Deals (0—20)% more damage",
+      "generic_quality_mod": "Arrows fall (0—20)% faster",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Rain of Blades",
+      "url": "https://poe2db.tw/us/Rain_of_Blades",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% increased Immobilisation buildup",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Raise Zombie",
+      "url": "https://poe2db.tw/us/Raise_Zombie",
+      "attribute": "int",
+      "gemling_effect": "Limit (0—4) Raised Zombies",
+      "generic_quality_mod": "(0—25)% increased effect of Empowerment on Raised Zombies",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Rake",
+      "url": "https://poe2db.tw/us/Rake",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% chance to Aggravate Bleeding on targets you Hit with Attacks",
+      "generic_quality_mod": "base additional damage from distance +% final [0,30]",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Rampage",
+      "url": "https://poe2db.tw/us/Rampage",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Rapid Assault",
+      "url": "https://poe2db.tw/us/Rapid_Assault",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% more Magnitude of Bleeding inflicted",
+      "generic_quality_mod": "(0—20)% chance to leave an additional spearhead in the target",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Rapid Shot",
+      "url": "https://poe2db.tw/us/Rapid_Shot",
+      "attribute": "?",
+      "gemling_effect": "+(0—30) to Maximum Heat",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Ravenous Swarm",
+      "url": "https://poe2db.tw/us/Ravenous_Swarm",
+      "attribute": "int",
+      "gemling_effect": "Spawn a new Swarm once every (-2 — 0) seconds",
+      "generic_quality_mod": "+(0—1) metres to swarm Attack radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Reaper's Invocation",
+      "url": "https://poe2db.tw/us/Reapers_Invocation",
+      "attribute": "?",
+      "gemling_effect": "Socketed Spells deal (0—20)% increased Damage when triggered",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Refutation",
+      "url": "https://poe2db.tw/us/Refutation",
+      "attribute": "?",
+      "gemling_effect": "Buff duration is (0—1) second",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Remnants of Kalguur",
+      "url": "https://poe2db.tw/us/Remnants_of_Kalguur",
+      "attribute": "?",
+      "gemling_effect": "% chance to spawn a Remnant on Stunning an Enemy",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Repulsion",
+      "url": "https://poe2db.tw/us/Repulsion",
+      "attribute": "?",
+      "gemling_effect": "+(0—20)% more damage against Immobilised enemies",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Resonating Shield",
+      "url": "https://poe2db.tw/us/Resonating_Shield",
+      "attribute": "str",
+      "gemling_effect": "(0—100)% increased Stun Threshold while Channelling",
+      "generic_quality_mod": "Break (0—20)% increased Armour",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Rhoa Mount",
+      "url": "https://poe2db.tw/us/Rhoa_Mount",
+      "attribute": "dex",
+      "gemling_effect": "(0—30)% increased Reservation Efficiency",
+      "generic_quality_mod": "Minions have (0—20)% more Maximum Life",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Rolling Magma",
+      "url": "https://poe2db.tw/us/Rolling_Magma",
+      "attribute": "?",
+      "gemling_effect": "Chains +(0—4) times",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Rolling Slam",
+      "url": "https://poe2db.tw/us/Rolling_Slam",
+      "attribute": "str",
+      "gemling_effect": "Break Armour equal to (0—40)% of Physical damage dealt",
+      "generic_quality_mod": "(0—100)% increased Stun Threshold while using Skill",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Runic Reprieve",
+      "url": "https://poe2db.tw/us/Runic_Reprieve",
+      "attribute": "?",
+      "gemling_effect": "You take (0—10)% of damage from Blocked Hits",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Sacrifice",
+      "url": "https://poe2db.tw/us/Sacrifice",
+      "attribute": "int",
+      "gemling_effect": "Minions have (0—40)% increased maximum Life",
+      "generic_quality_mod": "Minions Revive +(0—5)% more quickly",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Savage Fury",
+      "url": "https://poe2db.tw/us/Savage_Fury",
+      "attribute": "?",
+      "gemling_effect": "Gain (0—1) additional Fury on Attack Hit",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Scavenged Plating",
+      "url": "https://poe2db.tw/us/Scavenged_Plating",
+      "attribute": "str",
+      "gemling_effect": "(0—1)% more Armour per Scavenged Plating",
+      "generic_quality_mod": "+(0—2) seconds to Scavenged Plating duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Seismic Cry",
+      "url": "https://poe2db.tw/us/Seismic_Cry",
+      "attribute": "str",
+      "gemling_effect": "Gains (0—20)% of Physical damage as Fire damage",
+      "generic_quality_mod": "Empowered Attack Aftershocks deal (0—10)% more damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Shard Scavenger",
+      "url": "https://poe2db.tw/us/Shard_Scavenger",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Skill Effect Duration",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Shattering Palm",
+      "url": "https://poe2db.tw/us/Shattering_Palm",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Shield Charge",
+      "url": "https://poe2db.tw/us/Shield_Charge",
+      "attribute": "str",
+      "gemling_effect": "(0—30)% increased maximum travel distance",
+      "generic_quality_mod": "Deals up to an additional +(0—40)% more Damage, based on the distance travelled",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Shield Wall",
+      "url": "https://poe2db.tw/us/Shield_Wall",
+      "attribute": "str",
+      "gemling_effect": "Gains (0—20)% of Physical damage as Fire damage",
+      "generic_quality_mod": "(0—40)% more Damage if destroyed by your Skills",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Shockburst Rounds",
+      "url": "https://poe2db.tw/us/Shockburst_Rounds",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Shockchain Arrow",
+      "url": "https://poe2db.tw/us/Shockchain_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Attack Speed",
+      "generic_quality_mod": "(0—20)% more Lightning Damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Shockwave Totem",
+      "url": "https://poe2db.tw/us/Shockwave_Totem",
+      "attribute": "str",
+      "gemling_effect": "Limit (0—1) Totem",
+      "generic_quality_mod": "+(0—4) seconds to Totem duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Siege Ballista",
+      "url": "https://poe2db.tw/us/Siege_Ballista",
+      "attribute": "?",
+      "gemling_effect": "Limit (0—1) Totem",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Siege Cascade",
+      "url": "https://poe2db.tw/us/Siege_Cascade",
+      "attribute": "?",
+      "gemling_effect": "+(0—3) Bolts loaded per clip",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Siphon Elements",
+      "url": "https://poe2db.tw/us/Siphon_Elements",
+      "attribute": "int",
+      "gemling_effect": "Remnants created by Supported Skills can be collected from (0—30)% further away",
+      "generic_quality_mod": "+(0—2)% chance per Power to spawn a Cold Remnant on Freezing a target +(0—2)% chance to spawn a Fire Remnant on Igniting a non-Ignited target +(0—2)% chance to spawn a Lightning Remnant on Shocking a non-Shocked target",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Siphoning Strike",
+      "url": "https://poe2db.tw/us/Siphoning_Strike",
+      "attribute": "?",
+      "gemling_effect": "(0—50)% chance to gain an additional Charge",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Skeletal Arsonist",
+      "url": "https://poe2db.tw/us/Skeletal_Arsonist",
+      "attribute": "int",
+      "gemling_effect": "Fires +(0—2) Projectiles",
+      "generic_quality_mod": "Deals additional Fire damage equal to +(0—4)% of Minion 's maximum Life",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Skeletal Brute",
+      "url": "https://poe2db.tw/us/Skeletal_Brute",
+      "attribute": "int",
+      "gemling_effect": "Minions have (0—30)% more Maximum Life",
+      "generic_quality_mod": "Minions cause (0—40)% more Stun buildup",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Skeletal Cleric",
+      "url": "https://poe2db.tw/us/Skeletal_Cleric",
+      "attribute": "int",
+      "gemling_effect": "Minions take (0—40)% reduced Damage",
+      "generic_quality_mod": "Revived Skeletons are immune to Damage for (0—3) seconds after being Revived",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Skeletal Frost Mage",
+      "url": "https://poe2db.tw/us/Skeletal_Frost_Mage",
+      "attribute": "int",
+      "gemling_effect": "(0—20)% increased Spirit Reservation Efficiency",
+      "generic_quality_mod": "Minions deal (0—20)% more damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Skeletal Reaver",
+      "url": "https://poe2db.tw/us/Skeletal_Reaver",
+      "attribute": "int",
+      "gemling_effect": "Break Armour equal to (0—30)% of Physical damage dealt",
+      "generic_quality_mod": "Minions have (0—20)% increased effect of Rage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Skeletal Sniper",
+      "url": "https://poe2db.tw/us/Skeletal_Sniper",
+      "attribute": "int",
+      "gemling_effect": "Deals (0—50)% more Fire Damage",
+      "generic_quality_mod": "Minions deal (0—20)% more damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Skeletal Storm Mage",
+      "url": "https://poe2db.tw/us/Skeletal_Storm_Mage",
+      "attribute": "int",
+      "gemling_effect": "(0—30)% increased Minion Cast Speed",
+      "generic_quality_mod": "Minions gain (0—20)% of their maximum Life as Extra maximum Energy Shield",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Skyfall",
+      "url": "https://poe2db.tw/us/Skyfall",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% increased Damage with Hits against Frozen Enemies",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Snap",
+      "url": "https://poe2db.tw/us/Snap",
+      "attribute": "int",
+      "gemling_effect": "(0—100)% increased Cooldown Recovery Rate",
+      "generic_quality_mod": "(0—10)% chance to spawn an additional Infusion Remnant",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Snipe",
+      "url": "https://poe2db.tw/us/Snipe",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% longer Perfect Timing window  ·  (0—20)% more Attack Speed",
+      "generic_quality_mod": "Explosion radius is (0—0.4) metres",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Sniper's Mark",
+      "url": "https://poe2db.tw/us/Snipers_Mark",
+      "attribute": "dex",
+      "gemling_effect": "Marked enemy deals (0—10)% less damage",
+      "generic_quality_mod": "Next Critical Hit against Marked Enemy has (0—15)% increased Critical Damage Bonus",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Soul Offering",
+      "url": "https://poe2db.tw/us/Soul_Offering",
+      "attribute": "int",
+      "gemling_effect": "Buff grants you (0—20)% increased Spell damage",
+      "generic_quality_mod": "+(0—1) second to Spike duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Spark",
+      "url": "https://poe2db.tw/us/Spark",
+      "attribute": "int",
+      "gemling_effect": "Fires +(0—4) Projectiles",
+      "generic_quality_mod": "(0—30)% increased Projectile Speed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Spear of Solaris",
+      "url": "https://poe2db.tw/us/Spear_of_Solaris",
+      "attribute": "dex",
+      "gemling_effect": "Deals (0—20)% more Fire Damage",
+      "generic_quality_mod": "(0—25)% chance to retain 40% of Glory on use",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Spearfield",
+      "url": "https://poe2db.tw/us/Spearfield",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Attack Speed",
+      "generic_quality_mod": "Hazards created by this Skill have (0—10)% chance to rearm after they are triggered",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Spell Totem",
+      "url": "https://poe2db.tw/us/Spell_Totem",
+      "attribute": "?",
+      "gemling_effect": "Spells Cast by Totems have (0—10)% increased Cast Speed per Summoned Totem",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Spiral Volley",
+      "url": "https://poe2db.tw/us/Spiral_Volley",
+      "attribute": "dex",
+      "gemling_effect": "Benefits from consuming Charges have (0—30)% chance to be doubled",
+      "generic_quality_mod": "Fires +(0—4) Projectiles",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Staggering Palm",
+      "url": "https://poe2db.tw/us/Staggering_Palm",
+      "attribute": "?",
+      "gemling_effect": "Fires +(0—2) Projectiles",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Stampede",
+      "url": "https://poe2db.tw/us/Stampede",
+      "attribute": "str",
+      "gemling_effect": "(0—20)% more Area of Effect",
+      "generic_quality_mod": "(0—20)% chance to cause an additional Aftershock",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Storm Lance",
+      "url": "https://poe2db.tw/us/Storm_Lance",
+      "attribute": "dex",
+      "gemling_effect": "Fires +(0—2) Projectiles",
+      "generic_quality_mod": "base number of overcharged spears allowed [0,1]",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Storm Wave",
+      "url": "https://poe2db.tw/us/Storm_Wave",
+      "attribute": "?",
+      "gemling_effect": "Wave length is + (0—4) metres",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Stormblast Bolts",
+      "url": "https://poe2db.tw/us/Stormblast_Bolts",
+      "attribute": "?",
+      "gemling_effect": "+(0—2) Bolts loaded per clip",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Stormcaller Arrow",
+      "url": "https://poe2db.tw/us/Stormcaller_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "Fires +(0—2) Projectiles",
+      "generic_quality_mod": "(0—30)% increased Shock Duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Sunder",
+      "url": "https://poe2db.tw/us/Sunder",
+      "attribute": "str",
+      "gemling_effect": "(0—20)% more Attack Speed",
+      "generic_quality_mod": "(0—50)% reduced Accuracy penalty based on distance",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Supercharged Slam",
+      "url": "https://poe2db.tw/us/Supercharged_Slam",
+      "attribute": "str",
+      "gemling_effect": "(0—300)% more Stun buildup",
+      "generic_quality_mod": "+(0—1) maximum Stage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Tame Beast",
+      "url": "https://poe2db.tw/us/Tame_Beast",
+      "attribute": "dex",
+      "gemling_effect": "(0—50)% reduced Mana Cost",
+      "generic_quality_mod": "+(0—1.6) seconds to Wisp duration",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Tempest Bell",
+      "url": "https://poe2db.tw/us/Tempest_Bell",
+      "attribute": "?",
+      "gemling_effect": "bell hit limit [0,10]",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Tempest Flurry",
+      "url": "https://poe2db.tw/us/Tempest_Flurry",
+      "attribute": "?",
+      "gemling_effect": "Final Strike targets (0—2) additional nearby enemies",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Temporal Chains",
+      "url": "https://poe2db.tw/us/Temporal_Chains",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% faster Curse Activation",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Thrashing Vines",
+      "url": "https://poe2db.tw/us/Thrashing_Vines",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% chance to Impale Enemies on Hit",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Thunderous Leap",
+      "url": "https://poe2db.tw/us/Thunderous_Leap",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% chance to cause an additional Aftershock",
+      "generic_quality_mod": "(0—30)% chance to leave Shocked Ground when Detonating Spears",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Thunderstorm",
+      "url": "https://poe2db.tw/us/Thunderstorm",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Time of Need",
+      "url": "https://poe2db.tw/us/Time_of_Need",
+      "attribute": "str",
+      "gemling_effect": "Buff grants (0—20)% increased Life Regeneration Rate",
+      "generic_quality_mod": "Blessing recovers (0—40) Life and removes Curses and Elemental Ailments",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Tornado",
+      "url": "https://poe2db.tw/us/Tornado",
+      "attribute": "?",
+      "gemling_effect": "+ (0—2) to Limit of Tornadoes",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Tornado Shot",
+      "url": "https://poe2db.tw/us/Tornado_Shot",
+      "attribute": "dex",
+      "gemling_effect": "+ (0—2) to Limit of Tornadoes",
+      "generic_quality_mod": "Copied Projectiles deal +(0—15)% more damage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Toxic Domain",
+      "url": "https://poe2db.tw/us/Toxic_Domain",
+      "attribute": "dex",
+      "gemling_effect": "Effects of Toxic Bloom Linger on you for (0—2) seconds",
+      "generic_quality_mod": "active skill base area of effect radius [0,3]",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Toxic Growth",
+      "url": "https://poe2db.tw/us/Toxic_Growth",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% increased Poison Duration",
+      "generic_quality_mod": "Fires +(0—1) Pustule Limit +(0—1) pustule",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Trail of Caltrops",
+      "url": "https://poe2db.tw/us/Trail_of_Caltrops",
+      "attribute": "dex",
+      "gemling_effect": "Deals (0—20)% more Physical damage",
+      "generic_quality_mod": "+(0—5) to maximum number of Caltrops allowed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Trinity",
+      "url": "https://poe2db.tw/us/Trinity",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% of Physical damage Converted to a random Element",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Triskelion Cascade",
+      "url": "https://poe2db.tw/us/Triskelion_Cascade",
+      "attribute": "?",
+      "gemling_effect": "Empowered Skill has (0—5)% more area of effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Twister",
+      "url": "https://poe2db.tw/us/Twister",
+      "attribute": "dex",
+      "gemling_effect": "(0—20)% more Projectile Speed",
+      "generic_quality_mod": "(0—20)% chance for an additional twister",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Unearth",
+      "url": "https://poe2db.tw/us/Unearth",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% more Minion Attack Speed",
+      "generic_quality_mod": "+(0—5) seconds to Bone Construct duration Minions have (0—50)% increased Movement Speed",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Vaulting Impact",
+      "url": "https://poe2db.tw/us/Vaulting_Impact",
+      "attribute": "?",
+      "gemling_effect": "(0—50)% more Damage against Heavy Stunned Enemies",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Verisium Manifestations",
+      "url": "https://poe2db.tw/us/Verisium_Manifestations",
+      "attribute": "?",
+      "gemling_effect": "+(0—2) to Verisium Manifestation Limit",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Vine Arrow",
+      "url": "https://poe2db.tw/us/Vine_Arrow",
+      "attribute": "dex",
+      "gemling_effect": "(0—40)% more Skill Effect Duration",
+      "generic_quality_mod": "Plant deals additional Chaos Damage per second equal to (0—10)% of Poison Damage per second",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Volcanic Fissure",
+      "url": "https://poe2db.tw/us/Volcanic_Fissure",
+      "attribute": "str",
+      "gemling_effect": "Deals (0—20)% more Fire Damage",
+      "generic_quality_mod": "(0—20)% chance to cause an additional Aftershock",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Volcano",
+      "url": "https://poe2db.tw/us/Volcano",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Skill Effect Duration",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Voltaic Barrier",
+      "url": "https://poe2db.tw/us/Voltaic_Barrier",
+      "attribute": "?",
+      "gemling_effect": "Chains +(0—2) times",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Voltaic Grenade",
+      "url": "https://poe2db.tw/us/Voltaic_Grenade",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Lightning Damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Voltaic Mark",
+      "url": "https://poe2db.tw/us/Voltaic_Mark",
+      "attribute": "dex",
+      "gemling_effect": "(0—50)% reduced Mana Cost",
+      "generic_quality_mod": "Hits against Marked enemy cause +(0—20)% increased Electrocute buildup",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Vulnerability",
+      "url": "https://poe2db.tw/us/Vulnerability",
+      "attribute": "int",
+      "gemling_effect": "(0—50)% reduced Mana Cost",
+      "generic_quality_mod": "(0—10)% increased Curse Magnitudes",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Walking Calamity",
+      "url": "https://poe2db.tw/us/Walking_Calamity",
+      "attribute": "?",
+      "gemling_effect": "(0—50)% chance to not consume Glory",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "War Banner",
+      "url": "https://poe2db.tw/us/War_Banner",
+      "attribute": "?",
+      "gemling_effect": "(0—30)% more Area of Effect",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Wardbound Minions",
+      "url": "https://poe2db.tw/us/Wardbound_Minions",
+      "attribute": "?",
+      "gemling_effect": "+(0—5) s to Minion duration",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Wave of Frost",
+      "url": "https://poe2db.tw/us/Wave_of_Frost",
+      "attribute": "?",
+      "gemling_effect": "Enemies Frozen by this Skill take (0—40)% increased damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Whirling Assault",
+      "url": "https://poe2db.tw/us/Whirling_Assault",
+      "attribute": "?",
+      "gemling_effect": "Deals (0—20)% more Physical damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Whirling Slash",
+      "url": "https://poe2db.tw/us/Whirling_Slash",
+      "attribute": "dex",
+      "gemling_effect": "(0—10)% more Attack Speed",
+      "generic_quality_mod": "Collapse deals +(0—40)% more damage per additional stage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Whirlwind Lance",
+      "url": "https://poe2db.tw/us/Whirlwind_Lance",
+      "attribute": "dex",
+      "gemling_effect": "Elemental Whirlwinds Gain + (0—50)% of damage as damage of the corresponding Type",
+      "generic_quality_mod": "Collapse deals +(0—40)% more damage per additional stage",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Wind Blast",
+      "url": "https://poe2db.tw/us/Wind_Blast",
+      "attribute": "?",
+      "gemling_effect": "Break Armour equal to (0—40)% of Physical damage dealt",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Wind Dancer",
+      "url": "https://poe2db.tw/us/Wind_Dancer",
+      "attribute": "dex",
+      "gemling_effect": "(0—50)% more damage per stage",
+      "generic_quality_mod": "+(0—0.4) metres to explosion radius",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Wind Serpent's Fury",
+      "url": "https://poe2db.tw/us/Wind_Serpents_Fury",
+      "attribute": "dex",
+      "gemling_effect": "Gains (0—20)% of Damage as Extra Chaos Damage",
+      "generic_quality_mod": "(0—30)% more Knockback Distance",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Wing Blast",
+      "url": "https://poe2db.tw/us/Wing_Blast",
+      "attribute": "?",
+      "gemling_effect": "Deals (0—20)% more Physical damage",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    },
+    {
+      "name": "Withering Presence",
+      "url": "https://poe2db.tw/us/Withering_Presence",
+      "attribute": "int",
+      "gemling_effect": "Withers enemies in your Presence every (-0.5 — 0) seconds",
+      "generic_quality_mod": "Withered duration is (0—1) second",
+      "new_in_0_5": false
+    },
+    {
+      "name": "Wolf Pack",
+      "url": "https://poe2db.tw/us/Wolf_Pack",
+      "attribute": "?",
+      "gemling_effect": "(0—20)% more Minion Attack Speed",
+      "generic_quality_mod": null,
+      "new_in_0_5": true
+    }
+  ]
+}
