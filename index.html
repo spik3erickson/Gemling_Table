@@ -97,6 +97,10 @@ code{background:#0a0b0e;border:1px solid var(--line);border-radius:5px;padding:1
       <option>Amazon (Huntress)</option><option>Ritualist (Huntress)</option>
       <option>Any / Unsure</option>
     </select>
+    <div id="gemlingQ" style="display:none">
+      <label>Gemling skill-gem quality cap (%) <span class="muted">— Gemling pushes quality past 20%; the math scales every gemling effect to this</span></label>
+      <input id="qcap" type="number" min="20" max="60" value="40">
+    </div>
 
     <fieldset>
       <legend>3 · What you already have</legend>
@@ -139,9 +143,15 @@ code{background:#0a0b0e;border:1px solid var(--line);border-radius:5px;padding:1
       </select>
       <div class="ai-fields">
         <div id="localFields">
-          <label>Endpoint (OpenAI-compatible)</label>
+          <label>Endpoint (OpenAI-compatible or Ollama)</label>
           <input id="aiUrl" value="https://llm.nocturnehq.com/v1/chat/completions">
-          <label>Model</label><input id="aiModel" placeholder="e.g. qwen2.5:14b">
+          <label>Model <span class="muted">— pick the exact tag, e.g. <code>qwen2.5:32b</code> (not "Qwen 32b")</span></label>
+          <div class="row">
+            <input id="aiModel" list="modelList" placeholder="qwen2.5:32b" style="flex:1">
+            <button class="btn sec" id="loadModels" style="flex:0 0 auto;width:auto;margin-top:0;padding:9px 12px">↻ load</button>
+          </div>
+          <datalist id="modelList"></datalist>
+          <div class="note" id="modelNote">Click <b>↻ load</b> to pull the list of installed models from the endpoint.</div>
         </div>
         <div id="claudeFields" style="display:none">
           <label>Anthropic API key <span class="muted">(stored in this browser only)</span></label>
@@ -199,7 +209,9 @@ function init(){
   wslots.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=cap(s);$('#wpn').appendChild(o);});
   setupTA('#uq','#uqlist',UNIQUES.map(u=>({name:u.name,slot:u.slot,ref:u})),i=>{chosen.unique=i.ref;chips();});
   $('#provider').onchange=syncProvider; syncProvider();
+  $('#asc').onchange=syncAsc; syncAsc();
   $('#lvl').oninput=ptInfo; ptInfo();
+  $('#loadModels').onclick=loadModels;
   $('#go').onclick=forge;
   $('#rand').onclick=()=>{const u=UNIQUES[(Math.random()*UNIQUES.length)|0];chosen.unique=u;chips();forge();};
 }
@@ -208,6 +220,36 @@ function syncProvider(){
   box.classList.toggle('show-ai',p!=='off');
   $('#localFields').style.display=p==='local'?'block':'none';
   $('#claudeFields').style.display=p==='claude'?'block':'none';
+}
+// derive the API origin+base from the chat URL so we can hit /v1/models or /api/tags
+function apiBase(){ try{const u=new URL($('#aiUrl').value.trim()); return u.origin;}catch(e){return $('#aiUrl').value.replace(/\/(v1|api)\/.*$/,'');} }
+async function loadModels(){
+  const note=$('#modelNote'), list=$('#modelList'); note.innerHTML='<span class="spin"></span> loading…';
+  const base=apiBase(); let names=[];
+  for(const path of ['/v1/models','/api/tags']){
+    try{ const r=await fetch(base+path); if(!r.ok)continue; const j=await r.json();
+      names = (j.data||[]).map(m=>m.id).concat((j.models||[]).map(m=>m.name||m.model)).filter(Boolean);
+      if(names.length) break;
+    }catch(e){}
+  }
+  if(names.length){
+    list.innerHTML=[...new Set(names)].map(n=>`<option value="${n}">`).join('');
+    if(!$('#aiModel').value && names[0]) $('#aiModel').value=names[0];
+    note.innerHTML=`${names.length} models loaded — choose one above.`;
+  }else{
+    note.innerHTML=`Couldn't auto-load models (CORS or endpoint offline). Type the exact tag, e.g. <code>qwen2.5:32b</code>. On the host: <code>ollama list</code> shows tags; serve with <code>OLLAMA_ORIGINS=*</code>.`;
+  }
+}
+const isGemling=()=>$('#asc').value.startsWith('Gemling');
+function syncAsc(){ $('#gemlingQ').style.display=isGemling()?'block':'none'; }
+// gem-quality the math scales gemling effects to: Gemling uses its cap, everyone else 20%
+function qcap(){ return isGemling()?Math.max(20,+$('#qcap').value||20):20; }
+// scale every (lo—hi) range in a gemling line to the player's quality
+function scaleGemling(text,q){ if(!text)return text;
+  return text.replace(/\((-?\d+(?:\.\d+)?)—(-?\d+(?:\.\d+)?)\)/g,(m,lo,hi)=>{
+    const v=parseFloat(lo)+(parseFloat(hi)-parseFloat(lo))*(q/20);
+    return Number.isInteger(v)?v:(+v.toFixed(2)).toString();
+  });
 }
 function ptInfo(){
   const lvl=+$('#lvl').value||1; const pts=Math.max(0,lvl-1)+ (lvl>=1?0:0); // ~1 pt/level + quest points
@@ -268,8 +310,25 @@ function profile(){
   if(/attack|melee|strike|slam|crossbow|bow|spear/.test(blob))arche.add('attack');
   if(/projectile|arrow|bolt|proj/.test(blob))arche.add('projectile');
   if(!arche.size)arche.add('attack');
-  return {dmg,arche,notes,wpn};
+  // damaging ailments / DoT: ignite (fire/flammability/burn), bleed (phys), poison (chaos),
+  // plus the utility ailments shock (lightning) and chill/freeze (cold).
+  const ail=new Set();
+  const ailFocus=/ailment|damage over time|\bdot\b|degen|ignit|flammab|burn|scorch|bleed|hemorrhage|poison|caustic|toxic|venom/.test(blob);
+  [['ignite',/ignit|flammab|burn|scorch/,'fire'],
+   ['bleed',/bleed|hemorrhage|gash|rupture/,'physical'],
+   ['poison',/poison|caustic|toxic|venom/,'chaos'],
+   ['shock',/shock|electrocut/,'lightning'],
+   ['chill',/chill|freeze|frostbite/,'cold']]
+   .forEach(([n,re,dt])=>{ if(re.test(blob)||(ailFocus&&dmg.has(dt))) ail.add(n); });
+  if(ail.size) notes.push('ailments: '+[...ail].join('/'));
+  return {dmg,arche,ail,ailFocus,notes,wpn,q:qcap()};
 }
+// does this gem text engage a profile ailment? (ignite/flammability/burn, bleed, poison, shock, freeze)
+const AIL_RE={ignite:/ignit|flammab|burn|scorch/i,bleed:/bleed|hemorrhage|rupture/i,
+  poison:/poison|caustic|toxic|venom/i,shock:/shock|electrocut/i,chill:/chill|freeze|frostbite|cold exposure/i};
+function ailHit(text,prof){ if(!prof.ail||!prof.ail.size)return 0; let h=0;
+  prof.ail.forEach(a=>{ if(AIL_RE[a]&&AIL_RE[a].test(text||''))h++; });
+  if(/ailment|damaging ailment/i.test(text||''))h++; return h; }
 
 function scoreSkill(sk,prof){
   const tg=sk.tags||{},gt=(sk.gemType||'').toLowerCase(),parts=[];let sc=0;
@@ -280,8 +339,13 @@ function scoreSkill(sk,prof){
   if(prof.arche.has('projectile')&&tg.projectile)add('projectile',3);
   if(prof.arche.has('minion')&&(gt==='minion'||tg.minion))add('minion',6);
   let dm=0;prof.dmg.forEach(d=>{if(tg[d])dm+=3;});add('damage-type match',dm);
-  const gm=GEMLING[sk.name];
-  if(gm&&/more .*damage|increased .*damage|more attack|more cast|critical/i.test(gm.gemling_effect||''))add('gemling multiplier',2);
+  const gm=GEMLING[sk.name], ge=gm?gm.gemling_effect||'':'';
+  // gemling damage line matters more the higher the Gemling quality cap (×q/20)
+  if(/more .*damage|increased .*damage|more attack|more cast|critical/i.test(ge))add('gemling multiplier',+(2*prof.q/20).toFixed(1));
+  // ailment build: reward skills whose gemling line scales the relevant ailment, weighted by quality
+  if(prof.ail&&prof.ail.size){ const ah=ailHit(ge,prof);
+    if(ah)add('ailment gemling',+(ah*1.5*prof.q/20).toFixed(1));
+    if(ailHit((sk.description||'')+' '+JSON.stringify(tg),prof))add('ailment fit',2); }
   const nsup=(DATA.compat.by_skill[sk.name]||[]).length; add('support pool',Math.min(nsup/40,3));
   if(['buff','warcry','banner','mark'].includes(gt))add('utility penalty',-4);
   return {sc,parts};
@@ -307,6 +371,8 @@ function scoreSupport(sp,prof){
   if(tg.minion&&!prof.arche.has('minion'))sc-=5;
   sc+=(supportMult(sp)-1)*20; // weight the actual multiplier heavily
   if(tg.area)sc+=1;
+  // ailment builds: boost supports that scale the chosen ailment (ignite/flammability, bleed, poison…)
+  if(prof.ail&&prof.ail.size) sc+=ailHit((sp.description||'')+' '+(sp.name||''),prof)*4;
   return sc;
 }
 function pickSupports(skill,prof,n=5){
@@ -376,6 +442,13 @@ function vaalAside(item,kind){
   }
   return '⚗ Vaal: a rare can gain +1 socketed gems, an extra rune socket, or a corrupted implicit — worth it once the base is otherwise finished.';
 }
+// amulet anointment guidance (anoint a passive notable onto the amulet via distilled emotions)
+function anointFocus(prof){
+  if(prof.ail&&prof.ail.size) return `an ailment notable — scale ${[...prof.ail].join('/')} magnitude/duration (e.g. flammability/ignite, bleed, or poison nodes)`;
+  if(prof.arche.has('minion')) return 'a minion damage or minion-life notable';
+  if(prof.dmg.size) return `a ${[...prof.dmg].map(cap).join('/')} damage, penetration, or crit notable`;
+  return 'your single highest-impact damage notable';
+}
 
 // ═══════════════════════════ DECIDE ═══════════════════════════
 let LAST=null;
@@ -430,14 +503,16 @@ function render(b){
           :`<div class="muted" style="font-size:12px">SUPPORT MULTIPLIER (from picks)</div><div class="big">×${b.sup.totalMult.toFixed(2)}</div><div class="note">Product of the 'more' multipliers on the selected supports (level-dependent values approximated).</div>`}
       </div>
     </div>
-    ${gm?`<div class="note"><b>Gemling quality bonus on ${b.main.name}:</b> ${gm.gemling_effect}</div>`:''}
+    ${gm?`<div class="note"><b>Gemling quality bonus on ${b.main.name}${prof.q>20?` @ ${prof.q}% quality`:''}:</b> ${prof.q>20?scaleGemling(gm.gemling_effect,prof.q):gm.gemling_effect}${prof.q>20?' <span class="muted">(scaled from the 20% baseline)</span>':''}</div>`:''}
+    ${prof.ail&&prof.ail.size?`<div class="note"><b>Ailment plan:</b> built around ${[...prof.ail].map(a=>`<span class="dt-${({ignite:'fire',bleed:'physical',poison:'chaos',shock:'lightning',chill:'cold'})[a]}">${cap(a)}</span>`).join(' / ')} — skills & supports that scale ${prof.ail.has('ignite')?'ignite/flammability':'the ailment'} were prioritised${prof.q>20?', and their gemling magnitude is computed at your '+prof.q+'% quality':''}.</div>`:''}
     ${b.alts.length?`<div class="note">Also scored: ${b.alts.map(s=>s.name).join(' · ')}</div>`:''}
   </div>`;
 
   // SUPPORTS
   h+=`<div class="card"><div class="sect-title">🔗 Support gems <span class="muted" style="text-transform:none;letter-spacing:0">— compatibility-verified, ranked by computed multiplier</span></div>`;
   b.sup.list.forEach(({sp,mult})=>{const dt=DTYPES.filter(d=>(sp.tags||{})[d]).map(dtSpan).join(' ');
-    h+=`<div class="gem"><div class="nm">${sp.name} <span class="pill">×${mult.toFixed(2)}</span>${sp.external_granted?' <span class="pill">'+(sp.source||'ext')+'</span>':''}</div>
+    const ailB=(prof.ail&&prof.ail.size&&ailHit((sp.description||'')+' '+sp.name,prof))?' <span class="pill" style="color:var(--fire)">ailment</span>':'';
+    h+=`<div class="gem"><div class="nm">${sp.name} <span class="pill">×${mult.toFixed(2)}</span>${ailB}${sp.external_granted?' <span class="pill">'+(sp.source||'ext')+'</span>':''}</div>
         <div class="why">${sp.description||'—'} ${dt?'· '+dt:''}</div></div>`;});
   const poolN=(DATA.compat.by_skill[b.main.name]||[]).length;
   h+=`<div class="note">${poolN} supports compatible with ${b.main.name}; engine kept the 5 with the highest damage multiplier for your profile. Combined ≈ ×${b.sup.totalMult.toFixed(2)} more.</div></div>`;
@@ -446,6 +521,7 @@ function render(b){
   h+=`<div class="card"><div class="sect-title">🛡 Gear plan</div>`;
   if(b.owned)h+=`<div class="slotrow"><div class="s">${b.owned.slot}</div><div><b>${b.owned.name}</b> <span class="muted">(yours)</span><br><span class="muted">${(b.owned.explicits||[]).join(' · ')||'—'}</span><div class="vaal">${vaalAside(b.owned,'unique')}</div></div></div>`;
   b.uniques.forEach(u=>h+=`<div class="slotrow"><div class="s">${u.slot}</div><div><b>${u.name}</b><br><span class="muted">${(u.explicits||[]).slice(0,3).join(' · ')}</span><div class="vaal">${vaalAside(u,'unique')}</div></div></div>`);
+  h+=`<div class="slotrow"><div class="s">amulet ✦</div><div><b>Anointment</b> <span class="muted">(distilled emotions)</span><br><span style="font-size:11.5px;color:var(--int)">💠 Anoint ${anointFocus(prof)}. If life/EHP is short, a life or recovery notable is the safe alternative.</span></div></div>`;
   h+=`<div class="note">Empty slots → rare bases prioritising resistances, life, and ${[...prof.dmg].map(cap).join('/')||'damage'}. Browse bases in <a href="pages/items_catalog.html" target="_blank">the item catalog</a>.</div></div>`;
 
   // DEFENSE SOLVER
@@ -498,19 +574,23 @@ Ascendancy: ${b.asc}. Owns: ${b.owned?b.owned.name+' — '+(b.owned.explicits||[
 Tree: level ${b.lvl} (~${b.ptEst} pts); has: ${b.notables||'(unspecified)'}.
 Priorities: ${b.pri.dmg?'max damage; ':''}${b.pri.res?'cap elemental res + ≥40% chaos (hard); ':''}${b.pri.tanky?'survivability; ':''}
 
+${prof.ail&&prof.ail.size?`Ailment focus: ${[...prof.ail].join('/')} (e.g. ignite = flammability/burn fire DoT). Scale ailment magnitude/duration, not just hit damage.`:''}
+${prof.q>20?`Gemling quality cap: ${prof.q}% — every gem-quality (gemling) effect scales linearly from its 20% baseline, so a "(0—40)% more X" line is worth ${(40*prof.q/20)}% at ${prof.q}%. Factor this into the math.`:''}
+
 ENGINE OUTPUT (authoritative):
-- Skill: ${b.main.name} (${b.main.gemType}; ${[...prof.dmg].join('/')||'flexible'}). Build score ${b.mainScore.sc.toFixed(1)}. Gemling bonus: ${gm?gm.gemling_effect:'n/a'}.
+- Skill: ${b.main.name} (${b.main.gemType}; ${[...prof.dmg].join('/')||'flexible'}). Build score ${b.mainScore.sc.toFixed(1)}. Gemling bonus${prof.q>20?` @ ${prof.q}% quality`:''}: ${gm?(prof.q>20?scaleGemling(gm.gemling_effect,prof.q):gm.gemling_effect):'n/a'}.
 - Supports (kept for highest multiplier, ≈×${b.sup.totalMult.toFixed(2)}): ${sup}
 - Synergy uniques: ${uqs}
 - Defense solver: elemental ${b.res.elemOK?'cappable':'tight'} (${b.res.lines} free suffix lines); chaos: ${b.res.chaosPlan}
 ${b.wdps?`- Weapon base DPS reference: ${Math.round(b.wdps.dps)} (${b.wdps.name}).`:''}
 
-WRITE (<=380 words):
+WRITE (<=400 words):
 1) Build identity + why it does big damage on a ${b.asc}.
 2) Skill + the 5 supports in play order, 1 line of synergy each.
-3) Gear/stat priorities; reaching 75/75/75 + 40% chaos without gutting damage.
-4) Remaining passive points: what to allocate (clusters/notables) and the #1 damage multiplier to chase.
-5) Vaal/corruption ideas worth gambling (incl. double-corrupt on a spare unique).
+3) ${prof.ail&&prof.ail.size?'Ailment scaling — how to stack '+[...prof.ail].join('/')+' magnitude/duration (flammability, more-ailment supports, gem quality at '+prof.q+'%).':'Damage scaling — the #1 multiplier to chase.'}
+4) Gear/stat priorities; reaching 75/75/75 + 40% chaos without gutting damage; and the best AMULET ANOINTMENT (which passive notable to anoint via distilled emotions) for this build.
+5) Remaining passive points: what to allocate (clusters/notables).
+6) Vaal/corruption ideas worth gambling (incl. double-corrupt on a spare unique).
 Be specific, confident, no disclaimers.`;
 }
 async function runAI(b,provider){
@@ -524,10 +604,12 @@ async function runAI(b,provider){
         body:JSON.stringify({model:$('#claudeModel').value,max_tokens:1200,system:'You are a concise expert PoE2 build theorycrafter. The engine decides; you explain.',messages:[{role:'user',content:text}]})});
       if(!res.ok)throw new Error('HTTP '+res.status); const j=await res.json(); out=(j.content||[]).map(c=>c.text).join('');
     }else{
-      const url=$('#aiUrl').value.trim(),model=$('#aiModel').value.trim()||'default';
+      const url=$('#aiUrl').value.trim(),model=$('#aiModel').value.trim();
+      if(!model)throw new Error('pick a model — click ↻ load, or type the exact tag like qwen2.5:32b');
       const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({model,messages:[{role:'system',content:'You are a concise expert PoE2 build theorycrafter. The engine decides; you explain.'},{role:'user',content:text}],temperature:0.7,stream:false})});
-      if(!res.ok)throw new Error('HTTP '+res.status); const j=await res.json();
+      if(!res.ok){const t=await res.text().catch(()=>''); throw new Error('HTTP '+res.status+(t?' — '+t.slice(0,180):''));}
+      const j=await res.json();
       out=j.choices?.[0]?.message?.content||j.message?.content||j.response||JSON.stringify(j).slice(0,300);
     }
     body.className='ai'; body.textContent=(out||'').trim()||'(empty response)';
