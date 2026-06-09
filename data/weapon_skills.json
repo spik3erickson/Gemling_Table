@@ -1,0 +1,2664 @@
+{
+  "version": "0.5",
+  "source": "PoB export (repoe-fork/pob-data)",
+  "generated_at": "2026-06-09T14:10:41",
+  "skill_count": 394,
+  "skills": {
+    "Abyssal Apparition": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Acidic Concoction": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Alchemist's Boon": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Align Fate": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ancestral Cry": {
+      "weapons": [
+        "axe",
+        "claw",
+        "dagger",
+        "flail",
+        "mace",
+        "spear",
+        "staff",
+        "sword"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ancestral Spirits": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ancestral Warrior Totem": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Animus Exchange": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Animus Splinters": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Apocalypse": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Arc": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Archmage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Archon of Chayula": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Arctic Armour": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Arctic Howl": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Armour Breaker": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Armour Piercing Rounds": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Artillery Ballista": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Attrition": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Azmerian Swarms": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Azmerian Wolf": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ball Lightning": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Barkskin": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Barrage": {
+      "weapons": [
+        "bow",
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Barrier Invocation": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Berserk": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bitter Dead": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Black Powder Blitz": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Blasphemy": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bleeding Concoction": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Blink": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Blood Boil": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Blood Hunt": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bloodhound's Mark": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bone Blast": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bone Cage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bone Offering": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Boneshatter": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bonestorm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bow Shot": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Briarpatch": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Bursting Fen Toad": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cackling Companions": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Called Shots": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Block": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Charm Use": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Critical": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Dodge": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Elemental Ailment": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Melee Kill": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Melee Stun": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cast on Minion Death": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Chaos Bolt": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Chaotic Surge": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Charge Regulation": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Charged Staff": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cluster Grenade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Coiling Bolts": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Combat Frenzy": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Comet": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Companion: {0}": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Conductive Runes": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Consecrate": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Contagion": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Convalescence": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Crackling Palm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cross Slash": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Crossbow Shot": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Crushing Fear": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Cull The Weak": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Curse on Block": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Dark Effigy": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Decompose": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Defiance Banner": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Demon Form": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Despair": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Detonate Dead": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Detonate Living": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Detonate Minion": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Detonating Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Devour": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Discipline": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Disengage": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Dread Banner": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Earthquake": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Earthshatter": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Electrocuting Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Elemental Conflux": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Elemental Expression": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Elemental Invocation": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Elemental Storm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Elemental Sundering": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Elemental Surge": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Elemental Weakness": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ember Fusillade": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Emergency Reload": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Encase in Jade": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Enfeeble": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Entangle": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Escape Shot": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Essence Drain": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Eternal March": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Eternal Rage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Explosive Concoction": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Explosive Grenade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Explosive Shot": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Explosive Spear": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Explosive Transmutation": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Exsanguinate": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Eye of Winter": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Falling Thunder": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fangs of Frost": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Feast of Flesh": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Feral Invocation": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ferocious Roar": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fire Spell on Hit": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fireball": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Firebolt": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Firestorm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Flame Breath": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Flame Wall": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Flameblast": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Flash Grenade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Flicker Strike": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Forge Hammer": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fortifying Cry": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fragmentation Rounds": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fragments Of The Past": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Freezing Mark": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Freezing Salvo": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Freezing Shards": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Frost Bomb": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Frost Darts": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Frost Wall": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Frostbolt": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Frostflame Nova": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Frozen Locus": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fulminating Concoction": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fulmination": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Furious Slam": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Fury of the Mountain": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Future-Past": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Galvanic Field": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Galvanic Shards": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Gas Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Gas Grenade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Gathering Storm": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Gelid Palm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Gemini Surge": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ghost Dance": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Glacial Bolt": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Glacial Cascade": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Glacial Lance": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Grenade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Grim Feast": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Grim Pillars": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hailstorm Rounds": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hammer of the Gods": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hand of Chayula": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Harbinger of Madness": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Heart of Ice": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Herald of Ash": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Herald of Blood": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Herald of Ice": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Herald of Plague": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Herald of Thunder": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Herald of the Royal Queen": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hexblast": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "High Velocity Rounds": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "His Foul Emergence": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "His Scattering Calamity": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "His Vile Intrusion": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "His Winnowing Flame": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hollow Focus": {
+      "weapons": [
+        "axe",
+        "claw",
+        "dagger",
+        "flail",
+        "mace",
+        "spear",
+        "staff",
+        "sword"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hollow Form": {
+      "weapons": [
+        "axe",
+        "claw",
+        "dagger",
+        "flail",
+        "mace",
+        "spear",
+        "staff",
+        "sword"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hollow Resonance": {
+      "weapons": [
+        "axe",
+        "claw",
+        "dagger",
+        "flail",
+        "mace",
+        "spear",
+        "staff",
+        "sword"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Hollow Shell": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ice Fragments": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ice Nova": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ice Shards": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ice Shot": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ice Strike": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ice-Tipped Arrows": {
+      "weapons": [
+        "bow",
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Icestorm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Impurity": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Incendiary Shot": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Incinerate": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Inevitable Agony": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Infernal Cry": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Into the Breach": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Iron Ward": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Kelari's Malediction": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Kelari, the Tainted Sands": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Killing Palm": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Leap Slam": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Leylines": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Life Remnants": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lightning Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lightning Bolt": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lightning Conduit": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lightning Rod": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lightning Spear": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lightning Warp": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lingering Illusion": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Living Bomb": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lunar Assault": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Lunar Blessing": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mace Strike": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Magma Barrier": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Magnetic Salvo": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Malice": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mana Drain": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mana Remnants": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mana Tempest": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Manifest Weapon": {
+      "weapons": [
+        "axe",
+        "claw",
+        "dagger",
+        "flail",
+        "mace",
+        "spear",
+        "staff",
+        "sword"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mantra of Destruction": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Maul": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Meditate": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Midnight Zenith": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mirage Archer": {
+      "weapons": [
+        "bow",
+        "crossbow",
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mirage Deadeye": {
+      "weapons": [
+        "bow",
+        "crossbow",
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mirror of Refraction": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mist Raven": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Molten Blast": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Molten Crash": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Molten Shower": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Moment of Vulnerability": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Mortar Cannon": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Navira, the Last Mirage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Oil Barrage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Oil Grenade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Orb of Storms": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Overwhelming Presence": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Pain Offering": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Parry": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": true,
+      "notes": ""
+    },
+    "Perfect Strike": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Permafrost Bolts": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Phantasmal Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Pinnacle of Power": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Plague Bearer": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Plasma Blast": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Poisonburst Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Pounce": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Power Siphon": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Powered by Verisium": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Primal Bounty": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Primal Strikes": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Profane Ritual": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Purity of Fire": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Purity of Ice": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Purity of Lightning": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Quarterstaff Strike": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Raging Spirits": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rain of Arrows": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rain of Blades": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Raise Shield": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": true,
+      "notes": ""
+    },
+    "Raise Zombie": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rake": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rampage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rapid Assault": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rapid Shot": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ravenous Swarm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Reap": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Reaper's Invocation": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Refutation": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Remnants of Kalguur": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rend": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Repulsion": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Requiem": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Resonating Shield": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": true,
+      "notes": ""
+    },
+    "Rhoa Mount": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Righteous Descent": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rite of Restoration": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ritual Sacrifice": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rolling Magma": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Rolling Slam": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Runic Reprieve": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Runic Tempering": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Ruzhan, the Blazing Sword": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Sacrifice": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Sanguine Revelry": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Savage Fury": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Scavenged Plating": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Seismic Cry": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shard Scavenger": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shattering Concoction": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shattering Palm": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shattering Spite": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shield Charge": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": true,
+      "notes": ""
+    },
+    "Shield Wall": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": true,
+      "notes": ""
+    },
+    "Shockburst Rounds": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shockchain Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shockwave Totem": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Shred": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Siege Ballista": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Siege Cascade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Sigil of Power": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Siphon Elements": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Siphoning Strike": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Arsonist": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Brute": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Cleric": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Frost Mage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Reaver": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Sniper": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Storm Mage": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skeletal Warrior": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Skyfall": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Smash to Smithereens": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Snap": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Snipe": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Sniper's Mark": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Soaring Midnight": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": true,
+      "notes": ""
+    },
+    "Solar Orb": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Sorcery Ward": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Soul Offering": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Soulrend": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spark": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spear Stab": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spear Throw": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spear of Solaris": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spearfield": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spectre: {0}": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spell Totem": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spellslinger": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spiral Volley": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spiraling Conspiracy": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Spirit Vessel": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Staggering Palm": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Stampede": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Starborn Onslaught": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Storm Lance": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Storm Wave": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Stormblast Bolts": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Stormcaller Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Summon Infernal Hound": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Sunder": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Supercharged Slam": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Supporting Fire": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Tame Beast": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Temper Weapon": {
+      "weapons": [
+        "axe",
+        "claw",
+        "dagger",
+        "flail",
+        "mace",
+        "spear",
+        "staff",
+        "sword"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Tempest Bell": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Tempest Flurry": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Temporal Chains": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Temporal Rift": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "The Stars Answer": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Thrashing Vines": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Thundergod's Wrath": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Thunderous Leap": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Thunderstorm": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Time Freeze": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Time Snap": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Time of Need": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Tornado": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Tornado Shot": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Toxic Domain": {
+      "weapons": [
+        "bow",
+        "crossbow",
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Toxic Growth": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Trail of Caltrops": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Trinity": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Triskelion Cascade": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Twister": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Unbound Avatar": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Unearth": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Unleash": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Valako's Charge": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Vaulting Impact": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Verisium Manifestations": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Vine Arrow": {
+      "weapons": [
+        "bow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Virtuous Barrier": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Vivid Stampede": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Void Illusion": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Volatile Dead": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Volcanic Fissure": {
+      "weapons": [
+        "mace"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Volcano": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Voltaic Barrier": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Voltaic Grenade": {
+      "weapons": [
+        "crossbow"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Voltaic Mark": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Vulnerability": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Walking Calamity": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "War Banner": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wardbound Minions": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wave of Frost": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Whirling Assault": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Whirling Slash": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Whirlwind Lance": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wild Protector": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wildwood's Gifts": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wind Blast": {
+      "weapons": [
+        "staff"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wind Dancer": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wind Serpent's Fury": {
+      "weapons": [
+        "spear"
+      ],
+      "requiresWeapon": true,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wing Blast": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wither": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Withering Presence": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    },
+    "Wolf Pack": {
+      "weapons": [],
+      "requiresWeapon": false,
+      "requiresShield": false,
+      "notes": ""
+    }
+  }
+}

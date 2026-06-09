@@ -1,0 +1,1911 @@
+{
+  "version": "0.5",
+  "source": "repoe-fork/pob-data poe2/ModCorrupted.json",
+  "built_at": "2026-06-09T14:07:14",
+  "by_item_class": {
+    "Amulet": [
+      {
+        "mod_id": "CorruptionAllResistances1",
+        "text": "+(5-10)% to all Elemental Resistances",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "fire_resistance",
+          "lightning_resistance",
+          "elemental",
+          "fire",
+          "cold",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionCharmChargeGeneration1",
+        "text": "Charms gain (0.08-0.17) charges per Second",
+        "weight": 1,
+        "mod_tags": [
+          "charm"
+        ]
+      },
+      {
+        "mod_id": "CorruptionDexterity1",
+        "text": "+(10-15) to Dexterity",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalSkillGemLevel1",
+        "text": "+1 to Level of all Skills",
+        "weight": 1,
+        "mod_tags": [
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIntelligence1",
+        "text": "+(10-15) to Intelligence",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionItemFoundRarityIncrease1",
+        "text": "(10-15)% increased Rarity of Items found",
+        "weight": 1,
+        "mod_tags": [
+          "drop"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLifeFlaskChargeGeneration1",
+        "text": "Life Flasks gain (0.08-0.17) charges per Second",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLifeLeech1",
+        "text": "Leech 3% of Physical Attack Damage as Life",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life",
+          "physical",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionManaFlaskChargeGeneration1",
+        "text": "Mana Flasks gain (0.08-0.17) charges per Second",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionManaLeech1",
+        "text": "Leech 2% of Physical Attack Damage as Mana",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana",
+          "physical",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumElementalResistance1",
+        "text": "+1% to all Maximum Elemental Resistances",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "fire_resistance",
+          "lightning_resistance",
+          "elemental",
+          "fire",
+          "cold",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionStrength1",
+        "text": "+(10-15) to Strength",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      }
+    ],
+    "Ring": [
+      {
+        "mod_id": "CorruptionAllDamage1",
+        "text": "(20-30)% increased Damage",
+        "weight": 1,
+        "mod_tags": [
+          "damage"
+        ]
+      },
+      {
+        "mod_id": "CorruptionAllResistances1",
+        "text": "+(5-10)% to all Elemental Resistances",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "fire_resistance",
+          "lightning_resistance",
+          "elemental",
+          "fire",
+          "cold",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionChaosResistance1",
+        "text": "+(13-19)% to Chaos Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "chaos_resistance",
+          "chaos",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionCriticalStrikeMultiplier1",
+        "text": "(15-20)% increased Critical Damage Bonus",
+        "weight": 1,
+        "mod_tags": [
+          "damage",
+          "critical"
+        ]
+      },
+      {
+        "mod_id": "CorruptionDexterity1",
+        "text": "+(10-15) to Dexterity",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedMana1",
+        "text": "+(20-25) to maximum Mana",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedSkillSpeed1",
+        "text": "(4-6)% increased Skill Speed",
+        "weight": 1,
+        "mod_tags": [
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIntelligence1",
+        "text": "+(10-15) to Intelligence",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionItemFoundRarityIncrease1",
+        "text": "(10-15)% increased Rarity of Items found",
+        "weight": 1,
+        "mod_tags": [
+          "drop"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLifeRegenerationRate1",
+        "text": "(15-25)% increased Life Regeneration rate",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionManaRegeneration1",
+        "text": "(20-30)% increased Mana Regeneration Rate",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionStrength1",
+        "text": "+(10-15) to Strength",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      }
+    ],
+    "Belt": [
+      {
+        "mod_id": "CorruptionColdResistance1",
+        "text": "+(20-25)% to Cold Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "elemental",
+          "cold",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionDexterity1",
+        "text": "+(10-15) to Dexterity",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionFireResistance1",
+        "text": "+(20-25)% to Fire Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "fire_resistance",
+          "elemental",
+          "fire",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedEnergyShieldPercent1",
+        "text": "(15-25)% increased maximum Energy Shield",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "energy_shield"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedEvasionRatingPercent1",
+        "text": "(15-25)% increased Evasion Rating",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "evasion"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedLife1",
+        "text": "+(30-40) to maximum Life",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedPhysicalDamageReductionRatingPercent1",
+        "text": "(15-25)% increased Armour",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "armour"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIntelligence1",
+        "text": "+(10-15) to Intelligence",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLightningResistance1",
+        "text": "+(20-25)% to Lightning Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "lightning_resistance",
+          "elemental",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumEnduranceCharges1",
+        "text": "+1 to Maximum Endurance Charges",
+        "weight": 1,
+        "mod_tags": [
+          "endurance_charge"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumFireResistance1",
+        "text": "+(1-3)% to Maximum Fire Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "fire_resistance",
+          "elemental",
+          "fire",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionStrength1",
+        "text": "+(10-15) to Strength",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      }
+    ],
+    "Helmet": [
+      {
+        "mod_id": "CorruptionGlobalMinionSkillGemsLevel1",
+        "text": "+1 to Level of all Minion Skills",
+        "weight": 1,
+        "mod_tags": [
+          "minion",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedAccuracy1",
+        "text": "+(50-100) to Accuracy Rating",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedSpirit1",
+        "text": "+(20-30) to Spirit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLifeRegenerationRate1",
+        "text": "(15-25)% increased Life Regeneration rate",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionManaRegeneration1",
+        "text": "(20-30)% increased Mana Regeneration Rate",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumColdResistance1",
+        "text": "+(1-3)% to Maximum Cold Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "elemental",
+          "cold",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumPowerCharges1",
+        "text": "+1 to Maximum Power Charges",
+        "weight": 1,
+        "mod_tags": [
+          "power_charge"
+        ]
+      }
+    ],
+    "Body Armour": [
+      {
+        "mod_id": "CorruptionAdditionalPhysicalDamageReduction1",
+        "text": "(3-5)% additional Physical Damage Reduction",
+        "weight": 1,
+        "mod_tags": [
+          "physical"
+        ]
+      },
+      {
+        "mod_id": "CorruptionChaosResistance1",
+        "text": "+(13-19)% to Chaos Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "chaos_resistance",
+          "chaos",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionDamageTakenGainedAsLife1",
+        "text": "(10-20)% of Damage taken Recouped as Life",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionDamageTakenGainedAsMana1",
+        "text": "(10-20)% of Damage taken Recouped as Mana",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedLife1",
+        "text": "+(30-40) to maximum Life",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumElementalResistance1",
+        "text": "+1% to all Maximum Elemental Resistances",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "fire_resistance",
+          "lightning_resistance",
+          "elemental",
+          "fire",
+          "cold",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionThornsDamageIncrease1",
+        "text": "(40-50)% increased Thorns damage",
+        "weight": 1,
+        "mod_tags": [
+          "damage"
+        ]
+      }
+    ],
+    "Gloves": [
+      {
+        "mod_id": "CorruptionArmourBreak1",
+        "text": "Break (10-15)% increased Armour",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionColdPenetration1",
+        "text": "Damage Penetrates (10-15)% Cold Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "cold"
+        ]
+      },
+      {
+        "mod_id": "CorruptionFirePenetration1",
+        "text": "Damage Penetrates (10-15)% Fire Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "fire"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalMeleeSkillGemsLevel1",
+        "text": "+1 to Level of all Melee Skills",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGoldFoundIncrease1",
+        "text": "(5-10)% increased Quantity of Gold Dropped by Slain Enemies",
+        "weight": 1,
+        "mod_tags": [
+          "drop"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLightningPenetration1",
+        "text": "Damage Penetrates (10-15)% Lightning Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "lightning"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumFrenzyCharges1",
+        "text": "+1 to Maximum Frenzy Charges",
+        "weight": 1,
+        "mod_tags": [
+          "frenzy_charge"
+        ]
+      }
+    ],
+    "Boots": [
+      {
+        "mod_id": "CorruptionColdResistance1",
+        "text": "+(20-25)% to Cold Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "elemental",
+          "cold",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionFireResistance1",
+        "text": "+(20-25)% to Fire Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "fire_resistance",
+          "elemental",
+          "fire",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedFreezeThreshold1",
+        "text": "(20-30)% increased Freeze Threshold",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "cold",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedStunThreshold1",
+        "text": "(20-30)% increased Stun Threshold",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLightningResistance1",
+        "text": "+(20-25)% to Lightning Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "lightning_resistance",
+          "elemental",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumLightningResistance1",
+        "text": "+(1-3)% to Maximum Lightning Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "lightning_resistance",
+          "elemental",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMovementVelocity1",
+        "text": "(3-5)% increased Movement Speed",
+        "weight": 1,
+        "mod_tags": [
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionSlowPotency1",
+        "text": "(20-30)% reduced Slowing Potency of Debuffs on You",
+        "weight": 1,
+        "mod_tags": []
+      }
+    ],
+    "Shield": [
+      {
+        "mod_id": "CorruptionGainLifeOnBlock1",
+        "text": "(20-25) Life gained when you Block",
+        "weight": 1,
+        "mod_tags": [
+          "block",
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGainManaOnBlock1",
+        "text": "(10-15) Mana gained when you Block",
+        "weight": 1,
+        "mod_tags": [
+          "block",
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalBlockChance1",
+        "text": "(10-15)% increased Block chance",
+        "weight": 1,
+        "mod_tags": [
+          "block"
+        ]
+      },
+      {
+        "mod_id": "CorruptionMaximumBlockChance1",
+        "text": "+3% to maximum Block chance",
+        "weight": 1,
+        "mod_tags": [
+          "block"
+        ]
+      },
+      {
+        "mod_id": "CorruptionThornsDamageIncrease1",
+        "text": "(40-50)% increased Thorns damage",
+        "weight": 1,
+        "mod_tags": [
+          "damage"
+        ]
+      }
+    ],
+    "Focus": [
+      {
+        "mod_id": "CorruptionIncreasedMana1",
+        "text": "+(20-25) to maximum Mana",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionSpellDamageOnWeapon1",
+        "text": "(20-30)% increased Spell Damage",
+        "weight": 1,
+        "mod_tags": [
+          "caster_damage",
+          "damage",
+          "caster"
+        ]
+      }
+    ],
+    "Quiver": [
+      {
+        "mod_id": "CorruptionAllDamage1",
+        "text": "(20-30)% increased Damage",
+        "weight": 1,
+        "mod_tags": [
+          "damage"
+        ]
+      },
+      {
+        "mod_id": "CorruptionChainFromTerrain1",
+        "text": "Projectiles have (10-20)% chance to Chain an additional time from terrain",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionChanceToPierce1",
+        "text": "(20-30)% chance to Pierce an Enemy",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionCriticalStrikeMultiplier1",
+        "text": "(15-20)% increased Critical Damage Bonus",
+        "weight": 1,
+        "mod_tags": [
+          "damage",
+          "critical"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedAccuracy1",
+        "text": "+(50-100) to Accuracy Rating",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedMana1",
+        "text": "+(20-25) to maximum Mana",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedSkillSpeed1",
+        "text": "(4-6)% increased Skill Speed",
+        "weight": 1,
+        "mod_tags": [
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLifeGainedFromEnemyDeath1",
+        "text": "Gain (20-25) Life per enemy killed",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionManaGainedFromEnemyDeath1",
+        "text": "Gain (10-15) Mana per enemy killed",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      }
+    ],
+    "Armour (any)": [
+      {
+        "mod_id": "CorruptionReducedLocalAttributeRequirements1",
+        "text": "(10-20)% reduced Attribute Requirements",
+        "weight": 1,
+        "mod_tags": []
+      }
+    ],
+    "Armour (Str -- pure armour)": [
+      {
+        "mod_id": "CorruptionLocalIncreasedPhysicalDamageReductionRatingPercent1",
+        "text": "(15-25)% increased Armour",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "armour"
+        ]
+      }
+    ],
+    "Armour (Dex -- pure evasion)": [
+      {
+        "mod_id": "CorruptionLocalIncreasedEvasionRatingPercent1",
+        "text": "(15-25)% increased Evasion Rating",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "evasion"
+        ]
+      }
+    ],
+    "Armour (Int -- pure ES)": [
+      {
+        "mod_id": "CorruptionLocalIncreasedEnergyShieldPercent1",
+        "text": "(15-25)% increased Energy Shield",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "energy_shield"
+        ]
+      }
+    ],
+    "Armour (Str/Dex -- armour+evasion)": [
+      {
+        "mod_id": "CorruptionLocalIncreasedArmourAndEvasion1",
+        "text": "(15-25)% increased Armour and Evasion",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "armour",
+          "evasion"
+        ]
+      }
+    ],
+    "Armour (Str/Int -- armour+ES)": [
+      {
+        "mod_id": "CorruptionLocalIncreasedArmourAndEnergyShield1",
+        "text": "(15-25)% increased Armour and Energy Shield",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "armour",
+          "energy_shield"
+        ]
+      }
+    ],
+    "Armour (Dex/Int -- evasion+ES)": [
+      {
+        "mod_id": "CorruptionLocalIncreasedEvasionAndEnergyShield1",
+        "text": "(15-25)% increased Evasion and Energy Shield",
+        "weight": 1,
+        "mod_tags": [
+          "defences",
+          "evasion",
+          "energy_shield"
+        ]
+      }
+    ],
+    "Weapon (any)": [
+      {
+        "mod_id": "CorruptionLocalCriticalStrikeMultiplier1",
+        "text": "+(5-10)% to Critical Damage Bonus",
+        "weight": 1,
+        "mod_tags": [
+          "damage",
+          "attack",
+          "critical"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalIncreasedAttackSpeed1",
+        "text": "(6-8)% increased Attack Speed",
+        "weight": 1,
+        "mod_tags": [
+          "attack",
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalIncreasedPhysicalDamagePercent1",
+        "text": "(15-25)% increased Physical Damage",
+        "weight": 1,
+        "mod_tags": [
+          "physical_damage",
+          "damage",
+          "physical",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionReducedLocalAttributeRequirements1",
+        "text": "(10-20)% reduced Attribute Requirements",
+        "weight": 1,
+        "mod_tags": []
+      }
+    ],
+    "One-Handed Weapon": [
+      {
+        "mod_id": "CorruptionLocalAddedChaosDamage1",
+        "text": "Adds (7-11) to (12-18) Chaos damage",
+        "weight": 1,
+        "mod_tags": [
+          "chaos_damage",
+          "damage",
+          "chaos",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedColdDamage1",
+        "text": "Adds (8-12) to (13-19) Cold Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "cold",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedFireDamage1",
+        "text": "Adds (9-14) to (15-22) Fire Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "fire",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedLightningDamage1",
+        "text": "Adds (1-2) to (29-43) Lightning Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "lightning",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionWeaponElementalDamage1",
+        "text": "(20-30)% increased Elemental Damage with Attacks",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "has_attack_mod",
+          "damage",
+          "elemental",
+          "fire",
+          "cold",
+          "lightning"
+        ]
+      }
+    ],
+    "Two-Handed Weapon": [
+      {
+        "mod_id": "CorruptionLocalAddedChaosDamageTwoHand1",
+        "text": "Adds (10-16) to (17-25) Chaos damage",
+        "weight": 1,
+        "mod_tags": [
+          "chaos_damage",
+          "damage",
+          "chaos",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedColdDamageTwoHand1",
+        "text": "Adds (11-17) to (18-26) Cold Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "cold",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedFireDamageTwoHand1",
+        "text": "Adds (13-20) to (21-31) Fire Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "fire",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedLightningDamageTwoHand1",
+        "text": "Adds (1-3) to (41-61) Lightning Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "lightning",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionWeaponElementalDamageTwoHand1",
+        "text": "(40-50)% increased Elemental Damage with Attacks",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "has_attack_mod",
+          "damage",
+          "elemental",
+          "fire",
+          "cold",
+          "lightning"
+        ]
+      }
+    ],
+    "Bow": [
+      {
+        "mod_id": "CorruptionAdditionalArrows1",
+        "text": "Bow Attacks fire an additional Arrow",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedChaosDamage1",
+        "text": "Adds (7-11) to (12-18) Chaos damage",
+        "weight": 1,
+        "mod_tags": [
+          "chaos_damage",
+          "damage",
+          "chaos",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedColdDamage1",
+        "text": "Adds (8-12) to (13-19) Cold Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "cold",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedFireDamage1",
+        "text": "Adds (9-14) to (15-22) Fire Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "fire",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalAddedLightningDamage1",
+        "text": "Adds (1-2) to (29-43) Lightning Damage",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "damage",
+          "elemental",
+          "lightning",
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalChanceToBlind1",
+        "text": "(5-10)% chance to Blind Enemies on hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalChanceToMaim1",
+        "text": "(10-15)% chance to Maim on Hit",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionWeaponElementalDamage1",
+        "text": "(20-30)% increased Elemental Damage with Attacks",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_damage",
+          "has_attack_mod",
+          "damage",
+          "elemental",
+          "fire",
+          "cold",
+          "lightning"
+        ]
+      }
+    ],
+    "Crossbow": [
+      {
+        "mod_id": "CorruptionAdditionalAmmo1",
+        "text": "Loads an additional bolt",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalChanceToBlind1",
+        "text": "(5-10)% chance to Blind Enemies on hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalChanceToMaim1",
+        "text": "(10-15)% chance to Maim on Hit",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Wand": [
+      {
+        "mod_id": "CorruptionFreezeDamageIncrease1",
+        "text": "(20-30)% increased Freeze Buildup",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "cold",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalChaosSpellGemsLevel1",
+        "text": "+1 to Level of all Chaos Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "chaos",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalColdSpellGemsLevel1",
+        "text": "+1 to Level of all Cold Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "cold",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalFireSpellGemsLevel1",
+        "text": "+1 to Level of all Fire Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "fire",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalLightningSpellGemsLevel1",
+        "text": "+1 to Level of all Lightning Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "lightning",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalPhysicalSpellGemsLevel1",
+        "text": "+1 to Level of all Physical Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "physical",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIgniteChanceIncrease1",
+        "text": "(20-30)% increased Flammability Magnitude",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "fire",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedCastSpeed1",
+        "text": "(10-15)% increased Cast Speed",
+        "weight": 1,
+        "mod_tags": [
+          "caster_speed",
+          "caster",
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLifeGainedFromEnemyDeath1",
+        "text": "Gain (20-25) Life per enemy killed",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionManaGainedFromEnemyDeath1",
+        "text": "Gain (10-15) Mana per enemy killed",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionReducedLocalAttributeRequirements1",
+        "text": "(10-20)% reduced Attribute Requirements",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionShockChanceIncrease1",
+        "text": "(20-30)% increased chance to Shock",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "lightning",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionSpellCriticalStrikeChance1",
+        "text": "(20-30)% increased Critical Hit Chance for Spells",
+        "weight": 1,
+        "mod_tags": [
+          "caster_critical",
+          "caster",
+          "critical"
+        ]
+      },
+      {
+        "mod_id": "CorruptionSpellDamageOnWeapon1",
+        "text": "(20-30)% increased Spell Damage",
+        "weight": 1,
+        "mod_tags": [
+          "caster_damage",
+          "damage",
+          "caster"
+        ]
+      }
+    ],
+    "Sceptre": [
+      {
+        "mod_id": "CorruptionAlliesInPresenceAllDamage1",
+        "text": "Allies in your Presence deal (20-30)% increased Damage",
+        "weight": 1,
+        "mod_tags": [
+          "damage"
+        ]
+      },
+      {
+        "mod_id": "CorruptionAlliesInPresenceCriticalStrikeMultiplier1",
+        "text": "Allies in your Presence have (10-15)% increased Critical Damage Bonus",
+        "weight": 1,
+        "mod_tags": [
+          "damage",
+          "critical"
+        ]
+      },
+      {
+        "mod_id": "CorruptionAlliesInPresenceIncreasedAttackSpeed1",
+        "text": "Allies in your Presence have (5-10)% increased Attack Speed",
+        "weight": 1,
+        "mod_tags": [
+          "attack",
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionAlliesInPresenceIncreasedCastSpeed1",
+        "text": "Allies in your Presence have (5-10)% increased Cast Speed",
+        "weight": 1,
+        "mod_tags": [
+          "caster_speed",
+          "caster",
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalIncreasedSpiritPercent1",
+        "text": "(15-25)% increased Spirit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionReducedLocalAttributeRequirements1",
+        "text": "(10-20)% reduced Attribute Requirements",
+        "weight": 1,
+        "mod_tags": []
+      }
+    ],
+    "Staff": [
+      {
+        "mod_id": "CorruptionFreezeDamageIncrease1",
+        "text": "(20-30)% increased Freeze Buildup",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "cold",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalChaosSpellGemsLevel1",
+        "text": "+1 to Level of all Chaos Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "chaos",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalColdSpellGemsLevel1",
+        "text": "+1 to Level of all Cold Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "cold",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalFireSpellGemsLevel1",
+        "text": "+1 to Level of all Fire Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "fire",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalLightningSpellGemsLevel1",
+        "text": "+1 to Level of all Lightning Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "lightning",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionGlobalPhysicalSpellGemsLevel1",
+        "text": "+1 to Level of all Physical Spell Skills",
+        "weight": 1,
+        "mod_tags": [
+          "physical",
+          "caster",
+          "gem"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIgniteChanceIncrease1",
+        "text": "(20-30)% increased Flammability Magnitude",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "fire",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionIncreasedCastSpeed1",
+        "text": "(10-15)% increased Cast Speed",
+        "weight": 1,
+        "mod_tags": [
+          "caster_speed",
+          "caster",
+          "speed"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLifeGainedFromEnemyDeath1",
+        "text": "Gain (20-25) Life per enemy killed",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "life"
+        ]
+      },
+      {
+        "mod_id": "CorruptionManaGainedFromEnemyDeath1",
+        "text": "Gain (10-15) Mana per enemy killed",
+        "weight": 1,
+        "mod_tags": [
+          "resource",
+          "mana"
+        ]
+      },
+      {
+        "mod_id": "CorruptionReducedLocalAttributeRequirements1",
+        "text": "(10-20)% reduced Attribute Requirements",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionShockChanceIncrease1",
+        "text": "(20-30)% increased chance to Shock",
+        "weight": 1,
+        "mod_tags": [
+          "elemental",
+          "lightning",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionSpellCriticalStrikeChance1",
+        "text": "(20-30)% increased Critical Hit Chance for Spells",
+        "weight": 1,
+        "mod_tags": [
+          "caster_critical",
+          "caster",
+          "critical"
+        ]
+      },
+      {
+        "mod_id": "CorruptionSpellDamageOnTwoHandWeapon1",
+        "text": "(40-60)% increased Spell Damage",
+        "weight": 1,
+        "mod_tags": [
+          "caster_damage",
+          "damage",
+          "caster"
+        ]
+      }
+    ],
+    "Warstaff": [
+      {
+        "mod_id": "CorruptionLocalChanceToPoison1",
+        "text": "(10-15)% chance to Poison on Hit with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "poison",
+          "chaos",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalRageOnHit1",
+        "text": "Grants 1 Rage on Hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalStunDamageIncrease1",
+        "text": "Causes (20-30)% increased Stun Buildup",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalWeaponRangeIncrease1",
+        "text": "(10-20)% increased Melee Strike Range with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Mace": [
+      {
+        "mod_id": "CorruptionLocalChanceToBleed1",
+        "text": "(10-15)% chance to cause Bleeding on Hit",
+        "weight": 1,
+        "mod_tags": [
+          "bleed",
+          "physical",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalRageOnHit1",
+        "text": "Grants 1 Rage on Hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalStunDamageIncrease1",
+        "text": "Causes (20-30)% increased Stun Buildup",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalWeaponRangeIncrease1",
+        "text": "(10-20)% increased Melee Strike Range with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Axe": [
+      {
+        "mod_id": "CorruptionLocalChanceToBleed1",
+        "text": "(10-15)% chance to cause Bleeding on Hit",
+        "weight": 1,
+        "mod_tags": [
+          "bleed",
+          "physical",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalRageOnHit1",
+        "text": "Grants 1 Rage on Hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalStunDamageIncrease1",
+        "text": "Causes (20-30)% increased Stun Buildup",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalWeaponRangeIncrease1",
+        "text": "(10-20)% increased Melee Strike Range with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Sword": [
+      {
+        "mod_id": "CorruptionLocalChanceToBleed1",
+        "text": "(10-15)% chance to cause Bleeding on Hit",
+        "weight": 1,
+        "mod_tags": [
+          "bleed",
+          "physical",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalChanceToPoison1",
+        "text": "(10-15)% chance to Poison on Hit with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "poison",
+          "chaos",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalRageOnHit1",
+        "text": "Grants 1 Rage on Hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalStunDamageIncrease1",
+        "text": "Causes (20-30)% increased Stun Buildup",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalWeaponRangeIncrease1",
+        "text": "(10-20)% increased Melee Strike Range with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Dagger": [
+      {
+        "mod_id": "CorruptionLocalChanceToPoison1",
+        "text": "(10-15)% chance to Poison on Hit with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "poison",
+          "chaos",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalRageOnHit1",
+        "text": "Grants 1 Rage on Hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalStunDamageIncrease1",
+        "text": "Causes (20-30)% increased Stun Buildup",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalWeaponRangeIncrease1",
+        "text": "(10-20)% increased Melee Strike Range with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Spear": [
+      {
+        "mod_id": "CorruptionLocalChanceToPoison1",
+        "text": "(10-15)% chance to Poison on Hit with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "poison",
+          "chaos",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalRageOnHit1",
+        "text": "Grants 1 Rage on Hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalStunDamageIncrease1",
+        "text": "Causes (20-30)% increased Stun Buildup",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalWeaponRangeIncrease1",
+        "text": "(10-20)% increased Melee Strike Range with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Flail": [
+      {
+        "mod_id": "CorruptionLocalChanceToBleed1",
+        "text": "(10-15)% chance to cause Bleeding on Hit",
+        "weight": 1,
+        "mod_tags": [
+          "bleed",
+          "physical",
+          "attack",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionLocalRageOnHit1",
+        "text": "Grants 1 Rage on Hit",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalStunDamageIncrease1",
+        "text": "Causes (20-30)% increased Stun Buildup",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionLocalWeaponRangeIncrease1",
+        "text": "(10-20)% increased Melee Strike Range with this weapon",
+        "weight": 1,
+        "mod_tags": [
+          "attack"
+        ]
+      }
+    ],
+    "Jewel": [
+      {
+        "mod_id": "CorruptionJewelBlindImmunity1",
+        "text": "Cannot be Blinded",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionJewelChaosResist1",
+        "text": "+(3-7)% to Chaos Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "chaos_resistance",
+          "chaos",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelColdResist1",
+        "text": "+(5-10)% to Cold Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "cold_resistance",
+          "elemental_resistance",
+          "elemental",
+          "cold",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelCorruptedBloodImmunity1",
+        "text": "Corrupted Blood cannot be inflicted on you",
+        "weight": 1,
+        "mod_tags": [
+          "bleed",
+          "physical",
+          "ailment"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelDexterity1",
+        "text": "+(4-6) to Dexterity",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelFireResist1",
+        "text": "+(5-10)% to Fire Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "fire_resistance",
+          "elemental",
+          "fire",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelHinderImmunity1",
+        "text": "You cannot be Hindered",
+        "weight": 1,
+        "mod_tags": [
+          "blue_herring"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelIntelligence1",
+        "text": "+(4-6) to Intelligence",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelLightningResist1",
+        "text": "+(5-10)% to Lightning Resistance",
+        "weight": 1,
+        "mod_tags": [
+          "elemental_resistance",
+          "lightning_resistance",
+          "elemental",
+          "lightning",
+          "resistance"
+        ]
+      },
+      {
+        "mod_id": "CorruptionJewelMaimImmunity1",
+        "text": "Immune to Maim",
+        "weight": 1,
+        "mod_tags": []
+      },
+      {
+        "mod_id": "CorruptionJewelStrength1",
+        "text": "+(4-6) to Strength",
+        "weight": 1,
+        "mod_tags": [
+          "attribute"
+        ]
+      }
+    ],
+    "Unknown (no active weight)": [
+      {
+        "mod_id": "CorruptionEnergyShieldDelay1",
+        "text": "(20-30)% faster start of Energy Shield Recharge",
+        "weight": 0,
+        "mod_tags": [
+          "defences",
+          "energy_shield"
+        ],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "CorruptionGlobalTrapSkillGemsLevel1",
+        "text": "+1 to Level of all Trap Skill Gems",
+        "weight": 0,
+        "mod_tags": [],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "CorruptionIncreasedSlowEffect1",
+        "text": "Debuffs you inflict have (20-30)% increased Slow Magnitude",
+        "weight": 0,
+        "mod_tags": [],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "CorruptionLifeRegenerationPercent1",
+        "text": "Regenerate (1-2)% of maximum Life per second",
+        "weight": 0,
+        "mod_tags": [
+          "resource",
+          "life"
+        ],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "CorruptionWeaponSwapSpeed1",
+        "text": "(20-30)% increased Weapon Swap Speed",
+        "weight": 0,
+        "mod_tags": [
+          "attack",
+          "speed"
+        ],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionAreaOfEffect1",
+        "text": "(15-25)% increased Area of Effect",
+        "weight": 0,
+        "mod_tags": [],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionCooldownRecovery1",
+        "text": "(8-12)% increased Cooldown Recovery Rate",
+        "weight": 0,
+        "mod_tags": [],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionCurseEffect1",
+        "text": "(5-10)% increased Curse Magnitudes",
+        "weight": 0,
+        "mod_tags": [
+          "caster",
+          "curse"
+        ],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionDamageGainedAsChaos1",
+        "text": "Gain (5-8)% of Damage as Extra Chaos Damage",
+        "weight": 0,
+        "mod_tags": [
+          "chaos_damage",
+          "damage",
+          "chaos"
+        ],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionEnergyGeneration1",
+        "text": "Meta Skills gain (20-30)% increased Energy",
+        "weight": 0,
+        "mod_tags": [],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionPresenceRadius1",
+        "text": "(15-25)% increased Presence Area of Effect",
+        "weight": 0,
+        "mod_tags": [
+          "aura"
+        ],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionSkillEffectDuration1",
+        "text": "(15-25)% increased Skill Effect Duration",
+        "weight": 0,
+        "mod_tags": [],
+        "flag": "no_active_weight_in_source"
+      },
+      {
+        "mod_id": "SpecialCorruptionWarcrySpeed1",
+        "text": "(15-25)% increased Warcry Speed",
+        "weight": 0,
+        "mod_tags": [
+          "speed"
+        ],
+        "flag": "no_active_weight_in_source"
+      }
+    ]
+  },
+  "unique_corruptions": null,
+  "notes": "Item class membership is derived from weightKey/weightVal pairs in ModCorrupted.json. A tag is considered active when its weight > 0; the 'default' tag is always excluded. Armour sub-type tags (str_armour, dex_armour, etc.) reflect PoB's defence-combo encoding and are separate from the generic 'armour' tag which covers all slot armour pieces. The 'weapon' tag covers all weapon slots; specific weapon-type tags are more granular.  The following 13 mod(s) have no active weight in the source data (all weights are 0 or the weightKey list is empty) and are bucketed under 'Unknown (no active weight)': CorruptionEnergyShieldDelay1, CorruptionGlobalTrapSkillGemsLevel1, CorruptionIncreasedSlowEffect1, CorruptionLifeRegenerationPercent1, CorruptionWeaponSwapSpeed1, SpecialCorruptionAreaOfEffect1, SpecialCorruptionCooldownRecovery1, SpecialCorruptionCurseEffect1, SpecialCorruptionDamageGainedAsChaos1, SpecialCorruptionEnergyGeneration1, SpecialCorruptionPresenceRadius1, SpecialCorruptionSkillEffectDuration1, SpecialCorruptionWarcrySpeed1. These may be disabled/unreleased corruptions or PoB placeholders. Unique-specific transforming corruption outcomes (e.g. alternate unique forms) are NOT encoded in ModCorrupted.json or the Uniques/*.json files in this PoB data export. The Uniques/*.json files store item stat text as raw strings with no corruption-transform field; no unique-specific corruption data is derivable from this source."
+}

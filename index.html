@@ -183,10 +183,10 @@ code{background:#0a0b0e;border:1px solid var(--line);border-radius:5px;padding:1
 const DATA={}, $=s=>document.querySelector(s);
 const FILES={gemling:'data/gemling_quality.json',skills:'data/skill_gems.json',supports:'data/support_gems.json',
   compat:'data/support_compatibility.json',uniques:'data/uniques.json',bases:'data/bases.json',
-  runes:'data/runes.json',jewels:'data/jewels.json',
-  notables:'data/tree_notables.json',keystones:'data/tree_keystones.json'};
+  runes:'data/runes.json',jewels:'data/jewels.json',spirit:'data/spirit_gems.json',
+  notables:'data/tree_notables.json',keystones:'data/tree_keystones.json',weaponskills:'data/weapon_skills.json'};
 const DTYPES=['fire','cold','lightning','chaos','physical'];
-let UNIQUES=[],SKILLS=[],SUPPORTS=[],BASES=[],RUNES=[],GEMLING={},SUPP={},SKILLBY={},NOTABLES=[],KEYSTONES=[];
+let UNIQUES=[],SKILLS=[],SUPPORTS=[],BASES=[],RUNES=[],GEMLING={},SUPP={},SKILLBY={},NOTABLES=[],KEYSTONES=[],SPIRIT=[],WEAPONSKILLS={};
 const cap=s=>(s||'').replace(/\b\w/g,c=>c.toUpperCase());
 const num=s=>{const m=String(s).match(/-?\d+(\.\d+)?/);return m?parseFloat(m[0]):null;};
 
@@ -203,6 +203,7 @@ function init(){
   UNIQUES=DATA.uniques.items||DATA.uniques; SKILLS=DATA.skills; SUPPORTS=DATA.supports;
   BASES=DATA.bases.items||DATA.bases; RUNES=DATA.runes.items||DATA.runes;
   NOTABLES=DATA.notables.notables||DATA.notables; KEYSTONES=DATA.keystones.keystones||DATA.keystones;
+  SPIRIT=DATA.spirit||[]; WEAPONSKILLS=(DATA.weaponskills&&DATA.weaponskills.skills)||{};
   (DATA.gemling.skills||[]).forEach(s=>GEMLING[s.name]=s);
   SUPPORTS.forEach(s=>SUPP[s.name]=s); SKILLS.forEach(s=>SKILLBY[s.name]=s);
   $('#loadstat').textContent=`${SKILLS.length} skills · ${SUPPORTS.length} supports · ${UNIQUES.length} uniques · ${BASES.length} bases · ${RUNES.length} runes`;
@@ -343,6 +344,25 @@ function ailHit(text,prof){ if(!prof.ail||!prof.ail.size)return 0; let h=0;
   prof.ail.forEach(a=>{ if(AIL_RE[a]&&AIL_RE[a].test(text||''))h++; });
   if(/ailment|damaging ailment/i.test(text||''))h++; return h; }
 
+// ─── RELATIONAL CORE ───
+// Once a skill is chosen, the SPINE is the authoritative build identity derived FROM that skill
+// (its real damage types, tags, archetype, ailment). Everything else is scored vs the spine, so
+// off-spine pieces fall to ~0 instead of being judged in isolation.
+const DMG2AIL={fire:'ignite',physical:'bleed',chaos:'poison',lightning:'shock',cold:'chill'};
+function spineFrom(intent,skill){
+  const dmg=new Set(intent.dmg),ail=new Set(intent.ail),arche=new Set(intent.arche),tg=skill.tags||{};
+  DTYPES.forEach(d=>{if(tg[d])dmg.add(d);});                 // skill's own damage types are authoritative
+  const gt=(skill.gemType||'').toLowerCase();
+  if(gt==='spell'||tg.spell)arche.add('spell');
+  if(gt==='attack'||tg.attack)arche.add('attack');
+  if(tg.melee)arche.add('melee'); if(tg.projectile)arche.add('projectile');
+  if(gt==='minion'||tg.minion)arche.add('minion');
+  // if the build is ailment-focused, the spine's ailments follow its damage types
+  if(intent.ailFocus) dmg.forEach(d=>{if(DMG2AIL[d])ail.add(DMG2AIL[d]);});
+  return {dmg,ail,arche,ailFocus:intent.ailFocus,q:intent.q,wpn:intent.wpn,skill:skill.name,
+          tags:new Set(Object.keys(tg).filter(k=>tg[k]))};
+}
+
 function scoreSkill(sk,prof){
   const tg=sk.tags||{},gt=(sk.gemType||'').toLowerCase(),parts=[];let sc=0;
   const add=(n,v)=>{if(v){sc+=v;parts.push([n,v]);}};
@@ -351,20 +371,34 @@ function scoreSkill(sk,prof){
   if(prof.arche.has('melee')&&tg.melee)add('melee',3);
   if(prof.arche.has('projectile')&&tg.projectile)add('projectile',3);
   if(prof.arche.has('minion')&&(gt==='minion'||tg.minion))add('minion',6);
-  let dm=0;prof.dmg.forEach(d=>{if(tg[d])dm+=3;});add('damage-type match',dm);
+  // the skill must HAVE a damage type (a real DPS skill), and it should match the intent if given
+  const skillDmg=DTYPES.filter(d=>tg[d]);
+  if(prof.dmg.size){ let dm=0;prof.dmg.forEach(d=>{if(tg[d])dm+=3;});add('matches intended damage',dm); }
+  else if(skillDmg.length) add('deals damage',1.5);
   const gm=GEMLING[sk.name], ge=gm?gm.gemling_effect||'':'';
-  // gemling damage line matters more the higher the Gemling quality cap (×q/20)
   if(/more .*damage|increased .*damage|more attack|more cast|critical/i.test(ge))add('gemling multiplier',+(2*prof.q/20).toFixed(1));
-  // ailment build: reward skills whose gemling line scales the relevant ailment, weighted by quality
   if(prof.ail&&prof.ail.size){ const ah=ailHit(ge,prof);
     if(ah)add('ailment gemling',+(ah*1.5*prof.q/20).toFixed(1));
     if(ailHit((sk.description||'')+' '+JSON.stringify(tg),prof))add('ailment fit',2); }
-  const nsup=(DATA.compat.by_skill[sk.name]||[]).length; add('support pool',Math.min(nsup/40,3));
-  if(['buff','warcry','banner','mark'].includes(gt))add('utility penalty',-4);
+  // RELATIONAL ecosystem: how many compatible supports actually SCALE this skill's damage types
+  const onType=tg, sups=(DATA.compat.by_skill[sk.name]||[]);
+  let eco=0; for(const nm of sups){const s=SUPP[nm]; if(!s)continue; const stg=s.tags||{};
+    if(skillDmg.some(d=>stg[d])||/more |penetrat|exposure|critical|increased .*damage/i.test((s.description||'')+s.name))eco++;}
+  add('support ecosystem',Math.min(eco/12,4));
+  if(['buff','warcry','banner','mark'].includes(gt))add('utility penalty',-6);
+  if(/warp|blink|leap|dash|charge|movement/i.test(sk.name)&&!prof.arche.has('attack'))add('movement skill penalty',-3);
   return {sc,parts};
+}
+// can this skill be used with the player's chosen weapon? (data-driven, from PoB weapon restrictions)
+function weaponOK(sk,wpn){
+  if(!wpn)return true;
+  const w=WEAPONSKILLS[sk.name]; if(!w)return true;          // unknown → don't exclude
+  if(!w.requiresWeapon||!w.weapons||!w.weapons.length)return true; // spell/any-weapon
+  return w.weapons.includes(wpn);
 }
 function rankSkills(prof){
   return SKILLS.filter(s=>!['buff','mark','banner','warcry'].includes((s.gemType||'').toLowerCase()))
+    .filter(s=>weaponOK(s,prof.wpn))                          // hard relational constraint: weapon must match
     .map(s=>({s,...scoreSkill(s,prof)})).sort((a,b)=>b.sc-a.sc);
 }
 
@@ -423,32 +457,35 @@ function resistSolver(prof, uniques){
       :`Need ${chaosTarget}% — slot ${chaosRune?chaosRune.name+' (+'+chaosRune.v+'%)':'a chaos-res soul core'} and roll ${Math.max(0,Math.ceil((chaosTarget-chaosCovered)/PER_LINE))} chaos-res suffix line(s).`};
 }
 
-// Only reward OFFENSIVE / build-defining synergy — generic life/armour/attribute uniques
-// score ~0 so they aren't suggested for every slot (rares cover those).
-function scoreUnique(u,prof){const t=textOf(u);let sc=0;
-  // damage type must scale as DAMAGE, not just appear in the name (Lightning Coil ≠ lightning build)
-  prof.dmg.forEach(d=>{ if(new RegExp(d+'\\s+(damage|penetration|exposure)','i').test(t)||new RegExp('as .*'+d+'\\s+damage','i').test(t)) sc+=3; });
-  if(prof.ail&&prof.ail.size) sc+=ailHit(t,prof)*3;
-  if(prof.arche.has('spell')&&/spell damage|increased.*spell|cast speed|per .*mana|to maximum mana/i.test(t))sc+=2;
-  if(prof.arche.has('attack')&&/attack speed|increased.*attack|melee damage|accuracy/i.test(t))sc+=2;
-  if(prof.arche.has('projectile')&&/projectile|arrow|bolt|pierc|chain|fork/i.test(t))sc+=2;
-  if(prof.arche.has('minion')&&/minion/i.test(t))sc+=3;
-  if(/critical|penetrat|exposure|gain .*as extra|more .*damage|increased .*damage/i.test(t))sc+=2;
-  if(/additional skill|grants skill|\+\d+ to level of|converted to|conversion/i.test(t))sc+=1.5; // build-enablers
+// A unique is worth a slot over a rare ONLY when it does something a rare can't for THIS spine:
+// a build-defining mechanic (grants skill/+levels, conversion, "as extra", reservation/penetration),
+// or it scales the spine's exact damage type/ailment hard. Off-spine uniques score ~0.
+function scoreUnique(u,spine){const t=textOf(u);let sc=0;
+  // build-defining mechanics — the actual reason to run a unique
+  if(/grants skill|\+\d+ to level of all|\+\d+ to level of .* skills|additional .* skill|grants .*(aura|herald)/i.test(t))sc+=4;
+  if(/converted to|conversion|gain .*% of .* as extra|adds? .* as extra/i.test(t)){ // conversion only counts if it feeds the spine
+    if(spine.dmg.size&&[...spine.dmg].some(d=>new RegExp('to '+d+'|as extra '+d+'|'+d,'i').test(t)))sc+=4; else sc+=1.5; }
+  if(/reserves no|no .* reservation|cannot be|enemies (cannot|can't)|chance to .* twice|culling/i.test(t))sc+=3;
+  // hard damage scaling for the spine's EXACT damage type (more/increased/added/penetration/exposure)
+  spine.dmg.forEach(d=>{ if(new RegExp('(more|increased|added|gain|extra|to maximum) .*'+d+' damage|'+d+' (penetration|exposure)','i').test(t)) sc+=2.5; });
+  if(spine.ail&&spine.ail.size) sc+=ailHit(t,spine)*2.5;
+  // generic but real offense (only meaningful alongside the above; small on its own)
+  if(/critical .*(chance|damage|bonus)|\bmore .* damage|penetrat|exposure/i.test(t))sc+=1.5;
+  if(spine.arche.has('minion')&&/minion/i.test(t))sc+=3;
+  if(spine.arche.has('spell')&&/spell damage|per .* mana|increased .* spell/i.test(t))sc+=1.5;
   return sc;}
 const GEAR_SLOTS=['amulet','ring','body','helmet','gloves','boots','belt'];
-// Only suggest a unique where it's genuinely best-in-slot. Real builds run a few
-// impactful uniques + rares for the rest — NOT a unique in every slot.
-function pickUniques(prof){
-  const own=ownedSlots(),by={};
-  UNIQUES.forEach(u=>{if(own.has(u.slot))return;(by[u.slot]=by[u.slot]||[]).push(u);});
-  const best=[];
-  GEAR_SLOTS.forEach(slot=>{ if(own.has(slot))return;
-    const c=(by[slot]||[]).map(u=>({u,sc:scoreUnique(u,prof)})).sort((a,b)=>b.sc-a.sc);
-    if(c.length) best.push({slot,u:c[0].u,sc:c[0].sc}); });
-  // include a unique only where it genuinely optimises the build (merit threshold) —
-  // no fixed count: could be zero, one, or several. Everything else is a rare.
-  return best.filter(x=>x.sc>=4).sort((a,b)=>b.sc-a.sc).map(x=>x.u);
+// GLOBAL ranking (not one-per-slot): rank every unique by spine synergy, keep only the few that
+// clear a real build-defining bar, at most one per slot, capped — so junk uniques never flood gear.
+function pickUniques(spine){
+  const own=ownedSlots();
+  // only slots this build actually uses: armour+jewellery, plus the chosen weapon slot (never other weapon types)
+  const allowed=new Set(GEAR_SLOTS); if(spine.wpn)allowed.add(spine.wpn);
+  const ranked=UNIQUES.filter(u=>allowed.has(u.slot)&&!own.has(u.slot)).map(u=>({u,sc:scoreUnique(u,spine)}))
+    .filter(x=>x.sc>=5).sort((a,b)=>b.sc-a.sc);   // bar: needs a mechanic + spine synergy, or strong on-type scaling
+  const out=[],usedSlot=new Set();
+  for(const{u}of ranked){ if(usedSlot.has(u.slot))continue; usedSlot.add(u.slot); out.push(u); if(out.length>=4)break; }
+  return out;
 }
 // slots the build should fill with RARES (target affixes), given owned + recommended uniques
 function rareSlotPlan(prof,uniques){
@@ -467,6 +504,18 @@ function pickRunes(prof){const dmg=[],res=[],chaos=[];
     if(prof.dmg.size&&[...prof.dmg].some(d=>txt.includes(d)))dmg.push(r);
     else if(/adds .*physical|increased .*damage|attack speed|critical/.test(txt))dmg.push(r);});
   return {dmg:dmg.slice(0,6),res:res.slice(0,6),chaos:chaos.slice(0,6)};}
+
+// SPIRIT gems (reservation: heralds, auras, persistent buffs) — scored vs the spine
+function pickSpirit(spine,n=3){
+  return SPIRIT.map(sp=>{const tg=sp.tags||{},t=(sp.description||'')+' '+sp.name;let sc=0;
+    spine.dmg.forEach(d=>{if(tg[d])sc+=3;});                 // herald/aura of the spine's element
+    if(tg.herald)sc+=2; if(tg.aura)sc+=1;
+    if(spine.arche.has('minion')&&tg.minion)sc+=3;
+    if(spine.arche.has('spell')&&(tg.spell||/spell|mana/i.test(t)))sc+=1.5;
+    if(spine.ail&&spine.ail.size)sc+=ailHit(t,spine)*2;
+    if(/more|increased .* damage|critical|penetrat|exposure|gain .* charge|extra .* damage/i.test(t))sc+=1;
+    return {sp,sc};}).filter(x=>x.sc>0).sort((a,b)=>b.sc-a.sc).slice(0,n).map(x=>x.sp);
+}
 
 // vaal / corruption advice per item
 function vaalAside(item,kind){
@@ -498,11 +547,17 @@ function anointPick(prof){ const m=matchNotables(prof,NOTABLES,1); return m[0]||
 let LAST=null;
 function forge(){
   if(!chosen.uniques.length && !$('#wpn').value && !$('#goal').value.trim()){alert('Describe a goal, or pick a unique / weapon type.');return;}
-  const prof=profile();
-  const ranked=rankSkills(prof);
+  const intent=profile();
+  // 1) pick a coherent core skill from loose intent
+  const ranked=rankSkills(intent);
+  if(!ranked.length){alert('No skill matches that weapon/class. Try clearing the weapon type.');return;}
   const main=ranked[0].s, mainScore=ranked[0];
+  // 2) derive the SPINE from that skill — now everything is scored RELATIVE to it
+  const prof=spineFrom(intent,main);
+  // 3) build the rest against the spine
   const sup=pickSupports(main,prof,5);
   const uniques=pickUniques(prof);
+  const spirit=pickSpirit(prof,3);
   const rareSlots=rareSlotPlan(prof,uniques);
   const treeNotables=matchNotables(prof,NOTABLES,6);
   const keystone=matchNotables(prof,KEYSTONES,1)[0]||null;
@@ -512,7 +567,7 @@ function forge(){
   const lvl=+$('#lvl').value||90;
   const ptEst=Math.max(0,lvl-1)+24;
   const build={asc:$('#asc').value,goal:$('#goal').value,prof,main,mainScore,alts:ranked.slice(1,4).map(x=>x.s),
-    sup,uniques,rareSlots,treeNotables,keystone,runes,wdps,res,owned:chosen.uniques.slice(),wpn:$('#wpn').value,stats:$('#stats').value,
+    sup,uniques,spirit,rareSlots,treeNotables,keystone,runes,wdps,res,owned:chosen.uniques.slice(),wpn:$('#wpn').value,stats:$('#stats').value,
     notables:$('#notables').value, treecode:$('#treecode').value, lvl, ptEst,
     pri:{dmg:$('#pDmg').checked,res:$('#pRes').checked,tanky:$('#pTanky').checked},
     jewels:DATA.jewels};
@@ -562,7 +617,14 @@ function render(b){
     h+=`<div class="gem"><div class="nm">${sp.name} <span class="pill">×${mult.toFixed(2)}</span>${ailB}${sp.external_granted?' <span class="pill">'+(sp.source||'ext')+'</span>':''}</div>
         <div class="why">${sp.description||'—'} ${dt?'· '+dt:''}</div></div>`;});
   const poolN=(DATA.compat.by_skill[b.main.name]||[]).length;
-  h+=`<div class="note">${poolN} supports compatible with ${b.main.name}; engine kept the 5 with the highest damage multiplier for your profile. Combined ≈ ×${b.sup.totalMult.toFixed(2)} more.</div></div>`;
+  h+=`<div class="note">${poolN} supports compatible with ${b.main.name}; engine kept the 5 with the highest multiplier for the ${[...prof.dmg].map(cap).join('/')||'build'} spine. Combined ≈ ×${b.sup.totalMult.toFixed(2)} more.</div></div>`;
+
+  // SPIRIT GEMS (reservation: heralds / auras / persistent buffs) — relational to the spine
+  h+=`<div class="card"><div class="sect-title">🜂 Spirit gems <span class="muted" style="text-transform:none;letter-spacing:0">— reservation buffs that fit the ${[...prof.dmg].map(cap).join('/')||'build'} spine</span></div>`;
+  if(b.spirit.length) b.spirit.forEach(sp=>{const dt=DTYPES.filter(d=>(sp.tags||{})[d]).map(dtSpan).join(' ');
+    h+=`<div class="gem"><div class="nm">${sp.name} <span class="pill">${cap(sp.gemType||'spirit')}</span></div><div class="why">${sp.description||'—'} ${dt?'· '+dt:''}</div></div>`;});
+  else h+=`<div class="muted">No spirit gem strongly fits the spine — run a generic herald/aura of your damage type, or Archmage for spell mana scaling.</div>`;
+  h+=`<div class="note">Reserve spirit on these; mind total spirit. ${SPIRIT.length} spirit gems in the dataset.</div></div>`;
 
   // GEAR — a few impactful uniques + rares for the rest (not all-uniques)
   const totU=b.owned.length+b.uniques.length;
@@ -620,7 +682,8 @@ function render(b){
 
   // AI slot (secondary)
   h+=`<div class="card" id="aicard"><div class="sect-title">🤖 AI write-up <span class="muted" style="text-transform:none;letter-spacing:0">— secondary; the math above made the calls</span></div>
-    <div id="aibody" class="muted">${$('#provider').value!=='off'?'<span class="spin"></span> asking '+($('#provider').value==='claude'?'Claude':'your local model')+'…':'AI off — pure math output.'}</div></div>`;
+    <button class="btn sec" style="width:auto;margin:0 0 10px" onclick="copyPrompt(this)">📋 Copy AI prompt (paste into Claude / any chat — no key needed)</button>
+    <div id="aibody" class="muted">${$('#provider').value!=='off'?'<span class="spin"></span> asking '+($('#provider').value==='claude'?'Claude':'your local model')+'…':'AI off — pure math output. Use the button above to get a write-up from any chat.'}</div></div>`;
 
   $('#out').innerHTML=h;
 }
@@ -642,8 +705,10 @@ ${prof.q>20?`Gemling quality cap: ${prof.q}% — every gem-quality (gemling) eff
 ENGINE OUTPUT (authoritative):
 - Skill: ${b.main.name} (${b.main.gemType}; ${[...prof.dmg].join('/')||'flexible'}). Build score ${b.mainScore.sc.toFixed(1)}. Gemling bonus${prof.q>20?` @ ${prof.q}% quality`:''}: ${gm?(prof.q>20?scaleGemling(gm.gemling_effect,prof.q):gm.gemling_effect):'n/a'}.
 - Supports (kept for highest multiplier, ≈×${b.sup.totalMult.toFixed(2)}): ${sup}
+- Spirit gems (reservation — heralds/auras for the spine): ${b.spirit.map(s=>s.name).join(', ')||'none flagged'}
 - Uniques to use (ONLY these — every other slot is a RARE, do not propose an all-unique setup): ${uqs||'none — go all-rares'}
 - Rare slots (recommend target affixes, not uniques): ${b.rareSlots.join(', ')}
+- Anoint: ${(anointPick(prof)||{}).name||'(best damage notable)'}; tree notables: ${b.treeNotables.map(n=>n.name).slice(0,5).join(', ')}; keystone: ${b.keystone?b.keystone.name:'n/a'}
 - Defense solver: elemental ${b.res.elemOK?'cappable':'tight'} (${b.res.lines} free suffix lines); chaos: ${b.res.chaosPlan}
 ${b.wdps?`- Weapon base DPS reference: ${Math.round(b.wdps.dps)} (${b.wdps.name}).`:''}
 
@@ -655,6 +720,15 @@ WRITE (<=400 words):
 5) Remaining passive points: what to allocate (clusters/notables).
 6) Vaal/corruption ideas worth gambling (incl. double-corrupt on a spare unique).
 Be specific, confident, no disclaimers.`;
+}
+function copyPrompt(btn){
+  if(!LAST){alert('Forge a build first.');return;}
+  const txt=prompt(LAST);
+  (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject())
+    .then(()=>{const o=btn.textContent;btn.textContent='✓ Copied — paste it into Claude or any chat';setTimeout(()=>btn.textContent=o,2500);})
+    .catch(()=>{ // fallback: drop the text into a textarea the user can copy
+      const ta=document.createElement('textarea');ta.value=txt;ta.style.cssText='width:100%;height:160px;margin-top:8px';
+      btn.parentNode.insertBefore(ta,btn.nextSibling);ta.select();});
 }
 async function runAI(b,provider){
   const body=$('#aibody'); if(!body)return; const text=prompt(b);

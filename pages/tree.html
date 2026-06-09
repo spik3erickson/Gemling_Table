@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PoE2 Passive Tree</title>
+<style>
+  :root {
+    --bg: #0d0e12;
+    --panel: #15171f;
+    --panel2: #1c1e28;
+    --border: #2a2c38;
+    --text: #c8c8c8;
+    --muted: #666;
+    --accent: #c9a227;
+    --accent-dim: rgba(201,162,39,0.25);
+    --keystone: #e8b84b;
+    --notable: #a0c4ff;
+    --mastery: #b87dd4;
+    --jewel: #6ecb8a;
+    --normal: #4a4e62;
+    --normal-lit: #7a7e9a;
+    --allocated: #c9a227;
+    --edge-dim: rgba(60,65,90,0.55);
+    --edge-hi: rgba(201,162,39,0.7);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 13px;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    z-index: 20;
+  }
+  header h1 { font-size: 15px; color: var(--accent); font-weight: 600; white-space: nowrap; }
+  #search {
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 220px;
+  }
+  #search:focus { outline: none; border-color: var(--accent); }
+  #search::placeholder { color: var(--muted); }
+  .hdr-btns { display: flex; gap: 6px; margin-left: auto; }
+  .btn {
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+    transition: border-color 0.15s;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  #point-count {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 80px;
+  }
+
+  /* ── Canvas wrapper ── */
+  #canvas-wrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+  #canvas-wrap.dragging { cursor: grabbing; }
+  #tree-canvas { display: block; }
+
+  /* ── Tooltip ── */
+  #tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 9px 12px;
+    max-width: 280px;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  }
+  #tooltip .tt-name {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  #tooltip .tt-kind {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  #tooltip .tt-stat { font-size: 12px; color: #aaa; line-height: 1.5; }
+  #tooltip .tt-stat + .tt-stat { margin-top: 2px; }
+
+  /* ── Legend ── */
+  #legend {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(13,14,18,0.88);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 8px 12px;
+    pointer-events: none;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 18px;
+  }
+  .leg-row { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+  .leg-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+  .leg-ring {
+    width: 10px; height: 10px; border-radius: 50%; border: 2px solid; flex-shrink: 0;
+    background: transparent;
+  }
+
+  /* ── Loading overlay ── */
+  #loading {
+    position: absolute;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    z-index: 50;
+  }
+  #loading .ld-text { color: var(--muted); font-size: 14px; }
+  #loading .ld-bar {
+    width: 220px; height: 3px;
+    background: var(--panel2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  #loading .ld-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.2s;
+    border-radius: 2px;
+  }
+  #err-msg {
+    color: #e05030;
+    font-size: 13px;
+    max-width: 400px;
+    text-align: center;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PoE2 Passive Tree</h1>
+  <input type="text" id="search" placeholder="Search nodes…" autocomplete="off" spellcheck="false">
+  <span id="point-count">0 points</span>
+  <div class="hdr-btns">
+    <button class="btn active" id="btn-asc">Ascendancy</button>
+    <button class="btn" id="btn-reset">Reset View</button>
+    <button class="btn" id="btn-clear">Clear</button>
+  </div>
+</header>
+
+<div id="canvas-wrap">
+  <canvas id="tree-canvas"></canvas>
+
+  <div id="legend">
+    <div class="leg-row"><div class="leg-dot" style="background:#e8b84b;width:13px;height:13px;"></div>Keystone</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#a0c4ff;width:9px;height:9px;"></div>Notable</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#b87dd4;width:8px;height:8px;"></div>Mastery</div>
+    <div class="leg-row"><div class="leg-ring" style="border-color:#6ecb8a;width:9px;height:9px;"></div>Jewel Socket</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#4a4e62;width:5px;height:5px;"></div>Normal</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#c9a227;width:7px;height:7px;"></div>Allocated</div>
+  </div>
+
+  <div id="loading">
+    <div class="ld-text" id="ld-msg">Loading tree data…</div>
+    <div class="ld-bar"><div class="ld-fill" id="ld-fill"></div></div>
+    <div id="err-msg"></div>
+  </div>
+</div>
+
+<div id="tooltip">
+  <div class="tt-name" id="tt-name"></div>
+  <div class="tt-kind" id="tt-kind"></div>
+  <div id="tt-stats"></div>
+</div>
+
+<script>
+'use strict';
+
+// ── Constants ─────────────────────────────────────────────────────────────────
+const KIND_COLORS = {
+  keystone: '#e8b84b',
+  notable:  '#a0c4ff',
+  mastery:  '#b87dd4',
+  jewel:    '#6ecb8a',
+  normal:   '#4a4e62',
+};
+const KIND_RADIUS = {
+  keystone: 9,
+  notable:  6,
+  mastery:  5,
+  jewel:    6,
+  normal:   3,
+};
+const ALLOCATED_COLOR = '#c9a227';
+const ALLOCATED_GLOW  = 'rgba(201,162,39,0.45)';
+const SEARCH_HIT_COLOR = '#fff';
+const EDGE_NORMAL = 'rgba(55,60,85,0.7)';
+const EDGE_ALLOC  = 'rgba(201,162,39,0.75)';
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let nodes = [];          // processed node objects
+let idMap  = {};         // id -> node
+let edges  = [];         // [{a: node, b: node}]
+let bounds = {};
+
+let pan  = { x: 0, y: 0 };
+let zoom = 1;
+let drag = { active: false, sx: 0, sy: 0, px: 0, py: 0 };
+
+let hoveredNode = null;
+let allocated   = new Set();
+let searchQuery = '';
+let searchHits  = new Set();   // node ids
+let showAsc     = true;
+
+let raf = null;
+let dirty = true;
+
+// ── Canvas setup ──────────────────────────────────────────────────────────────
+const wrap   = document.getElementById('canvas-wrap');
+const canvas = document.getElementById('tree-canvas');
+const ctx    = canvas.getContext('2d');
+
+function resize() {
+  canvas.width  = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  dirty = true;
+}
+window.addEventListener('resize', resize);
+resize();
+
+// ── Load data ─────────────────────────────────────────────────────────────────
+const ldFill = document.getElementById('ld-fill');
+const ldMsg  = document.getElementById('ld-msg');
+const errMsg = document.getElementById('err-msg');
+
+async function loadData() {
+  try {
+    ldMsg.textContent = 'Fetching tree_layout.json…';
+    ldFill.style.width = '10%';
+
+    const resp = await fetch('../data/tree_layout.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${resp.url}`);
+
+    ldMsg.textContent = 'Parsing…';
+    ldFill.style.width = '50%';
+
+    const raw = await resp.json();
+
+    ldMsg.textContent = 'Building graph…';
+    ldFill.style.width = '75%';
+
+    bounds = raw.bounds;
+    processNodes(raw.nodes);
+
+    ldFill.style.width = '100%';
+    ldMsg.textContent = 'Done';
+
+    // Hide loading after short delay
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+    }, 200);
+
+    resetView();
+    startLoop();
+
+  } catch (e) {
+    ldMsg.textContent = 'Failed to load';
+    errMsg.textContent = String(e);
+    errMsg.style.display = 'block';
+    ldFill.style.background = '#e05030';
+  }
+}
+
+function processNodes(raw) {
+  // Build node objects
+  for (const n of raw) {
+    const obj = {
+      id:    n.id,
+      name:  n.name,
+      x:     n.x,
+      y:     n.y,
+      kind:  n.kind,
+      asc:   n.asc,
+      stats: n.stats,
+      out:   n.out,
+    };
+    nodes.push(obj);
+    idMap[n.id] = obj;
+  }
+
+  // Build edge list (deduplicate)
+  const seen = new Set();
+  for (const n of nodes) {
+    for (const toId of n.out) {
+      const target = idMap[toId];
+      if (!target) continue;
+      const key = n.id < toId ? `${n.id}|${toId}` : `${toId}|${n.id}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        edges.push({ a: n, b: target });
+      }
+    }
+  }
+}
+
+// ── View transforms ───────────────────────────────────────────────────────────
+function worldToScreen(wx, wy) {
+  return {
+    x: wx * zoom + pan.x,
+    y: wy * zoom + pan.y,
+  };
+}
+function screenToWorld(sx, sy) {
+  return {
+    x: (sx - pan.x) / zoom,
+    y: (sy - pan.y) / zoom,
+  };
+}
+
+function resetView() {
+  const w = canvas.width;
+  const h = canvas.height;
+  const bw = bounds.max_x - bounds.min_x;
+  const bh = bounds.max_y - bounds.min_y;
+  const margin = 60;
+  zoom = Math.min((w - margin * 2) / bw, (h - margin * 2) / bh);
+  const cx = (bounds.min_x + bounds.max_x) / 2;
+  const cy = (bounds.min_y + bounds.max_y) / 2;
+  pan.x = w / 2 - cx * zoom;
+  pan.y = h / 2 - cy * zoom;
+  dirty = true;
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function startLoop() {
+  function frame() {
+    if (dirty) {
+      draw();
+      dirty = false;
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  raf = requestAnimationFrame(frame);
+}
+
+function draw() {
+  const W = canvas.width;
+  const H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#0d0e12';
+  ctx.fillRect(0, 0, W, H);
+
+  if (!nodes.length) return;
+
+  const hasSearch = searchQuery.length > 0;
+
+  // Viewport culling bounds in world space
+  const tl = screenToWorld(0, 0);
+  const br = screenToWorld(W, H);
+  const margin = 20 / zoom;  // extra world units margin
+  const vxMin = tl.x - margin;
+  const vxMax = br.x + margin;
+  const vyMin = tl.y - margin;
+  const vyMax = br.y + margin;
+
+  // ── Draw edges ──
+  ctx.save();
+  ctx.lineWidth = Math.max(0.4, zoom * 0.6);
+
+  // Batch edges by color for fewer state changes
+  const edgesNormal = [];
+  const edgesAlloc  = [];
+
+  for (const e of edges) {
+    const a = e.a, b = e.b;
+    // Skip ascendancy if hidden
+    if (!showAsc && (a.asc || b.asc)) continue;
+    // Cull: at least one endpoint in view (loose check)
+    const aInView = a.x > vxMin && a.x < vxMax && a.y > vyMin && a.y < vyMax;
+    const bInView = b.x > vxMin && b.x < vxMax && b.y > vyMin && b.y < vyMax;
+    if (!aInView && !bInView) continue;
+
+    if (allocated.has(a.id) && allocated.has(b.id)) {
+      edgesAlloc.push(e);
+    } else {
+      edgesNormal.push(e);
+    }
+  }
+
+  // Draw normal edges
+  ctx.strokeStyle = EDGE_NORMAL;
+  ctx.beginPath();
+  for (const e of edgesNormal) {
+    const ap = worldToScreen(e.a.x, e.a.y);
+    const bp = worldToScreen(e.b.x, e.b.y);
+    ctx.moveTo(ap.x, ap.y);
+    ctx.lineTo(bp.x, bp.y);
+  }
+  ctx.stroke();
+
+  // Draw allocated edges
+  ctx.strokeStyle = EDGE_ALLOC;
+  ctx.lineWidth = Math.max(0.8, zoom * 1.0);
+  ctx.beginPath();
+  for (const e of edgesAlloc) {
+    const ap = worldToScreen(e.a.x, e.a.y);
+    const bp = worldToScreen(e.b.x, e.b.y);
+    ctx.moveTo(ap.x, ap.y);
+    ctx.lineTo(bp.x, bp.y);
+  }
+  ctx.stroke();
+  ctx.restore();
+
+  // ── Draw nodes ──
+  for (const n of nodes) {
+    if (!showAsc && n.asc) continue;
+
+    // Cull
+    if (n.x < vxMin || n.x > vxMax || n.y < vyMin || n.y > vyMax) continue;
+
+    const p = worldToScreen(n.x, n.y);
+    const isAlloc  = allocated.has(n.id);
+    const isHover  = n === hoveredNode;
+    const isHit    = hasSearch && searchHits.has(n.id);
+    const isDimmed = hasSearch && !isHit;
+
+    const baseR = KIND_RADIUS[n.kind] * Math.max(0.4, Math.min(zoom, 2.5));
+
+    ctx.save();
+
+    // Global alpha for search dim
+    if (isDimmed) ctx.globalAlpha = 0.12;
+    else if (hasSearch && isHit) ctx.globalAlpha = 1.0;
+
+    let color = KIND_COLORS[n.kind];
+    let radius = baseR;
+
+    if (isAlloc) {
+      color  = ALLOCATED_COLOR;
+      radius = baseR * 1.3;
+    }
+    if (isHover) {
+      radius = baseR * 1.5;
+    }
+
+    // Glow for keystones + allocated
+    if ((n.kind === 'keystone' || isAlloc) && !isDimmed) {
+      ctx.shadowColor = isAlloc ? ALLOCATED_GLOW : 'rgba(232,184,75,0.4)';
+      ctx.shadowBlur  = 8 * Math.max(0.5, zoom);
+    }
+
+    // Jewel sockets: draw as ring
+    if (n.kind === 'jewel') {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+      ctx.strokeStyle = isAlloc ? ALLOCATED_COLOR : color;
+      ctx.lineWidth   = Math.max(1, zoom * 1.2);
+      ctx.stroke();
+      if (isAlloc) {
+        ctx.fillStyle = 'rgba(201,162,39,0.2)';
+        ctx.fill();
+      }
+    } else {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    // Search hit highlight ring
+    if (isHit) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, radius + Math.max(2, zoom * 1.5), 0, Math.PI * 2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth   = Math.max(1, zoom * 0.8);
+      ctx.globalAlpha = 0.7;
+      ctx.stroke();
+    }
+
+    // Hover ring
+    if (isHover) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, radius + Math.max(2, zoom * 1.5), 0, Math.PI * 2);
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth   = Math.max(1, zoom * 0.8);
+      ctx.globalAlpha = 0.6;
+      ctx.stroke();
+    }
+
+    // Node name label at high zoom
+    if (zoom > 2.5 && (n.kind === 'keystone' || n.kind === 'notable') && n.name) {
+      ctx.globalAlpha = 0.85;
+      ctx.shadowBlur  = 0;
+      const fontSize  = Math.min(11, 8 * zoom / 2.5);
+      ctx.font = `${fontSize}px 'Segoe UI', sans-serif`;
+      ctx.fillStyle   = '#ddd';
+      ctx.textAlign   = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText(n.name, p.x, p.y + radius + 2);
+    }
+
+    ctx.restore();
+  }
+}
+
+// ── Hit-test (find node under cursor) ─────────────────────────────────────────
+function hitTest(sx, sy) {
+  const w = screenToWorld(sx, sy);
+  let best = null;
+  let bestDist = Infinity;
+  const threshold = 14 / zoom;   // world-space pick radius
+
+  for (const n of nodes) {
+    if (!showAsc && n.asc) continue;
+    const dx = n.x - w.x;
+    const dy = n.y - w.y;
+    const d  = Math.sqrt(dx * dx + dy * dy);
+    const pickR = (KIND_RADIUS[n.kind] / zoom) + threshold;
+    if (d < pickR && d < bestDist) {
+      best = n;
+      bestDist = d;
+    }
+  }
+  return best;
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+const tooltip  = document.getElementById('tooltip');
+const ttName   = document.getElementById('tt-name');
+const ttKind   = document.getElementById('tt-kind');
+const ttStats  = document.getElementById('tt-stats');
+
+const KIND_LABEL = {
+  keystone: 'Keystone',
+  notable:  'Notable Passive',
+  mastery:  'Mastery',
+  jewel:    'Jewel Socket',
+  normal:   'Passive',
+};
+const KIND_COLORS_CSS = {
+  keystone: '#e8b84b',
+  notable:  '#a0c4ff',
+  mastery:  '#b87dd4',
+  jewel:    '#6ecb8a',
+  normal:   '#7a7e9a',
+};
+
+function showTooltip(node, mx, my) {
+  ttName.textContent  = node.name || '(unnamed)';
+  ttKind.textContent  = (node.asc ? 'Ascendancy · ' : '') + (KIND_LABEL[node.kind] || node.kind);
+  ttKind.style.color  = KIND_COLORS_CSS[node.kind] || '#888';
+
+  ttStats.innerHTML = '';
+  for (const s of node.stats) {
+    const d = document.createElement('div');
+    d.className = 'tt-stat';
+    d.textContent = s;
+    ttStats.appendChild(d);
+  }
+
+  // Position tooltip near cursor, avoid edges
+  const tw = 280, th = tooltip.offsetHeight || 80;
+  let tx = mx + 16, ty = my - 10;
+  if (tx + tw > window.innerWidth  - 8) tx = mx - tw - 12;
+  if (ty + th > window.innerHeight - 8) ty = window.innerHeight - th - 8;
+  if (ty < 8) ty = 8;
+
+  tooltip.style.left    = tx + 'px';
+  tooltip.style.top     = ty + 'px';
+  tooltip.style.display = 'block';
+}
+
+function hideTooltip() {
+  tooltip.style.display = 'none';
+}
+
+// ── Mouse events ──────────────────────────────────────────────────────────────
+let mouseX = 0, mouseY = 0;
+
+wrap.addEventListener('mousedown', e => {
+  if (e.button !== 0) return;
+  drag.active = true;
+  drag.sx = e.clientX;
+  drag.sy = e.clientY;
+  drag.px = pan.x;
+  drag.py = pan.y;
+  wrap.classList.add('dragging');
+});
+
+window.addEventListener('mouseup', e => {
+  if (!drag.active) return;
+  drag.active = false;
+  wrap.classList.remove('dragging');
+
+  // If barely moved, treat as click
+  const moved = Math.abs(e.clientX - drag.sx) + Math.abs(e.clientY - drag.sy);
+  if (moved < 5) {
+    const rect = canvas.getBoundingClientRect();
+    const hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
+    if (hit) {
+      if (allocated.has(hit.id)) allocated.delete(hit.id);
+      else allocated.add(hit.id);
+      updatePointCount();
+      dirty = true;
+    }
+  }
+});
+
+window.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  if (drag.active) {
+    pan.x = drag.px + (e.clientX - drag.sx);
+    pan.y = drag.py + (e.clientY - drag.sy);
+    dirty = true;
+    hideTooltip();
+    return;
+  }
+
+  const rect = canvas.getBoundingClientRect();
+  const hit  = hitTest(e.clientX - rect.left, e.clientY - rect.top);
+  if (hit !== hoveredNode) {
+    hoveredNode = hit;
+    dirty = true;
+  }
+  if (hit) {
+    showTooltip(hit, e.clientX, e.clientY);
+  } else {
+    hideTooltip();
+  }
+});
+
+wrap.addEventListener('wheel', e => {
+  e.preventDefault();
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+
+  const factor = e.deltaY < 0 ? 1.12 : 1 / 1.12;
+  const newZoom = Math.max(0.05, Math.min(20, zoom * factor));
+
+  // Zoom toward cursor
+  pan.x = mx - (mx - pan.x) * (newZoom / zoom);
+  pan.y = my - (my - pan.y) * (newZoom / zoom);
+  zoom  = newZoom;
+  dirty = true;
+}, { passive: false });
+
+// Touch support
+let lastTouchDist = 0;
+let lastTouchMid  = { x: 0, y: 0 };
+
+wrap.addEventListener('touchstart', e => {
+  e.preventDefault();
+  if (e.touches.length === 1) {
+    drag.active = true;
+    drag.sx = e.touches[0].clientX;
+    drag.sy = e.touches[0].clientY;
+    drag.px = pan.x;
+    drag.py = pan.y;
+  } else if (e.touches.length === 2) {
+    drag.active = false;
+    const t0 = e.touches[0], t1 = e.touches[1];
+    lastTouchDist = Math.hypot(t1.clientX - t0.clientX, t1.clientY - t0.clientY);
+    lastTouchMid  = { x: (t0.clientX + t1.clientX) / 2, y: (t0.clientY + t1.clientY) / 2 };
+  }
+}, { passive: false });
+
+wrap.addEventListener('touchmove', e => {
+  e.preventDefault();
+  if (e.touches.length === 1 && drag.active) {
+    pan.x = drag.px + (e.touches[0].clientX - drag.sx);
+    pan.y = drag.py + (e.touches[0].clientY - drag.sy);
+    dirty = true;
+  } else if (e.touches.length === 2) {
+    const t0 = e.touches[0], t1 = e.touches[1];
+    const dist = Math.hypot(t1.clientX - t0.clientX, t1.clientY - t0.clientY);
+    const mid  = { x: (t0.clientX + t1.clientX) / 2, y: (t0.clientY + t1.clientY) / 2 };
+    const rect = canvas.getBoundingClientRect();
+    const mx   = mid.x - rect.left;
+    const my   = mid.y - rect.top;
+    const factor   = dist / lastTouchDist;
+    const newZoom  = Math.max(0.05, Math.min(20, zoom * factor));
+    pan.x = mx - (mx - pan.x) * (newZoom / zoom);
+    pan.y = my - (my - pan.y) * (newZoom / zoom);
+    zoom  = newZoom;
+    lastTouchDist = dist;
+    dirty = true;
+  }
+}, { passive: false });
+
+wrap.addEventListener('touchend', e => {
+  if (e.touches.length < 2) {
+    drag.active = false;
+  }
+}, { passive: false });
+
+// ── Search ────────────────────────────────────────────────────────────────────
+const searchInput = document.getElementById('search');
+
+searchInput.addEventListener('input', () => {
+  searchQuery = searchInput.value.trim().toLowerCase();
+  searchHits.clear();
+
+  if (searchQuery) {
+    for (const n of nodes) {
+      if (!showAsc && n.asc) continue;
+      const nameMatch  = n.name.toLowerCase().includes(searchQuery);
+      const statMatch  = n.stats.some(s => s.toLowerCase().includes(searchQuery));
+      if (nameMatch || statMatch) searchHits.add(n.id);
+    }
+  }
+  dirty = true;
+});
+
+// ── Controls ──────────────────────────────────────────────────────────────────
+document.getElementById('btn-reset').addEventListener('click', () => {
+  resetView();
+  dirty = true;
+});
+
+document.getElementById('btn-clear').addEventListener('click', () => {
+  allocated.clear();
+  updatePointCount();
+  dirty = true;
+});
+
+const btnAsc = document.getElementById('btn-asc');
+btnAsc.addEventListener('click', () => {
+  showAsc = !showAsc;
+  btnAsc.classList.toggle('active', showAsc);
+  dirty = true;
+});
+
+function updatePointCount() {
+  const el = document.getElementById('point-count');
+  const n  = allocated.size;
+  el.textContent = n === 1 ? '1 point' : `${n} points`;
+}
+
+// ── Keyboard shortcuts ────────────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.target === searchInput) return;
+  if (e.key === 'Escape') {
+    searchInput.value = '';
+    searchQuery = '';
+    searchHits.clear();
+    dirty = true;
+  }
+  if (e.key === 'r' || e.key === 'R') {
+    resetView();
+  }
+});
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>
