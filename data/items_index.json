@@ -1,0 +1,28 @@
+{
+  "version": "0.5",
+  "source": "repoe-fork/pob-data PoB export",
+  "counts": {
+    "uniques": 395,
+    "bases": 1715,
+    "runes": 283,
+    "jewel_bases": 9,
+    "jewel_uniques": 7,
+    "cluster_types": 3,
+    "rune_types": {
+      "Rune": 213,
+      "AbyssalEye": 4,
+      "SoulCore": 34,
+      "Idol": 31,
+      "CongealedMist": 1
+    }
+  },
+  "files": [
+    "data/uniques.json",
+    "data/bases.json",
+    "data/runes.json",
+    "data/jewels.json",
+    "pages/items_catalog.html"
+  ],
+  "id_only_slots": [],
+  "notes": "id_only_slots lists base item slots whose implicit mods are stored as stat-id references only and need a StatDescriptions join to resolve to human-readable text. All other mods are already in text form."
+}

@@ -1,0 +1,4198 @@
+{
+  "version": "0.5",
+  "source": "repoe-fork/pob-data PoB export",
+  "count": 283,
+  "type_breakdown": {
+    "Rune": 213,
+    "AbyssalEye": 4,
+    "SoulCore": 34,
+    "Idol": 31,
+    "CongealedMist": 1
+  },
+  "items": [
+    {
+      "name": "Adept Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+9 to Dexterity"
+        ],
+        "caster": [
+          "+9 to Dexterity"
+        ],
+        "weapon": [
+          "+9 to Dexterity"
+        ]
+      }
+    },
+    {
+      "name": "Aldur's Legacy",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power"
+        ],
+        "caster": [
+          "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power"
+        ],
+        "weapon": [
+          "When socketed into a Unique Kalguuran or Ezomyte item, destroys the item to create a Rune imbued with that item's power"
+        ]
+      }
+    },
+    {
+      "name": "Amanamu's Gaze",
+      "type": "AbyssalEye",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "+2 to Armour per 1 Spirit"
+        ],
+        "boots": [
+          "1% increased Movement Speed per 15 Spirit, up to a maximum of 40%",
+          "Other Modifiers to Movement Speed except for Sprinting do not apply"
+        ],
+        "helmet": [
+          "Remove a Damaging Ailment when you use a Command Skill"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Animosity",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "talisman": [
+          "Gain 2 Druidic Prowess when you Heavy Stun a Rare or Unique Enemy",
+          "Bonded: 40% increased Stun Buildup"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Control",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "quarterstaff": [
+          "50% increased Immobilisation buildup",
+          "Bonded: 30% increased Damage against Immobilised Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Decay",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "wand": [
+          "25% increased Withered Magnitude",
+          "Bonded: 15% chance that when Volatility on you explodes, you regain an equivalent amount of Volatility"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Detonation",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "crossbow": [
+          "Grenades have 10% chance to activate a second time",
+          "Bonded: 40% increased Crossbow Reload Speed"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Discovery",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "staff": [
+          "30% chance to create an additional Remnant",
+          "Bonded: +1 to maximum number of Elemental Infusions"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Dueling",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "buckler": [
+          "30% increased Parried Debuff Magnitude",
+          "Bonded: 15% increased Block chance"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Prowess",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "spear": [
+          "30% chance when you gain a Charge to gain an additional Charge",
+          "Bonded: 30% increased Endurance, Frenzy and Power Charge Duration"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Retaliation",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "shield": [
+          "8% increased Attack Speed if you have Blocked Recently",
+          "Bonded: +3% to maximum Block chance"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Shattering",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "one hand mace": [
+          "40% increased effect of Fully Broken Armour",
+          "Bonded: Break 50% increased Armour"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Splinters",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "bow": [
+          "+50% Surpassing chance to fire an additional Arrow",
+          "Bonded: 30% increased Projectile Speed"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of Witchcraft",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "focus": [
+          "40% increased Area of Effect of Curses",
+          "Bonded: 15% faster Curse Activation"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of the Horde",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "sceptre": [
+          "Minions have 8% increased Attack and Cast Speed",
+          "Bonded: Minions have 10% increased Movement Speed"
+        ]
+      }
+    },
+    {
+      "name": "Ancient Rune of the Titan",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "two hand mace": [
+          "10% chance for Slam Skills you use yourself to cause an additional Aftershock",
+          "Bonded: 15% increased Area of Effect for Attacks"
+        ]
+      }
+    },
+    {
+      "name": "Astrid's Creativity",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Can have 1 additional Crafted Modifier"
+        ],
+        "caster": [
+          "Can have 1 additional Crafted Modifier"
+        ],
+        "weapon": [
+          "Can have 1 additional Crafted Modifier"
+        ]
+      }
+    },
+    {
+      "name": "Atmohua's Soul Core of Retreat",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "Gain additional Ailment Threshold equal to 15% of maximum Energy Shield",
+          "Gain additional Stun Threshold equal to 15% of maximum Energy Shield"
+        ],
+        "focus": [
+          "Gain additional Ailment Threshold equal to 15% of maximum Energy Shield",
+          "Gain additional Stun Threshold equal to 15% of maximum Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Bear Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "helmet": [
+          "10% increased Area of Effect",
+          "Bonded: 12% increased Reservation Efficiency of Companion Skills"
+        ],
+        "sceptre": [
+          "Allies in your Presence deal 12 to 18 added Attack Physical Damage",
+          "Bonded: 40% increased Attack Damage while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Betrayal of Aldur",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "caster": [
+          "Transforms all Fire, Cold and Lightning modifiers on the item into equivalent Chaos modifiers",
+          "Bonded: 25% increased Chaos Damage"
+        ],
+        "weapon": [
+          "Transforms all Fire, Cold and Lightning modifiers on the item into equivalent Chaos modifiers",
+          "Bonded: 25% increased Chaos Damage"
+        ]
+      }
+    },
+    {
+      "name": "Boar Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "Gain 1 Rage on Melee Hit",
+          "Bonded: 25% increased Warcry Cooldown Recovery Rate"
+        ],
+        "sceptre": [
+          "Allies in your Presence Regenerate 0.5% of your Maximum Life per second",
+          "Bonded: 25% increased Life Regeneration rate while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Body Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+45 to maximum Life",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+40 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "wand": [
+          "+40 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "weapon": [
+          "Leeches 4% of Physical Damage as Life",
+          "Bonded: 5% increased maximum Life"
+        ]
+      }
+    },
+    {
+      "name": "Breath of Aldur",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "caster": [
+          "When socketed, transforms all Fire and Lightning modifiers to equivalent Cold modifiers",
+          "Bonded: 25% increased Cold Damage"
+        ],
+        "weapon": [
+          "When socketed, transforms all Fire and Lightning modifiers to equivalent Cold modifiers",
+          "Bonded: 25% increased Cold Damage"
+        ]
+      }
+    },
+    {
+      "name": "Cadigan's Epiphany",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "Destroys all Augment Sockets on the item to create a Jewel Socket"
+        ]
+      }
+    },
+    {
+      "name": "Cat Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "25% increased Accuracy Rating",
+          "Bonded: 30% increased Charm Charges gained"
+        ],
+        "sceptre": [
+          "Allies in your Presence have 14% increased Critical Hit Chance",
+          "Bonded: 25% increased Critical Hit Chance while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Charging Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "12% increased Runic Ward Regeneration Rate",
+          "Bonded: Regenerate 15 Runic Ward per second"
+        ]
+      }
+    },
+    {
+      "name": "Cholotl's Soul Core of War",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "bow": [
+          "20% increased Projectile Speed"
+        ]
+      }
+    },
+    {
+      "name": "Citaqualotl's Soul Core of Foulness",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "weapon": [
+          "Adds 19 to 29 Chaos damage"
+        ]
+      }
+    },
+    {
+      "name": "Citaqualotl's Thesis",
+      "type": "SoulCore",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "You Recoup 50% of Damage taken by your Offerings as Life"
+        ],
+        "boots": [
+          "Sacrifice 10% of maximum Life to gain that much Guard when you Dodge Roll"
+        ],
+        "gloves": [
+          "One of your Persistent Minions revives when an Offering expires"
+        ]
+      }
+    },
+    {
+      "name": "Countess Seske's Rune of Archery",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "bow": [
+          "Bow Attacks fire an additional Arrow",
+          "Bonded: 20% increased Projectile Speed"
+        ]
+      }
+    },
+    {
+      "name": "Courtesan Mannan's Rune of Cruelty",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "20% increased Magnitude of Damaging Ailments you inflict",
+          "Bonded: 15% increased Duration of Damaging Ailments on Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Craiceann's Rune of Recovery",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "30% increased Energy Shield Recharge Rate",
+          "Bonded: Gain additional Ailment Threshold equal to 50% of maximum Energy Shield",
+          "Bonded: Gain additional Stun Threshold equal to 50% of maximum Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Craiceann's Rune of Warding",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "50% reduced effect of Curses on you",
+          "Bonded: 8% increased Curse Magnitudes"
+        ]
+      }
+    },
+    {
+      "name": "Desert Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+14% to Fire Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 8% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "wand": [
+          "Gain 8% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "weapon": [
+          "Adds 7 to 11 Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ]
+      }
+    },
+    {
+      "name": "Emergent Instinct",
+      "type": "Rune",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "Thorns Damage is Lucky against targets with Fully Broken Armour",
+          "Bonded: 30% increased Thorns damage"
+        ],
+        "gloves": [
+          "Regenerate 5% of maximum Life per Second if you have used a Command Skill Recently",
+          "Bonded: 20% increased Life Regeneration rate"
+        ],
+        "helmet": [
+          "Targets that are Blinded, Maimed, and Bleeding cannot Evade your Hits",
+          "Bonded: 30% increased Immobilisation buildup"
+        ]
+      }
+    },
+    {
+      "name": "Emergent Possibility",
+      "type": "Rune",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "15% of Chaos Damage from Hits taken as a Damage of a random Element",
+          "Bonded: +13% to Chaos Resistance"
+        ],
+        "boots": [
+          "50% increased Runic Ward Regeneration Rate while Sprinting",
+          "Bonded: 15% increased Runic Ward Cost Efficiency"
+        ],
+        "gloves": [
+          "Gain 1% of Damage as Extra Damage of a random Element per",
+          "Rune Socketed in Equipped Items",
+          "Bonded: 20% increased Elemental Damage"
+        ]
+      }
+    },
+    {
+      "name": "Emergent Protection",
+      "type": "Rune",
+      "rank": 60,
+      "effects": {
+        "boots": [
+          "When you stop Sprinting, gain Guard equal to 4% of maximum Life per second spent Sprinting, up to a maximum of 20%, for 4 seconds",
+          "Bonded: 20% increased Guard gained"
+        ],
+        "gloves": [
+          "Banners also grant 2% of Life Regenerated per second to affected targets",
+          "Bonded: Regenerate 0.5% of maximum Life per second"
+        ],
+        "helmet": [
+          "Gain 1 Endurance Charge on reaching Low Life, only once every 2 seconds",
+          "Bonded: 40% increased Endurance Charge Duration"
+        ]
+      }
+    },
+    {
+      "name": "Emergent Vigour",
+      "type": "Rune",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "Gain Maximum Energy Shield equal to 50% of total",
+          "Strength Requirements of Equipped Armour Items",
+          "Bonded: +20 to Strength"
+        ],
+        "boots": [
+          "Hits against you have no Critical Damage Bonus while on Consecrated Ground",
+          "Bonded: 20% increased Effect of Consecrated Ground you create"
+        ],
+        "helmet": [
+          "+1 to maximum Life per 8 Armour on Equipped Helmet",
+          "Bonded: +20 to Spirit"
+        ]
+      }
+    },
+    {
+      "name": "Estazunti's Soul Core of Convalescence",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "12% increased speed of Recoup Effects"
+        ],
+        "helmet": [
+          "8% of Damage taken Recouped as Life"
+        ]
+      }
+    },
+    {
+      "name": "Farrul's Rune of Grace",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "8% increased Deflection Rating while moving",
+          "Bonded: Prevent +3% of Damage from Deflected Hits"
+        ]
+      }
+    },
+    {
+      "name": "Farrul's Rune of the Chase",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "5% increased Movement Speed",
+          "Bonded: 10% increased Cooldown Recovery Rate"
+        ]
+      }
+    },
+    {
+      "name": "Farrul's Rune of the Hunt",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "weapon": [
+          "50% increased Attack Damage against Rare or Unique Enemies",
+          "Bonded: +1 to Level of all Attack Skills"
+        ]
+      }
+    },
+    {
+      "name": "Fenumus' Rune of Agony",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "staff": [
+          "Gain 13% of Damage as Extra Chaos Damage",
+          "Bonded: Gain 8% of Damage as Extra Physical Damage"
+        ],
+        "wand": [
+          "Gain 13% of Damage as Extra Chaos Damage",
+          "Bonded: Gain 8% of Damage as Extra Physical Damage"
+        ],
+        "weapon": [
+          "Gain 13% of Damage as Extra Chaos Damage",
+          "Bonded: Gain 8% of Damage as Extra Physical Damage"
+        ]
+      }
+    },
+    {
+      "name": "Fenumus' Rune of Draining",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "20% increased Withered Magnitude",
+          "Bonded: +7% to Chaos Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Fenumus' Rune of Spinning",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "8% increased Cast Speed",
+          "Bonded: 20% increased Mana Cost Efficiency while on Low Mana"
+        ]
+      }
+    },
+    {
+      "name": "Fox Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "body armour": [
+          "Idols socketed in this item gain the benefits of their Bonded modifiers",
+          "Bonded: +5% to Quality of all Skills"
+        ],
+        "sceptre": [
+          "50% increased Presence Area of Effect",
+          "Bonded: Minions have 30% increased Area of Effect"
+        ]
+      }
+    },
+    {
+      "name": "Glacial Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+14% to Cold Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 8% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "wand": [
+          "Gain 8% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "weapon": [
+          "Adds 6 to 10 Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ]
+      }
+    },
+    {
+      "name": "Greater Adept Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+12 to Dexterity"
+        ],
+        "caster": [
+          "+12 to Dexterity"
+        ],
+        "weapon": [
+          "+12 to Dexterity"
+        ]
+      }
+    },
+    {
+      "name": "Greater Body Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+60 to maximum Life",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+50 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "wand": [
+          "+50 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "weapon": [
+          "Leeches 5% of Physical Damage as Life",
+          "Bonded: 5% increased maximum Life"
+        ]
+      }
+    },
+    {
+      "name": "Greater Charging Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "16% increased Runic Ward Regeneration Rate",
+          "Bonded: Regenerate 20 Runic Ward per second"
+        ]
+      }
+    },
+    {
+      "name": "Greater Desert Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+18% to Fire Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 10% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "wand": [
+          "Gain 10% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "weapon": [
+          "Adds 13 to 16 Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ]
+      }
+    },
+    {
+      "name": "Greater Glacial Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+18% to Cold Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 10% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "wand": [
+          "Gain 10% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "weapon": [
+          "Adds 9 to 15 Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ]
+      }
+    },
+    {
+      "name": "Greater Inspiration Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "18% increased Mana Regeneration Rate",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "30% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "wand": [
+          "30% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "weapon": [
+          "Gain 30 Mana per enemy killed",
+          "Bonded: 12% of Skill Mana Costs Converted to Life Costs"
+        ]
+      }
+    },
+    {
+      "name": "Greater Iron Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "18% increased Armour, Evasion and Energy Shield",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "30% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "wand": [
+          "30% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "weapon": [
+          "18% increased Physical Damage",
+          "Bonded: 20% increased effect of Fully Broken Armour"
+        ]
+      }
+    },
+    {
+      "name": "Greater Mind Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+40 to maximum Mana",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+75 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "wand": [
+          "+75 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "weapon": [
+          "Leeches 4% of Physical Damage as Mana",
+          "Bonded: 5% increased maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Greater Rebirth Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "Regenerate 0.45% of maximum Life per second",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "10% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "wand": [
+          "10% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "weapon": [
+          "Gain 35 Life per enemy killed",
+          "Bonded: Regenerate 0.4% of maximum Life per second"
+        ]
+      }
+    },
+    {
+      "name": "Greater Resolve Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+12 to Intelligence"
+        ],
+        "caster": [
+          "+12 to Intelligence"
+        ],
+        "weapon": [
+          "+12 to Intelligence"
+        ]
+      }
+    },
+    {
+      "name": "Greater Robust Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+12 to Strength"
+        ],
+        "caster": [
+          "+12 to Strength"
+        ],
+        "weapon": [
+          "+12 to Strength"
+        ]
+      }
+    },
+    {
+      "name": "Greater Rune of Alacrity",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Debuffs on you expire 8% faster",
+          "Bonded: 15% increased Elemental Ailment Threshold"
+        ],
+        "weapon": [
+          "8% increased Skill Speed",
+          "Bonded: 15% increased Reservation Efficiency of Herald Skills"
+        ]
+      }
+    },
+    {
+      "name": "Greater Rune of Leadership",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Minions take 10% of Physical Damage as Lightning Damage",
+          "Bonded: Minions have +10% to all Elemental Resistances"
+        ],
+        "weapon": [
+          "Minions gain 10% of their Physical Damage as Extra Lightning Damage",
+          "Bonded: Minions deal 20% increased Damage"
+        ]
+      }
+    },
+    {
+      "name": "Greater Rune of Nobility",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "10% reduced effect of Shock on you",
+          "Bonded: 10% reduced Shock duration on you"
+        ],
+        "weapon": [
+          "Attacks with this Weapon have 10% chance to inflict Exposure",
+          "Bonded: 20% increased Exposure Effect"
+        ]
+      }
+    },
+    {
+      "name": "Greater Rune of Tithing",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "1 to 100 Lightning Thorns damage",
+          "Bonded: 15% increased Thorns damage"
+        ],
+        "weapon": [
+          "Meta Skills gain 10% increased Energy",
+          "Bonded: Invocated Spells have 25% chance to consume half as much Energy"
+        ]
+      }
+    },
+    {
+      "name": "Greater Stone Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+100 to Stun Threshold",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain additional Stun Threshold equal to 14% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "wand": [
+          "Gain additional Stun Threshold equal to 14% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "weapon": [
+          "Causes 40% increased Stun Buildup",
+          "Bonded: 40% increased Damage against Immobilised Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Greater Storm Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+18% to Lightning Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 10% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "wand": [
+          "Gain 10% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "weapon": [
+          "Adds 1 to 30 Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ]
+      }
+    },
+    {
+      "name": "Greater Tempered Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "31 to 52 Physical Thorns damage"
+        ],
+        "weapon": [
+          "Adds 9 to 12 Physical Damage"
+        ]
+      }
+    },
+    {
+      "name": "Greater Vision Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "16% increased Life and Mana Recovery from Flasks",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "24% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "wand": [
+          "24% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "weapon": [
+          "+120 to Accuracy Rating",
+          "Bonded: Attacks have +1% to Critical Hit Chance"
+        ]
+      }
+    },
+    {
+      "name": "Greater Ward Rune",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "armour": [
+          "+25 to maximum Runic Ward",
+          "Bonded: 15% increased Global Armour, Evasion and Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Guatelitzi's Soul Core of Endurance",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "staff": [
+          "50% chance when you gain an Endurance Charge to gain an additional Endurance Charge"
+        ],
+        "wand": [
+          "50% chance when you gain an Endurance Charge to gain an additional Endurance Charge"
+        ],
+        "weapon": [
+          "50% chance when you gain an Endurance Charge to gain an additional Endurance Charge"
+        ]
+      }
+    },
+    {
+      "name": "Guatelitzi's Thesis",
+      "type": "SoulCore",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "10% of Physical Damage prevented Recouped as Life"
+        ],
+        "boots": [
+          "Lose 5% of maximum Life per second while Sprinting",
+          "25% increased Movement Speed while Sprinting"
+        ],
+        "helmet": [
+          "Gain Armour equal to 35% of Life Lost from Hits in the past 8 seconds"
+        ]
+      }
+    },
+    {
+      "name": "Hawk Idol",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "10% increased Deflection Rating",
+          "Bonded: +12% to Cold Resistance"
+        ],
+        "sceptre": [
+          "Companions have 12% increased Attack Speed",
+          "Bonded: 8% increased Attack Speed while your Companion is in your Presence"
+        ]
+      }
+    },
+    {
+      "name": "Hayoxi's Soul Core of Heatproofing",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "+40% of Armour also applies to Cold Damage"
+        ]
+      }
+    },
+    {
+      "name": "Hedgewitch Assandra's Rune of Wisdom",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "staff": [
+          "+1 to Level of all Spell Skills",
+          "Bonded: Archon recovery period expires 30% faster"
+        ],
+        "wand": [
+          "+1 to Level of all Spell Skills",
+          "Bonded: Archon recovery period expires 30% faster"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Alira",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "15% chance when you gain a Power Charge to gain an additional Power Charge",
+          "Bonded: +1 to Maximum Power Charges"
+        ],
+        "sceptre": [
+          "When you generate a Power Charge, Allies in your Presence generate that Charge instead",
+          "Bonded: 40% increased maximum Energy Shield if you've consumed a Power Charge Recently"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Eeshta",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "15% increased Cost Efficiency",
+          "Bonded: Meta Skills have 15% increased Reservation Efficiency"
+        ],
+        "sceptre": [
+          "15% increased Mana Recovery rate while your Companion is in your Presence",
+          "Bonded: 8% increased Life Recovery Rate while your Companion is in your Presence"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Egrin",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "Enemies you Curse take 6% increased Damage",
+          "Bonded: 20% increased Area of Effect of Curses"
+        ],
+        "sceptre": [
+          "Bonded: 20% faster Curse Activation"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Eramir",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "Skills have 10% chance to not remove Charges but still count as consuming them",
+          "Bonded: 15% chance for Charms you use to not consume Charges"
+        ],
+        "sceptre": [
+          "Allies in your Presence share Charges with you",
+          "Bonded: 25% increased Endurance, Frenzy and Power Charge Duration"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Greust",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "buckler": [
+          "Gain Deflection Rating equal to 20% of Evasion Rating",
+          "Bonded: 12% increased Damage for each type of Elemental Ailment on Enemy"
+        ],
+        "sceptre": [
+          "Companions deal 10% more Damage for each different type of dead Companion you have",
+          "Bonded: Recover 3% of maximum Life when one of your Minions is Revived"
+        ],
+        "shield": [
+          "+25% of Armour also applies to Elemental Damage",
+          "Bonded: 12% increased Damage for each type of Elemental Ailment on Enemy"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Grold",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "50% increased total Power counted by Warcries",
+          "Bonded: 30% increased Glory generation"
+        ],
+        "sceptre": [
+          "15% increased Damage per each different Companion in your Presence",
+          "Bonded: 15% increased Reservation Efficiency of Companion Skills"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Kraityn",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "15% chance when you gain a Frenzy Charge to gain an additional Frenzy Charge",
+          "Bonded: +1 to Maximum Frenzy Charges"
+        ],
+        "sceptre": [
+          "When you generate a Frenzy Charge, Allies in your Presence generate that Charge instead",
+          "Bonded: 40% increased Evasion Rating if you've consumed a Frenzy Charge Recently"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Maxarius",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "+1 Charm Slot",
+          "Bonded: Storm Skills have +1 to Limit"
+        ],
+        "sceptre": [
+          "Flasks gain 0.2 charges per Second",
+          "Bonded: 20% increased Life and Mana Recovery from Flasks"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Oak",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "15% chance when you gain an Endurance Charge to gain an additional Endurance Charge",
+          "Bonded: +1 to Maximum Endurance Charges"
+        ],
+        "sceptre": [
+          "When you generate an Endurance Charge, Allies in your Presence generate that Charge instead",
+          "Bonded: 40% increased Armour if you've consumed an Endurance Charge Recently"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Ralakesh",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "8% increased Reservation Efficiency of Minion Skills",
+          "Bonded: Minions Revive 8% faster"
+        ],
+        "sceptre": [
+          "40% increased Armour, Evasion and Energy Shield while your Companion is in your Presence",
+          "Bonded: Companions have 25% increased maximum Life"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Silk",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "buckler": [
+          "Bonded: 30% increased Parry Range"
+        ],
+        "sceptre": [
+          "Companions in your Presence gain 1 Rage on hit",
+          "Bonded: Companions have 30% increased Area of Effect"
+        ],
+        "shield": [
+          "15% increased Block chance while your Companion is in your Presence",
+          "Bonded: +3% to maximum Block chance"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Sirrius",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "8% increased Attack Speed",
+          "Bonded: 20% reduced Slowing Potency of Debuffs on You"
+        ],
+        "sceptre": [
+          "Allies in your Presence have 8% increased Movement Speed",
+          "Bonded: 4% increased Movement Speed"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Thruldana",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "sceptre": [
+          "Allies in your Presence deal 13 to 27 added Attack Chaos Damage",
+          "Bonded: 15% increased Withered Magnitude"
+        ],
+        "weapon": [
+          "25% reduced Poison Duration",
+          "Targets can be affected by +1 of your Poisons at the same time",
+          "Bonded: Gain 13% of Physical Damage as extra Chaos Damage"
+        ]
+      }
+    },
+    {
+      "name": "Idol of Yeena",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "30% increased Skill Effect Duration with Plant Skills",
+          "Bonded: Plants have a 25% chance to immediately Overgrow when they enter your Presence for the first time"
+        ],
+        "sceptre": [
+          "Plants have a 25% chance to immediately Overgrow when they enter your Presence for the first time",
+          "Bonded: 30% increased Skill Effect Duration with Plant Skills"
+        ]
+      }
+    },
+    {
+      "name": "Idol of the Martyr",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "martial weapon wand or staff": [
+          "25% reduced Spirit",
+          "Meta Skills gain 40% increased Energy",
+          "Bonded: Invocated skills have 25% increased Maximum Energy",
+          "Bonded: Meta Skills have 25% reduced Reservation Efficiency"
+        ],
+        "sceptre": [
+          "40% reduced Presence Area of Effect",
+          "Aura Skills have 25% increased Magnitudes",
+          "Bonded: Allies in your Presence Regenerate 3% of your Maximum Life per second",
+          "Bonded: 25% reduced Life Regeneration rate"
+        ]
+      }
+    },
+    {
+      "name": "Idol of the Pharisee",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "martial weapon wand or staff": [
+          "30% reduced maximum Mana",
+          "Gain 2% of Damage as Extra Physical Damage per ten percent missing Mana",
+          "Bonded: 30% reduced Mana Cost Efficiency",
+          "Bonded: 12% increased Skill Speed while on Low Mana"
+        ],
+        "sceptre": [
+          "30% reduced Mana Cost Efficiency of Command Skills",
+          "Minions deal 60% increased Damage with Command Skills",
+          "Bonded: 25% reduced Reservation Efficiency of Minion Skills",
+          "Bonded: Temporary Minion Skills have +2 to Limit of Minions summoned"
+        ]
+      }
+    },
+    {
+      "name": "Idol of the Sycophant",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "martial weapon wand or staff": [
+          "-20% to all Elemental Resistances",
+          "Gain 20% of Damage as Extra Damage of a random Element",
+          "Bonded: -20% to Chaos Resistance",
+          "Bonded: Gain 20% of Damage as Extra Chaos Damage"
+        ],
+        "sceptre": [
+          "Companions in your Presence have -20% to all Elemental Resistances",
+          "Companions in your Presence Gain 20% of Damage as Extra Damage of a random Element",
+          "Bonded: Allies in your Presence Gain 20% of Damage as Extra Chaos Damage",
+          "Bonded: Companions in your Presence have -20% to Chaos Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Inspiration Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "15% increased Mana Regeneration Rate",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "25% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "wand": [
+          "25% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "weapon": [
+          "Gain 20 Mana per enemy killed",
+          "Bonded: 12% of Skill Mana Costs Converted to Life Costs"
+        ]
+      }
+    },
+    {
+      "name": "Ire of Aldur",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "caster": [
+          "Transforms all Fire and Cold modifiers on the item into equivalent Lightning modifiers",
+          "Bonded: 25% increased Lightning Damage"
+        ],
+        "weapon": [
+          "Transforms all Fire and Cold modifiers on the item into equivalent Lightning modifiers",
+          "Bonded: 25% increased Lightning Damage"
+        ]
+      }
+    },
+    {
+      "name": "Iron Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "16% increased Armour, Evasion and Energy Shield",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "25% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "wand": [
+          "25% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "weapon": [
+          "16% increased Physical Damage",
+          "Bonded: 20% increased effect of Fully Broken Armour"
+        ]
+      }
+    },
+    {
+      "name": "Jiquani's Thesis",
+      "type": "SoulCore",
+      "rank": 60,
+      "effects": {
+        "boots": [
+          "Increases and Reductions to Movement Speed also",
+          "apply to Energy Shield Recharge Rate"
+        ],
+        "gloves": [
+          "Energy Shield Recharge starts after spending a total of",
+          "2000 Mana, no more than once every 2 seconds"
+        ],
+        "helmet": [
+          "+1 to maximum Mana per 2 Item Energy Shield on Equipped Helmet"
+        ]
+      }
+    },
+    {
+      "name": "Katla's Gloom",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "Can roll Decay modifiers",
+          "Bonded: 25% reduced Effect of Non-Damaging Ailments on you"
+        ]
+      }
+    },
+    {
+      "name": "Kolr's Hunt",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "Can roll Marksman modifiers",
+          "Bonded: 20% increased Projectile Damage"
+        ]
+      }
+    },
+    {
+      "name": "Kurgal's Gaze",
+      "type": "AbyssalEye",
+      "rank": 60,
+      "effects": {
+        "boots": [
+          "15% increased Mana Cost Efficiency if you haven't Dodge Rolled Recently"
+        ],
+        "gloves": [
+          "40% increased effect of Arcane Surge on you"
+        ],
+        "helmet": [
+          "Increases and Reductions to Life Regeneration Rate also apply to Mana Regeneration Rate"
+        ]
+      }
+    },
+    {
+      "name": "Lady Hestra's Rune of Winter",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "weapon": [
+          "Adds 19 to 28 Cold Damage against Chilled Enemies",
+          "Bonded: +2% to Maximum Cold Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of A Worthy Foe",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "shield": [
+          "Off-hand Hits inflict Runefather's Challenge",
+          "Bonded: +45% to Cold Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Adonia's Ego",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "wand": [
+          "+1 to Maximum Power Charges",
+          "Bonded: +65 to maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Alkem Eira",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "shield": [
+          "30% of damage Blocked is Recouped as Mana",
+          "Bonded: 20% of damage Blocked is Recouped as Mana"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Amor Mandragora",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "talisman": [
+          "Gain 1 Druidic Prowess for every 20 total Rage spent",
+          "Bonded: Enemies in your Presence are Hindered"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Ashrend",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "Cannot be Ignited",
+          "-10 Physical Damage taken from Attack Hits",
+          "Bonded: +35% to Fire Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Blackbraid",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "+50% of Armour also applies to Elemental Damage",
+          "Bonded: +15% to all Elemental Resistances"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Brain Rattler",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "two hand mace": [
+          "All damage with this Weapon causes Electrocution buildup",
+          "Bonded: Damage Penetrates 10% Lightning Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Bramblejack",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "250% of Melee Physical Damage taken reflected to Attacker",
+          "Bonded: Regenerate 3% of maximum Life per second while Surrounded"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Briarpatch",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "boots": [
+          "+15% to Thorns Critical Hit Chance",
+          "Bonded: 15% increased Thorns Critical Damage Bonus"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Briskwrap",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "Gain Deflection Rating equal to 30% of Evasion Rating",
+          "Bonded: 35% increased Flask Mana Recovery rate"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Bristleboar",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "Gain 5 Rage when Hit by an Enemy",
+          "Gain 10 Rage when Critically Hit by an Enemy",
+          "Bonded: +3 to Maximum Rage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Brynhand's Mark",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "one hand mace": [
+          "Causes Double Stun Buildup",
+          "Bonded: Adds 14 to 20 Physical Damage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Bushwhack",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "boots": [
+          "Physical Damage is Pinning",
+          "Bonded: +20 to Dexterity"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Candlemaker",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "gloves": [
+          "40% increased Fire Damage",
+          "Flammability Magnitude is doubled",
+          "Bonded: 20% increased Ignite Duration on Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Chernobog's Pillar",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "shield": [
+          "Gain 1% of damage as Fire damage per 2% Chance to Block",
+          "Bonded: +30% to Chaos Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Crown of Thorns",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Pain Attunement",
+          "Bonded: 17 to 26 Physical Thorns damage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Cursecarver",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "wand": [
+          "+3 to Level of all Curse Skills",
+          "Bonded: 35% increased Mana Regeneration Rate"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Deathblow",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "gloves": [
+          "Culling Strike",
+          "Bonded: Gain 30 Life per enemy killed"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Deidbell",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Warcries Explode Corpses dealing 10% of their Life as Physical Damage",
+          "Bonded: Warcry Skills have 20% increased Area of Effect"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Dionadair",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "shield": [
+          "Double Stun Threshold while Shield is Raised",
+          "Bonded: 15% increased Stun Threshold"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Duality",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "quarterstaff": [
+          "Gain 250 Guard for 0.5 seconds per Combo expended when using Skills",
+          "Bonded: Gain Finality for 0.2 seconds per Combo expended when using Skills"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Dunkelhalt",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "buckler": [
+          "50% increased Parried Debuff Magnitude",
+          "Bonded: 50% increased Parry Damage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Dusk Vigil",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "staff": [
+          "Gain 30% of Physical Damage as Extra Fire Damage",
+          "Bonded: Triggered Spells deal 20% increased Spell Damage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Edyrns Tusks",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "50% chance to inflict Bleeding on Hit",
+          "50% reduced Slowing Potency of Debuffs on You",
+          "Bonded: 35% increased Thorns damage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Elevore",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Charms gain 1 charge per Second",
+          "+1 Charm Slot",
+          "Bonded: Charms gain 0.5 charges per Second"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Erian's Cobble",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "+30 to Accuracy Rating",
+          "+10 to maximum Life",
+          "+10 to maximum Mana",
+          "10% increased Rarity of Items found",
+          "10% increased Critical Hit Chance",
+          "+5 to all Attributes",
+          "+5% to all Elemental Resistances",
+          "3 Life Regeneration per second",
+          "Bonded: +20 to Armour",
+          "Bonded: +20 to Evasion Rating",
+          "Bonded: +20 to maximum Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Ezomyte Peak",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "15% increased Area of Effect",
+          "Unwavering Stance",
+          "Bonded: 50% reduced Slowing Potency of Debuffs on You"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Facebreaker",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "gloves": [
+          "+1 to Armour per Strength",
+          "Bonded: 1% increased Damage per 15 Strength"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Foxshade",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "10% increased Movement Speed when on Full Life",
+          "100% increased Evasion Rating when on Full Life",
+          "Bonded: 20% increased Evasion Rating"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Greymake",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "+50 to all Attributes",
+          "Bonded: +1 Maximum Life per Level"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Hoghunt",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "two hand mace": [
+          "+5% to Critical Hit Chance",
+          "Maim on Critical Hit",
+          "Bonded: 25% increased Attack Damage against Maimed Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Horns of Bynden",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Gain 1 Rage on Melee Hit",
+          "Every Rage also grants 1% increased Armour",
+          "Bonded: +3 to Maximum Rage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Hrimnor's Hymn",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "two hand mace": [
+          "25% chance for Slam Skills you use yourself to cause an additional Aftershock",
+          "Bonded: 15% chance for Slam Skills you use yourself to cause an additional Aftershock"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Ironbound",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "bow": [
+          "Hits with this weapon have 1 to 3 Added Physical Damage per 1% Block Chance",
+          "Bonded: 3% increased Block chance per 100 total Item Armour on Equipped Armour Items"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Keeper of the Arc",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Alternating every 5 seconds:",
+          "Take 20% less Damage from Hits",
+          "Take 20% less Damage over time",
+          "Bonded: 25% increased Mana Regeneration Rate"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Kingsguard",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "Recover 5% of maximum Life for each Endurance Charge consumed",
+          "Bonded: +30 to maximum Life"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Legionstride",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "boots": [
+          "+10% to Block chance",
+          "Bonded: 10% reduced Damage taken from Projectile Hits"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Lifesprig",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "wand": [
+          "+2 to Level of all Spell Skills",
+          "Bonded: Leeches 1% of maximum Life when you Cast a Spell"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Mjolner",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "one hand mace": [
+          "+200 Intelligence Requirement",
+          "+3 to Level of all Lightning Skills",
+          "Bonded: +1 to Level of all Lightning Skills"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Northpaw",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "gloves": [
+          "Base Critical Hit Chance for Attacks with Weapons is 7%",
+          "Bonded: 15% increased Critical Damage Bonus"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Oaksworn",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "shield": [
+          "50% increased Life Regeneration rate",
+          "Bonded: 50 Life Regeneration per second"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Obern's Bastion",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "boots": [
+          "200% increased Stun Recovery",
+          "Bonded: 40% reduced Chill Duration on you",
+          "Bonded: 40% reduced Freeze Duration on you"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Olrovasara",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "one hand mace": [
+          "On Hitting an enemy, gains maximum added Lightning damage equal to",
+          "the enemy's Power for 20 seconds, up to a total of 120",
+          "Bonded: 15% increased Attack Speed"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Quill Rain",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "bow": [
+          "50% increased Attack Speed",
+          "20% less Attack Damage",
+          "Bonded: 70% increased Arrow Speed"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Rondel de Ezo",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "buckler": [
+          "Curse Enemies with Enfeeble on Block",
+          "Bonded: 100% increased Block chance against Projectiles"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Runeseeker's Call",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "wand": [
+          "75% increased effect of Socketed Runes",
+          "Bonded: +100 to maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Serle's Grit",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "one hand mace": [
+          "Maximum Quality is 40%",
+          "Bonded: Skills which Empower an Attack have 20% chance to not count that Attack"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Spiteful Floret",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "talisman": [
+          "Every 5 Rage also grants 5% of Damage taken Recouped as Life",
+          "Bonded: Attacks have 20% chance to cause Bleeding"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Starkonja's Head",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "100% increased Global Evasion Rating when on Low Life",
+          "5% of Damage from Hits is taken from your Damageable Companion's Life before you",
+          "Bonded: 5% of Damage from Hits is taken from your Damageable Companion's Life before you"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Svalinn",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "shield": [
+          "Chance to Block Damage is Lucky",
+          "You take 20% of damage from Blocked Hits",
+          "Bonded: +50 to maximum Runic Ward"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of The Blood Thorn",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "quarterstaff": [
+          "Adds 4 to 8 Physical Damage",
+          "Causes Bleeding on Hit",
+          "Bonded: 10% increased Magnitude of Bleeding you inflict"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of The Knight-errant",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "boots": [
+          "Iron Reflexes",
+          "Bonded: 25% increased Elemental Ailment Threshold"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of The Sentry",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "quarterstaff": [
+          "Adds 23 to 34 Fire damage to Attacks",
+          "100% increased Flammability Magnitude",
+          "Bonded: +2% to Maximum Fire Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of The Smiling Knight",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Aggravate Bleeding on targets you Critically Hit with Attacks",
+          "Bonded: 20% increased Critical Hit Chance"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of The Unleashed",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "body armour": [
+          "25% of Damage taken from Hits bypasses Energy Shield if Energy Shield is below half",
+          "Bonded: 20% increased Armour while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of The Vile Knight",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Deal 4% increased Damage with Hits to Rare or Unique Enemies for each second they've ever been in your Presence, up to a maximum of 200%",
+          "Bonded: 20% increased Presence Area of Effect"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Trampletoe",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "boots": [
+          "Deal 10% of Overkill damage to enemies within 2 metres of the enemy killed",
+          "Bonded: 15% increased Global Physical Damage"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Trenchtimbre",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "one hand mace": [
+          "Increases and Reductions to Minion Attack Speed also affect you",
+          "Bonded: +1 to Level of all Minion Skills"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Twisted Empyrean",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "two hand mace": [
+          "Attacks with this Weapon have Added Cold Damage equal to 6% to 10% of maximum Mana",
+          "Bonded: 15% of Damage is taken from Mana before Life"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Tyranny's Grip",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "spear": [
+          "Strikes deal Splash Damage",
+          "Bonded: Knocks Enemies Back on Hit"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Wanderlust",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "boots": [
+          "Your speed is unaffected by Slows",
+          "Bonded: 5% increased Movement Speed"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Wings of Caelyn",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "helmet": [
+          "Gain 1 Rage on Melee Hit",
+          "Every Rage also grants 1% increased Stun Threshold",
+          "Bonded: Every five Rage also grants you 1% increased Movement Speed"
+        ]
+      }
+    },
+    {
+      "name": "Legacy of Wulfsbane",
+      "type": "Rune",
+      "rank": 65,
+      "effects": {
+        "shield": [
+          "Intimidate Enemies on Block for 8 seconds",
+          "Bonded: +25 to Strength"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Adept Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+6 to Dexterity"
+        ],
+        "caster": [
+          "+6 to Dexterity"
+        ],
+        "weapon": [
+          "+6 to Dexterity"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Body Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+30 to maximum Life",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+30 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "wand": [
+          "+30 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "weapon": [
+          "Leeches 3% of Physical Damage as Life",
+          "Bonded: 5% increased maximum Life"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Charging Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "8% increased Runic Ward Regeneration Rate",
+          "Bonded: Regenerate 10 Runic Ward per second"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Desert Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+10% to Fire Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 6% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "wand": [
+          "Gain 6% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "weapon": [
+          "Adds 4 to 6 Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Glacial Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+10% to Cold Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 6% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "wand": [
+          "Gain 6% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "weapon": [
+          "Adds 3 to 5 Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Inspiration Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "12% increased Mana Regeneration Rate",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "20% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "wand": [
+          "20% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "weapon": [
+          "Gain 10 Mana per enemy killed",
+          "Bonded: 12% of Skill Mana Costs Converted to Life Costs"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Iron Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "14% increased Armour, Evasion and Energy Shield",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "20% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "wand": [
+          "20% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "weapon": [
+          "14% increased Physical Damage",
+          "Bonded: 20% increased effect of Fully Broken Armour"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Mind Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+20 to maximum Mana",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+45 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "wand": [
+          "+45 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "weapon": [
+          "Leeches 2% of Physical Damage as Mana",
+          "Bonded: 5% increased maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Rebirth Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Regenerate 0.35% of maximum Life per second",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "6% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "wand": [
+          "6% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "weapon": [
+          "Gain 15 Life per enemy killed",
+          "Bonded: Regenerate 0.4% of maximum Life per second"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Resolve Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+6 to Intelligence"
+        ],
+        "caster": [
+          "+6 to Intelligence"
+        ],
+        "weapon": [
+          "+6 to Intelligence"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Robust Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+6 to Strength"
+        ],
+        "caster": [
+          "+6 to Strength"
+        ],
+        "weapon": [
+          "+6 to Strength"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Stone Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+50 to Stun Threshold",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain additional Stun Threshold equal to 10% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "wand": [
+          "Gain additional Stun Threshold equal to 10% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "weapon": [
+          "Causes 20% increased Stun Buildup",
+          "Bonded: 40% increased Damage against Immobilised Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Storm Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+10% to Lightning Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 6% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "wand": [
+          "Gain 6% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "weapon": [
+          "Adds 1 to 10 Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Tempered Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "6 to 9 Physical Thorns damage"
+        ],
+        "weapon": [
+          "Adds 3 to 4 Physical Damage"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Vision Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "8% increased Life and Mana Recovery from Flasks",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "16% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "wand": [
+          "16% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "weapon": [
+          "+60 to Accuracy Rating",
+          "Bonded: Attacks have +1% to Critical Hit Chance"
+        ]
+      }
+    },
+    {
+      "name": "Lesser Ward Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+15 to maximum Runic Ward",
+          "Bonded: 15% increased Global Armour, Evasion and Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Masterwork Rune",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Upgrades a socketed Rune"
+        ],
+        "caster": [
+          "Upgrades a socketed Rune"
+        ],
+        "weapon": [
+          "Upgrades a socketed Rune"
+        ]
+      }
+    },
+    {
+      "name": "Medved's Tending",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "body armour": [
+          "Can roll Soul modifiers",
+          "Bonded: 3% increased maximum Life",
+          "Bonded: 3% increased maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Mind Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+30 to maximum Mana",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+60 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "wand": [
+          "+60 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "weapon": [
+          "Leeches 3% of Physical Damage as Mana",
+          "Bonded: 5% increased maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Opiloti's Soul Core of Assault",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "staff": [
+          "50% chance when you gain a Frenzy Charge to gain an additional Frenzy Charge"
+        ],
+        "wand": [
+          "50% chance when you gain a Frenzy Charge to gain an additional Frenzy Charge"
+        ],
+        "weapon": [
+          "50% chance when you gain a Frenzy Charge to gain an additional Frenzy Charge"
+        ]
+      }
+    },
+    {
+      "name": "Owl Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "focus": [
+          "12% increased Cooldown Recovery Rate",
+          "Bonded: 20% increased effect of Archon Buffs on you"
+        ],
+        "sceptre": [
+          "Allies in your Presence have 10% increased Cast Speed",
+          "Bonded: 10% increased Skill Speed while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Ox Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "buckler": [
+          "15% increased Block chance",
+          "Bonded: 15% chance for Damage of Enemies Hitting you to be Unlucky"
+        ],
+        "sceptre": [
+          "Allies in your Presence have +12% to all Elemental Resistances",
+          "Bonded: +20% of Armour also applies to Elemental Damage while Shapeshifted"
+        ],
+        "shield": [
+          "15% increased Block chance",
+          "Bonded: 15% chance for Damage of Enemies Hitting you to be Unlucky"
+        ]
+      }
+    },
+    {
+      "name": "Panther Idol",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "+10% of Armour also applies to Chaos Damage",
+          "Bonded: +8% to Chaos Resistance"
+        ],
+        "sceptre": [
+          "Minions have +20% to Chaos Resistance",
+          "Bonded: Minions have 20% additional Physical Damage Reduction"
+        ]
+      }
+    },
+    {
+      "name": "Passion of Aldur",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "caster": [
+          "Transforms all Cold and Lightning modifiers on the item into equivalent Fire modifiers",
+          "Bonded: 25% increased Fire Damage"
+        ],
+        "weapon": [
+          "Transforms all Cold and Lightning modifiers on the item into equivalent Fire modifiers",
+          "Bonded: 25% increased Fire Damage"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Adept Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+15 to Dexterity"
+        ],
+        "caster": [
+          "+15 to Dexterity"
+        ],
+        "weapon": [
+          "+15 to Dexterity"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Body Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+75 to maximum Life",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+60 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "wand": [
+          "+60 to maximum Energy Shield",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "weapon": [
+          "Leeches 6% of Physical Damage as Life",
+          "Bonded: 5% increased maximum Life"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Charging Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "20% increased Runic Ward Regeneration Rate",
+          "Bonded: Regenerate 25 Runic Ward per second"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Desert Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+22% to Fire Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 12% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "wand": [
+          "Gain 12% of Damage as Extra Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "weapon": [
+          "Adds 17 to 20 Fire Damage",
+          "Bonded: 30% increased Ignite Magnitude"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Glacial Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+22% to Cold Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 12% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "wand": [
+          "Gain 12% of Damage as Extra Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "weapon": [
+          "Adds 16 to 20 Cold Damage",
+          "Bonded: 30% increased Freeze Buildup"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Inspiration Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "21% increased Mana Regeneration Rate",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "35% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "wand": [
+          "35% increased Mana Regeneration Rate",
+          "Bonded: 16% increased Mana Cost Efficiency"
+        ],
+        "weapon": [
+          "Gain 40 Mana per enemy killed",
+          "Bonded: 12% of Skill Mana Costs Converted to Life Costs"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Iron Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "20% increased Armour, Evasion and Energy Shield",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "35% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "wand": [
+          "35% increased Spell Damage",
+          "Bonded: Break Armour on Critical Hit with Spells equal to 12% of Physical Damage dealt"
+        ],
+        "weapon": [
+          "20% increased Physical Damage",
+          "Bonded: 20% increased effect of Fully Broken Armour"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Mind Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+50 to maximum Mana",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "+90 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "wand": [
+          "+90 to maximum Mana",
+          "Bonded: 5% increased maximum Mana"
+        ],
+        "weapon": [
+          "Leeches 5% of Physical Damage as Mana",
+          "Bonded: 5% increased maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Rebirth Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "Regenerate 0.5% of maximum Life per second",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "12% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "wand": [
+          "12% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "weapon": [
+          "Gain 45 Life per enemy killed",
+          "Bonded: Regenerate 0.4% of maximum Life per second"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Resolve Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+15 to Intelligence"
+        ],
+        "caster": [
+          "+15 to Intelligence"
+        ],
+        "weapon": [
+          "+15 to Intelligence"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Robust Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+15 to Strength"
+        ],
+        "caster": [
+          "+15 to Strength"
+        ],
+        "weapon": [
+          "+15 to Strength"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Stone Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+125 to Stun Threshold",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain additional Stun Threshold equal to 16% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "wand": [
+          "Gain additional Stun Threshold equal to 16% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "weapon": [
+          "Causes 50% increased Stun Buildup",
+          "Bonded: 40% increased Damage against Immobilised Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Storm Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+22% to Lightning Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 12% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "wand": [
+          "Gain 12% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "weapon": [
+          "Adds 1 to 40 Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Vision Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "20% increased Life and Mana Recovery from Flasks",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "28% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "wand": [
+          "28% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "weapon": [
+          "+150 to Accuracy Rating",
+          "Bonded: Attacks have +1% to Critical Hit Chance"
+        ]
+      }
+    },
+    {
+      "name": "Perfect Ward Rune",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "armour": [
+          "+30 to maximum Runic Ward",
+          "Bonded: 15% increased Global Armour, Evasion and Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Primate Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "helmet": [
+          "Minions have 15% increased maximum Life",
+          "Bonded: Remnants can be collected from 30% further away"
+        ],
+        "sceptre": [
+          "Allies in your Presence deal 40% increased Damage",
+          "Bonded: 40% increased Damage while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Quipolatl's Soul Core of Flow",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "8% increased Skill Effect Duration",
+          "8% increased Cooldown Recovery Rate"
+        ]
+      }
+    },
+    {
+      "name": "Quipolatl's Thesis",
+      "type": "SoulCore",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "+75% of Armour also applies to Chaos Damage while on full Energy Shield"
+        ],
+        "gloves": [
+          "Your Energy Shield Recharge starts when your Minions are Reformed"
+        ],
+        "helmet": [
+          "A random Skill that requires Glory generates 50% of its maximum Glory when your Marks Activate"
+        ]
+      }
+    },
+    {
+      "name": "Rabbit Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "body armour": [
+          "12% increased Rarity of Items found",
+          "Bonded: 10% increased Quantity of Gold Dropped by Slain Enemies"
+        ],
+        "sceptre": [
+          "15% increased Spirit",
+          "Bonded: Minions have 30% increased Cooldown Recovery Rate for Command Skills"
+        ]
+      }
+    },
+    {
+      "name": "Raven-Touched Shard",
+      "type": "CongealedMist",
+      "rank": 60,
+      "effects": {
+        "helmet": [
+          "Raven-Touched"
+        ]
+      }
+    },
+    {
+      "name": "Rebirth Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "Regenerate 0.4% of maximum Life per second",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "8% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "wand": [
+          "8% increased Energy Shield Recharge Rate",
+          "Bonded: 8% of Damage taken Recouped as Life"
+        ],
+        "weapon": [
+          "Gain 25 Life per enemy killed",
+          "Bonded: Regenerate 0.4% of maximum Life per second"
+        ]
+      }
+    },
+    {
+      "name": "Resolve Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+9 to Intelligence"
+        ],
+        "caster": [
+          "+9 to Intelligence"
+        ],
+        "weapon": [
+          "+9 to Intelligence"
+        ]
+      }
+    },
+    {
+      "name": "Robust Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+9 to Strength"
+        ],
+        "caster": [
+          "+9 to Strength"
+        ],
+        "weapon": [
+          "+9 to Strength"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Accumulation",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "bow": [
+          "On Hitting an enemy, gains maximum added Cold damage equal to the enemy's Power for 20 seconds, up to a total of 32",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "crossbow": [
+          "On Hitting an enemy, gains maximum added Cold damage equal to the enemy's Power for 20 seconds, up to a total of 32",
+          "Bonded: 30% increased Freeze Buildup"
+        ],
+        "gloves": [
+          "Gain 3 Life per Enemy Hit with Attacks",
+          "Gain 1 Mana per Enemy Hit with Attacks",
+          "Bonded: +30 to maximum Life",
+          "Bonded: +30 to maximum Mana"
+        ],
+        "spear": [
+          "On Hitting an enemy, gains maximum added Cold damage equal to the enemy's Power for 20 seconds, up to a total of 32",
+          "Bonded: 30% increased Freeze Buildup"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Acrobatics",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "boots": [
+          "+0.3 metres to Dodge Roll distance",
+          "Bonded: 30% increased Armour if you haven't Dodge Rolled Recently"
+        ],
+        "caster": [
+          "Flasks gain 0.2 charges per Second",
+          "Bonded: Charms gain 0.25 charges per Second"
+        ],
+        "weapon": [
+          "Flasks gain 0.2 charges per Second",
+          "Bonded: Charms gain 0.25 charges per Second"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Confrontation",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "spear": [
+          "Gain 4 Rage on Melee Hit",
+          "-10 to Maximum Rage"
+        ],
+        "warstaff": [
+          "Gain 4 Rage on Melee Hit",
+          "-10 to Maximum Rage"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Consistency",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "caster": [
+          "50% increased Spell Damage while your Companion is in your Presence",
+          "Bonded: 8% increased Mana Recovery rate while your Companion is in your Presence"
+        ],
+        "helmet": [
+          "200% increased Critical Hit Chance",
+          "You have no Critical Damage Bonus",
+          "Bonded: Hits against you have 25% reduced Critical Damage Bonus"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Culmination",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "gloves": [
+          "50% chance to build an additional Combo on Hit",
+          "Bonded: 5% increased Attack Speed"
+        ],
+        "one hand mace": [
+          "Rolls only the minimum or maximum Damage value for Physical Damage"
+        ],
+        "warstaff": [
+          "Rolls only the minimum or maximum Damage value for Physical Damage"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Foundations",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "body armour": [
+          "+30 to Armour",
+          "+30 to Evasion Rating",
+          "+10 to maximum Energy Shield",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Reach",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "helmet": [
+          "Remnants you create have 15% increased effect",
+          "Bonded: Recover 3% of Maximum Mana when you collect a Remnant"
+        ],
+        "staff": [
+          "Remnants you create have 25% reduced effect",
+          "Remnants can be collected from 50% further away",
+          "Bonded: 20% increased Exposure Effect"
+        ],
+        "wand": [
+          "Remnants you create have 25% reduced effect",
+          "Remnants can be collected from 50% further away",
+          "Bonded: 20% increased Exposure Effect"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Renown",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "caster": [
+          "Archon recovery period expires 30% faster",
+          "Bonded: 30% increased Archon Buff duration"
+        ],
+        "gloves": [
+          "50% increased Glory generation",
+          "Bonded: Banner Skills have 20% increased Aura Magnitudes"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Vital Flame",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "one hand mace": [
+          "Adds 13 to 16 Fire Damage",
+          "15% of Skill Mana Costs Converted to Life Costs",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "talisman": [
+          "Adds 13 to 16 Fire Damage",
+          "15% of Skill Mana Costs Converted to Life Costs",
+          "Bonded: 30% increased Ignite Magnitude"
+        ],
+        "two hand mace": [
+          "Adds 13 to 16 Fire Damage",
+          "15% of Skill Mana Costs Converted to Life Costs",
+          "Bonded: 30% increased Ignite Magnitude"
+        ]
+      }
+    },
+    {
+      "name": "Rune of Vitality",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "buckler": [
+          "Recover 15 Life when you Block",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "caster": [
+          "+80 to maximum Life",
+          "Bonded: 15% increased amount of Life Leeched"
+        ],
+        "shield": [
+          "Recover 15 Life when you Block",
+          "Bonded: 5% increased maximum Life"
+        ],
+        "weapon": [
+          "+80 to maximum Life",
+          "Bonded: 15% increased amount of Life Leeched"
+        ]
+      }
+    },
+    {
+      "name": "Rune of the Blossom",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "body armour": [
+          "+50 to Spirit",
+          "-1 to Spirit per 2 Levels",
+          "Bonded: 5% increased Spirit Reservation Efficiency"
+        ]
+      }
+    },
+    {
+      "name": "Rune of the Hunt",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "boots": [
+          "8% increased Movement Speed while Sprinting",
+          "Bonded: 50% increased Stun Recovery"
+        ],
+        "sceptre": [
+          "Companions deal 30% increased Damage",
+          "Bonded: 8% increased Mana Recovery rate while your Companion is in your Presence"
+        ]
+      }
+    },
+    {
+      "name": "Rune of the Prism",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "body armour": [
+          "-10% to all Maximum Elemental Resistances",
+          "+20% to all Elemental Resistances"
+        ]
+      }
+    },
+    {
+      "name": "Saqawal's Rune of Erosion",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "25% increased Exposure Effect",
+          "Bonded: 15% increased Magnitude of Non-Damaging Ailments you inflict"
+        ]
+      }
+    },
+    {
+      "name": "Saqawal's Rune of Memory",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "2% increased Experience gain",
+          "Bonded: +10% to all Elemental Resistances"
+        ]
+      }
+    },
+    {
+      "name": "Saqawal's Rune of the Sky",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "staff": [
+          "Gain 5% of Damage as Extra Damage of all Elements",
+          "Bonded: 12% chance when collecting an Elemental Infusion to gain an",
+          "Bonded: additional Elemental Infusion of the same type"
+        ],
+        "wand": [
+          "Gain 5% of Damage as Extra Damage of all Elements",
+          "Bonded: 12% chance when collecting an Elemental Infusion to gain an",
+          "Bonded: additional Elemental Infusion of the same type"
+        ],
+        "weapon": [
+          "Gain 5% of Damage as Extra Damage of all Elements",
+          "Bonded: 8% chance to gain an additional random Charge when you gain a Charge"
+        ]
+      }
+    },
+    {
+      "name": "Serle's Triumph",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+1 Suffix Modifier allowed"
+        ],
+        "caster": [
+          "+1 Suffix Modifier allowed"
+        ],
+        "weapon": [
+          "+1 Suffix Modifier allowed"
+        ]
+      }
+    },
+    {
+      "name": "Snake Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "8% increased Curse Magnitudes",
+          "Bonded: Remnants you create have 15% increased effect"
+        ],
+        "sceptre": [
+          "Allies in your Presence have 10% increased Attack Speed",
+          "Bonded: 10% increased Skill Speed while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Atmohua",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Convert 20% of Requirements to Strength"
+        ],
+        "weapon": [
+          "Convert 20% of Requirements to Strength"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Azcapa",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "10% increased Quantity of Gold Dropped by Slain Enemies"
+        ],
+        "weapon": [
+          "+15 to Spirit"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Cholotl",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Convert 20% of Requirements to Dexterity"
+        ],
+        "weapon": [
+          "Convert 20% of Requirements to Dexterity"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Citaqualotl",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+5% to all Elemental Resistances"
+        ],
+        "weapon": [
+          "30% increased Elemental Damage with Attacks"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Jiquani",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "body armour": [
+          "3% increased maximum Life"
+        ],
+        "weapon": [
+          "Recover 2% of maximum Life on Kill"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Opiloti",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "helmet": [
+          "20% increased Charm Charges gained"
+        ],
+        "weapon": [
+          "15% chance to cause Bleeding on Hit"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Puhuarte",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "+1% to Maximum Fire Resistance"
+        ],
+        "weapon": [
+          "30% increased Flammability Magnitude"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Quipolatl",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "boots": [
+          "15% reduced Slowing Potency of Debuffs on You"
+        ],
+        "weapon": [
+          "5% increased Attack Speed"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Tacati",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "+11% to Chaos Resistance"
+        ],
+        "weapon": [
+          "15% chance to Poison on Hit with this weapon"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Ticaba",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "body armour": [
+          "Hits against you have 20% reduced Critical Damage Bonus"
+        ],
+        "buckler": [
+          "Hits against you have 20% reduced Critical Damage Bonus"
+        ],
+        "shield": [
+          "Hits against you have 20% reduced Critical Damage Bonus"
+        ],
+        "weapon": [
+          "+5% to Critical Damage Bonus"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Topotante",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "boots": [
+          "25% increased Elemental Ailment Threshold"
+        ],
+        "weapon": [
+          "Attacks with this Weapon Penetrate 15% Elemental Resistances"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Tzamoto",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "helmet": [
+          "+1% to Maximum Cold Resistance"
+        ],
+        "weapon": [
+          "30% increased Freeze Buildup"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Xopec",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "boots": [
+          "+1% to Maximum Lightning Resistance"
+        ],
+        "weapon": [
+          "30% increased chance to Shock"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Zalatl",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "helmet": [
+          "3% increased maximum Mana"
+        ],
+        "weapon": [
+          "Recover 2% of maximum Mana on Kill"
+        ]
+      }
+    },
+    {
+      "name": "Soul Core of Zantipi",
+      "type": "SoulCore",
+      "rank": 0,
+      "effects": {
+        "armour": [
+          "Convert 20% of Requirements to Intelligence"
+        ],
+        "weapon": [
+          "Convert 20% of Requirements to Intelligence"
+        ]
+      }
+    },
+    {
+      "name": "Stag Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "helmet": [
+          "Projectiles have 15% chance to Fork",
+          "Bonded: Projectiles have 25% chance for an additional Projectile when Forking"
+        ],
+        "sceptre": [
+          "Allies in your Presence deal 1 to 40 added Attack Lightning Damage",
+          "Bonded: 40% increased Attack Damage while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Stoat Idol",
+      "type": "Idol",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "5% of Damage taken bypasses Energy Shield",
+          "Bonded: +12% to Lightning Resistance"
+        ],
+        "sceptre": [
+          "Companions have 25% increased maximum Life",
+          "Bonded: 25% increased Damage while your Companion is in your Presence"
+        ]
+      }
+    },
+    {
+      "name": "Stone Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+75 to Stun Threshold",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain additional Stun Threshold equal to 12% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "wand": [
+          "Gain additional Stun Threshold equal to 12% of maximum Energy Shield",
+          "Bonded: 30% increased Immobilisation buildup"
+        ],
+        "weapon": [
+          "Causes 30% increased Stun Buildup",
+          "Bonded: 40% increased Damage against Immobilised Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Storm Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+14% to Lightning Resistance",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "Gain 8% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "wand": [
+          "Gain 8% of Damage as Extra Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ],
+        "weapon": [
+          "Adds 1 to 20 Lightning Damage",
+          "Bonded: 30% increased Magnitude of Shock you inflict"
+        ]
+      }
+    },
+    {
+      "name": "Tacati's Soul Core of Affliction",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "Enemies you Curse have -5% to Chaos Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Tecrod's Gaze",
+      "type": "AbyssalEye",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "Regenerate 1.5% of maximum Life per second"
+        ],
+        "boots": [
+          "10% increased Movement Speed when on Low Life"
+        ],
+        "gloves": [
+          "25% increased Life Cost Efficiency"
+        ]
+      }
+    },
+    {
+      "name": "Tempered Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "14 to 21 Physical Thorns damage"
+        ],
+        "weapon": [
+          "Adds 6 to 9 Physical Damage"
+        ]
+      }
+    },
+    {
+      "name": "Thane Girt's Rune of Wildness",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "staff": [
+          "25% chance for Spell Skills to fire 2 additional Projectiles",
+          "Bonded: Every Rage also grants 1% increased Spell Damage"
+        ],
+        "wand": [
+          "25% chance for Spell Skills to fire 2 additional Projectiles",
+          "Bonded: Every Rage also grants 1% increased Spell Damage"
+        ]
+      }
+    },
+    {
+      "name": "Thane Grannell's Rune of Mastery",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "30% increased Magnitude of Non-Damaging Ailments you inflict",
+          "Bonded: 15% increased Duration of Elemental Ailments on Enemies"
+        ]
+      }
+    },
+    {
+      "name": "Thane Leld's Rune of Spring",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "weapon": [
+          "Adds 1 to 60 Lightning Damage against Shocked Enemies",
+          "Bonded: +2% to Maximum Lightning Resistance"
+        ]
+      }
+    },
+    {
+      "name": "Thane Myrk's Rune of Summer",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "weapon": [
+          "Adds 23 to 34 Fire Damage to Attacks against Ignited Enemies",
+          "Bonded: +2% to Maximum Fire Resistance"
+        ]
+      }
+    },
+    {
+      "name": "The Greatwolf's Rune of Claws",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "Adds 5 to 12 Physical Damage to Attacks",
+          "Bonded: Fissure Skills have +2 to Limit"
+        ]
+      }
+    },
+    {
+      "name": "The Greatwolf's Rune of Willpower",
+      "type": "Rune",
+      "rank": 50,
+      "effects": {
+        "body armour": [
+          "15% of Damage is taken from Mana before Life",
+          "Bonded: 8% of Maximum Life Converted to Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Thrud's Might",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "caster": [
+          "Can roll Destruction modifiers",
+          "Bonded: +5% to all Elemental Resistances"
+        ],
+        "weapon": [
+          "Can roll Destruction modifiers",
+          "Bonded: +5% to all Elemental Resistances"
+        ]
+      }
+    },
+    {
+      "name": "Topotante's Soul Core of Dampening",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "gloves": [
+          "+40% of Armour also applies to Fire Damage"
+        ]
+      }
+    },
+    {
+      "name": "Tzamoto's Soul Core of Ferocity",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "helmet": [
+          "+4 to Maximum Rage"
+        ]
+      }
+    },
+    {
+      "name": "Uhtred's Sidereus",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "boots": [
+          "Can roll Chronomancy modifiers",
+          "Bonded: 10% increased Cooldown Recovery Rate"
+        ]
+      }
+    },
+    {
+      "name": "Ulaman's Gaze",
+      "type": "AbyssalEye",
+      "rank": 60,
+      "effects": {
+        "body armour": [
+          "Prevent +3% of Damage from Deflected Hits"
+        ],
+        "gloves": [
+          "Critical Hit chance is Lucky against Parried enemies"
+        ],
+        "helmet": [
+          "+1 to Accuracy Rating per 1 Item Evasion Rating on Equipped Helmet"
+        ]
+      }
+    },
+    {
+      "name": "Uromoti's Soul Core of Attenuation",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "15% increased Curse Duration",
+          "15% increased Poison Duration"
+        ]
+      }
+    },
+    {
+      "name": "Vision Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "12% increased Life and Mana Recovery from Flasks",
+          "Bonded: +20 to maximum Life",
+          "Bonded: +20 to maximum Mana"
+        ],
+        "staff": [
+          "20% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "wand": [
+          "20% increased Critical Hit Chance for Spells",
+          "Bonded: 25% increased Critical Damage Bonus"
+        ],
+        "weapon": [
+          "+90 to Accuracy Rating",
+          "Bonded: Attacks have +1% to Critical Hit Chance"
+        ]
+      }
+    },
+    {
+      "name": "Vorana's Carnage",
+      "type": "Rune",
+      "rank": 0,
+      "effects": {
+        "helmet": [
+          "Can roll Berserking modifiers",
+          "Bonded: Gain 2 Rage on Melee Hit"
+        ]
+      }
+    },
+    {
+      "name": "Ward Rune",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "+20 to maximum Runic Ward",
+          "Bonded: 15% increased Global Armour, Evasion and Energy Shield"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Annihilation",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "weapon": [
+          "Attacks spend 5% of your maximum Runic Ward if possible to gain that much added Physical damage",
+          "Bonded: 10% reduced Runic Ward Cost Efficiency"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Armature",
+      "type": "Rune",
+      "rank": 45,
+      "effects": {
+        "weapon": [
+          "Gain maximum Runic Ward equal to 15% of this Weapon's maximum damage",
+          "Bonded: 5% increased Attack Speed while missing Runic Ward"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Bodyguards",
+      "type": "Rune",
+      "rank": 45,
+      "effects": {
+        "sceptre": [
+          "Minions in your Presence have Onslaught while you are on Low Runic Ward",
+          "Bonded: Damage of Enemies Hitting you is Unlucky if",
+          "Bonded: your Runic Ward has been damaged Recently"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Courage",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "helmet": [
+          "25% increased Armour and Evasion Rating while on Low Runic Ward",
+          "Bonded: 20% increased Armour and Evasion Rating when on Low Life"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Desperation",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "staff": [
+          "Spell damage Penetrates 25% of enemy Elemental Resistances while on Low Runic Ward",
+          "Bonded: 12% increased Elemental Damage"
+        ],
+        "wand": [
+          "Spell damage Penetrates 25% of enemy Elemental Resistances while on Low Runic Ward",
+          "Bonded: 12% increased Elemental Damage"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Disintegration",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "weapon": [
+          "Attacks Break Armour equal to 15% of maximum Runic Ward",
+          "Bonded: Break 10% increased Armour"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Equinox",
+      "type": "Rune",
+      "rank": 45,
+      "effects": {
+        "caster": [
+          "40% less Mana Regeneration Rate",
+          "Mana Recovery from Regeneration is also applied to Runic Ward",
+          "Bonded: 20% increased Runic Ward Regeneration Rate if you've dealt a Critical Hit Recently"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Glancing",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "body armour": [
+          "+3 to Deflection Rating per 10 maximum Runic Ward",
+          "Bonded: Prevent +1% of Damage from Deflected Hits"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Heart",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "body armour": [
+          "Gain 5% of maximum Life as Extra maximum Runic Ward",
+          "Bonded: 1% more Runic Ward Regeneration rate per 2% of maximum Runic Ward lost from Hits Recently, up to 100% more"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Hollowing",
+      "type": "Rune",
+      "rank": 45,
+      "effects": {
+        "caster": [
+          "Gain 15% of maximum Life as Extra maximum Runic Ward",
+          "15% less maximum Life",
+          "Bonded: +1% to all Maximum Elemental Resistances while on full Runic Ward"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Nourishment",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "15% Life Recovery from Flasks also applies to Runic Ward",
+          "Bonded: 15% increased Life Recovery from Flasks"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Obsession",
+      "type": "Rune",
+      "rank": 45,
+      "effects": {
+        "wand": [
+          "All damage taken bypasses Runic Ward",
+          "Runic Ward Regeneration Rate is doubled",
+          "Bonded: 12% increased maximum Runic Ward"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Protection",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "Every 4 seconds, gain Guard equal to 20% of maximum Runic Ward for 2 seconds",
+          "Bonded: 8% increased Guard gained"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Reinforcement",
+      "type": "Rune",
+      "rank": 15,
+      "effects": {
+        "armour": [
+          "20% increased Runic Ward",
+          "Bonded: Gain 2% of maximum Life as Extra maximum Runic Ward"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Salvaging",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "sceptre": [
+          "Recover 3% of maximum Runic Ward when one of your Reviving Minions is Killed",
+          "Bonded: Recover 3% of maximum Life when one of your Minions is Revived"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Stability",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "buckler": [
+          "+4 to Stun Threshold per 10 maximum Runic Ward",
+          "Bonded: 15% increased Stun buildup while Shapeshifted"
+        ],
+        "shield": [
+          "+4 to Stun Threshold per 10 maximum Runic Ward",
+          "Bonded: 15% increased Stun buildup while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Warding Rune of Symbiosis",
+      "type": "Rune",
+      "rank": 30,
+      "effects": {
+        "boots": [
+          "1% increased Energy Shield Recharge Rate per 30 maximum Runic Ward",
+          "Bonded: Regenerate 1% of maximum Energy Shield per second"
+        ]
+      }
+    },
+    {
+      "name": "Wolf Idol",
+      "type": "Idol",
+      "rank": 0,
+      "effects": {
+        "gloves": [
+          "15% increased Magnitude of Bleeding you inflict",
+          "Bonded: 25% reduced Magnitude of Bleeding on You"
+        ],
+        "sceptre": [
+          "Allies in your Presence have 20% increased Critical Damage Bonus",
+          "Bonded: 25% increased Critical Hit Chance while Shapeshifted"
+        ]
+      }
+    },
+    {
+      "name": "Xipocado's Soul Core of Dominion",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "sceptre": [
+          "Minions deal 40% increased Damage with Command Skills"
+        ],
+        "staff": [
+          "Minions deal 40% increased Damage with Command Skills"
+        ],
+        "wand": [
+          "Minions deal 40% increased Damage with Command Skills"
+        ]
+      }
+    },
+    {
+      "name": "Xopec's Soul Core of Power",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "staff": [
+          "50% chance when you gain a Power Charge to gain an additional Power Charge"
+        ],
+        "wand": [
+          "50% chance when you gain a Power Charge to gain an additional Power Charge"
+        ],
+        "weapon": [
+          "50% chance when you gain a Power Charge to gain an additional Power Charge"
+        ]
+      }
+    },
+    {
+      "name": "Zalatl's Soul Core of Insulation",
+      "type": "SoulCore",
+      "rank": 50,
+      "effects": {
+        "boots": [
+          "+40% of Armour also applies to Lightning Damage"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,4232 @@
+{
+  "version": "0.5",
+  "source": "repoe-fork/pob-data PoB export",
+  "regular_bases": [
+    {
+      "name": "Diamond",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "dexjewel",
+        "intjewel",
+        "jewel",
+        "not_for_sale",
+        "strjewel"
+      ]
+    },
+    {
+      "name": "Emerald",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "dexjewel",
+        "jewel"
+      ]
+    },
+    {
+      "name": "Ruby",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "jewel",
+        "strjewel"
+      ]
+    },
+    {
+      "name": "Sapphire",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "intjewel",
+        "jewel"
+      ]
+    },
+    {
+      "name": "Time-Lost Diamond",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "dex_radius_jewel",
+        "int_radius_jewel",
+        "jewel",
+        "not_for_sale",
+        "radius_jewel",
+        "str_radius_jewel"
+      ]
+    },
+    {
+      "name": "Time-Lost Emerald",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "dex_radius_jewel",
+        "jewel",
+        "not_for_sale",
+        "radius_jewel"
+      ]
+    },
+    {
+      "name": "Time-Lost Ruby",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "jewel",
+        "not_for_sale",
+        "radius_jewel",
+        "str_radius_jewel"
+      ]
+    },
+    {
+      "name": "Time-Lost Sapphire",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "int_radius_jewel",
+        "jewel",
+        "not_for_sale",
+        "radius_jewel"
+      ]
+    },
+    {
+      "name": "Timeless Jewel",
+      "itemClass": "Jewel",
+      "requirements": {},
+      "tags": [
+        "default",
+        "dexjewel",
+        "intjewel",
+        "jewel",
+        "not_for_sale",
+        "strjewel"
+      ]
+    }
+  ],
+  "unique_jewels": [
+    {
+      "name": "The Adorned",
+      "slot": "jewel",
+      "baseType": "Diamond",
+      "requirements": {},
+      "implicits": [],
+      "explicits": [
+        "(0-150)% increased Effect of Jewel Socket Passive Skills",
+        "containing Corrupted Magic Jewels"
+      ],
+      "source": "Drops from unique{Trialmaster} in normal{The Trial of Chaos}",
+      "league": "",
+      "tags": [
+        "limited:1"
+      ],
+      "limitedTo": 1
+    },
+    {
+      "name": "Controlled Metamorphosis",
+      "slot": "jewel",
+      "baseType": "Diamond",
+      "requirements": {},
+      "implicits": [],
+      "explicits": [
+        "Radius: Variable",
+        "Only affects Passives in Massive Ring",
+        "Passives in Radius can be Allocated without being connected to your tree",
+        "-(20-5)% to all Elemental Resistances",
+        "-(23-3)% to Chaos Resistance"
+      ],
+      "source": "Drops from unique{Xesht, We That Are One} in normal{Twisted Domain}",
+      "league": "",
+      "tags": [
+        "limited:1"
+      ],
+      "limitedTo": 1
+    },
+    {
+      "name": "Grand Spectrum",
+      "slot": "jewel",
+      "baseType": "Ruby",
+      "requirements": {},
+      "implicits": [],
+      "explicits": [
+        "2% increased Maximum Life per socketed Grand Spectrum"
+      ],
+      "source": "",
+      "league": "",
+      "tags": [
+        "limited:3"
+      ],
+      "limitedTo": 3
+    },
+    {
+      "name": "Grand Spectrum",
+      "slot": "jewel",
+      "baseType": "Emerald",
+      "requirements": {},
+      "implicits": [],
+      "explicits": [
+        "2% increased Spirit per socketed Grand Spectrum"
+      ],
+      "source": "",
+      "league": "",
+      "tags": [
+        "limited:3"
+      ],
+      "limitedTo": 3
+    },
+    {
+      "name": "Grand Spectrum",
+      "slot": "jewel",
+      "baseType": "Sapphire",
+      "requirements": {},
+      "implicits": [],
+      "explicits": [
+        "+6% to all Elemental Resistances per socketed Grand Spectrum"
+      ],
+      "source": "",
+      "league": "",
+      "tags": [
+        "limited:3"
+      ],
+      "limitedTo": 3
+    },
+    {
+      "name": "Heroic Tragedy",
+      "slot": "jewel",
+      "baseType": "Timeless Jewel",
+      "requirements": {},
+      "implicits": [],
+      "explicits": [
+        "Radius: Very Large",
+        "Remembrancing (100-8000) songworthy deeds by the line of Olroth",
+        "Passives in radius are Conquered by the Kalguur",
+        "Historic"
+      ],
+      "source": "Drops from unique{Olroth, Origin of the Fall}",
+      "league": "",
+      "tags": []
+    },
+    {
+      "name": "Undying Hate",
+      "slot": "jewel",
+      "baseType": "Timeless Jewel",
+      "requirements": {},
+      "implicits": [],
+      "explicits": [
+        "Radius: Very Large",
+        "Glorifying the defilement of (100-8000) souls in tribute to Ulaman",
+        "Passives in radius are Conquered by the Abyssals",
+        "Historic"
+      ],
+      "source": "Drops from unique{Vessel of Kulemak}",
+      "league": "",
+      "tags": []
+    }
+  ],
+  "cluster": [
+    {
+      "name": "Large Cluster Jewel",
+      "size": "Large",
+      "sizeIndex": 2,
+      "minNodes": 8,
+      "maxNodes": 12,
+      "notableCount": 5,
+      "skills": [
+        {
+          "name": "Attack Damage",
+          "tag": "affliction_attack_damage_",
+          "stats": [
+            "10% increased Attack Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Attack Damage"
+          ]
+        },
+        {
+          "name": "Attack Damage while Dual Wielding",
+          "tag": "affliction_attack_damage_while_dual_wielding_",
+          "stats": [
+            "12% increased Attack Damage while Dual Wielding"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Attack Damage while Dual Wielding"
+          ]
+        },
+        {
+          "name": "Attack Damage while holding a Shield",
+          "tag": "affliction_attack_damage_while_holding_a_shield",
+          "stats": [
+            "12% increased Attack Damage while holding a Shield"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Attack Damage while holding a Shield"
+          ]
+        },
+        {
+          "name": "Axe and Sword Damage",
+          "tag": "affliction_axe_and_sword_damage",
+          "stats": [
+            "Axe Attacks deal 12% increased Damage with Hits and Ailments",
+            "Sword Attacks deal 12% increased Damage with Hits and Ailments"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Axe Attacks deal 12% increased Damage with Hits and Ailments",
+            "Added Small Passive Skills grant: Sword Attacks deal 12% increased Damage with Hits and Ailments"
+          ]
+        },
+        {
+          "name": "Bow Damage",
+          "tag": "affliction_bow_damage",
+          "stats": [
+            "12% increased Damage with Bows",
+            "12% increased Damage Over Time with Bow Skills"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Damage with Bows",
+            "Added Small Passive Skills grant: 12% increased Damage Over Time with Bow Skills"
+          ]
+        },
+        {
+          "name": "Chaos Damage",
+          "tag": "affliction_chaos_damage",
+          "stats": [
+            "12% increased Chaos Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Chaos Damage"
+          ]
+        },
+        {
+          "name": "Cold Damage",
+          "tag": "affliction_cold_damage",
+          "stats": [
+            "12% increased Cold Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Cold Damage"
+          ]
+        },
+        {
+          "name": "Dagger and Claw Damage",
+          "tag": "affliction_dagger_and_claw_damage",
+          "stats": [
+            "Claw Attacks deal 12% increased Damage with Hits and Ailments",
+            "Dagger Attacks deal 12% increased Damage with Hits and Ailments"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Claw Attacks deal 12% increased Damage with Hits and Ailments",
+            "Added Small Passive Skills grant: Dagger Attacks deal 12% increased Damage with Hits and Ailments"
+          ]
+        },
+        {
+          "name": "Damage with Two Handed Weapons",
+          "tag": "affliction_damage_with_two_handed_melee_weapons",
+          "stats": [
+            "12% increased Damage with Two Handed Weapons"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Damage with Two Handed Weapons"
+          ]
+        },
+        {
+          "name": "Elemental Damage",
+          "tag": "affliction_elemental_damage",
+          "stats": [
+            "10% increased Elemental Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Elemental Damage"
+          ]
+        },
+        {
+          "name": "Fire Damage",
+          "tag": "affliction_fire_damage",
+          "stats": [
+            "12% increased Fire Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Fire Damage"
+          ]
+        },
+        {
+          "name": "Lightning Damage",
+          "tag": "affliction_lightning_damage",
+          "stats": [
+            "12% increased Lightning Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Lightning Damage"
+          ]
+        },
+        {
+          "name": "Mace and Staff Damage",
+          "tag": "affliction_mace_and_staff_damage",
+          "stats": [
+            "Staff Attacks deal 12% increased Damage with Hits and Ailments",
+            "Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Staff Attacks deal 12% increased Damage with Hits and Ailments",
+            "Added Small Passive Skills grant: Mace or Sceptre Attacks deal 12% increased Damage with Hits and Ailments"
+          ]
+        },
+        {
+          "name": "Minion Damage",
+          "tag": "affliction_minion_damage",
+          "stats": [
+            "Minions deal 10% increased Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Minions deal 10% increased Damage"
+          ]
+        },
+        {
+          "name": "Physical Damage",
+          "tag": "affliction_physical_damage",
+          "stats": [
+            "12% increased Physical Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Physical Damage"
+          ]
+        },
+        {
+          "name": "Spell Damage",
+          "tag": "affliction_spell_damage",
+          "stats": [
+            "10% increased Spell Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Spell Damage"
+          ]
+        },
+        {
+          "name": "Wand Damage",
+          "tag": "affliction_wand_damage",
+          "stats": [
+            "Wand Attacks deal 12% increased Damage with Hits and Ailments"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Wand Attacks deal 12% increased Damage with Hits and Ailments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Medium Cluster Jewel",
+      "size": "Medium",
+      "sizeIndex": 1,
+      "minNodes": 4,
+      "maxNodes": 6,
+      "notableCount": 4,
+      "skills": [
+        {
+          "name": "Area Damage",
+          "tag": "affliction_area_damage",
+          "stats": [
+            "10% increased Area Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Area Damage"
+          ]
+        },
+        {
+          "name": "Aura Effect (Legacy)",
+          "tag": "old_do_not_use_affliction_aura_effect",
+          "stats": [
+            "3% increased effect of Non-Curse Auras from your Skills"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 3% increased effect of Non-Curse Auras from your Skills"
+          ]
+        },
+        {
+          "name": "Brand Damage",
+          "tag": "affliction_brand_damage",
+          "stats": [
+            "12% increased Brand Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Brand Damage"
+          ]
+        },
+        {
+          "name": "Channelling Skill Damage",
+          "tag": "affliction_channelling_skill_damage",
+          "stats": [
+            "Channelling Skills deal 12% increased Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Channelling Skills deal 12% increased Damage"
+          ]
+        },
+        {
+          "name": "Chaos Damage over Time",
+          "tag": "affliction_chaos_damage_over_time_multiplier",
+          "stats": [
+            "12% increased Chaos Damage over Time"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Chaos Damage over Time"
+          ]
+        },
+        {
+          "name": "Cold Damage over Time",
+          "tag": "affliction_cold_damage_over_time_multiplier",
+          "stats": [
+            "12% increased Cold Damage over Time"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Cold Damage over Time"
+          ]
+        },
+        {
+          "name": "Critical Chance",
+          "tag": "affliction_critical_chance",
+          "stats": [
+            "15% increased Critical Strike Chance"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 15% increased Critical Strike Chance"
+          ]
+        },
+        {
+          "name": "Curse Effect (Legacy)",
+          "tag": "old_do_not_use_affliction_curse_effect",
+          "stats": [
+            "2% increased Effect of your Curses"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 2% increased Effect of your Curses"
+          ]
+        },
+        {
+          "name": "Damage over Time",
+          "tag": "affliction_damage_over_time_multiplier",
+          "stats": [
+            "10% increased Damage over Time"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Damage over Time"
+          ]
+        },
+        {
+          "name": "Damage while you have a Herald",
+          "tag": "affliction_damage_while_you_have_a_herald",
+          "stats": [
+            "10% increased Damage while affected by a Herald"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Damage while affected by a Herald"
+          ]
+        },
+        {
+          "name": "Effect of Non-Damaging Ailments",
+          "tag": "affliction_effect_of_non-damaging_ailments",
+          "stats": [
+            "10% increased Effect of Non-Damaging Ailments"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Effect of Non-Damaging Ailments"
+          ]
+        },
+        {
+          "name": "Fire Damage over Time",
+          "tag": "affliction_fire_damage_over_time_multiplier",
+          "stats": [
+            "12% increased Burning Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Burning Damage"
+          ]
+        },
+        {
+          "name": "Flask Duration",
+          "tag": "affliction_flask_duration",
+          "stats": [
+            "6% increased Flask Effect Duration"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 6% increased Flask Effect Duration"
+          ]
+        },
+        {
+          "name": "Life and Mana recovery from Flasks",
+          "tag": "affliction_life_and_mana_recovery_from_flasks",
+          "stats": [
+            "10% increased Life Recovery from Flasks",
+            "10% increased Mana Recovery from Flasks"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Life Recovery from Flasks",
+            "Added Small Passive Skills grant: 10% increased Mana Recovery from Flasks"
+          ]
+        },
+        {
+          "name": "Minion Damage while you have a Herald",
+          "tag": "affliction_minion_damage_while_you_have_a_herald",
+          "stats": [
+            "Minions deal 10% increased Damage while you are affected by a Herald"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Minions deal 10% increased Damage while you are affected by a Herald"
+          ]
+        },
+        {
+          "name": "Minion Life",
+          "tag": "affliction_minion_life",
+          "stats": [
+            "Minions have 12% increased maximum Life"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Minions have 12% increased maximum Life"
+          ]
+        },
+        {
+          "name": "Physical Damage over Time",
+          "tag": "affliction_physical_damage_over_time_multiplier",
+          "stats": [
+            "12% increased Physical Damage over Time"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Physical Damage over Time"
+          ]
+        },
+        {
+          "name": "Projectile Damage",
+          "tag": "affliction_projectile_damage",
+          "stats": [
+            "10% increased Projectile Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 10% increased Projectile Damage"
+          ]
+        },
+        {
+          "name": "Totem Damage",
+          "tag": "affliction_totem_damage",
+          "stats": [
+            "12% increased Totem Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Totem Damage"
+          ]
+        },
+        {
+          "name": "Trap and Mine Damage",
+          "tag": "affliction_trap_and_mine_damage",
+          "stats": [
+            "12% increased Trap Damage",
+            "12% increased Mine Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 12% increased Trap Damage",
+            "Added Small Passive Skills grant: 12% increased Mine Damage"
+          ]
+        },
+        {
+          "name": "Exerted Attack Damage",
+          "tag": "affliction_warcry_buff_effect",
+          "stats": [
+            "Exerted Attacks deal 20% increased Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: Exerted Attacks deal 20% increased Damage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Small Cluster Jewel",
+      "size": "Small",
+      "sizeIndex": 0,
+      "minNodes": 2,
+      "maxNodes": 3,
+      "notableCount": 1,
+      "skills": [
+        {
+          "name": "Armour",
+          "tag": "affliction_armour",
+          "stats": [
+            "15% increased Armour"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 15% increased Armour"
+          ]
+        },
+        {
+          "name": "Chance to Block Attack Damage",
+          "tag": "affliction_chance_to_block",
+          "stats": [
+            "+2% Chance to Block Attack Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +2% Chance to Block Attack Damage"
+          ]
+        },
+        {
+          "name": "Chance to Block Spell Damage",
+          "tag": "affliction_chance_to_block",
+          "stats": [
+            "2% Chance to Block Spell Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 2% Chance to Block Spell Damage"
+          ]
+        },
+        {
+          "name": "Chance to Suppress Spell Damage",
+          "tag": "affliction_chance_to_dodge_attacks",
+          "stats": [
+            "+4% chance to Suppress Spell Damage"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +4% chance to Suppress Spell Damage"
+          ]
+        },
+        {
+          "name": "Chaos Resistance",
+          "tag": "affliction_chaos_resistance",
+          "stats": [
+            "+12% to Chaos Resistance"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +12% to Chaos Resistance"
+          ]
+        },
+        {
+          "name": "Cold Resistance",
+          "tag": "affliction_cold_resistance",
+          "stats": [
+            "+15% to Cold Resistance"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +15% to Cold Resistance"
+          ]
+        },
+        {
+          "name": "Curse Effect",
+          "tag": "affliction_curse_effect_small",
+          "stats": [
+            "2% increased Effect of your Curses"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 2% increased Effect of your Curses"
+          ]
+        },
+        {
+          "name": "Dexterity",
+          "tag": "affliction_dexterity",
+          "stats": [
+            "+10 to Dexterity"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +10 to Dexterity"
+          ]
+        },
+        {
+          "name": "Evasion",
+          "tag": "affliction_evasion",
+          "stats": [
+            "15% increased Evasion Rating"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 15% increased Evasion Rating"
+          ]
+        },
+        {
+          "name": "Fire Resistance",
+          "tag": "affliction_fire_resistance",
+          "stats": [
+            "+15% to Fire Resistance"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +15% to Fire Resistance"
+          ]
+        },
+        {
+          "name": "Intelligence",
+          "tag": "affliction_intelligence",
+          "stats": [
+            "+10 to Intelligence"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +10 to Intelligence"
+          ]
+        },
+        {
+          "name": "Lightning Resistance",
+          "tag": "affliction_lightning_resistance",
+          "stats": [
+            "+15% to Lightning Resistance"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +15% to Lightning Resistance"
+          ]
+        },
+        {
+          "name": "Energy Shield",
+          "tag": "affliction_maximum_energy_shield",
+          "stats": [
+            "6% increased maximum Energy Shield"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 6% increased maximum Energy Shield"
+          ]
+        },
+        {
+          "name": "Life",
+          "tag": "affliction_maximum_life",
+          "stats": [
+            "4% increased maximum Life"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 4% increased maximum Life"
+          ]
+        },
+        {
+          "name": "Mana",
+          "tag": "affliction_maximum_mana",
+          "stats": [
+            "6% increased maximum Mana"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 6% increased maximum Mana"
+          ]
+        },
+        {
+          "name": "Reservation Efficiency",
+          "tag": "affliction_reservation_efficiency_small",
+          "stats": [
+            "6% increased Mana Reservation Efficiency of Skills"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: 6% increased Mana Reservation Efficiency of Skills"
+          ]
+        },
+        {
+          "name": "Strength",
+          "tag": "affliction_strength",
+          "stats": [
+            "+10 to Strength"
+          ],
+          "enchant": [
+            "Added Small Passive Skills grant: +10 to Strength"
+          ]
+        }
+      ]
+    }
+  ],
+  "timeless": {
+    "description": "Timeless jewels convert nearby passives based on legion type and seed.",
+    "source_files": [
+      "legion_passives",
+      "legion_trade_ids",
+      "nodes_index"
+    ],
+    "node_count": 231
+  },
+  "crafted_mods": [
+    {
+      "id": "CraftedJewelAdditionalPrefixAllowed",
+      "type": "Suffix",
+      "group": "PrefixSuffixAllowed",
+      "level": 1,
+      "mods": [
+        "+1 Prefix Modifier allowed"
+      ]
+    },
+    {
+      "id": "CraftedJewelAdditionalSuffixAllowed",
+      "type": "Prefix",
+      "group": "PrefixSuffixAllowed",
+      "level": 1,
+      "mods": [
+        "+1 Suffix Modifier allowed"
+      ]
+    },
+    {
+      "id": "CraftedJewelBlindOnHitWhileRubySapphireSocketed",
+      "type": "Suffix",
+      "group": "BlindOnHitWhileRubySapphireForJewel",
+      "level": 1,
+      "mods": [
+        "Blind Enemies on Hit while you have a Ruby and a Sapphire socketed in your tree"
+      ]
+    },
+    {
+      "id": "CraftedJewelDebilitateOnHitWhileEmeraldSapphireSocketed",
+      "type": "Suffix",
+      "group": "DebilitateOnHitWhileEmeraldSapphireForJewel",
+      "level": 1,
+      "mods": [
+        "Debilitate Enemies on Hit while you have an Emerald and a Sapphire socketed in your tree"
+      ]
+    },
+    {
+      "id": "CraftedJewelExposureOnHitWhileRubyEmeraldSocketed",
+      "type": "Suffix",
+      "group": "ExposureOnHitWhileRubyEmeraldForJewel",
+      "level": 1,
+      "mods": [
+        "Inflict Elemental Exposure on Hit while you have a Ruby and an Emerald socketed in your tree"
+      ]
+    },
+    {
+      "id": "CraftedJewelMaximumChaosResistance",
+      "type": "Suffix",
+      "group": "MaximumChaosResistance",
+      "level": 1,
+      "mods": [
+        "+1% to Maximum Chaos Resistance"
+      ]
+    },
+    {
+      "id": "CraftedJewelPrefixEffect",
+      "type": "Suffix",
+      "group": "LocalPrefixEffect",
+      "level": 1,
+      "mods": [
+        "(40-60)% increased Effect of Prefixes"
+      ]
+    },
+    {
+      "id": "CraftedJewelRadiusChaosResistance",
+      "type": "Suffix",
+      "group": "ChaosResistance",
+      "level": 1,
+      "mods": [
+        "+(4-5)% to Chaos Resistance"
+      ]
+    },
+    {
+      "id": "CraftedJewelRadiusColdResistance",
+      "type": "Suffix",
+      "group": "ColdResistance",
+      "level": 1,
+      "mods": [
+        "+(5-7)% to Cold Resistance"
+      ]
+    },
+    {
+      "id": "CraftedJewelRadiusExtraLargeSize",
+      "type": "Prefix",
+      "group": "JewelRadiusLargerRadius",
+      "level": 1,
+      "mods": [
+        "Upgrades Radius to Very Large"
+      ]
+    },
+    {
+      "id": "CraftedJewelRadiusFireResistance",
+      "type": "Suffix",
+      "group": "FireResistance",
+      "level": 1,
+      "mods": [
+        "+(5-7)% to Fire Resistance"
+      ]
+    },
+    {
+      "id": "CraftedJewelRadiusLightningResistance",
+      "type": "Suffix",
+      "group": "LightningResistance",
+      "level": 1,
+      "mods": [
+        "+(5-7)% to Lightning Resistance"
+      ]
+    },
+    {
+      "id": "CraftedJewelSuffixEffect",
+      "type": "Prefix",
+      "group": "LocalSuffixEffect",
+      "level": 1,
+      "mods": [
+        "(40-60)% increased Effect of Suffixes"
+      ]
+    },
+    {
+      "id": "JewelAccuracy",
+      "type": "Prefix",
+      "group": "IncreasedAccuracyPercent",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Accuracy Rating"
+      ]
+    },
+    {
+      "id": "JewelAilmentChance",
+      "type": "Suffix",
+      "group": "AilmentChance",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased chance to inflict Ailments"
+      ]
+    },
+    {
+      "id": "JewelAilmentEffect",
+      "type": "Prefix",
+      "group": "AilmentEffect",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Magnitude of Ailments you inflict"
+      ]
+    },
+    {
+      "id": "JewelAilmentThreshold",
+      "type": "Suffix",
+      "group": "IncreasedAilmentThreshold",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Elemental Ailment Threshold"
+      ]
+    },
+    {
+      "id": "JewelAilmentThresholdfromEnergyShield",
+      "type": "Suffix",
+      "group": "AilmentThresholdfromEnergyShield",
+      "level": 1,
+      "mods": [
+        "Gain additional Ailment Threshold equal to (5-15)% of maximum Energy Shield"
+      ]
+    },
+    {
+      "id": "JewelAreaofEffect",
+      "type": "Prefix",
+      "group": "AreaOfEffect",
+      "level": 1,
+      "mods": [
+        "(4-6)% increased Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelArmour",
+      "type": "Prefix",
+      "group": "GlobalPhysicalDamageReductionRatingPercent",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Armour"
+      ]
+    },
+    {
+      "id": "JewelArmourBreak",
+      "type": "Prefix",
+      "group": "ArmourBreak",
+      "level": 1,
+      "mods": [
+        "Break (5-15)% increased Armour"
+      ]
+    },
+    {
+      "id": "JewelArmourBreakDuration",
+      "type": "Suffix",
+      "group": "ArmourBreakDuration",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Armour Break Duration"
+      ]
+    },
+    {
+      "id": "JewelAttackCriticalChance",
+      "type": "Suffix",
+      "group": "AttackCriticalStrikeChance",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Critical Hit Chance for Attacks"
+      ]
+    },
+    {
+      "id": "JewelAttackCriticalDamage",
+      "type": "Suffix",
+      "group": "AttackCriticalStrikeMultiplier",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Critical Damage Bonus for Attack Damage"
+      ]
+    },
+    {
+      "id": "JewelAttackDamage",
+      "type": "Prefix",
+      "group": "AttackDamage",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Attack Damage"
+      ]
+    },
+    {
+      "id": "JewelAttackSpeed",
+      "type": "Suffix",
+      "group": "IncreasedAttackSpeed",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed"
+      ]
+    },
+    {
+      "id": "JewelAuraEffect",
+      "type": "Prefix",
+      "group": "AuraEffectForJewel",
+      "level": 1,
+      "mods": [
+        "Aura Skills have (3-7)% increased Magnitudes"
+      ]
+    },
+    {
+      "id": "JewelAxeDamage",
+      "type": "Prefix",
+      "group": "IncreasedAxeDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Damage with Axes"
+      ]
+    },
+    {
+      "id": "JewelAxeSpeed",
+      "type": "Suffix",
+      "group": "AxeAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed with Axes"
+      ]
+    },
+    {
+      "id": "JewelBannerArea",
+      "type": "Prefix",
+      "group": "BannerArea",
+      "level": 1,
+      "mods": [
+        "Banner Skills have (6-16)% increased Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelBannerDuration",
+      "type": "Suffix",
+      "group": "BannerDuration",
+      "level": 1,
+      "mods": [
+        "Banner Skills have (15-25)% increased Duration"
+      ]
+    },
+    {
+      "id": "JewelBannerValourGained",
+      "type": "Suffix",
+      "group": "BannerValourGained",
+      "level": 1,
+      "mods": [
+        "(15-20)% increased Glory generation for Banner Skills"
+      ]
+    },
+    {
+      "id": "JewelBleedingChance",
+      "type": "Prefix",
+      "group": "BaseChanceToBleed",
+      "level": 1,
+      "mods": [
+        "(3-7)% chance to inflict Bleeding on Hit"
+      ]
+    },
+    {
+      "id": "JewelBleedingDuration",
+      "type": "Suffix",
+      "group": "BleedDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Bleeding Duration"
+      ]
+    },
+    {
+      "id": "JewelBleedingEffect",
+      "type": "Prefix",
+      "group": "BleedDotMultiplier",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Magnitude of Bleeding you inflict"
+      ]
+    },
+    {
+      "id": "JewelBlindEffect",
+      "type": "Prefix",
+      "group": "BlindEffect",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Blind Effect"
+      ]
+    },
+    {
+      "id": "JewelBlindonHit",
+      "type": "Suffix",
+      "group": "AttacksBlindOnHitChance",
+      "level": 1,
+      "mods": [
+        "(3-7)% chance to Blind Enemies on Hit with Attacks"
+      ]
+    },
+    {
+      "id": "JewelBlock",
+      "type": "Prefix",
+      "group": "IncreasedBlockChance",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Block chance"
+      ]
+    },
+    {
+      "id": "JewelBowAccuracyRating",
+      "type": "Prefix",
+      "group": "BowIncreasedAccuracyRating",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Accuracy Rating with Bows"
+      ]
+    },
+    {
+      "id": "JewelBowDamage",
+      "type": "Prefix",
+      "group": "IncreasedBowDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Bows"
+      ]
+    },
+    {
+      "id": "JewelBowSpeed",
+      "type": "Suffix",
+      "group": "BowAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed with Bows"
+      ]
+    },
+    {
+      "id": "JewelCastSpeed",
+      "type": "Suffix",
+      "group": "IncreasedCastSpeed",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Cast Speed"
+      ]
+    },
+    {
+      "id": "JewelChainFromTerrain",
+      "type": "Suffix",
+      "group": "ChainFromTerrain",
+      "level": 1,
+      "mods": [
+        "Projectiles have (3-5)% chance to Chain an additional time from terrain"
+      ]
+    },
+    {
+      "id": "JewelChaosDamage",
+      "type": "Prefix",
+      "group": "IncreasedChaosDamage",
+      "level": 1,
+      "mods": [
+        "(7-13)% increased Chaos Damage"
+      ]
+    },
+    {
+      "id": "JewelCharmChargesGained",
+      "type": "Suffix",
+      "group": "CharmChargesGained",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Charm Charges gained"
+      ]
+    },
+    {
+      "id": "JewelCharmDamageWhileUsing",
+      "type": "Prefix",
+      "group": "CharmDamageWhileUsing",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Damage while you have an active Charm"
+      ]
+    },
+    {
+      "id": "JewelCharmDuration",
+      "type": "Suffix",
+      "group": "CharmDuration",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Charm Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelChillDuration",
+      "type": "Suffix",
+      "group": "IncreasedChillDuration",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Chill Duration on Enemies"
+      ]
+    },
+    {
+      "id": "JewelColdDamage",
+      "type": "Prefix",
+      "group": "ColdDamagePercentage",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Cold Damage"
+      ]
+    },
+    {
+      "id": "JewelColdPenetration",
+      "type": "Prefix",
+      "group": "ColdResistancePenetration",
+      "level": 1,
+      "mods": [
+        "Damage Penetrates (5-10)% Cold Resistance"
+      ]
+    },
+    {
+      "id": "JewelCompanionDamage",
+      "type": "Prefix",
+      "group": "CompanionDamage",
+      "level": 1,
+      "mods": [
+        "Companions deal (10-20)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelCompanionLife",
+      "type": "Prefix",
+      "group": "CompanionLife",
+      "level": 1,
+      "mods": [
+        "Companions have (10-20)% increased maximum Life"
+      ]
+    },
+    {
+      "id": "JewelCooldownSpeed",
+      "type": "Suffix",
+      "group": "GlobalCooldownRecovery",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Cooldown Recovery Rate"
+      ]
+    },
+    {
+      "id": "JewelCorpses",
+      "type": "Prefix",
+      "group": "DamageIfConsumedCorpse",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Damage if you have Consumed a Corpse Recently"
+      ]
+    },
+    {
+      "id": "JewelCriticalAilmentEffect",
+      "type": "Prefix",
+      "group": "CriticalAilmentEffect",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Magnitude of Damaging Ailments you inflict with Critical Hits"
+      ]
+    },
+    {
+      "id": "JewelCriticalChance",
+      "type": "Suffix",
+      "group": "CriticalStrikeChance",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Critical Hit Chance"
+      ]
+    },
+    {
+      "id": "JewelCriticalDamage",
+      "type": "Suffix",
+      "group": "CriticalStrikeMultiplier",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Critical Damage Bonus"
+      ]
+    },
+    {
+      "id": "JewelCrossbowDamage",
+      "type": "Prefix",
+      "group": "CrossbowDamage",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Crossbows"
+      ]
+    },
+    {
+      "id": "JewelCrossbowReloadSpeed",
+      "type": "Suffix",
+      "group": "CrossbowReloadSpeed",
+      "level": 1,
+      "mods": [
+        "(10-15)% increased Crossbow Reload Speed"
+      ]
+    },
+    {
+      "id": "JewelCrossbowSpeed",
+      "type": "Suffix",
+      "group": "CrossbowSpeed",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed with Crossbows"
+      ]
+    },
+    {
+      "id": "JewelCurseArea",
+      "type": "Prefix",
+      "group": "CurseAreaOfEffect",
+      "level": 1,
+      "mods": [
+        "(8-12)% increased Area of Effect of Curses"
+      ]
+    },
+    {
+      "id": "JewelCurseDelay",
+      "type": "Suffix",
+      "group": "CurseDelay",
+      "level": 1,
+      "mods": [
+        "(5-15)% faster Curse Activation"
+      ]
+    },
+    {
+      "id": "JewelCurseDuration",
+      "type": "Suffix",
+      "group": "BaseCurseDuration",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Curse Duration"
+      ]
+    },
+    {
+      "id": "JewelCurseEffect",
+      "type": "Prefix",
+      "group": "CurseEffectivenessForJewel",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Curse Magnitudes"
+      ]
+    },
+    {
+      "id": "JewelDaggerCriticalChance",
+      "type": "Suffix",
+      "group": "CritChanceWithDaggerForJewel",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Critical Hit Chance with Daggers"
+      ]
+    },
+    {
+      "id": "JewelDaggerDamage",
+      "type": "Prefix",
+      "group": "IncreasedDaggerDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Daggers"
+      ]
+    },
+    {
+      "id": "JewelDaggerSpeed",
+      "type": "Suffix",
+      "group": "DaggerAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed with Daggers"
+      ]
+    },
+    {
+      "id": "JewelDamageVsRareOrUnique",
+      "type": "Prefix",
+      "group": "DamageVsRareOrUnique",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Damage with Hits against Rare and Unique Enemies"
+      ]
+    },
+    {
+      "id": "JewelDamagefromMana",
+      "type": "Suffix",
+      "group": "DamageRemovedFromManaBeforeLife",
+      "level": 1,
+      "mods": [
+        "(2-4)% of Damage is taken from Mana before Life"
+      ]
+    },
+    {
+      "id": "JewelDamagevsArmourBrokenEnemies",
+      "type": "Prefix",
+      "group": "DamagevsArmourBrokenEnemies",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Damage against Enemies with Fully Broken Armour"
+      ]
+    },
+    {
+      "id": "JewelDamagingAilmentDuration",
+      "type": "Suffix",
+      "group": "DamagingAilmentDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Duration of Damaging Ailments on Enemies"
+      ]
+    },
+    {
+      "id": "JewelDazeBuildup",
+      "type": "Suffix",
+      "group": "DazeBuildup",
+      "level": 1,
+      "mods": [
+        "(5-10)% chance to Daze on Hit"
+      ]
+    },
+    {
+      "id": "JewelDebuffExpiry",
+      "type": "Suffix",
+      "group": "DebuffTimePassed",
+      "level": 1,
+      "mods": [
+        "Debuffs on you expire (5-10)% faster"
+      ]
+    },
+    {
+      "id": "JewelElementalAilmentDuration",
+      "type": "Suffix",
+      "group": "ElementalAilmentDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Duration of Ignite, Shock and Chill on Enemies"
+      ]
+    },
+    {
+      "id": "JewelElementalDamage",
+      "type": "Prefix",
+      "group": "ElementalDamagePercent",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Elemental Damage"
+      ]
+    },
+    {
+      "id": "JewelEmpoweredAttackDamage",
+      "type": "Prefix",
+      "group": "ExertedAttackDamage",
+      "level": 1,
+      "mods": [
+        "Empowered Attacks deal (10-20)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelEnergy",
+      "type": "Suffix",
+      "group": "EnergyGeneration",
+      "level": 1,
+      "mods": [
+        "Meta Skills gain (4-8)% increased Energy"
+      ]
+    },
+    {
+      "id": "JewelEnergyShield",
+      "type": "Prefix",
+      "group": "GlobalEnergyShieldPercent",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased maximum Energy Shield"
+      ]
+    },
+    {
+      "id": "JewelEnergyShieldDelay",
+      "type": "Prefix",
+      "group": "EnergyShieldDelay",
+      "level": 1,
+      "mods": [
+        "(10-15)% faster start of Energy Shield Recharge"
+      ]
+    },
+    {
+      "id": "JewelEnergyShieldRecharge",
+      "type": "Prefix",
+      "group": "EnergyShieldRegeneration",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Energy Shield Recharge Rate"
+      ]
+    },
+    {
+      "id": "JewelEvasion",
+      "type": "Prefix",
+      "group": "GlobalEvasionRatingPercent",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Evasion Rating"
+      ]
+    },
+    {
+      "id": "JewelFasterAilments",
+      "type": "Suffix",
+      "group": "FasterAilmentDamageForJewel",
+      "level": 1,
+      "mods": [
+        "Damaging Ailments deal damage (3-7)% faster"
+      ]
+    },
+    {
+      "id": "JewelFireDamage",
+      "type": "Prefix",
+      "group": "FireDamagePercentage",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Fire Damage"
+      ]
+    },
+    {
+      "id": "JewelFirePenetration",
+      "type": "Prefix",
+      "group": "FireResistancePenetration",
+      "level": 1,
+      "mods": [
+        "Damage Penetrates (5-10)% Fire Resistance"
+      ]
+    },
+    {
+      "id": "JewelFlailCriticalChance",
+      "type": "Suffix",
+      "group": "FlailCriticalChance",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Critical Hit Chance with Flails"
+      ]
+    },
+    {
+      "id": "JewelFlailDamage",
+      "type": "Prefix",
+      "group": "FlailDamage",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Flails"
+      ]
+    },
+    {
+      "id": "JewelFlaskChargesGained",
+      "type": "Suffix",
+      "group": "IncreasedFlaskChargesGained",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Flask Charges gained"
+      ]
+    },
+    {
+      "id": "JewelFlaskDuration",
+      "type": "Suffix",
+      "group": "FlaskDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Flask Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelFocusEnergyShield",
+      "type": "Prefix",
+      "group": "FocusEnergyShield",
+      "level": 1,
+      "mods": [
+        "(30-50)% increased Energy Shield from Equipped Focus"
+      ]
+    },
+    {
+      "id": "JewelForkingProjectiles",
+      "type": "Suffix",
+      "group": "ForkingProjectiles",
+      "level": 1,
+      "mods": [
+        "Projectiles have (10-15)% chance for an additional Projectile when Forking"
+      ]
+    },
+    {
+      "id": "JewelFreezeAmount",
+      "type": "Suffix",
+      "group": "FreezeDamageIncrease",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Freeze Buildup"
+      ]
+    },
+    {
+      "id": "JewelFreezeThreshold",
+      "type": "Suffix",
+      "group": "FreezeThreshold",
+      "level": 1,
+      "mods": [
+        "(18-32)% increased Freeze Threshold"
+      ]
+    },
+    {
+      "id": "JewelHazardDamage",
+      "type": "Prefix",
+      "group": "HazardDamage",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Hazard Damage"
+      ]
+    },
+    {
+      "id": "JewelHeraldDamage",
+      "type": "Prefix",
+      "group": "HeraldDamage",
+      "level": 1,
+      "mods": [
+        "Herald Skills deal (15-25)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelIgniteChance",
+      "type": "Suffix",
+      "group": "IgniteChanceIncrease",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Flammability Magnitude"
+      ]
+    },
+    {
+      "id": "JewelIgniteEffect",
+      "type": "Prefix",
+      "group": "IgniteEffect",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Ignite Magnitude"
+      ]
+    },
+    {
+      "id": "JewelIncisionChance",
+      "type": "Prefix",
+      "group": "IncisionChance",
+      "level": 1,
+      "mods": [
+        "(15-25)% chance for Attack Hits to apply Incision"
+      ]
+    },
+    {
+      "id": "JewelIncreasedDuration",
+      "type": "Suffix",
+      "group": "SkillEffectDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Skill Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelKnockback",
+      "type": "Suffix",
+      "group": "KnockbackDistance",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Knockback Distance"
+      ]
+    },
+    {
+      "id": "JewelLifeCost",
+      "type": "Suffix",
+      "group": "LifeCost",
+      "level": 1,
+      "mods": [
+        "(4-6)% of Skill Mana Costs Converted to Life Costs"
+      ]
+    },
+    {
+      "id": "JewelLifeFlaskChargeGen",
+      "type": "Suffix",
+      "group": "LifeFlaskChargePercentGeneration",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Life Flask Charges gained"
+      ]
+    },
+    {
+      "id": "JewelLifeFlaskRecovery",
+      "type": "Suffix",
+      "group": "GlobalFlaskLifeRecovery",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Life Recovery from Flasks"
+      ]
+    },
+    {
+      "id": "JewelLifeLeech",
+      "type": "Suffix",
+      "group": "LifeLeechAmount",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased amount of Life Leeched"
+      ]
+    },
+    {
+      "id": "JewelLifeRecoup",
+      "type": "Suffix",
+      "group": "LifeRecoupForJewel",
+      "level": 1,
+      "mods": [
+        "(2-3)% of Damage taken Recouped as Life"
+      ]
+    },
+    {
+      "id": "JewelLifeRegeneration",
+      "type": "Suffix",
+      "group": "LifeRegenerationRate",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Life Regeneration rate"
+      ]
+    },
+    {
+      "id": "JewelLifeonKill",
+      "type": "Suffix",
+      "group": "MaximumLifeOnKillPercent",
+      "level": 1,
+      "mods": [
+        "Recover (1-2)% of maximum Life on Kill"
+      ]
+    },
+    {
+      "id": "JewelLightningDamage",
+      "type": "Prefix",
+      "group": "LightningDamagePercentage",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Lightning Damage"
+      ]
+    },
+    {
+      "id": "JewelLightningPenetration",
+      "type": "Prefix",
+      "group": "LightningResistancePenetration",
+      "level": 1,
+      "mods": [
+        "Damage Penetrates (5-10)% Lightning Resistance"
+      ]
+    },
+    {
+      "id": "JewelMaceDamage",
+      "type": "Prefix",
+      "group": "IncreasedMaceDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Maces"
+      ]
+    },
+    {
+      "id": "JewelMaceStun",
+      "type": "Suffix",
+      "group": "MaceStun",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Stun Buildup with Maces"
+      ]
+    },
+    {
+      "id": "JewelManaFlaskChargeGen",
+      "type": "Suffix",
+      "group": "ManaFlaskChargePercentGeneration",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Mana Flask Charges gained"
+      ]
+    },
+    {
+      "id": "JewelManaFlaskRecovery",
+      "type": "Suffix",
+      "group": "FlaskManaRecovery",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Mana Recovery from Flasks"
+      ]
+    },
+    {
+      "id": "JewelManaLeech",
+      "type": "Suffix",
+      "group": "ManaLeechAmount",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased amount of Mana Leeched"
+      ]
+    },
+    {
+      "id": "JewelManaRegeneration",
+      "type": "Suffix",
+      "group": "ManaRegeneration",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Mana Regeneration Rate"
+      ]
+    },
+    {
+      "id": "JewelManaonKill",
+      "type": "Suffix",
+      "group": "ManaGainedOnKillPercentage",
+      "level": 1,
+      "mods": [
+        "Recover (1-2)% of maximum Mana on Kill"
+      ]
+    },
+    {
+      "id": "JewelMarkCastSpeed",
+      "type": "Suffix",
+      "group": "MarkCastSpeed",
+      "level": 1,
+      "mods": [
+        "Mark Skills have (5-15)% increased Use Speed"
+      ]
+    },
+    {
+      "id": "JewelMarkDuration",
+      "type": "Suffix",
+      "group": "MarkDuration",
+      "level": 1,
+      "mods": [
+        "Mark Skills have (18-32)% increased Skill Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelMarkEffect",
+      "type": "Prefix",
+      "group": "MarkEffect",
+      "level": 1,
+      "mods": [
+        "(4-8)% increased Effect of your Mark Skills"
+      ]
+    },
+    {
+      "id": "JewelMaximumColdResistance",
+      "type": "Suffix",
+      "group": "MaximumColdResist",
+      "level": 1,
+      "mods": [
+        "+1% to Maximum Cold Resistance"
+      ]
+    },
+    {
+      "id": "JewelMaximumFireResistance",
+      "type": "Suffix",
+      "group": "MaximumFireResist",
+      "level": 1,
+      "mods": [
+        "+1% to Maximum Fire Resistance"
+      ]
+    },
+    {
+      "id": "JewelMaximumLightningResistance",
+      "type": "Suffix",
+      "group": "MaximumLightningResistance",
+      "level": 1,
+      "mods": [
+        "+1% to Maximum Lightning Resistance"
+      ]
+    },
+    {
+      "id": "JewelMaximumRage",
+      "type": "Prefix",
+      "group": "MaximumRage",
+      "level": 1,
+      "mods": [
+        "+(1-2) to Maximum Rage"
+      ]
+    },
+    {
+      "id": "JewelMeleeDamage",
+      "type": "Prefix",
+      "group": "MeleeDamage",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Melee Damage"
+      ]
+    },
+    {
+      "id": "JewelMeleeDamageIfProjectileHitRecently",
+      "type": "Prefix",
+      "group": "MeleeDamageIfProjectileHitRecently",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Melee Damage if you've dealt a Projectile Attack Hit in the past eight seconds"
+      ]
+    },
+    {
+      "id": "JewelMinionAccuracy",
+      "type": "Prefix",
+      "group": "MinionAccuracyRatingForJewel",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Minion Accuracy Rating"
+      ]
+    },
+    {
+      "id": "JewelMinionArea",
+      "type": "Prefix",
+      "group": "MinionAreaOfEffect",
+      "level": 1,
+      "mods": [
+        "Minions have (5-8)% increased Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelMinionAttackandCastSpeed",
+      "type": "Suffix",
+      "group": "MinionAttackSpeedAndCastSpeed",
+      "level": 1,
+      "mods": [
+        "Minions have (2-4)% increased Attack and Cast Speed"
+      ]
+    },
+    {
+      "id": "JewelMinionChaosResistance",
+      "type": "Suffix",
+      "group": "MinionChaosResistance",
+      "level": 1,
+      "mods": [
+        "Minions have +(7-13)% to Chaos Resistance"
+      ]
+    },
+    {
+      "id": "JewelMinionCriticalChance",
+      "type": "Suffix",
+      "group": "MinionCriticalStrikeChanceIncrease",
+      "level": 1,
+      "mods": [
+        "Minions have (10-20)% increased Critical Hit Chance"
+      ]
+    },
+    {
+      "id": "JewelMinionCriticalMultiplier",
+      "type": "Suffix",
+      "group": "MinionCriticalStrikeMultiplier",
+      "level": 1,
+      "mods": [
+        "Minions have (15-25)% increased Critical Damage Bonus"
+      ]
+    },
+    {
+      "id": "JewelMinionDamage",
+      "type": "Prefix",
+      "group": "MinionDamage",
+      "level": 1,
+      "mods": [
+        "Minions deal (5-15)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelMinionLife",
+      "type": "Prefix",
+      "group": "MinionLife",
+      "level": 1,
+      "mods": [
+        "Minions have (5-15)% increased maximum Life"
+      ]
+    },
+    {
+      "id": "JewelMinionPhysicalDamageReduction",
+      "type": "Suffix",
+      "group": "MinionPhysicalDamageReduction",
+      "level": 1,
+      "mods": [
+        "Minions have (6-16)% additional Physical Damage Reduction"
+      ]
+    },
+    {
+      "id": "JewelMinionResistances",
+      "type": "Suffix",
+      "group": "MinionElementalResistance",
+      "level": 1,
+      "mods": [
+        "Minions have +(5-10)% to all Elemental Resistances"
+      ]
+    },
+    {
+      "id": "JewelMinionReviveSpeed",
+      "type": "Suffix",
+      "group": "MinionReviveSpeed",
+      "level": 1,
+      "mods": [
+        "Minions Revive (5-15)% faster"
+      ]
+    },
+    {
+      "id": "JewelMovementSpeed",
+      "type": "Suffix",
+      "group": "MovementVelocity",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Movement Speed"
+      ]
+    },
+    {
+      "id": "JewelOfferingDuration",
+      "type": "Suffix",
+      "group": "OfferingDuration",
+      "level": 1,
+      "mods": [
+        "Offering Skills have (15-25)% increased Duration"
+      ]
+    },
+    {
+      "id": "JewelOfferingLife",
+      "type": "Prefix",
+      "group": "OfferingLife",
+      "level": 1,
+      "mods": [
+        "Offerings have (15-25)% increased Maximum Life"
+      ]
+    },
+    {
+      "id": "JewelParriedDebuffDuration",
+      "type": "Suffix",
+      "group": "ParriedDebuffDuration",
+      "level": 1,
+      "mods": [
+        "(10-15)% increased Parried Debuff Duration"
+      ]
+    },
+    {
+      "id": "JewelParryDamage",
+      "type": "Prefix",
+      "group": "ParryDamage",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Parry Damage"
+      ]
+    },
+    {
+      "id": "JewelPhysicalDamage",
+      "type": "Prefix",
+      "group": "PhysicalDamagePercent",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Global Physical Damage"
+      ]
+    },
+    {
+      "id": "JewelPiercingProjectiles",
+      "type": "Suffix",
+      "group": "ChanceToPierce",
+      "level": 1,
+      "mods": [
+        "(10-20)% chance to Pierce an Enemy"
+      ]
+    },
+    {
+      "id": "JewelPinBuildup",
+      "type": "Suffix",
+      "group": "PinBuildup",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Pin Buildup"
+      ]
+    },
+    {
+      "id": "JewelPlantDamage",
+      "type": "Prefix",
+      "group": "PlantDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Damage with Plant Skills"
+      ]
+    },
+    {
+      "id": "JewelPoisonChance",
+      "type": "Suffix",
+      "group": "BaseChanceToPoison",
+      "level": 1,
+      "mods": [
+        "(5-10)% chance to Poison on Hit"
+      ]
+    },
+    {
+      "id": "JewelPoisonDamage",
+      "type": "Prefix",
+      "group": "PoisonEffect",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Magnitude of Poison you inflict"
+      ]
+    },
+    {
+      "id": "JewelPoisonDuration",
+      "type": "Suffix",
+      "group": "PoisonDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Poison Duration"
+      ]
+    },
+    {
+      "id": "JewelPresenceRadius",
+      "type": "Prefix",
+      "group": "PresenceRadius",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Presence Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelProjectileDamage",
+      "type": "Prefix",
+      "group": "ProjectileDamage",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Projectile Damage"
+      ]
+    },
+    {
+      "id": "JewelProjectileDamageIfMeleeHitRecently",
+      "type": "Prefix",
+      "group": "ProjectileDamageIfMeleeHitRecently",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Projectile Damage if you've dealt a Melee Hit in the past eight seconds"
+      ]
+    },
+    {
+      "id": "JewelProjectileSpeed",
+      "type": "Prefix",
+      "group": "ProjectileSpeed",
+      "level": 1,
+      "mods": [
+        "(4-8)% increased Projectile Speed"
+      ]
+    },
+    {
+      "id": "JewelQuarterstaffDamage",
+      "type": "Prefix",
+      "group": "IncreasedStaffDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Quarterstaves"
+      ]
+    },
+    {
+      "id": "JewelQuarterstaffFreezeBuildup",
+      "type": "Suffix",
+      "group": "QuarterstaffFreezeBuildup",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Freeze Buildup with Quarterstaves"
+      ]
+    },
+    {
+      "id": "JewelQuarterstaffSpeed",
+      "type": "Suffix",
+      "group": "StaffAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed with Quarterstaves"
+      ]
+    },
+    {
+      "id": "JewelQuiverEffect",
+      "type": "Prefix",
+      "group": "QuiverModifierEffect",
+      "level": 1,
+      "mods": [
+        "(4-6)% increased bonuses gained from Equipped Quiver"
+      ]
+    },
+    {
+      "id": "JewelRadiusAccuracy",
+      "type": "Prefix",
+      "group": "IncreasedAccuracyPercent",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Accuracy Rating"
+      ]
+    },
+    {
+      "id": "JewelRadiusAilmentChance",
+      "type": "Suffix",
+      "group": "AilmentChance",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased chance to inflict Ailments"
+      ]
+    },
+    {
+      "id": "JewelRadiusAilmentEffect",
+      "type": "Prefix",
+      "group": "AilmentEffect",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Magnitude of Ailments you inflict"
+      ]
+    },
+    {
+      "id": "JewelRadiusAilmentThreshold",
+      "type": "Suffix",
+      "group": "IncreasedAilmentThreshold",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Elemental Ailment Threshold"
+      ]
+    },
+    {
+      "id": "JewelRadiusAilmentThresholdfromEnergyShield",
+      "type": "Suffix",
+      "group": "AilmentThresholdfromEnergyShield",
+      "level": 1,
+      "mods": [
+        "Gain additional Ailment Threshold equal to (1-2)% of maximum Energy Shield"
+      ]
+    },
+    {
+      "id": "JewelRadiusAreaofEffect",
+      "type": "Prefix",
+      "group": "AreaOfEffect",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelRadiusArmour",
+      "type": "Prefix",
+      "group": "GlobalPhysicalDamageReductionRatingPercent",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Armour"
+      ]
+    },
+    {
+      "id": "JewelRadiusArmourBreak",
+      "type": "Prefix",
+      "group": "ArmourBreak",
+      "level": 1,
+      "mods": [
+        "Break (1-2)% increased Armour"
+      ]
+    },
+    {
+      "id": "JewelRadiusArmourBreakDuration",
+      "type": "Suffix",
+      "group": "ArmourBreakDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Armour Break Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusAttackCriticalChance",
+      "type": "Suffix",
+      "group": "AttackCriticalStrikeChance",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Critical Hit Chance for Attacks"
+      ]
+    },
+    {
+      "id": "JewelRadiusAttackCriticalDamage",
+      "type": "Suffix",
+      "group": "AttackCriticalStrikeMultiplier",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Critical Damage Bonus for Attack Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusAttackDamage",
+      "type": "Prefix",
+      "group": "AttackDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusAttackSpeed",
+      "type": "Suffix",
+      "group": "IncreasedAttackSpeed",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusAuraEffect",
+      "type": "Prefix",
+      "group": "AuraEffectForJewel",
+      "level": 1,
+      "mods": [
+        "Aura Skills have (1-3)% increased Magnitudes"
+      ]
+    },
+    {
+      "id": "JewelRadiusAxeDamage",
+      "type": "Prefix",
+      "group": "IncreasedAxeDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage with Axes"
+      ]
+    },
+    {
+      "id": "JewelRadiusAxeSpeed",
+      "type": "Suffix",
+      "group": "AxeAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed with Axes"
+      ]
+    },
+    {
+      "id": "JewelRadiusBannerArea",
+      "type": "Prefix",
+      "group": "BannerArea",
+      "level": 1,
+      "mods": [
+        "Banner Skills have (2-3)% increased Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelRadiusBannerDuration",
+      "type": "Suffix",
+      "group": "BannerDuration",
+      "level": 1,
+      "mods": [
+        "Banner Skills have (3-4)% increased Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusBannerValourGained",
+      "type": "Suffix",
+      "group": "BannerValourGained",
+      "level": 1,
+      "mods": [
+        "(8-12)% increased Glory generation for Banner Skills"
+      ]
+    },
+    {
+      "id": "JewelRadiusBleedingChance",
+      "type": "Prefix",
+      "group": "BaseChanceToBleed",
+      "level": 1,
+      "mods": [
+        "1% chance to inflict Bleeding on Hit"
+      ]
+    },
+    {
+      "id": "JewelRadiusBleedingDuration",
+      "type": "Suffix",
+      "group": "BleedDuration",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Bleeding Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusBleedingEffect",
+      "type": "Prefix",
+      "group": "BleedDotMultiplier",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Magnitude of Bleeding you inflict"
+      ]
+    },
+    {
+      "id": "JewelRadiusBlindEffect",
+      "type": "Prefix",
+      "group": "BlindEffect",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Blind Effect"
+      ]
+    },
+    {
+      "id": "JewelRadiusBlindonHit",
+      "type": "Suffix",
+      "group": "AttacksBlindOnHitChance",
+      "level": 1,
+      "mods": [
+        "1% chance to Blind Enemies on Hit with Attacks"
+      ]
+    },
+    {
+      "id": "JewelRadiusBlock",
+      "type": "Prefix",
+      "group": "IncreasedBlockChance",
+      "level": 1,
+      "mods": [
+        "(1-3)% increased Block chance"
+      ]
+    },
+    {
+      "id": "JewelRadiusBowAccuracyRating",
+      "type": "Prefix",
+      "group": "BowIncreasedAccuracyRating",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Accuracy Rating with Bows"
+      ]
+    },
+    {
+      "id": "JewelRadiusBowDamage",
+      "type": "Prefix",
+      "group": "IncreasedBowDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage with Bows"
+      ]
+    },
+    {
+      "id": "JewelRadiusBowSpeed",
+      "type": "Suffix",
+      "group": "BowAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed with Bows"
+      ]
+    },
+    {
+      "id": "JewelRadiusCastSpeed",
+      "type": "Suffix",
+      "group": "IncreasedCastSpeed",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Cast Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusChainFromTerrain",
+      "type": "Suffix",
+      "group": "ChainFromTerrain",
+      "level": 1,
+      "mods": [
+        "Projectiles have (1-2)% chance to Chain an additional time from terrain"
+      ]
+    },
+    {
+      "id": "JewelRadiusChaosDamage",
+      "type": "Prefix",
+      "group": "IncreasedChaosDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Chaos Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusCharmChargesGained",
+      "type": "Suffix",
+      "group": "CharmChargesGained",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Charm Charges gained"
+      ]
+    },
+    {
+      "id": "JewelRadiusCharmDamageWhileUsing",
+      "type": "Prefix",
+      "group": "CharmDamageWhileUsing",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage while you have an active Charm"
+      ]
+    },
+    {
+      "id": "JewelRadiusCharmDuration",
+      "type": "Suffix",
+      "group": "CharmDuration",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Charm Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusChillDuration",
+      "type": "Suffix",
+      "group": "IncreasedChillDuration",
+      "level": 1,
+      "mods": [
+        "(6-12)% increased Chill Duration on Enemies"
+      ]
+    },
+    {
+      "id": "JewelRadiusColdDamage",
+      "type": "Prefix",
+      "group": "ColdDamagePercentage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Cold Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusColdPenetration",
+      "type": "Prefix",
+      "group": "ColdResistancePenetration",
+      "level": 1,
+      "mods": [
+        "Damage Penetrates (1-2)% Cold Resistance"
+      ]
+    },
+    {
+      "id": "JewelRadiusCompanionDamage",
+      "type": "Prefix",
+      "group": "CompanionDamage",
+      "level": 1,
+      "mods": [
+        "Companions deal (2-3)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusCompanionLife",
+      "type": "Prefix",
+      "group": "CompanionLife",
+      "level": 1,
+      "mods": [
+        "Companions have (2-3)% increased maximum Life"
+      ]
+    },
+    {
+      "id": "JewelRadiusCooldownSpeed",
+      "type": "Suffix",
+      "group": "GlobalCooldownRecovery",
+      "level": 1,
+      "mods": [
+        "(1-3)% increased Cooldown Recovery Rate"
+      ]
+    },
+    {
+      "id": "JewelRadiusCorpses",
+      "type": "Prefix",
+      "group": "DamageIfConsumedCorpse",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage if you have Consumed a Corpse Recently"
+      ]
+    },
+    {
+      "id": "JewelRadiusCriticalAilmentEffect",
+      "type": "Prefix",
+      "group": "CriticalAilmentEffect",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Magnitude of Damaging Ailments you inflict with Critical Hits"
+      ]
+    },
+    {
+      "id": "JewelRadiusCriticalChance",
+      "type": "Suffix",
+      "group": "CriticalStrikeChance",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Critical Hit Chance"
+      ]
+    },
+    {
+      "id": "JewelRadiusCriticalDamage",
+      "type": "Suffix",
+      "group": "CriticalStrikeMultiplier",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Critical Damage Bonus"
+      ]
+    },
+    {
+      "id": "JewelRadiusCrossbowDamage",
+      "type": "Prefix",
+      "group": "CrossbowDamage",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage with Crossbows"
+      ]
+    },
+    {
+      "id": "JewelRadiusCrossbowReloadSpeed",
+      "type": "Suffix",
+      "group": "CrossbowReloadSpeed",
+      "level": 1,
+      "mods": [
+        "(5-7)% increased Crossbow Reload Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusCrossbowSpeed",
+      "type": "Suffix",
+      "group": "CrossbowSpeed",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed with Crossbows"
+      ]
+    },
+    {
+      "id": "JewelRadiusCurseArea",
+      "type": "Prefix",
+      "group": "CurseAreaOfEffect",
+      "level": 1,
+      "mods": [
+        "(3-6)% increased Area of Effect of Curses"
+      ]
+    },
+    {
+      "id": "JewelRadiusCurseDuration",
+      "type": "Suffix",
+      "group": "BaseCurseDuration",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Curse Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusCurseEffect",
+      "type": "Prefix",
+      "group": "CurseEffectivenessForJewel",
+      "level": 1,
+      "mods": [
+        "1% increased Curse Magnitudes"
+      ]
+    },
+    {
+      "id": "JewelRadiusDaggerCriticalChance",
+      "type": "Suffix",
+      "group": "CritChanceWithDaggerForJewel",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Critical Hit Chance with Daggers"
+      ]
+    },
+    {
+      "id": "JewelRadiusDaggerDamage",
+      "type": "Prefix",
+      "group": "IncreasedDaggerDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage with Daggers"
+      ]
+    },
+    {
+      "id": "JewelRadiusDaggerSpeed",
+      "type": "Suffix",
+      "group": "DaggerAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed with Daggers"
+      ]
+    },
+    {
+      "id": "JewelRadiusDamageVsRareOrUnique",
+      "type": "Prefix",
+      "group": "DamageVsRareOrUnique",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage with Hits against Rare and Unique Enemies"
+      ]
+    },
+    {
+      "id": "JewelRadiusDamagefromMana",
+      "type": "Suffix",
+      "group": "DamageRemovedFromManaBeforeLife",
+      "level": 1,
+      "mods": [
+        "1% of Damage is taken from Mana before Life"
+      ]
+    },
+    {
+      "id": "JewelRadiusDamagevsArmourBrokenEnemies",
+      "type": "Prefix",
+      "group": "DamagevsArmourBrokenEnemies",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Damage against Enemies with Fully Broken Armour"
+      ]
+    },
+    {
+      "id": "JewelRadiusDamagingAilmentDuration",
+      "type": "Suffix",
+      "group": "DamagingAilmentDuration",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Duration of Damaging Ailments on Enemies"
+      ]
+    },
+    {
+      "id": "JewelRadiusDazeBuildup",
+      "type": "Suffix",
+      "group": "DazeBuildup",
+      "level": 1,
+      "mods": [
+        "1% chance to Daze on Hit"
+      ]
+    },
+    {
+      "id": "JewelRadiusDebuffExpiry",
+      "type": "Suffix",
+      "group": "DebuffTimePassed",
+      "level": 1,
+      "mods": [
+        "Debuffs on you expire (3-5)% faster"
+      ]
+    },
+    {
+      "id": "JewelRadiusElementalAilmentDuration",
+      "type": "Suffix",
+      "group": "ElementalAilmentDuration",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Duration of Ignite, Shock and Chill on Enemies"
+      ]
+    },
+    {
+      "id": "JewelRadiusElementalDamage",
+      "type": "Prefix",
+      "group": "ElementalDamagePercent",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Elemental Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusEmpoweredAttackDamage",
+      "type": "Prefix",
+      "group": "ExertedAttackDamage",
+      "level": 1,
+      "mods": [
+        "Empowered Attacks deal (2-3)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusEnergy",
+      "type": "Suffix",
+      "group": "EnergyGeneration",
+      "level": 1,
+      "mods": [
+        "Meta Skills gain (2-4)% increased Energy"
+      ]
+    },
+    {
+      "id": "JewelRadiusEnergyShield",
+      "type": "Prefix",
+      "group": "GlobalEnergyShieldPercent",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased maximum Energy Shield"
+      ]
+    },
+    {
+      "id": "JewelRadiusEnergyShieldDelay",
+      "type": "Prefix",
+      "group": "EnergyShieldDelay",
+      "level": 1,
+      "mods": [
+        "(5-7)% faster start of Energy Shield Recharge"
+      ]
+    },
+    {
+      "id": "JewelRadiusEnergyShieldRecharge",
+      "type": "Prefix",
+      "group": "EnergyShieldRegeneration",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Energy Shield Recharge Rate"
+      ]
+    },
+    {
+      "id": "JewelRadiusEvasion",
+      "type": "Prefix",
+      "group": "GlobalEvasionRatingPercent",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Evasion Rating"
+      ]
+    },
+    {
+      "id": "JewelRadiusFasterAilments",
+      "type": "Suffix",
+      "group": "FasterAilmentDamageForJewel",
+      "level": 1,
+      "mods": [
+        "Damaging Ailments deal damage (2-3)% faster"
+      ]
+    },
+    {
+      "id": "JewelRadiusFireDamage",
+      "type": "Prefix",
+      "group": "FireDamagePercentage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Fire Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusFirePenetration",
+      "type": "Prefix",
+      "group": "FireResistancePenetration",
+      "level": 1,
+      "mods": [
+        "Damage Penetrates (1-2)% Fire Resistance"
+      ]
+    },
+    {
+      "id": "JewelRadiusFlailCriticalChance",
+      "type": "Suffix",
+      "group": "FlailCriticalChance",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Critical Hit Chance with Flails"
+      ]
+    },
+    {
+      "id": "JewelRadiusFlailDamage",
+      "type": "Prefix",
+      "group": "FlailDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage with Flails"
+      ]
+    },
+    {
+      "id": "JewelRadiusFlaskChargesGained",
+      "type": "Suffix",
+      "group": "IncreasedFlaskChargesGained",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Flask Charges gained"
+      ]
+    },
+    {
+      "id": "JewelRadiusFlaskDuration",
+      "type": "Suffix",
+      "group": "FlaskDuration",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Flask Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusFocusEnergyShield",
+      "type": "Prefix",
+      "group": "FocusEnergyShield",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Energy Shield from Equipped Focus"
+      ]
+    },
+    {
+      "id": "JewelRadiusForkingProjectiles",
+      "type": "Suffix",
+      "group": "ForkingProjectiles",
+      "level": 1,
+      "mods": [
+        "Projectiles have (5-7)% chance for an additional Projectile when Forking"
+      ]
+    },
+    {
+      "id": "JewelRadiusFreezeAmount",
+      "type": "Suffix",
+      "group": "FreezeDamageIncrease",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Freeze Buildup"
+      ]
+    },
+    {
+      "id": "JewelRadiusFreezeThreshold",
+      "type": "Suffix",
+      "group": "FreezeThreshold",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Freeze Threshold"
+      ]
+    },
+    {
+      "id": "JewelRadiusHazardDamage",
+      "type": "Prefix",
+      "group": "HazardDamage",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Hazard Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusHeraldDamage",
+      "type": "Prefix",
+      "group": "HeraldDamage",
+      "level": 1,
+      "mods": [
+        "Herald Skills deal (2-4)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusIgniteChance",
+      "type": "Suffix",
+      "group": "IgniteChanceIncrease",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Flammability Magnitude"
+      ]
+    },
+    {
+      "id": "JewelRadiusIgniteEffect",
+      "type": "Prefix",
+      "group": "IgniteEffect",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Ignite Magnitude"
+      ]
+    },
+    {
+      "id": "JewelRadiusIncColdFreToLightning",
+      "type": "Prefix",
+      "group": "IncreasedColdFreToLightning",
+      "level": 1,
+      "mods": [
+        "Increases and Reductions to",
+        " Cold and Fire Damage in Radius are transformed to apply to Lightning Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusIncLightningColdToFire",
+      "type": "Prefix",
+      "group": "IncreasedLightningColdToFire",
+      "level": 1,
+      "mods": [
+        "Increases and Reductions to",
+        " Cold and Lightning Damage in Radius are transformed to apply to Fire Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusIncLightningFireToCold",
+      "type": "Prefix",
+      "group": "IncreasedLightningFireToCold",
+      "level": 1,
+      "mods": [
+        "Increases and Reductions to",
+        " Fire and Lightning Damage in Radius are transformed to apply to Cold Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusIncisionChance",
+      "type": "Prefix",
+      "group": "IncisionChance",
+      "level": 1,
+      "mods": [
+        "(3-5)% chance for Attack Hits to apply Incision"
+      ]
+    },
+    {
+      "id": "JewelRadiusIncreasedDuration",
+      "type": "Suffix",
+      "group": "SkillEffectDuration",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Skill Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusKnockback",
+      "type": "Suffix",
+      "group": "KnockbackDistance",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Knockback Distance"
+      ]
+    },
+    {
+      "id": "JewelRadiusLargeSize",
+      "type": "Prefix",
+      "group": "JewelRadiusLargerRadius",
+      "level": 1,
+      "mods": [
+        "Upgrades Radius to Large"
+      ]
+    },
+    {
+      "id": "JewelRadiusLifeCost",
+      "type": "Suffix",
+      "group": "LifeCost",
+      "level": 1,
+      "mods": [
+        "(2-3)% of Skill Mana Costs Converted to Life Costs"
+      ]
+    },
+    {
+      "id": "JewelRadiusLifeFlaskChargeGen",
+      "type": "Suffix",
+      "group": "LifeFlaskChargePercentGeneration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Life Flask Charges gained"
+      ]
+    },
+    {
+      "id": "JewelRadiusLifeFlaskRecovery",
+      "type": "Suffix",
+      "group": "GlobalFlaskLifeRecovery",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Life Recovery from Flasks"
+      ]
+    },
+    {
+      "id": "JewelRadiusLifeLeech",
+      "type": "Suffix",
+      "group": "LifeLeechAmount",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased amount of Life Leeched"
+      ]
+    },
+    {
+      "id": "JewelRadiusLifeRecoup",
+      "type": "Suffix",
+      "group": "LifeRecoupForJewel",
+      "level": 1,
+      "mods": [
+        "1% of Damage taken Recouped as Life"
+      ]
+    },
+    {
+      "id": "JewelRadiusLifeRegeneration",
+      "type": "Suffix",
+      "group": "LifeRegenerationRate",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Life Regeneration rate"
+      ]
+    },
+    {
+      "id": "JewelRadiusLifeonKill",
+      "type": "Suffix",
+      "group": "MaximumLifeOnKillPercent",
+      "level": 1,
+      "mods": [
+        "Recover 1% of maximum Life on Kill"
+      ]
+    },
+    {
+      "id": "JewelRadiusLightningDamage",
+      "type": "Prefix",
+      "group": "LightningDamagePercentage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Lightning Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusLightningPenetration",
+      "type": "Prefix",
+      "group": "LightningResistancePenetration",
+      "level": 1,
+      "mods": [
+        "Damage Penetrates (1-2)% Lightning Resistance"
+      ]
+    },
+    {
+      "id": "JewelRadiusMaceDamage",
+      "type": "Prefix",
+      "group": "IncreasedMaceDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage with Maces"
+      ]
+    },
+    {
+      "id": "JewelRadiusMaceStun",
+      "type": "Suffix",
+      "group": "MaceStun",
+      "level": 1,
+      "mods": [
+        "(6-12)% increased Stun Buildup with Maces"
+      ]
+    },
+    {
+      "id": "JewelRadiusManaFlaskChargeGen",
+      "type": "Suffix",
+      "group": "ManaFlaskChargePercentGeneration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Mana Flask Charges gained"
+      ]
+    },
+    {
+      "id": "JewelRadiusManaFlaskRecovery",
+      "type": "Suffix",
+      "group": "FlaskManaRecovery",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Mana Recovery from Flasks"
+      ]
+    },
+    {
+      "id": "JewelRadiusManaLeech",
+      "type": "Suffix",
+      "group": "ManaLeechAmount",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased amount of Mana Leeched"
+      ]
+    },
+    {
+      "id": "JewelRadiusManaRegeneration",
+      "type": "Suffix",
+      "group": "ManaRegeneration",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Mana Regeneration Rate"
+      ]
+    },
+    {
+      "id": "JewelRadiusManaonKill",
+      "type": "Suffix",
+      "group": "ManaGainedOnKillPercentage",
+      "level": 1,
+      "mods": [
+        "Recover 1% of maximum Mana on Kill"
+      ]
+    },
+    {
+      "id": "JewelRadiusMarkCastSpeed",
+      "type": "Suffix",
+      "group": "MarkCastSpeed",
+      "level": 1,
+      "mods": [
+        "Mark Skills have (2-3)% increased Use Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusMarkDuration",
+      "type": "Suffix",
+      "group": "MarkDuration",
+      "level": 1,
+      "mods": [
+        "Mark Skills have (3-4)% increased Skill Effect Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusMarkEffect",
+      "type": "Prefix",
+      "group": "MarkEffect",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Effect of your Mark Skills"
+      ]
+    },
+    {
+      "id": "JewelRadiusMaximumRage",
+      "type": "Prefix",
+      "group": "MaximumRage",
+      "level": 1,
+      "mods": [
+        "+1 to Maximum Rage"
+      ]
+    },
+    {
+      "id": "JewelRadiusMediumSize",
+      "type": "Prefix",
+      "group": "JewelRadiusLargerRadius",
+      "level": 1,
+      "mods": [
+        "Upgrades Radius to Medium"
+      ]
+    },
+    {
+      "id": "JewelRadiusMeleeDamage",
+      "type": "Prefix",
+      "group": "MeleeDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Melee Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusMeleeDamageIfProjectileHitRecently",
+      "type": "Prefix",
+      "group": "MeleeDamageIfProjectileHitRecently",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Melee Damage if you've dealt a Projectile Attack Hit in the past eight seconds"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionAccuracy",
+      "type": "Prefix",
+      "group": "MinionAccuracyRatingForJewel",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Minion Accuracy Rating"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionArea",
+      "type": "Prefix",
+      "group": "MinionAreaOfEffect",
+      "level": 1,
+      "mods": [
+        "Minions have (3-5)% increased Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionAttackandCastSpeed",
+      "type": "Suffix",
+      "group": "MinionAttackSpeedAndCastSpeed",
+      "level": 1,
+      "mods": [
+        "Minions have (1-2)% increased Attack and Cast Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionChaosResistance",
+      "type": "Suffix",
+      "group": "MinionChaosResistance",
+      "level": 1,
+      "mods": [
+        "Minions have +(1-2)% to Chaos Resistance"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionCriticalChance",
+      "type": "Suffix",
+      "group": "MinionCriticalStrikeChanceIncrease",
+      "level": 1,
+      "mods": [
+        "Minions have (5-10)% increased Critical Hit Chance"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionCriticalMultiplier",
+      "type": "Suffix",
+      "group": "MinionCriticalStrikeMultiplier",
+      "level": 1,
+      "mods": [
+        "Minions have (6-12)% increased Critical Damage Bonus"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionDamage",
+      "type": "Prefix",
+      "group": "MinionDamage",
+      "level": 1,
+      "mods": [
+        "Minions deal (1-2)% increased Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionLife",
+      "type": "Prefix",
+      "group": "MinionLife",
+      "level": 1,
+      "mods": [
+        "Minions have (1-2)% increased maximum Life"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionPhysicalDamageReduction",
+      "type": "Suffix",
+      "group": "MinionPhysicalDamageReduction",
+      "level": 1,
+      "mods": [
+        "Minions have (1-2)% additional Physical Damage Reduction"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionResistances",
+      "type": "Suffix",
+      "group": "MinionElementalResistance",
+      "level": 1,
+      "mods": [
+        "Minions have +(1-2)% to all Elemental Resistances"
+      ]
+    },
+    {
+      "id": "JewelRadiusMinionReviveSpeed",
+      "type": "Suffix",
+      "group": "MinionReviveSpeed",
+      "level": 1,
+      "mods": [
+        "Minions Revive (3-7)% faster"
+      ]
+    },
+    {
+      "id": "JewelRadiusMovementSpeed",
+      "type": "Suffix",
+      "group": "MovementVelocity",
+      "level": 1,
+      "mods": [
+        "1% increased Movement Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusNotableEffect",
+      "type": "Suffix",
+      "group": "JewelRadiusSmallNodeEffect",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Effect of Small Passive Skills in Radius"
+      ]
+    },
+    {
+      "id": "JewelRadiusNotableEffectNew",
+      "type": "Suffix",
+      "group": "JewelRadiusNotableEffect",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Effect of Notable Passive Skills in Radius"
+      ]
+    },
+    {
+      "id": "JewelRadiusOfferingDuration",
+      "type": "Suffix",
+      "group": "OfferingDuration",
+      "level": 1,
+      "mods": [
+        "Offering Skills have (6-12)% increased Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusOfferingLife",
+      "type": "Prefix",
+      "group": "OfferingLife",
+      "level": 1,
+      "mods": [
+        "Offerings have (2-3)% increased Maximum Life"
+      ]
+    },
+    {
+      "id": "JewelRadiusParriedDebuffDuration",
+      "type": "Suffix",
+      "group": "ParriedDebuffDuration",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Parried Debuff Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusParryDamage",
+      "type": "Prefix",
+      "group": "ParryDamage",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Parry Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusPhysicalDamage",
+      "type": "Prefix",
+      "group": "PhysicalDamagePercent",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Global Physical Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusPiercingProjectiles",
+      "type": "Suffix",
+      "group": "ChanceToPierce",
+      "level": 1,
+      "mods": [
+        "(5-10)% chance to Pierce an Enemy"
+      ]
+    },
+    {
+      "id": "JewelRadiusPinBuildup",
+      "type": "Suffix",
+      "group": "PinBuildup",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Pin Buildup"
+      ]
+    },
+    {
+      "id": "JewelRadiusPlantDamage",
+      "type": "Prefix",
+      "group": "PlantDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage with Plant Skills"
+      ]
+    },
+    {
+      "id": "JewelRadiusPoisonChance",
+      "type": "Suffix",
+      "group": "BaseChanceToPoison",
+      "level": 1,
+      "mods": [
+        "1% chance to Poison on Hit"
+      ]
+    },
+    {
+      "id": "JewelRadiusPoisonDamage",
+      "type": "Prefix",
+      "group": "PoisonEffect",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Magnitude of Poison you inflict"
+      ]
+    },
+    {
+      "id": "JewelRadiusPoisonDuration",
+      "type": "Suffix",
+      "group": "PoisonDuration",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Poison Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusPresenceRadius",
+      "type": "Prefix",
+      "group": "PresenceRadius",
+      "level": 1,
+      "mods": [
+        "(8-12)% increased Presence Area of Effect"
+      ]
+    },
+    {
+      "id": "JewelRadiusProjectileDamage",
+      "type": "Prefix",
+      "group": "ProjectileDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Projectile Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusProjectileDamageIfMeleeHitRecently",
+      "type": "Prefix",
+      "group": "ProjectileDamageIfMeleeHitRecently",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Projectile Damage if you've dealt a Melee Hit in the past eight seconds"
+      ]
+    },
+    {
+      "id": "JewelRadiusProjectileSpeed",
+      "type": "Prefix",
+      "group": "ProjectileSpeed",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Projectile Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusQuarterstaffDamage",
+      "type": "Prefix",
+      "group": "IncreasedStaffDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage with Quarterstaves"
+      ]
+    },
+    {
+      "id": "JewelRadiusQuarterstaffFreezeBuildup",
+      "type": "Suffix",
+      "group": "QuarterstaffFreezeBuildup",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Freeze Buildup with Quarterstaves"
+      ]
+    },
+    {
+      "id": "JewelRadiusQuarterstaffSpeed",
+      "type": "Suffix",
+      "group": "StaffAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed with Quarterstaves"
+      ]
+    },
+    {
+      "id": "JewelRadiusQuiverEffect",
+      "type": "Prefix",
+      "group": "QuiverModifierEffect",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased bonuses gained from Equipped Quiver"
+      ]
+    },
+    {
+      "id": "JewelRadiusRageonHit",
+      "type": "Suffix",
+      "group": "RageOnHit",
+      "level": 1,
+      "mods": [
+        "Gain 1 Rage on Melee Hit"
+      ]
+    },
+    {
+      "id": "JewelRadiusRagewhenHit",
+      "type": "Suffix",
+      "group": "GainRageWhenHit",
+      "level": 1,
+      "mods": [
+        "Gain (1-2) Rage when Hit by an Enemy"
+      ]
+    },
+    {
+      "id": "JewelRadiusShapeshiftDamage",
+      "type": "Prefix",
+      "group": "ShapeshiftDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage while Shapeshifted"
+      ]
+    },
+    {
+      "id": "JewelRadiusShapeshiftSpeed",
+      "type": "Suffix",
+      "group": "ShapeshiftSkillSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Skill Speed while Shapeshifted"
+      ]
+    },
+    {
+      "id": "JewelRadiusShieldDefences",
+      "type": "Prefix",
+      "group": "ShieldArmourIncrease",
+      "level": 1,
+      "mods": [
+        "(8-15)% increased Armour, Evasion and Energy Shield from Equipped Shield"
+      ]
+    },
+    {
+      "id": "JewelRadiusShockChance",
+      "type": "Suffix",
+      "group": "ShockChanceIncrease",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased chance to Shock"
+      ]
+    },
+    {
+      "id": "JewelRadiusShockDuration",
+      "type": "Suffix",
+      "group": "ShockDuration",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Shock Duration"
+      ]
+    },
+    {
+      "id": "JewelRadiusShockEffect",
+      "type": "Prefix",
+      "group": "ShockEffect",
+      "level": 1,
+      "mods": [
+        "(5-7)% increased Magnitude of Shock you inflict"
+      ]
+    },
+    {
+      "id": "JewelRadiusSlowEffectOnSelf",
+      "type": "Suffix",
+      "group": "SlowPotency",
+      "level": 1,
+      "mods": [
+        "(2-5)% reduced Slowing Potency of Debuffs on You"
+      ]
+    },
+    {
+      "id": "JewelRadiusSmallNodeEffect",
+      "type": "Suffix",
+      "group": "JewelRadiusSmallNodeEffect",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Effect of Small Passive Skills in Radius"
+      ]
+    },
+    {
+      "id": "JewelRadiusSpearAttackSpeed",
+      "type": "Suffix",
+      "group": "SpearAttackSpeed",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed with Spears"
+      ]
+    },
+    {
+      "id": "JewelRadiusSpearCriticalDamage",
+      "type": "Suffix",
+      "group": "SpearCriticalDamage",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Critical Damage Bonus with Spears"
+      ]
+    },
+    {
+      "id": "JewelRadiusSpearDamage",
+      "type": "Prefix",
+      "group": "SpearDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage with Spears"
+      ]
+    },
+    {
+      "id": "JewelRadiusSpellCriticalChance",
+      "type": "Suffix",
+      "group": "SpellCriticalStrikeChance",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Critical Hit Chance for Spells"
+      ]
+    },
+    {
+      "id": "JewelRadiusSpellCriticalDamage",
+      "type": "Suffix",
+      "group": "SpellCritMultiplierForJewel",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Critical Spell Damage Bonus"
+      ]
+    },
+    {
+      "id": "JewelRadiusSpellDamage",
+      "type": "Prefix",
+      "group": "WeaponSpellDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Spell Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusStunBuildup",
+      "type": "Suffix",
+      "group": "StunDamageIncrease",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Stun Buildup"
+      ]
+    },
+    {
+      "id": "JewelRadiusStunThreshold",
+      "type": "Suffix",
+      "group": "IncreasedStunThreshold",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Stun Threshold"
+      ]
+    },
+    {
+      "id": "JewelRadiusStunThresholdDuringParry",
+      "type": "Suffix",
+      "group": "StunThresholdDuringParry",
+      "level": 1,
+      "mods": [
+        "(8-12)% increased Stun Threshold while Parrying"
+      ]
+    },
+    {
+      "id": "JewelRadiusStunThresholdIfNotStunnedRecently",
+      "type": "Suffix",
+      "group": "IncreasedStunThresholdIfNoRecentStun",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Stun Threshold if you haven't been Stunned Recently"
+      ]
+    },
+    {
+      "id": "JewelRadiusStunThresholdfromEnergyShield",
+      "type": "Suffix",
+      "group": "StunThresholdfromEnergyShield",
+      "level": 1,
+      "mods": [
+        "Gain additional Stun Threshold equal to (1-2)% of maximum Energy Shield"
+      ]
+    },
+    {
+      "id": "JewelRadiusSwordDamage",
+      "type": "Prefix",
+      "group": "IncreasedSwordDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage with Swords"
+      ]
+    },
+    {
+      "id": "JewelRadiusSwordSpeed",
+      "type": "Suffix",
+      "group": "SwordAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Attack Speed with Swords"
+      ]
+    },
+    {
+      "id": "JewelRadiusThorns",
+      "type": "Prefix",
+      "group": "ThornsDamageIncrease",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Thorns damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusTotemDamage",
+      "type": "Prefix",
+      "group": "TotemDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Totem Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusTotemLife",
+      "type": "Prefix",
+      "group": "IncreasedTotemLife",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Totem Life"
+      ]
+    },
+    {
+      "id": "JewelRadiusTotemPlacementSpeed",
+      "type": "Suffix",
+      "group": "SummonTotemCastSpeed",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Totem Placement speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusTrapDamage",
+      "type": "Prefix",
+      "group": "TrapDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Trap Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusTrapThrowSpeed",
+      "type": "Suffix",
+      "group": "TrapThrowSpeed",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Trap Throwing Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusTriggeredSpellDamage",
+      "type": "Prefix",
+      "group": "DamageWithTriggeredSpells",
+      "level": 1,
+      "mods": [
+        "Triggered Spells deal (2-3)% increased Spell Damage"
+      ]
+    },
+    {
+      "id": "JewelRadiusUnarmedAttackSpeed",
+      "type": "Suffix",
+      "group": "UnarmedAttackSpeed",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Unarmed Attack Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusUnarmedDamage",
+      "type": "Prefix",
+      "group": "UnarmedDamage",
+      "level": 1,
+      "mods": [
+        "(1-2)% increased Damage with Unarmed Attacks"
+      ]
+    },
+    {
+      "id": "JewelRadiusVolatilityOnKillChance",
+      "type": "Suffix",
+      "group": "VolatilityOnKillChance",
+      "level": 1,
+      "mods": [
+        "1% chance to gain Volatility on Kill"
+      ]
+    },
+    {
+      "id": "JewelRadiusWarcryBuffEffect",
+      "type": "Prefix",
+      "group": "WarcryEffect",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Warcry Buff Effect"
+      ]
+    },
+    {
+      "id": "JewelRadiusWarcryCooldown",
+      "type": "Suffix",
+      "group": "WarcryCooldownSpeed",
+      "level": 1,
+      "mods": [
+        "(3-7)% increased Warcry Cooldown Recovery Rate"
+      ]
+    },
+    {
+      "id": "JewelRadiusWarcryDamage",
+      "type": "Prefix",
+      "group": "WarcryDamage",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Damage with Warcries"
+      ]
+    },
+    {
+      "id": "JewelRadiusWarcrySpeed",
+      "type": "Suffix",
+      "group": "WarcrySpeed",
+      "level": 1,
+      "mods": [
+        "(2-3)% increased Warcry Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusWeaponSwapSpeed",
+      "type": "Suffix",
+      "group": "WeaponSwapSpeed",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Weapon Swap Speed"
+      ]
+    },
+    {
+      "id": "JewelRadiusWitheredEffect",
+      "type": "Prefix",
+      "group": "WitheredEffect",
+      "level": 1,
+      "mods": [
+        "(3-5)% increased Withered Magnitude"
+      ]
+    },
+    {
+      "id": "JewelRageonHit",
+      "type": "Suffix",
+      "group": "RageOnHit",
+      "level": 1,
+      "mods": [
+        "Gain 1 Rage on Melee Hit"
+      ]
+    },
+    {
+      "id": "JewelRagewhenHit",
+      "type": "Suffix",
+      "group": "GainRageWhenHit",
+      "level": 1,
+      "mods": [
+        "Gain (1-3) Rage when Hit by an Enemy"
+      ]
+    },
+    {
+      "id": "JewelShapeshiftDamage",
+      "type": "Prefix",
+      "group": "ShapeshiftDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Damage while Shapeshifted"
+      ]
+    },
+    {
+      "id": "JewelShapeshiftSpeed",
+      "type": "Suffix",
+      "group": "ShapeshiftSkillSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Skill Speed while Shapeshifted"
+      ]
+    },
+    {
+      "id": "JewelShieldDefences",
+      "type": "Prefix",
+      "group": "ShieldArmourIncrease",
+      "level": 1,
+      "mods": [
+        "(18-32)% increased Armour, Evasion and Energy Shield from Equipped Shield"
+      ]
+    },
+    {
+      "id": "JewelShockChance",
+      "type": "Suffix",
+      "group": "ShockChanceIncrease",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased chance to Shock"
+      ]
+    },
+    {
+      "id": "JewelShockDuration",
+      "type": "Suffix",
+      "group": "ShockDuration",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Shock Duration"
+      ]
+    },
+    {
+      "id": "JewelShockEffect",
+      "type": "Prefix",
+      "group": "ShockEffect",
+      "level": 1,
+      "mods": [
+        "(10-15)% increased Magnitude of Shock you inflict"
+      ]
+    },
+    {
+      "id": "JewelSlowEffectOnSelf",
+      "type": "Suffix",
+      "group": "SlowPotency",
+      "level": 1,
+      "mods": [
+        "(5-10)% reduced Slowing Potency of Debuffs on You"
+      ]
+    },
+    {
+      "id": "JewelSpearAttackSpeed",
+      "type": "Suffix",
+      "group": "SpearAttackSpeed",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed with Spears"
+      ]
+    },
+    {
+      "id": "JewelSpearCriticalDamage",
+      "type": "Suffix",
+      "group": "SpearCriticalDamage",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Critical Damage Bonus with Spears"
+      ]
+    },
+    {
+      "id": "JewelSpearDamage",
+      "type": "Prefix",
+      "group": "SpearDamage",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Spears"
+      ]
+    },
+    {
+      "id": "JewelSpellCriticalChance",
+      "type": "Suffix",
+      "group": "SpellCriticalStrikeChance",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Critical Hit Chance for Spells"
+      ]
+    },
+    {
+      "id": "JewelSpellCriticalDamage",
+      "type": "Suffix",
+      "group": "SpellCritMultiplierForJewel",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Critical Spell Damage Bonus"
+      ]
+    },
+    {
+      "id": "JewelSpellDamage",
+      "type": "Prefix",
+      "group": "WeaponSpellDamage",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Spell Damage"
+      ]
+    },
+    {
+      "id": "JewelStunBuildup",
+      "type": "Suffix",
+      "group": "StunDamageIncrease",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Stun Buildup"
+      ]
+    },
+    {
+      "id": "JewelStunThreshold",
+      "type": "Suffix",
+      "group": "IncreasedStunThreshold",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Stun Threshold"
+      ]
+    },
+    {
+      "id": "JewelStunThresholdDuringParry",
+      "type": "Suffix",
+      "group": "StunThresholdDuringParry",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Stun Threshold while Parrying"
+      ]
+    },
+    {
+      "id": "JewelStunThresholdIfNotStunnedRecently",
+      "type": "Suffix",
+      "group": "IncreasedStunThresholdIfNoRecentStun",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Stun Threshold if you haven't been Stunned Recently"
+      ]
+    },
+    {
+      "id": "JewelStunThresholdfromEnergyShield",
+      "type": "Suffix",
+      "group": "StunThresholdfromEnergyShield",
+      "level": 1,
+      "mods": [
+        "Gain additional Stun Threshold equal to (5-15)% of maximum Energy Shield"
+      ]
+    },
+    {
+      "id": "JewelSwordDamage",
+      "type": "Prefix",
+      "group": "IncreasedSwordDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Swords"
+      ]
+    },
+    {
+      "id": "JewelSwordSpeed",
+      "type": "Suffix",
+      "group": "SwordAttackSpeedForJewel",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Attack Speed with Swords"
+      ]
+    },
+    {
+      "id": "JewelThorns",
+      "type": "Prefix",
+      "group": "ThornsDamageIncrease",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Thorns damage"
+      ]
+    },
+    {
+      "id": "JewelTotemDamage",
+      "type": "Prefix",
+      "group": "TotemDamageForJewel",
+      "level": 1,
+      "mods": [
+        "(10-18)% increased Totem Damage"
+      ]
+    },
+    {
+      "id": "JewelTotemLife",
+      "type": "Prefix",
+      "group": "IncreasedTotemLife",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Totem Life"
+      ]
+    },
+    {
+      "id": "JewelTotemPlacementSpeed",
+      "type": "Suffix",
+      "group": "SummonTotemCastSpeed",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Totem Placement speed"
+      ]
+    },
+    {
+      "id": "JewelTrapDamage",
+      "type": "Prefix",
+      "group": "TrapDamage",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Trap Damage"
+      ]
+    },
+    {
+      "id": "JewelTrapThrowSpeed",
+      "type": "Suffix",
+      "group": "TrapThrowSpeed",
+      "level": 1,
+      "mods": [
+        "(4-8)% increased Trap Throwing Speed"
+      ]
+    },
+    {
+      "id": "JewelTriggeredSpellDamage",
+      "type": "Prefix",
+      "group": "DamageWithTriggeredSpells",
+      "level": 1,
+      "mods": [
+        "Triggered Spells deal (10-18)% increased Spell Damage"
+      ]
+    },
+    {
+      "id": "JewelUnarmedAttackSpeed",
+      "type": "Suffix",
+      "group": "UnarmedAttackSpeed",
+      "level": 1,
+      "mods": [
+        "(2-4)% increased Unarmed Attack Speed"
+      ]
+    },
+    {
+      "id": "JewelUnarmedDamage",
+      "type": "Prefix",
+      "group": "UnarmedDamage",
+      "level": 1,
+      "mods": [
+        "(6-16)% increased Damage with Unarmed Attacks"
+      ]
+    },
+    {
+      "id": "JewelVolatilityOnKillChance",
+      "type": "Suffix",
+      "group": "VolatilityOnKillChance",
+      "level": 1,
+      "mods": [
+        "(2-3)% chance to gain Volatility on Kill"
+      ]
+    },
+    {
+      "id": "JewelWarcryBuffEffect",
+      "type": "Prefix",
+      "group": "WarcryEffect",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Warcry Buff Effect"
+      ]
+    },
+    {
+      "id": "JewelWarcryCooldown",
+      "type": "Suffix",
+      "group": "WarcryCooldownSpeed",
+      "level": 1,
+      "mods": [
+        "(5-15)% increased Warcry Cooldown Recovery Rate"
+      ]
+    },
+    {
+      "id": "JewelWarcryDamage",
+      "type": "Prefix",
+      "group": "WarcryDamage",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Damage with Warcries"
+      ]
+    },
+    {
+      "id": "JewelWarcrySpeed",
+      "type": "Suffix",
+      "group": "WarcrySpeed",
+      "level": 1,
+      "mods": [
+        "(10-20)% increased Warcry Speed"
+      ]
+    },
+    {
+      "id": "JewelWeaponSwapSpeed",
+      "type": "Suffix",
+      "group": "WeaponSwapSpeed",
+      "level": 1,
+      "mods": [
+        "(15-25)% increased Weapon Swap Speed"
+      ]
+    },
+    {
+      "id": "JewelWitheredEffect",
+      "type": "Prefix",
+      "group": "WitheredEffect",
+      "level": 1,
+      "mods": [
+        "(5-10)% increased Withered Magnitude"
+      ]
+    }
+  ]
+}
