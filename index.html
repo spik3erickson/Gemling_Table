@@ -417,12 +417,28 @@ function scoreUnique(u,prof){const t=textOf(u);let sc=0;
   if(prof.arche.has('minion')&&/minion/.test(t))sc+=3;
   if(/critical|penetrat|more|increased .*damage/.test(t))sc+=1.5;
   if(/resistance/.test(t))sc+=1; if(/life|energy shield/.test(t))sc+=.5; return sc;}
+const GEAR_SLOTS=['amulet','ring','body','helmet','gloves','boots','belt'];
+// Only suggest a unique where it's genuinely best-in-slot. Real builds run a few
+// impactful uniques + rares for the rest — NOT a unique in every slot.
 function pickUniques(prof){
   const own=chosen.unique?chosen.unique.slot:null,by={};
   UNIQUES.forEach(u=>{if(u.slot===own)return;(by[u.slot]=by[u.slot]||[]).push(u);});
-  const out=[];['amulet','ring','body','helmet','gloves','boots','belt'].forEach(slot=>{
+  const best=[];
+  GEAR_SLOTS.forEach(slot=>{ if(slot===own)return;
     const c=(by[slot]||[]).map(u=>({u,sc:scoreUnique(u,prof)})).sort((a,b)=>b.sc-a.sc);
-    if(c.length&&c[0].sc>0)out.push(c[0].u);}); return out;}
+    if(c.length) best.push({slot,u:c[0].u,sc:c[0].sc}); });
+  // keep only strongly-synergistic uniques (score >= 4), capped at 3; the rest are rares
+  return best.filter(x=>x.sc>=4).sort((a,b)=>b.sc-a.sc).slice(0,3).map(x=>x.u);
+}
+// slots the build should fill with RARES (target affixes), given owned + recommended uniques
+function rareSlotPlan(prof,uniques){
+  const used=new Set([chosen.unique?chosen.unique.slot:null,...uniques.map(u=>u.slot)]);
+  const disp=['helmet','body','gloves','boots','belt','amulet','ring1','ring2'];
+  const norm=s=>s.replace(/[12]$/,'');
+  return disp.filter(s=>{ const base=norm(s);
+    if(base==='ring') return !(used.has('ring')&&s==='ring1'); // one ring may be unique, keep the other rare
+    return !used.has(base); });
+}
 
 const runeMods=r=>Object.values(r.effects||{}).flat().filter(x=>typeof x==='string');
 function pickRunes(prof){const dmg=[],res=[],chaos=[];
@@ -459,13 +475,14 @@ function forge(){
   const main=ranked[0].s, mainScore=ranked[0];
   const sup=pickSupports(main,prof,5);
   const uniques=pickUniques(prof);
+  const rareSlots=rareSlotPlan(prof,uniques);
   const runes=pickRunes(prof);
   const wdps=weaponDPS($('#wpn').value);
   const res=resistSolver(prof,uniques);
   const lvl=+$('#lvl').value||90;
   const ptEst=Math.max(0,lvl-1)+24;
   const build={asc:$('#asc').value,goal:$('#goal').value,prof,main,mainScore,alts:ranked.slice(1,4).map(x=>x.s),
-    sup,uniques,runes,wdps,res,owned:chosen.unique,wpn:$('#wpn').value,stats:$('#stats').value,
+    sup,uniques,rareSlots,runes,wdps,res,owned:chosen.unique,wpn:$('#wpn').value,stats:$('#stats').value,
     notables:$('#notables').value, treecode:$('#treecode').value, lvl, ptEst,
     pri:{dmg:$('#pDmg').checked,res:$('#pRes').checked,tanky:$('#pTanky').checked},
     jewels:DATA.jewels};
@@ -517,12 +534,18 @@ function render(b){
   const poolN=(DATA.compat.by_skill[b.main.name]||[]).length;
   h+=`<div class="note">${poolN} supports compatible with ${b.main.name}; engine kept the 5 with the highest damage multiplier for your profile. Combined ≈ ×${b.sup.totalMult.toFixed(2)} more.</div></div>`;
 
-  // GEAR + vaal asides
-  h+=`<div class="card"><div class="sect-title">🛡 Gear plan</div>`;
+  // GEAR — a few impactful uniques + rares for the rest (not all-uniques)
+  h+=`<div class="card"><div class="sect-title">🛡 Gear plan <span class="muted" style="text-transform:none;letter-spacing:0">— ${(b.owned?1:0)+b.uniques.length} unique${(b.owned?1:0)+b.uniques.length===1?'':'s'} + rares</span></div>`;
+  h+=`<div class="muted" style="font-size:12px;margin-bottom:6px">UNIQUES (only where best-in-slot)</div>`;
   if(b.owned)h+=`<div class="slotrow"><div class="s">${b.owned.slot}</div><div><b>${b.owned.name}</b> <span class="muted">(yours)</span><br><span class="muted">${(b.owned.explicits||[]).join(' · ')||'—'}</span><div class="vaal">${vaalAside(b.owned,'unique')}</div></div></div>`;
   b.uniques.forEach(u=>h+=`<div class="slotrow"><div class="s">${u.slot}</div><div><b>${u.name}</b><br><span class="muted">${(u.explicits||[]).slice(0,3).join(' · ')}</span><div class="vaal">${vaalAside(u,'unique')}</div></div></div>`);
-  h+=`<div class="slotrow"><div class="s">amulet ✦</div><div><b>Anointment</b> <span class="muted">(distilled emotions)</span><br><span style="font-size:11.5px;color:var(--int)">💠 Anoint ${anointFocus(prof)}. If life/EHP is short, a life or recovery notable is the safe alternative.</span></div></div>`;
-  h+=`<div class="note">Empty slots → rare bases prioritising resistances, life, and ${[...prof.dmg].map(cap).join('/')||'damage'}. Browse bases in <a href="pages/items_catalog.html" target="_blank">the item catalog</a>.</div></div>`;
+  if(!b.owned&&!b.uniques.length)h+=`<div class="slotrow"><div class="muted">No unique clears the synergy bar — this build is best as all-rares. Chase the implicit/affix targets below.</div></div>`;
+  // RARES for the remaining slots
+  const dmgAff=[...prof.dmg].map(cap).join('/')||'flat/%'+'';
+  const aff=`life, +resistances (toward 75/75/75${b.pri.res?' + 40% chaos':''}), and ${prof.ail&&prof.ail.size?[...prof.ail].map(cap).join('/')+' magnitude / ailment':dmgAff+' damage'}`;
+  h+=`<div class="muted" style="font-size:12px;margin:12px 0 4px">RARES (target affixes) — ${b.rareSlots.join(' · ')}</div>`;
+  h+=`<div class="slotrow"><div class="s">each rare</div><div><span class="muted">Roll: ${aff}${prof.arche.has('attack')?', attack speed / accuracy':prof.arche.has('spell')?', cast speed / spell damage':''}. Bases from <a href="pages/items_catalog.html" target="_blank">the catalog</a>; cap resists on rares first so uniques can be pure damage.</span></div></div>`;
+  h+=`<div class="slotrow"><div class="s">amulet ✦</div><div><b>Anointment</b> <span class="muted">(distilled emotions)</span><br><span style="font-size:11.5px;color:var(--int)">💠 Anoint ${anointFocus(prof)}. If life/EHP is short, a life or recovery notable is the safe alternative.</span></div></div></div>`;
 
   // DEFENSE SOLVER
   const r=b.res;
@@ -580,7 +603,8 @@ ${prof.q>20?`Gemling quality cap: ${prof.q}% — every gem-quality (gemling) eff
 ENGINE OUTPUT (authoritative):
 - Skill: ${b.main.name} (${b.main.gemType}; ${[...prof.dmg].join('/')||'flexible'}). Build score ${b.mainScore.sc.toFixed(1)}. Gemling bonus${prof.q>20?` @ ${prof.q}% quality`:''}: ${gm?(prof.q>20?scaleGemling(gm.gemling_effect,prof.q):gm.gemling_effect):'n/a'}.
 - Supports (kept for highest multiplier, ≈×${b.sup.totalMult.toFixed(2)}): ${sup}
-- Synergy uniques: ${uqs}
+- Uniques to use (ONLY these — every other slot is a RARE, do not propose an all-unique setup): ${uqs||'none — go all-rares'}
+- Rare slots (recommend target affixes, not uniques): ${b.rareSlots.join(', ')}
 - Defense solver: elemental ${b.res.elemOK?'cappable':'tight'} (${b.res.lines} free suffix lines); chaos: ${b.res.chaosPlan}
 ${b.wdps?`- Weapon base DPS reference: ${Math.round(b.wdps.dps)} (${b.wdps.name}).`:''}
 
@@ -588,7 +612,7 @@ WRITE (<=400 words):
 1) Build identity + why it does big damage on a ${b.asc}.
 2) Skill + the 5 supports in play order, 1 line of synergy each.
 3) ${prof.ail&&prof.ail.size?'Ailment scaling — how to stack '+[...prof.ail].join('/')+' magnitude/duration (flammability, more-ailment supports, gem quality at '+prof.q+'%).':'Damage scaling — the #1 multiplier to chase.'}
-4) Gear/stat priorities; reaching 75/75/75 + 40% chaos without gutting damage; and the best AMULET ANOINTMENT (which passive notable to anoint via distilled emotions) for this build.
+4) Gear: use ONLY the listed uniques (or none) and rares elsewhere with target affixes — do NOT suggest a unique for every slot. Reaching 75/75/75 + 40% chaos without gutting damage; and the best AMULET ANOINTMENT (which passive notable to anoint via distilled emotions).
 5) Remaining passive points: what to allocate (clusters/notables).
 6) Vaal/corruption ideas worth gambling (incl. double-corrupt on a spare unique).
 Be specific, confident, no disclaimers.`;
