@@ -37,7 +37,7 @@ Reproducible like the other build scripts (`--skip-download`; reuses the `repoe-
 ```json
 {
   "version": "0.5",
-  "source": "repoe-fork/pob-data PoE2 v0.5",
+  "source": "repoe-fork/pob-data PoB community export (base values may lag live game patches)",
   "generated_at": "<ISO8601>",
   "default_level": 20, "default_quality": 20,
   "skills": {
@@ -86,6 +86,8 @@ Reproducible like the other build scripts (`--skip-download`; reuses the `repoe-
     "Brutality I": {
       "id":"SupportBrutalityPlayer",
       "more":   [{"stat":"support_brutality_physical_damage_+%_final","value":25,"bucket":"physical"}],
+      // ^ GUARANTEED hit-damage mores only; conditional ones carry "conditional":true and feed the
+      //   situational ceiling, not the headline. Non-damage *_+%_final stay in rawConstantStats only.
       "increased":[],                          // [{"stat":"attack_speed_+%","value":15,"bucket":"attack_speed"}]
       "moreSpeed":[],                          // *_speed_+%_final (multiplicative)
       "gainAs":  [],                           // [{"from":"all","to":"fire","pct":25}]
@@ -132,6 +134,25 @@ Order: (1) no granted-effect → exclude. (2) `CreatesMinion(77)` or `minion.jso
 - Minion DPS (flagged, excluded).
 - Secondary statSets / multi-hit components beyond the primary (primary `statSets[0]` only); triggered-skill added damage.
 - Resistance/penetration mitigation — DPS is pre-mitigation, labeled as such.
+
+## Correctness rules added after adversarial review (v1 contract)
+
+These tighten the classifier/engine to stop non-damage stats inflating the headline number. The extractor (`build_dps.py`), engine (`index.html`), and tests (`test_dps.mjs`) all enforce them:
+
+- **MORE = guaranteed HIT-damage only.** A support `*_+%_final` becomes a guaranteed hit `more` ONLY if its name carries a hit-damage sense — the generic `support_active_skill_damage_+%_final` / `supported_active_skill_damage_+%_final`, or `*_{fire,cold,lightning,physical,chaos,elemental,spell,attack,area,projectile,melee}_damage_+%_final` — AND it carries none of the non-damage/over-time tokens (`damage_taken`, `damage_over_time`, `_effect`, `_duration`, `_cost`, `accuracy`, `area_of_effect`/`_aoe`, `knockback`, `chance_to_`, `_stun_`, `pin_`, `reload`, `projectile_speed`, `movement_speed`, `cooldown`, `_life`, `mana`, `_speed_+%_final`). Everything else (AoE, duration, cost, chance-to-ignite, stun-multiplier, etc.) stays in `rawConstantStats` only. *Effect on the dataset:* of 181 raw `*_+%_final` more candidates, 50 are kept as hit-damage entries and 173 `*_+%_final` raw stats are no longer force-fed into `more` (e.g. Ruthless's +500 big-hit-stun and Ignite III's +200 chance-to-ignite no longer multiply the hit by ×6/×3).
+- **Conditional ("situational") mores shown separately — never in the headline.** A hit-damage more whose name contains `_vs_`/`_if_`/`_while_`/`_per_`/`_from_distance`/`_on_low_life`/`_with_momentum`/`forked`/`_chain`/`pierced` is flagged `"conditional": true`. The engine multiplies it into a separate `situational` ceiling (shown as "up to ×N situational") but excludes it from the guaranteed `hit`/`dps` (18 entries flagged).
+- **Quality applied for UNCONDITIONAL damage-quality only.** The engine folds each skill quality stat that is `active_skill_damage_+%_final` or `active_skill_<type>_damage_+%_final` into the matching bucket's more product at `perPoint × quality`. Non-damage quality stats (Fireball's additional-projectiles) and conditional ones are skipped. (Proven: Lightning Conduit q0→q20 = ×1.20; Fireball unchanged.)
+- **`attackSpeedMultiplier` (ASM) is a MORE, not additive.** Attack rate = `base × (1 + ASM/100) × (1 + (increasedAttackSpeed + support increased)/100) × Π(support attack-kind moreSpeed)`. Only gear/tree/support *increased* attack speed lives in the additive factor.
+- **`moreSpeed` is firing-rate only, kind-strict.** Only `attack_speed_+%_final` (kind `attack`) and `cast_speed_+%_final` (kind `cast`) are rate mores; `projectile_speed`, `movement_speed`, `reload_speed`, `cooldown*` route to `rawConstantStats` and never touch rate. The engine's attack branch accepts only kind `attack`, the spell branch only kind `cast` (the old `skill` catch-all is gone).
+- **gain-as `from:'all'` snapshots the pre-gain total.** It adds `pct%` of the SUM of all current damage types (snapshotted before any gain-as), additively, so multiple attunements don't compound off each other.
+- **Warcry and channel/DoT-source skills excluded from the hit set.** Pre-empting the hit acceptance: `Warcry(63)` → `warcry` (Arctic Howl, Seismic Cry); `DamageOverTime(35)` on a non-Attack OR a primary statSet whose damage source is a `base_*_damage_to_deal_per_minute` stat → `dot_or_channel` (Incinerate, Flame Wall, Essence Drain, Exsanguinate, Soulrend, His Winnowing Flame), deferred to the DoT fast-follow. Hit-attacks that also apply a DoT (Tornado Shot, Vine Arrow) keep their weapon hit; Fireball/Spark/Ice Nova/Lightning Arrow/Perfect Strike are unaffected.
+- **Ranking is spine-aware.** Support ranking multiplies only GUARANTEED mores whose bucket hits the chosen skill's damage-type spine, skipping off-type penalty buckets — so Cold Attunement ranks ×1.0 (neutral) for a cold skill instead of a false ×0.5 penalty; the text-parse fallback still covers supports absent from `support_dps.json`.
+
+### Known v1 under-counts (documented, not bugs)
+
+- **Source-type `more` on converted damage.** After phys→element conversion, a source-type `more` (e.g. a physical `more` on damage already converted to fire) is not re-applied to the converted portion.
+- **Perfect-timed / secondary hits.** Window-of-Opportunity perfect-timing windows and secondary/explosion hit components beyond the primary statSet are not modelled.
+- **Upstream snapshot staleness.** Base values come from the `repoe-fork/pob-data` PoB community export and may lag the live game patch; the `source` field and the ledger label both say so.
 
 ## Testing
 

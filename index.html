@@ -184,7 +184,9 @@ const DATA={}, $=s=>document.querySelector(s);
 const FILES={gemling:'data/gemling_quality.json',skills:'data/skill_gems.json',supports:'data/support_gems.json',
   compat:'data/support_compatibility.json',uniques:'data/uniques.json',bases:'data/bases.json',
   runes:'data/runes.json',jewels:'data/jewels.json',spirit:'data/spirit_gems.json',
-  notables:'data/tree_notables.json',keystones:'data/tree_keystones.json',weaponskills:'data/weapon_skills.json'};
+  notables:'data/tree_notables.json',keystones:'data/tree_keystones.json',weaponskills:'data/weapon_skills.json',
+  skilldps:'data/skill_dps.json',supportdps:'data/support_dps.json'};
+const OPT={skilldps:1,supportdps:1}; // optional datasets: app still runs (degraded DPS) if the extractor hasn't produced them yet
 const DTYPES=['fire','cold','lightning','chaos','physical'];
 let UNIQUES=[],SKILLS=[],SUPPORTS=[],BASES=[],RUNES=[],GEMLING={},SUPP={},SKILLBY={},NOTABLES=[],KEYSTONES=[],SPIRIT=[],WEAPONSKILLS={};
 const cap=s=>(s||'').replace(/\b\w/g,c=>c.toUpperCase());
@@ -192,8 +194,10 @@ const num=s=>{const m=String(s).match(/-?\d+(\.\d+)?/);return m?parseFloat(m[0])
 
 async function load(){
   try{
-    const ent=await Promise.all(Object.entries(FILES).map(async([k,u])=>{const r=await fetch(u);if(!r.ok)throw new Error(u+' '+r.status);return[k,await r.json()];}));
-    ent.forEach(([k,v])=>DATA[k]=v); init();
+    const ent=await Promise.all(Object.entries(FILES).map(async([k,u])=>{
+      try{const r=await fetch(u);if(!r.ok)throw new Error(u+' '+r.status);return[k,await r.json()];}
+      catch(e){ if(OPT[k])return[k,null]; throw e; } }));   // optional DPS files degrade gracefully; required files still hard-fail
+    ent.forEach(([k,v])=>{if(v!=null)DATA[k]=v;}); init();
   }catch(e){
     $('#loadstat').textContent='data load failed';
     $('#out').innerHTML=`<div class="empty"><h2>Couldn't load datasets.</h2><p class="muted">${e.message}. Serve from repo root: <code>python3 -m http.server</code></p></div>`;
@@ -300,6 +304,134 @@ function weaponDPS(slot){
   return best;
 }
 
+// ==DPS-ENGINE-START==
+// PURE, DOM-FREE. Reads only its args + the two passed datasets (ctx.SKILLDPS / ctx.SUPPORTDPS).
+// Node-testable: slice between the markers and eval. Contract: data/skill_dps.json + data/support_dps.json (spec §A).
+const DPS_TYPES=['fire','cold','lightning','physical','chaos'];
+const lvlRow=(sk,L)=>{const keys=Object.keys(sk.levels||{}).map(Number).filter(n=>!isNaN(n));if(!keys.length)return null;
+  const max=Math.max(...keys),min=Math.min(...keys);return sk.levels[String(Math.max(min,Math.min(max,L)))]||sk.levels[String(max)];};
+// move pct% of source type into target (conversion preserves magnitude; gain-as adds without removing)
+function dpsConvert(by,src,dst,pct,add){const mv=(by[src]||0)*pct/100; if(!add) by[src]=(by[src]||0)-mv; by[dst]=(by[dst]||0)+mv;}
+// does a support 'more' entry's bucket apply to this damage type, on this skill kind?
+function bucketHits(bucket,type,kind){
+  if(!bucket||bucket==='all')return true;
+  if(bucket===type)return true;
+  if(bucket==='element')return type==='fire'||type==='cold'||type==='lightning'; // all-elemental supports apply to all 3 elements
+  if(bucket.indexOf('+')>=0)return bucket.split('+').indexOf(type)>=0; // multi-element pair e.g. 'cold+lightning' (attunement penalties)
+  if(bucket==='spell'||bucket==='attack')return bucket===kind;
+  if(bucket==='area'||bucket==='projectile'||bucket==='melee'||bucket==='dot')return true; // conditional/tag buckets: count (transparent, slight over-count)
+  return false;
+}
+function computeDPS(skillName,supportNames,ctx){
+  ctx=ctx||{}; const SK=ctx.SKILLDPS||{}, SP=ctx.SUPPORTDPS||{};
+  if(!SK.skills) return {dps:0,hit:0,byType:{},rate:0,critFactor:1,chance:0,parts:[],supportsUsed:[],excludedReason:'DPS dataset not loaded — run scripts/build_dps.py'};
+  if(SK.excluded&&SK.excluded[skillName]!=null)
+    return {dps:0,hit:0,byType:{},rate:0,critFactor:1,chance:0,parts:[],supportsUsed:[],excludedReason:SK.excluded[skillName]};
+  const sk=SK.skills[skillName];
+  if(!sk) return {dps:0,hit:0,byType:{},rate:0,critFactor:1,chance:0,parts:[],supportsUsed:[],excludedReason:'no DPS data for this skill'};
+  const L=Math.max(1,Math.min(sk.maxLevel||20,ctx.level||SK.default_level||20));
+  const row=lvlRow(sk,L)||{}, kind=sk.kind, parts=[];
+  const sups=(supportNames||[]).map(n=>SP.supports&&SP.supports[n]).filter(Boolean);
+  // 1) base hit per type
+  const by={}; const add=(t,v)=>{if(v)by[t]=(by[t]||0)+v;};
+  const wAvg=ctx.weaponAvg||{}, addF=ctx.addedFlat||{};
+  if(kind==='attack'){
+    const mult=row.baseMultiplier!=null?row.baseMultiplier:1.0;
+    DPS_TYPES.forEach(t=>{const a=row.added&&row.added[t]; const wf=(wAvg[t]||0)+(addF[t]||0)+(a?(a[0]+a[1])/2:0); add(t,wf*mult);});
+    parts.push(['weaponAvg×baseMult('+(+mult).toFixed(2)+')',Object.values(by).reduce((s,x)=>s+x,0)]);
+  }else{ // spell
+    DPS_TYPES.forEach(t=>{const b=row.base&&row.base[t], a=row.added&&row.added[t], xf=addF[t]||0;
+      add(t,(b?(b[0]+b[1])/2:0)+(a?(a[0]+a[1])/2:0)+xf);});
+    parts.push(['skill base avg(min,max)',Object.values(by).reduce((s,x)=>s+x,0)]);
+  }
+  // 2) conversion: skill convert (phys->X), then support gain-as
+  Object.entries(sk.convert||{}).forEach(([dst,pct])=>dpsConvert(by,'physical',dst,pct,false));
+  // gain-as 'from:all' = % of the SUM of all current types (snapshot pre-gain totals so
+  // multiple attunements don't compound off each other). Additive (gain, not move).
+  const preGain={}; DPS_TYPES.forEach(t=>{if(by[t])preGain[t]=by[t];});
+  const preGainSum=Object.values(preGain).reduce((s,x)=>s+x,0);
+  sups.forEach(s=>(s.gainAs||[]).forEach(g=>{
+    if(g.from==='all'){ by[g.to]=(by[g.to]||0)+preGainSum*g.pct/100; }            // % of total, no removal
+    else dpsConvert(by,g.from,g.to,g.pct,true);                                    // % of one type, no removal
+  }));
+  sups.forEach(s=>(s.convert||[]).forEach(c=>dpsConvert(by,c.from||'physical',c.to,c.pct,false)));
+  // 3) GUARANTEED more multipliers per type (supports + skill quality damage-more + ctx global),
+  //    then 4) increased bucket. Conditional mores are EXCLUDED from the headline (G3) and
+  //    instead feed a separate situational ceiling.
+  const inc=1+(ctx.increasedPct!=null?ctx.increasedPct:0)/100;
+  const qMore=qualityMore(sk,ctx.quality!=null?ctx.quality:0); // {type|'all': moreFactor} from damage-quality stats (G4)
+  let moreApplied=1, situational=1;
+  DPS_TYPES.forEach(t=>{ if(!by[t])return; let m=1, mc=1;
+    sups.forEach(s=>(s.more||[]).forEach(e=>{ if(!bucketHits(e.bucket,t,kind))return;
+      const f=1+e.value/100; if(e.conditional){mc*=f;} else {m*=f;} }));
+    // skill quality damage-more (unconditional): matches this type or 'all'
+    const qf=(qMore[t]||1)*(qMore.all||1); m*=qf;
+    if(ctx.moreGlobal)m*=ctx.moreGlobal;
+    by[t]*=m*inc; if(m>moreApplied)moreApplied=m; if(m*mc>situational)situational=m*mc; });
+  parts.push(['×more (per-type product, max '+moreApplied.toFixed(2)+')',moreApplied]);
+  parts.push(['×increased '+(ctx.increasedPct!=null?ctx.increasedPct:0)+'%',inc]);
+  // 5) sum -> hit
+  const byType={}; DPS_TYPES.forEach(t=>{if(by[t])byType[t]=by[t];});
+  const hit=Object.values(byType).reduce((s,x)=>s+x,0);
+  // 6) crit
+  let chance=(sk.critChance!=null?sk.critChance:(ctx.weaponCrit!=null?ctx.weaponCrit:5))+(ctx.critChanceBonus||0);
+  let bonus=(ctx.critMulti!=null?ctx.critMulti:100);
+  sups.forEach(s=>{const c=s.crit||{}; chance+=(c.addedChance||0); bonus+=(c.addedMulti||0);
+    if(c.moreChance)chance*=(1+c.moreChance/100); if(c.moreMulti)bonus*=(1+c.moreMulti/100);});
+  chance=Math.max(0,Math.min(100,chance));
+  const critFactor=1+(chance/100)*(bonus/100);
+  parts.push(['×crit ('+chance.toFixed(1)+'% @ +'+Math.round(bonus)+'% multi)',critFactor]);
+  // 7) rate. attackSpeedMultiplier (ASM) is its OWN multiplicative factor (a MORE), NOT additive (G1).
+  let rate;
+  if(kind==='attack'){
+    const base=sk.attackTimeMs?1000/sk.attackTimeMs:(1/(ctx.weaponAttackTime||1));
+    const asm=1+(row.attackSpeedMultiplier||0)/100;                                  // skill's own attack-rate more
+    let aspd=(ctx.increasedAttackSpeed||0);                                           // only gear/tree/support 'increased' here
+    sups.forEach(s=>(s.increased||[]).forEach(e=>{if(e.bucket==='attack_speed')aspd+=e.value;}));
+    let mspd=1; sups.forEach(s=>(s.moreSpeed||[]).forEach(e=>{if(e.kind==='attack')mspd*=(1+e.value/100);})); // attack-kind only (G2)
+    rate=base*asm*(1+aspd/100)*mspd;
+  }else{
+    const ct=sk.castTime||0; let base=ct>0?1/ct:1; // castTime==0 => instant/override, treat as 1 use/s reference
+    let cspd=(ctx.increasedCastSpeed||0);
+    sups.forEach(s=>(s.increased||[]).forEach(e=>{if(e.bucket==='cast_speed')cspd+=e.value;}));
+    let mspd=1; sups.forEach(s=>(s.moreSpeed||[]).forEach(e=>{if(e.kind==='cast')mspd*=(1+e.value/100);})); // cast-kind only (G2)
+    rate=base*(1+cspd/100)*mspd;
+  }
+  if(!(rate>0))rate=0;
+  parts.push(['×rate ('+rate.toFixed(2)+'/s)',rate]);
+  const dps=hit*critFactor*rate;
+  return {dps,hit,byType,rate,critFactor,chance,parts,situational,supportsUsed:sups.map((s,i)=>(supportNames||[]).filter(n=>SP.supports&&SP.supports[n])[i]||s.id)};
+}
+// G4: fold UNCONDITIONAL damage-quality stats into a per-bucket more factor at the chosen quality.
+// qualityStats entry = [statName, perPoint]; total more% = perPoint × quality. Skip conditional/non-damage.
+function qualityMore(sk,quality){
+  const out={}; if(!quality||!sk.quality)return out;
+  for(const q of sk.quality){ if(!Array.isArray(q)||q.length<2)continue;
+    const stat=q[0], per=+q[1]; if(!stat||!per)continue;
+    // must be an unconditional active-skill damage more: active_skill_damage_+%_final or active_skill_<type>_damage_+%_final
+    if(!/^active_skill_(?:fire_|cold_|lightning_|physical_|chaos_|elemental_|spell_|attack_|area_|projectile_|melee_)?damage_\+%_final$/.test(stat))continue;
+    if(/_vs_|_if_|_while_|_per_|_on_low_life|_from_distance/.test(stat))continue;       // conditional => skip
+    const m=stat.match(/^active_skill_(fire|cold|lightning|physical|chaos|elemental|spell|attack|area|projectile|melee)_damage/);
+    const bucket=m?(({elemental:'element'})[m[1]]||m[1]):'all';                          // 'element' -> handled by bucketHits via type loop
+    const f=1+per*quality/100;
+    if(bucket==='element'){['fire','cold','lightning'].forEach(t=>out[t]=(out[t]||1)*f);}
+    else out[bucket]=(out[bucket]||1)*f;
+  }
+  return out;
+}
+// exact 'more' product for support ranking: Π(1+value/100) over a support's GUARANTEED hit-damage mores.
+// supDps form for ranking-by-spine: pass (spineKind, spineTypes[]) to count only on-spine guaranteed mores (G7).
+function supMoreProduct(supDps,name,spineKind,spineTypes){const s=supDps&&supDps.supports&&supDps.supports[name]; if(!s||!s.more)return null;
+  return s.more.reduce((m,e)=>{
+    if(e.conditional)return m;                                                         // skip situational mores in ranking
+    if(spineTypes&&spineTypes.length){                                                 // spine-aware: only mores that hit the spine
+      const onSpine=spineTypes.some(t=>bucketHits(e.bucket,t,spineKind));
+      if(!onSpine)return m;                                                            // off-type penalty buckets skipped (no false 0.5)
+    }
+    return m*(1+e.value/100);
+  },1);}
+// ==DPS-ENGINE-END==
+
 // transparent build-score model. Every term is shown to the user.
 function profile(){
   const dmg=new Set(),arche=new Set(),notes=[];
@@ -402,8 +534,12 @@ function rankSkills(prof){
     .map(s=>({s,...scoreSkill(s,prof)})).sort((a,b)=>b.sc-a.sc);
 }
 
-// parse a numeric "% more" multiplier out of a support where the text carries it; else qualitative weight
-function supportMult(sp){
+// support 'more' multiplier for ranking: EXACT product from support_dps.json when present, else regex text-parse fallback.
+// G7: spine-aware — counts only GUARANTEED, on-spine mores; off-type penalty buckets are skipped, not scored as 0.5.
+function supportMult(sp,spine){
+  const spineKind=spine&&(spine.arche.has('spell')?'spell':spine.arche.has('attack')?'attack':null);
+  const spineTypes=spine&&[...spine.dmg];
+  const exact=supMoreProduct(DATA.supportdps,sp.name,spineKind,spineTypes); if(exact!=null)return exact; // pre-resolved Π(1+v/100)
   const t=(sp.description||'')+' '+(sp.name||'');
   const m=t.match(/(\d+)%\s*more/i); if(m)return 1+(+m[1])/100;
   if(/more /i.test(t))return 1.15; // qualitative 'more' present, value level-dependent
@@ -416,7 +552,7 @@ function scoreSupport(sp,prof){
   if(prof.arche.has('attack')&&tg.attack)sc+=2; if(prof.arche.has('spell')&&tg.spell)sc+=2;
   if(prof.arche.has('melee')&&tg.melee)sc+=2; if(prof.arche.has('projectile')&&tg.projectile)sc+=2;
   if(tg.minion&&!prof.arche.has('minion'))sc-=5;
-  sc+=(supportMult(sp)-1)*20; // weight the actual multiplier heavily
+  sc+=(supportMult(sp,prof)-1)*20; // weight the actual on-spine multiplier heavily
   if(tg.area)sc+=1;
   // ailment builds: boost supports that scale the chosen ailment (ignite/flammability, bleed, poison…)
   if(prof.ail&&prof.ail.size) sc+=ailHit((sp.description||'')+' '+(sp.name||''),prof)*4;
@@ -424,7 +560,7 @@ function scoreSupport(sp,prof){
 }
 function pickSupports(skill,prof,n=5){
   const names=DATA.compat.by_skill[skill.name]||[];
-  const ranked=names.map(nm=>SUPP[nm]).filter(Boolean).map(sp=>({sp,sc:scoreSupport(sp,prof),mult:supportMult(sp)})).sort((a,b)=>b.sc-a.sc).slice(0,n);
+  const ranked=names.map(nm=>SUPP[nm]).filter(Boolean).map(sp=>({sp,sc:scoreSupport(sp,prof),mult:supportMult(sp,prof)})).sort((a,b)=>b.sc-a.sc).slice(0,n);
   const totalMult=ranked.reduce((m,x)=>m*x.mult,1);
   return {list:ranked, totalMult};
 }
@@ -563,11 +699,25 @@ function forge(){
   const keystone=matchNotables(prof,KEYSTONES,1)[0]||null;
   const runes=pickRunes(prof);
   const wdps=weaponDPS($('#wpn').value);
+  // DPS engine ctx: gem level/quality/increased% + (for attacks) weapon avg/attackTime/crit seeded from the best base, all user-editable
+  const sd=DATA.skilldps, skDps=sd&&sd.skills&&sd.skills[main.name];
+  const seedW={phys:wdps?(wdps.lo+wdps.hi)/2:0,at:wdps?(wdps.aps?1/wdps.aps:1):1,crit:wdps?wdps.crit:5};
+  const elw=t=>{const el=$('#dpsW'+t); return el&&el.value!==''?+el.value:0;}; // editable elemental weapon-avg inputs (G6)
+  const dctx={ level:+($('#dpsLvl')||{}).value||(sd?sd.default_level:20)||20, quality:($('#dpsQ')&&$('#dpsQ').value!=='')?+$('#dpsQ').value:(sd?sd.default_quality:20)||20,
+    increasedPct:($('#dpsInc')&&$('#dpsInc').value!=='')?+$('#dpsInc').value:150,
+    weaponAvg:{physical:($('#dpsWavg')&&$('#dpsWavg').value!=='')?+$('#dpsWavg').value:seedW.phys,
+      fire:elw('fire'),cold:elw('cold'),lightning:elw('lightning'),chaos:elw('chaos')},
+    weaponAttackTime:($('#dpsWat')&&$('#dpsWat').value!=='')?+$('#dpsWat').value:seedW.at,
+    weaponCrit:($('#dpsWcrit')&&$('#dpsWcrit').value!=='')?+$('#dpsWcrit').value:seedW.crit,
+    SKILLDPS:sd,SUPPORTDPS:DATA.supportdps };
+  const supNames=sup.list.map(x=>x.sp.name);
+  const ledger=computeDPS(main.name,supNames,dctx);
+  ledger.kind=skDps?skDps.kind:null; ledger.ctx=dctx;
   const res=resistSolver(prof,uniques);
   const lvl=+$('#lvl').value||90;
   const ptEst=Math.max(0,lvl-1)+24;
   const build={asc:$('#asc').value,goal:$('#goal').value,prof,main,mainScore,alts:ranked.slice(1,4).map(x=>x.s),
-    sup,uniques,spirit,rareSlots,treeNotables,keystone,runes,wdps,res,owned:chosen.uniques.slice(),wpn:$('#wpn').value,stats:$('#stats').value,
+    sup,uniques,spirit,rareSlots,treeNotables,keystone,runes,wdps,ledger,res,owned:chosen.uniques.slice(),wpn:$('#wpn').value,stats:$('#stats').value,
     notables:$('#notables').value, treecode:$('#treecode').value, lvl, ptEst,
     pri:{dmg:$('#pDmg').checked,res:$('#pRes').checked,tanky:$('#pTanky').checked},
     jewels:DATA.jewels};
@@ -577,6 +727,46 @@ function forge(){
 
 // ═══════════════════════════ RENDER ═══════════════════════════
 const dtSpan=d=>`<span class="dt-${d}">${cap(d)}</span>`;
+// transparent DPS ledger: base -> +added -> conversion -> ×more -> ×increased -> ×crit -> ×rate = DPS, with editable ctx inputs
+function dpsLedger(b){
+  const L=b.ledger, c=L&&L.ctx||{}, isAtk=L&&L.kind==='attack';
+  if(L&&L.excludedReason)
+    return `<div class="muted" style="font-size:12px">ESTIMATED DPS</div><div class="big muted" style="font-size:18px">— n/a —</div>`+
+      `<div class="note">Not modelled for ${b.main.name}: <b>${L.excludedReason}</b>. ${/minion/i.test(L.excludedReason)?'Minion DPS is a planned fast-follow.':'This skill deals no direct hit damage v1.'}</div>`;
+  if(!L||!L.dps){
+    return `<div class="muted" style="font-size:12px">ESTIMATED DPS</div><div class="big muted" style="font-size:18px">—</div>`+
+      `<div class="note">DPS dataset not loaded yet — run <code>scripts/build_dps.py</code> to generate <code>data/skill_dps.json</code> + <code>data/support_dps.json</code>.</div>`;
+  }
+  const tbreak=DTYPES.filter(t=>L.byType[t]).map(t=>`${dtSpan(t)} ${Math.round(L.byType[t])}`).join(' · ')||'—';
+  // G8: every ctx input recomputes live on change.
+  const inp=(id,val,w)=>`<input id="${id}" type="number" value="${val}" onchange="reforge()" style="width:${w||58}px;display:inline-block;padding:3px 6px;margin:0">`;
+  let h=`<div class="muted" style="font-size:12px">ESTIMATED DPS <span style="text-transform:none">(${isAtk?'attack':'spell'})</span></div>`;
+  h+=`<div class="big">${L.dps>=1000?Math.round(L.dps).toLocaleString():L.dps.toFixed(1)}</div>`;
+  h+=`<div class="kv"><span class="n">hit</span><span>${Math.round(L.hit).toLocaleString()} (${tbreak})</span></div>`;
+  L.parts.forEach(([n,v])=>h+=`<div class="kv"><span class="n">${n}</span><span>${typeof v==='number'?(v>=1000?Math.round(v).toLocaleString():(+v).toFixed(2)):v}</span></div>`);
+  h+=`<div class="kv"><span class="n">= DPS</span><span><b>${L.dps>=1000?Math.round(L.dps).toLocaleString():L.dps.toFixed(1)}</b></span></div>`;
+  // G3: situational ceiling from conditional mores shown SEPARATELY (never in the headline).
+  if(L.situational&&L.situational>1.0001) h+=`<div class="kv"><span class="n muted">situational ceiling</span><span class="muted">up to ×${L.situational.toFixed(2)} (vs/if/per/while mores)</span></div>`;
+  // editable ctx
+  h+=`<div style="margin-top:8px;font-size:11.5px">`+
+     `<label style="margin:6px 0 2px">Gem level <b id="dpsLvlV">${c.level}</b></label>`+
+     `<input id="dpsLvl" type="range" min="1" max="20" value="${c.level}" oninput="document.querySelector('#dpsLvlV').textContent=this.value" onchange="reforge()" style="padding:0">`+
+     `<div class="row" style="gap:6px;margin-top:4px"><div>quality% ${inp('dpsQ',c.quality)}</div><div>increased% ${inp('dpsInc',c.increasedPct)}</div></div>`;
+  if(isAtk){
+    const wa=c.weaponAvg||{};
+    h+=`<div class="row" style="gap:6px;margin-top:4px"><div>wpn phys ${inp('dpsWavg',Math.round(wa.physical||0))}</div>`+
+       `<div>atk time ${inp('dpsWat',(+c.weaponAttackTime||1).toFixed(2))}</div><div>wpn crit% ${inp('dpsWcrit',c.weaponCrit)}</div></div>`;
+    h+=`<div class="row" style="gap:6px;margin-top:4px"><div>wpn fire ${inp('dpsWfire',Math.round(wa.fire||0),46)}</div>`+
+       `<div>cold ${inp('dpsWcold',Math.round(wa.cold||0),46)}</div><div>light ${inp('dpsWlightning',Math.round(wa.lightning||0),46)}</div><div>chaos ${inp('dpsWchaos',Math.round(wa.chaos||0),46)}</div></div>`;
+    const noWpn=!((wa.physical||0)||(wa.fire||0)||(wa.cold||0)||(wa.lightning||0)||(wa.chaos||0));
+    if(noWpn) h+=`<div class="note" style="color:var(--fire);margin-top:4px">⚠ enter weapon base damage for an accurate attack estimate</div>`;
+  }
+  h+=`<button class="btn sec" onclick="reforge()" style="margin-top:6px;padding:5px 10px;width:auto">↻ recompute</button></div>`;
+  // G9: honesty label
+  h+=`<div class="note">Estimated DPS — exact on skill + supports + weapon + crit; tree/gear via the adjustable bucket. Pre-mitigation; base values may lag the live patch; secondary/perfect-timed hits and source-type 'more' on converted damage not modelled in v1; situational (vs/if/per) mores shown separately.</div>`;
+  return h;
+}
+function reforge(){ if(LAST)forge(); }   // re-run the math with the edited DPS ctx inputs, then re-render
 function render(b){
   const prof=b.prof, gm=GEMLING[b.main.name];
   const dmgStr=[...prof.dmg].map(dtSpan).join(' ')||'<span class="muted">flexible</span>';
@@ -597,13 +787,7 @@ function render(b){
         <div class="scorebar"><i style="width:${pct}%"></i></div>
         ${b.mainScore.parts.map(([n,v])=>`<div class="kv"><span class="n">${n}</span><span>${v>0?'+':''}${(+v).toFixed(1)}</span></div>`).join('')}
       </div>
-      <div style="flex:1">
-        ${b.wdps?`<div class="muted" style="font-size:12px">WEAPON BASE DPS (best ${cap(b.wpn)} base)</div>
-          <div class="big">${Math.round(b.wdps.dps)}</div>
-          <div class="kv"><span class="n">${b.wdps.name}</span><span>${b.wdps.lo}-${b.wdps.hi} phys · ${b.wdps.aps} aps · ${b.wdps.crit}% crit</span></div>
-          <div class="note">Base only — multiply by supports (~×${b.sup.totalMult.toFixed(2)} from picks below), tree %, and added damage.</div>`
-          :`<div class="muted" style="font-size:12px">SUPPORT MULTIPLIER (from picks)</div><div class="big">×${b.sup.totalMult.toFixed(2)}</div><div class="note">Product of the 'more' multipliers on the selected supports (level-dependent values approximated).</div>`}
-      </div>
+      <div style="flex:1">${dpsLedger(b)}</div>
     </div>
     ${gm?`<div class="note"><b>Gemling quality bonus on ${b.main.name}${prof.q>20?` @ ${prof.q}% quality`:''}:</b> ${prof.q>20?scaleGemling(gm.gemling_effect,prof.q):gm.gemling_effect}${prof.q>20?' <span class="muted">(scaled from the 20% baseline)</span>':''}</div>`:''}
     ${prof.ail&&prof.ail.size?`<div class="note"><b>Ailment plan:</b> built around ${[...prof.ail].map(a=>`<span class="dt-${({ignite:'fire',bleed:'physical',poison:'chaos',shock:'lightning',chill:'cold'})[a]}">${cap(a)}</span>`).join(' / ')} — skills & supports that scale ${prof.ail.has('ignite')?'ignite/flammability':'the ailment'} were prioritised${prof.q>20?', and their gemling magnitude is computed at your '+prof.q+'% quality':''}.</div>`:''}
