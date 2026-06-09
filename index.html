@@ -183,9 +183,10 @@ code{background:#0a0b0e;border:1px solid var(--line);border-radius:5px;padding:1
 const DATA={}, $=s=>document.querySelector(s);
 const FILES={gemling:'data/gemling_quality.json',skills:'data/skill_gems.json',supports:'data/support_gems.json',
   compat:'data/support_compatibility.json',uniques:'data/uniques.json',bases:'data/bases.json',
-  runes:'data/runes.json',jewels:'data/jewels.json'};
+  runes:'data/runes.json',jewels:'data/jewels.json',
+  notables:'data/tree_notables.json',keystones:'data/tree_keystones.json'};
 const DTYPES=['fire','cold','lightning','chaos','physical'];
-let UNIQUES=[],SKILLS=[],SUPPORTS=[],BASES=[],RUNES=[],GEMLING={},SUPP={},SKILLBY={};
+let UNIQUES=[],SKILLS=[],SUPPORTS=[],BASES=[],RUNES=[],GEMLING={},SUPP={},SKILLBY={},NOTABLES=[],KEYSTONES=[];
 const cap=s=>(s||'').replace(/\b\w/g,c=>c.toUpperCase());
 const num=s=>{const m=String(s).match(/-?\d+(\.\d+)?/);return m?parseFloat(m[0]):null;};
 
@@ -201,19 +202,20 @@ async function load(){
 function init(){
   UNIQUES=DATA.uniques.items||DATA.uniques; SKILLS=DATA.skills; SUPPORTS=DATA.supports;
   BASES=DATA.bases.items||DATA.bases; RUNES=DATA.runes.items||DATA.runes;
+  NOTABLES=DATA.notables.notables||DATA.notables; KEYSTONES=DATA.keystones.keystones||DATA.keystones;
   (DATA.gemling.skills||[]).forEach(s=>GEMLING[s.name]=s);
   SUPPORTS.forEach(s=>SUPP[s.name]=s); SKILLS.forEach(s=>SKILLBY[s.name]=s);
   $('#loadstat').textContent=`${SKILLS.length} skills · ${SUPPORTS.length} supports · ${UNIQUES.length} uniques · ${BASES.length} bases · ${RUNES.length} runes`;
   $('#ver').textContent='data: PoE2 v0.5 · poe2db + PoB export · math engine v1';
   const wslots=[...new Set(BASES.filter(b=>b.category==='weapon').map(b=>b.slot))].sort();
   wslots.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=cap(s);$('#wpn').appendChild(o);});
-  setupTA('#uq','#uqlist',UNIQUES.map(u=>({name:u.name,slot:u.slot,ref:u})),i=>{chosen.unique=i.ref;chips();});
+  setupTA('#uq','#uqlist',UNIQUES.map(u=>({name:u.name,slot:u.slot,ref:u})),i=>{if(!chosen.uniques.some(u=>u.name===i.ref.name))chosen.uniques.push(i.ref);chips();});
   $('#provider').onchange=syncProvider; syncProvider();
   $('#asc').onchange=syncAsc; syncAsc();
   $('#lvl').oninput=ptInfo; ptInfo();
   $('#loadModels').onclick=loadModels;
   $('#go').onclick=forge;
-  $('#rand').onclick=()=>{const u=UNIQUES[(Math.random()*UNIQUES.length)|0];chosen.unique=u;chips();forge();};
+  $('#rand').onclick=()=>{const u=UNIQUES[(Math.random()*UNIQUES.length)|0];chosen.uniques=[u];chips();forge();};
 }
 function syncProvider(){
   const p=$('#provider').value, box=$('#providerbox');
@@ -257,7 +259,7 @@ function ptInfo(){
   $('#ptInfo').textContent=`~${est} points at level ${lvl}; the engine plans what's left.`;
 }
 // typeahead
-let chosen={unique:null};
+let chosen={uniques:[]};
 function setupTA(inSel,listSel,items,onPick){
   const inp=$(inSel),list=$(listSel);let act=-1,shown=[];
   inp.addEventListener('input',()=>{const q=inp.value.toLowerCase().trim();act=-1;
@@ -273,7 +275,9 @@ function setupTA(inSel,listSel,items,onPick){
     else return;[...list.children].forEach((d,i)=>d.classList.toggle('act',i===act));e.preventDefault();});
   document.addEventListener('click',e=>{if(!inp.contains(e.target)&&!list.contains(e.target))list.classList.remove('show');});
 }
-function chips(){$('#uqchips').innerHTML=chosen.unique?`<span class="chip"><b>${chosen.unique.name}</b> <span class="muted">${chosen.unique.slot||''}</span> <span class="x" onclick="chosen.unique=null;chips()">✕</span></span>`:'';}
+function chips(){$('#uqchips').innerHTML=chosen.uniques.map((u,i)=>`<span class="chip"><b>${u.name}</b> <span class="muted">${u.slot||''}</span> <span class="x" onclick="rmUnique(${i})">✕</span></span>`).join('');}
+function rmUnique(i){chosen.uniques.splice(i,1);chips();}
+const ownedSlots=()=>new Set(chosen.uniques.map(u=>u.slot));
 
 // ═══════════════════════════ CALC (math — the decision-maker) ═══════════════════════════
 const textOf=u=>[...(u.explicits||[]),...(u.implicits||[]),u.name||''].join(' ').toLowerCase();
@@ -303,13 +307,22 @@ function profile(){
   if(wpn){ if(RANGED.includes(wpn)){arche.add('attack');arche.add('projectile');}
     else if(CASTER.includes(wpn))arche.add('spell');
     else if(MELEE.includes(wpn)){arche.add('attack');arche.add('melee');} notes.push('weapon '+cap(wpn)); }
-  const blob=(chosen.unique?textOf(chosen.unique):'')+' '+goal+' '+stats;
+  const blob=chosen.uniques.map(textOf).join(' ')+' '+goal+' '+stats;
   DTYPES.forEach(d=>{if(blob.includes(d))dmg.add(d);});
   if(/minion|skeletal|raise|companion|spirit summon/.test(blob))arche.add('minion');
   if(/spell|cast/.test(blob))arche.add('spell');
   if(/attack|melee|strike|slam|crossbow|bow|spear/.test(blob))arche.add('attack');
   if(/projectile|arrow|bolt|proj/.test(blob))arche.add('projectile');
-  if(!arche.size)arche.add('attack');
+  // infer archetype from CLASS when the input didn't pin one (e.g. a Sorc with no weapon → spell, not attack)
+  if(!arche.size){
+    const c=$('#asc').value;
+    if(/Sorceress|Witch|Stormweaver|Chronomancer|Infernalist|Blood Mage|Lich/.test(c))arche.add('spell');
+    else if(/Ranger|Deadeye|Pathfinder/.test(c)){arche.add('attack');arche.add('projectile');}
+    else if(/Mercenary|Gemling|Witchhunter|Tactician/.test(c)){arche.add('attack');arche.add('projectile');}
+    else if(/Warrior|Titan|Warbringer|Smith/.test(c)){arche.add('attack');arche.add('melee');}
+    else if(/Monk|Invoker|Acolyte|Huntress|Amazon|Ritualist/.test(c)){arche.add('attack');arche.add('melee');}
+    else arche.add('attack');
+  }
   // damaging ailments / DoT: ignite (fire/flammability/burn), bleed (phys), poison (chaos),
   // plus the utility ailments shock (lightning) and chill/freeze (cold).
   const ail=new Set();
@@ -384,7 +397,7 @@ function pickSupports(skill,prof,n=5){
 
 // resistance SOLVER — proves the cap is reachable, with numbers
 function resistSolver(prof, uniques){
-  const occupied=new Set(uniques.map(u=>u.slot)); if(chosen.unique)occupied.add(chosen.unique.slot);
+  const occupied=new Set(uniques.map(u=>u.slot)); chosen.uniques.forEach(u=>occupied.add(u.slot));
   // suffix lines available for resistances on rare gear (slots not taken by uniques)
   const resSlots={ring:2,amulet:1,belt:1,gloves:1,boots:1,helmet:1,body:1};
   let lines=0; for(const[s,c]of Object.entries(resSlots)) lines += occupied.has(s)?0:c;
@@ -392,7 +405,7 @@ function resistSolver(prof, uniques){
   const elementalNeed=225; // 75×3
   // resist from recommended uniques
   let uniqRes=0,uniqChaos=0;
-  uniques.concat(chosen.unique?[chosen.unique]:[]).forEach(u=>{
+  uniques.concat(chosen.uniques).forEach(u=>{
     (u.explicits||[]).forEach(m=>{const v=num(m)||0;
       if(/chaos resistance/i.test(m))uniqChaos+=v; else if(/resistance/i.test(m))uniqRes+=v;});
   });
@@ -410,29 +423,36 @@ function resistSolver(prof, uniques){
       :`Need ${chaosTarget}% — slot ${chaosRune?chaosRune.name+' (+'+chaosRune.v+'%)':'a chaos-res soul core'} and roll ${Math.max(0,Math.ceil((chaosTarget-chaosCovered)/PER_LINE))} chaos-res suffix line(s).`};
 }
 
+// Only reward OFFENSIVE / build-defining synergy — generic life/armour/attribute uniques
+// score ~0 so they aren't suggested for every slot (rares cover those).
 function scoreUnique(u,prof){const t=textOf(u);let sc=0;
-  prof.dmg.forEach(d=>{if(t.includes(d))sc+=2;});
-  if(prof.arche.has('spell')&&/spell|cast/.test(t))sc+=2;
-  if(prof.arche.has('attack')&&/attack|physical|melee/.test(t))sc+=2;
-  if(prof.arche.has('minion')&&/minion/.test(t))sc+=3;
-  if(/critical|penetrat|more|increased .*damage/.test(t))sc+=1.5;
-  if(/resistance/.test(t))sc+=1; if(/life|energy shield/.test(t))sc+=.5; return sc;}
+  // damage type must scale as DAMAGE, not just appear in the name (Lightning Coil ≠ lightning build)
+  prof.dmg.forEach(d=>{ if(new RegExp(d+'\\s+(damage|penetration|exposure)','i').test(t)||new RegExp('as .*'+d+'\\s+damage','i').test(t)) sc+=3; });
+  if(prof.ail&&prof.ail.size) sc+=ailHit(t,prof)*3;
+  if(prof.arche.has('spell')&&/spell damage|increased.*spell|cast speed|per .*mana|to maximum mana/i.test(t))sc+=2;
+  if(prof.arche.has('attack')&&/attack speed|increased.*attack|melee damage|accuracy/i.test(t))sc+=2;
+  if(prof.arche.has('projectile')&&/projectile|arrow|bolt|pierc|chain|fork/i.test(t))sc+=2;
+  if(prof.arche.has('minion')&&/minion/i.test(t))sc+=3;
+  if(/critical|penetrat|exposure|gain .*as extra|more .*damage|increased .*damage/i.test(t))sc+=2;
+  if(/additional skill|grants skill|\+\d+ to level of|converted to|conversion/i.test(t))sc+=1.5; // build-enablers
+  return sc;}
 const GEAR_SLOTS=['amulet','ring','body','helmet','gloves','boots','belt'];
 // Only suggest a unique where it's genuinely best-in-slot. Real builds run a few
 // impactful uniques + rares for the rest — NOT a unique in every slot.
 function pickUniques(prof){
-  const own=chosen.unique?chosen.unique.slot:null,by={};
-  UNIQUES.forEach(u=>{if(u.slot===own)return;(by[u.slot]=by[u.slot]||[]).push(u);});
+  const own=ownedSlots(),by={};
+  UNIQUES.forEach(u=>{if(own.has(u.slot))return;(by[u.slot]=by[u.slot]||[]).push(u);});
   const best=[];
-  GEAR_SLOTS.forEach(slot=>{ if(slot===own)return;
+  GEAR_SLOTS.forEach(slot=>{ if(own.has(slot))return;
     const c=(by[slot]||[]).map(u=>({u,sc:scoreUnique(u,prof)})).sort((a,b)=>b.sc-a.sc);
     if(c.length) best.push({slot,u:c[0].u,sc:c[0].sc}); });
-  // keep only strongly-synergistic uniques (score >= 4), capped at 3; the rest are rares
-  return best.filter(x=>x.sc>=4).sort((a,b)=>b.sc-a.sc).slice(0,3).map(x=>x.u);
+  // include a unique only where it genuinely optimises the build (merit threshold) —
+  // no fixed count: could be zero, one, or several. Everything else is a rare.
+  return best.filter(x=>x.sc>=4).sort((a,b)=>b.sc-a.sc).map(x=>x.u);
 }
 // slots the build should fill with RARES (target affixes), given owned + recommended uniques
 function rareSlotPlan(prof,uniques){
-  const used=new Set([chosen.unique?chosen.unique.slot:null,...uniques.map(u=>u.slot)]);
+  const used=new Set([...ownedSlots(),...uniques.map(u=>u.slot)]);
   const disp=['helmet','body','gloves','boots','belt','amulet','ring1','ring2'];
   const norm=s=>s.replace(/[12]$/,'');
   return disp.filter(s=>{ const base=norm(s);
@@ -458,31 +478,41 @@ function vaalAside(item,kind){
   }
   return '⚗ Vaal: a rare can gain +1 socketed gems, an extra rune socket, or a corrupted implicit — worth it once the base is otherwise finished.';
 }
-// amulet anointment guidance (anoint a passive notable onto the amulet via distilled emotions)
-function anointFocus(prof){
-  if(prof.ail&&prof.ail.size) return `an ailment notable — scale ${[...prof.ail].join('/')} magnitude/duration (e.g. flammability/ignite, bleed, or poison nodes)`;
-  if(prof.arche.has('minion')) return 'a minion damage or minion-life notable';
-  if(prof.dmg.size) return `a ${[...prof.dmg].map(cap).join('/')} damage, penetration, or crit notable`;
-  return 'your single highest-impact damage notable';
+// score a passive-tree notable/keystone for this build (data-driven, from the GGG tree export)
+function notableScore(nt,prof){ const t=nt.stats.join(' ').toLowerCase(); let sc=0;
+  prof.dmg.forEach(d=>{if(t.includes(d))sc+=3;});
+  if(prof.ail&&prof.ail.size) sc+=ailHit(t,prof)*4;
+  if(prof.arche.has('attack')&&/attack|melee|strike|slam/.test(t))sc+=2;
+  if(prof.arche.has('spell')&&/spell|cast/.test(t))sc+=2;
+  if(prof.arche.has('projectile')&&/projectile|bow|arrow|bolt/.test(t))sc+=2;
+  if(prof.arche.has('minion')&&/minion/.test(t))sc+=3;
+  if(/critical|penetrat|exposure|\bmore \b|increased .*damage|attack speed|cast speed/.test(t))sc+=1;
+  return sc;
 }
+function matchNotables(prof,pool,n){ return (pool||NOTABLES).map(nt=>({nt,sc:notableScore(nt,prof)}))
+  .filter(x=>x.sc>0).sort((a,b)=>b.sc-a.sc).slice(0,n).map(x=>x.nt); }
+// amulet anointment — pick a REAL notable from the tree that best fits the build
+function anointPick(prof){ const m=matchNotables(prof,NOTABLES,1); return m[0]||null; }
 
 // ═══════════════════════════ DECIDE ═══════════════════════════
 let LAST=null;
 function forge(){
-  if(!chosen.unique && !$('#wpn').value && !$('#goal').value.trim()){alert('Describe a goal, or pick a unique / weapon type.');return;}
+  if(!chosen.uniques.length && !$('#wpn').value && !$('#goal').value.trim()){alert('Describe a goal, or pick a unique / weapon type.');return;}
   const prof=profile();
   const ranked=rankSkills(prof);
   const main=ranked[0].s, mainScore=ranked[0];
   const sup=pickSupports(main,prof,5);
   const uniques=pickUniques(prof);
   const rareSlots=rareSlotPlan(prof,uniques);
+  const treeNotables=matchNotables(prof,NOTABLES,6);
+  const keystone=matchNotables(prof,KEYSTONES,1)[0]||null;
   const runes=pickRunes(prof);
   const wdps=weaponDPS($('#wpn').value);
   const res=resistSolver(prof,uniques);
   const lvl=+$('#lvl').value||90;
   const ptEst=Math.max(0,lvl-1)+24;
   const build={asc:$('#asc').value,goal:$('#goal').value,prof,main,mainScore,alts:ranked.slice(1,4).map(x=>x.s),
-    sup,uniques,rareSlots,runes,wdps,res,owned:chosen.unique,wpn:$('#wpn').value,stats:$('#stats').value,
+    sup,uniques,rareSlots,treeNotables,keystone,runes,wdps,res,owned:chosen.uniques.slice(),wpn:$('#wpn').value,stats:$('#stats').value,
     notables:$('#notables').value, treecode:$('#treecode').value, lvl, ptEst,
     pri:{dmg:$('#pDmg').checked,res:$('#pRes').checked,tanky:$('#pTanky').checked},
     jewels:DATA.jewels};
@@ -503,7 +533,7 @@ function render(b){
       <span class="pill">${cap(b.main.gemType||'')}</span>
       ${[...prof.arche].map(a=>`<span class="pill">${a}</span>`).join('')}
       <span class="pill">dmg: ${dmgStr}</span>
-      ${b.owned?`<span class="pill">around ${b.owned.name}</span>`:''}${b.wpn?`<span class="pill">${cap(b.wpn)}</span>`:''}
+      ${b.owned.length?`<span class="pill">around ${b.owned.map(u=>u.name).join(', ')}</span>`:''}${b.wpn?`<span class="pill">${cap(b.wpn)}</span>`:''}
     </div>
     <div class="row" style="gap:18px;margin-top:10px">
       <div style="flex:1.3">
@@ -535,17 +565,22 @@ function render(b){
   h+=`<div class="note">${poolN} supports compatible with ${b.main.name}; engine kept the 5 with the highest damage multiplier for your profile. Combined ≈ ×${b.sup.totalMult.toFixed(2)} more.</div></div>`;
 
   // GEAR — a few impactful uniques + rares for the rest (not all-uniques)
-  h+=`<div class="card"><div class="sect-title">🛡 Gear plan <span class="muted" style="text-transform:none;letter-spacing:0">— ${(b.owned?1:0)+b.uniques.length} unique${(b.owned?1:0)+b.uniques.length===1?'':'s'} + rares</span></div>`;
+  const totU=b.owned.length+b.uniques.length;
+  h+=`<div class="card"><div class="sect-title">🛡 Gear plan <span class="muted" style="text-transform:none;letter-spacing:0">— ${totU} unique${totU===1?'':'s'} + rares</span></div>`;
   h+=`<div class="muted" style="font-size:12px;margin-bottom:6px">UNIQUES (only where best-in-slot)</div>`;
-  if(b.owned)h+=`<div class="slotrow"><div class="s">${b.owned.slot}</div><div><b>${b.owned.name}</b> <span class="muted">(yours)</span><br><span class="muted">${(b.owned.explicits||[]).join(' · ')||'—'}</span><div class="vaal">${vaalAside(b.owned,'unique')}</div></div></div>`;
+  b.owned.forEach(o=>h+=`<div class="slotrow"><div class="s">${o.slot}</div><div><b>${o.name}</b> <span class="muted">(yours)</span><br><span class="muted">${(o.explicits||[]).join(' · ')||'—'}</span><div class="vaal">${vaalAside(o,'unique')}</div></div></div>`);
   b.uniques.forEach(u=>h+=`<div class="slotrow"><div class="s">${u.slot}</div><div><b>${u.name}</b><br><span class="muted">${(u.explicits||[]).slice(0,3).join(' · ')}</span><div class="vaal">${vaalAside(u,'unique')}</div></div></div>`);
-  if(!b.owned&&!b.uniques.length)h+=`<div class="slotrow"><div class="muted">No unique clears the synergy bar — this build is best as all-rares. Chase the implicit/affix targets below.</div></div>`;
+  if(!b.owned.length&&!b.uniques.length)h+=`<div class="slotrow"><div class="muted">No unique clears the synergy bar — this build is best as all-rares. Chase the implicit/affix targets below.</div></div>`;
   // RARES for the remaining slots
   const dmgAff=[...prof.dmg].map(cap).join('/')||'flat/%'+'';
   const aff=`life, +resistances (toward 75/75/75${b.pri.res?' + 40% chaos':''}), and ${prof.ail&&prof.ail.size?[...prof.ail].map(cap).join('/')+' magnitude / ailment':dmgAff+' damage'}`;
   h+=`<div class="muted" style="font-size:12px;margin:12px 0 4px">RARES (target affixes) — ${b.rareSlots.join(' · ')}</div>`;
   h+=`<div class="slotrow"><div class="s">each rare</div><div><span class="muted">Roll: ${aff}${prof.arche.has('attack')?', attack speed / accuracy':prof.arche.has('spell')?', cast speed / spell damage':''}. Bases from <a href="pages/items_catalog.html" target="_blank">the catalog</a>; cap resists on rares first so uniques can be pure damage.</span></div></div>`;
-  h+=`<div class="slotrow"><div class="s">amulet ✦</div><div><b>Anointment</b> <span class="muted">(distilled emotions)</span><br><span style="font-size:11.5px;color:var(--int)">💠 Anoint ${anointFocus(prof)}. If life/EHP is short, a life or recovery notable is the safe alternative.</span></div></div></div>`;
+  const an=anointPick(prof);
+  h+=`<div class="slotrow"><div class="s">amulet ✦</div><div><b>Anointment</b> <span class="muted">(distilled emotions · separate layer, not in the base numbers above)</span><br>`+
+     (an?`<span style="font-size:11.5px;color:var(--int)">💠 Anoint <b>${an.name}</b> — ${an.stats.join(' · ')}.</span>`
+        :`<span style="font-size:11.5px;color:var(--int)">💠 Anoint your highest-impact damage notable.</span>`)+
+     ` <span class="muted">If EHP is short, a life/recovery notable instead.</span></div></div></div>`;
 
   // DEFENSE SOLVER
   const r=b.res;
@@ -573,11 +608,15 @@ function render(b){
   h+=`</div>`;
 
   // TREE
-  h+=`<div class="card"><div class="sect-title">🌳 Passive tree</div>
+  h+=`<div class="card"><div class="sect-title">🌳 Passive tree <span class="muted" style="text-transform:none;letter-spacing:0">— real notables from the official tree, ranked for your build</span></div>
     <div class="kv"><span class="n">Level ${b.lvl} → est. points</span><span>~${b.ptEst}</span></div>
-    ${b.notables?`<div class="kv"><span class="n">You have</span><span>${b.notables}</span></div>`:''}
-    <div class="note">Spend remaining points on: ${[...prof.dmg].map(cap).join('/')||'your'} damage clusters, then ${b.pri.res?'life + a chaos-res notable, ':''}attack/cast speed and crit. ${b.treecode?'Imported tree parsed for context.':'Paste a tree/PoB code for point-by-point routing.'} ${$('#provider').value!=='off'?'AI routing below.':''}</div>
-  </div>`;
+    ${b.notables?`<div class="kv"><span class="n">You already have</span><span>${b.notables}</span></div>`:''}`;
+  if(b.keystone)h+=`<div class="slotrow"><div class="s">keystone</div><div><b>${b.keystone.name}</b><br><span class="muted">${b.keystone.stats.join(' · ')}</span></div></div>`;
+  if(b.treeNotables.length){
+    h+=`<div class="muted" style="font-size:12px;margin:10px 0 4px">SPEND REMAINING POINTS ON (top notables)</div>`;
+    b.treeNotables.forEach(nt=>h+=`<div class="slotrow"><div class="s" style="min-width:0">✦</div><div><b>${nt.name}</b><br><span class="muted" style="font-size:11.5px">${nt.stats.join(' · ')}</span></div></div>`);
+  }
+  h+=`<div class="note">Route through these via the shortest path; cap resists on gear so tree points go to damage. ${b.treecode?'Imported tree noted for context.':''}${$('#provider').value!=='off'?' AI point-by-point routing below.':''}</div></div>`;
 
   // AI slot (secondary)
   h+=`<div class="card" id="aicard"><div class="sect-title">🤖 AI write-up <span class="muted" style="text-transform:none;letter-spacing:0">— secondary; the math above made the calls</span></div>
@@ -593,7 +632,7 @@ function prompt(b){
   return `You are a Path of Exile 2 (v0.5) theorycrafter. The DETERMINISTIC ENGINE has already chosen this build using math from verified data — your job is ONLY to explain it clearly and add ideas/playstyle. Do NOT change the engine's picks; if you disagree, note it briefly as an "alt idea" at the end.
 
 PLAYER GOAL: ${b.goal||'(none given)'}
-Ascendancy: ${b.asc}. Owns: ${b.owned?b.owned.name+' — '+(b.owned.explicits||[]).join(', '):'(no unique)'}. Weapon: ${b.wpn||'n/a'}. Stats: ${b.stats||'n/a'}.
+Ascendancy: ${b.asc}. Owns: ${b.owned.length?b.owned.map(o=>o.name).join(', '):'(no unique)'}. Weapon: ${b.wpn||'n/a'}. Stats: ${b.stats||'n/a'}.
 Tree: level ${b.lvl} (~${b.ptEst} pts); has: ${b.notables||'(unspecified)'}.
 Priorities: ${b.pri.dmg?'max damage; ':''}${b.pri.res?'cap elemental res + ≥40% chaos (hard); ':''}${b.pri.tanky?'survivability; ':''}
 

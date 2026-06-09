@@ -1,0 +1,205 @@
+{
+  "version": "0.5",
+  "source": "grindinggear/poe2-skilltree-export",
+  "count": 33,
+  "keystones": [
+    {
+      "name": "Ancestral Bond",
+      "stats": [
+        "Your Totem Limit is doubled · No Charge requirement for placing Totems · Totems reserve 75 Spirit each"
+      ]
+    },
+    {
+      "name": "Avatar of Fire",
+      "stats": [
+        "75% of Damage Converted to Fire Damage · Deal no Non-Fire Damage"
+      ]
+    },
+    {
+      "name": "Blackflame Covenant",
+      "stats": [
+        "Fire Spells Convert 100% of Fire Damage to Chaos Damage · Chaos Damage from Fire Spells Contributes to Flammability and Ignite Magnitudes · Ignite inflicted with Fire Spells deals Chaos Damage instead of Fire Damage"
+      ]
+    },
+    {
+      "name": "Blood Magic",
+      "stats": [
+        "You have no Mana · Skill Mana Costs Converted to Life Costs"
+      ]
+    },
+    {
+      "name": "Bulwark",
+      "stats": [
+        "Dodge Roll cannot Avoid Damage · Take 30% less Damage from Hits while Dodge Rolling"
+      ]
+    },
+    {
+      "name": "Chaos Inoculation",
+      "stats": [
+        "Maximum Life is 1 · Immune to Chaos Damage and Bleeding"
+      ]
+    },
+    {
+      "name": "Conduit",
+      "stats": [
+        "If you would gain a Charge, Allies in your Presence gain that Charge instead"
+      ]
+    },
+    {
+      "name": "Crimson Assault",
+      "stats": [
+        "Bleeding you inflict is Aggravated · Base Bleeding Duration is 1 second · 50% more Magnitude of Bleeding you inflict"
+      ]
+    },
+    {
+      "name": "Dance with Death",
+      "stats": [
+        "25% more Skill Speed while Off Hand is empty and you have · a One-Handed Martial Weapon equipped in your Main Hand"
+      ]
+    },
+    {
+      "name": "Eldritch Battery",
+      "stats": [
+        "Convert 100% of maximum Energy Shield to maximum Mana · Mana Costs are Doubled"
+      ]
+    },
+    {
+      "name": "Elemental Equilibrium",
+      "stats": [
+        "Create Lightning Infusion Remnants instead of Fire · Create Cold Infusion Remnants instead of Lightning · Create Fire Infusion Remnants instead of Cold"
+      ]
+    },
+    {
+      "name": "Eternal Youth",
+      "stats": [
+        "Life Recharges instead of Energy Shield · 50% less Life Recovery from Flasks"
+      ]
+    },
+    {
+      "name": "Giant's Blood",
+      "stats": [
+        "You can wield Two-Handed Axes, Maces and Swords in one hand · Triple Attribute requirements of Martial Weapons · Inherent Life granted by Strength is halved"
+      ]
+    },
+    {
+      "name": "Glancing Blows",
+      "stats": [
+        "Chance to Evade is Unlucky · Chance to Deflect is Lucky"
+      ]
+    },
+    {
+      "name": "Heartstopper",
+      "stats": [
+        "Take 50% less Damage over Time if you've started taking Damage over Time in the past second · Take 50% more Damage over Time if you haven't started taking Damage over Time in the past second"
+      ]
+    },
+    {
+      "name": "Hollow Palm Technique",
+      "stats": [
+        "Can Attack as though using a Quarterstaff while both of your hand slots are empty · Unarmed Attacks that would use an Equipped Quarterstaff's damage have: · • Base Unarmed Physical damage replaced with damage based on their Skill Level · • 1% more Attack Speed per 75 Item Evasion on Equipped Armour Items · • +0.1% to Critical Hit Chance per 10 Item Energy Shield on Equipped Armour Items"
+      ]
+    },
+    {
+      "name": "Iron Reflexes",
+      "stats": [
+        "Converts all Evasion Rating to Armour"
+      ]
+    },
+    {
+      "name": "Lord of the Wilds",
+      "stats": [
+        "You can equip a non-Unique Sceptre while wielding a Talisman · 50% less Spirit · Non-Minion Skills have 50% less Reservation Efficiency"
+      ]
+    },
+    {
+      "name": "Mind Over Matter",
+      "stats": [
+        "All Damage is taken from Mana before Life · 50% less Mana Recovery Rate"
+      ]
+    },
+    {
+      "name": "Necromantic Talisman",
+      "stats": [
+        "All bonuses from Equipped Amulet apply to your Minions instead of you"
+      ]
+    },
+    {
+      "name": "Oasis",
+      "stats": [
+        "Cannot use Charms · 30% more Recovery from Flasks"
+      ]
+    },
+    {
+      "name": "Pain Attunement",
+      "stats": [
+        "30% less Critical Damage Bonus when on Full Life · 30% more Critical Damage Bonus when on Low Life"
+      ]
+    },
+    {
+      "name": "Primal Hunger",
+      "stats": [
+        "100% more Maximum Rage · Regenerate 1 Rage per second per 4 Rage spent Recently · No Rage effect"
+      ]
+    },
+    {
+      "name": "Resolute Technique",
+      "stats": [
+        "Accuracy Rating is Doubled · Never deal Critical Hits"
+      ]
+    },
+    {
+      "name": "Resonance",
+      "stats": [
+        "Gain Power Charges instead of Frenzy Charges · Gain Frenzy Charges instead of Endurance Charges · Gain Endurance Charges instead of Power Charges"
+      ]
+    },
+    {
+      "name": "Ritual Cadence",
+      "stats": [
+        "Invocation Skills instead Trigger Spells every 2 seconds · Invocation Skills cannot gain Energy while Triggering Spells · Invoked Spells consume 50% less Energy"
+      ]
+    },
+    {
+      "name": "Scarred Faith",
+      "stats": [
+        "5% of Physical Damage prevented Recouped as Energy Shield per enemy Power · Energy Shield does not Recharge · You cannot Recover Energy Shield from Regeneration · You cannot Recover Energy Shield to above Armour"
+      ]
+    },
+    {
+      "name": "Trusted Kinship",
+      "stats": [
+        "You can have two Companions of different types · 30% more Reservation Efficiency of Companion Skills · 20% less Reservation Efficiency of non-Companion Skills"
+      ]
+    },
+    {
+      "name": "Unwavering Stance",
+      "stats": [
+        "Cannot be Light Stunned · Cannot Dodge Roll or Sprint"
+      ]
+    },
+    {
+      "name": "Vaal Pact",
+      "stats": [
+        "50% more amount of Life Leeched · Leech Life 67% less quickly · Cannot Recover Life other than from Leech · Life Leech effects are not removed when Unreserved Life is Filled"
+      ]
+    },
+    {
+      "name": "Whispers of Doom",
+      "stats": [
+        "You can apply an additional Curse · Double Activation Delay of Curses"
+      ]
+    },
+    {
+      "name": "Wildsurge Incantation",
+      "stats": [
+        "Storm and Plant Spells: · • deal 50% more damage · • cost 50% less · • have 75% less duration"
+      ]
+    },
+    {
+      "name": "Zealot's Oath",
+      "stats": [
+        "Excess Life Recovery from Regeneration is applied to Energy Shield · Energy Shield does not Recharge"
+      ]
+    }
+  ]
+}
